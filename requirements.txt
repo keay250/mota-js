@@ -1,0 +1,4 @@
+# 永不复还数据提取与 mota-js 工具链 Python 依赖
+rubymarshal>=1.0.3
+pillow>=10.0.0
+flask>=2.0.0
