@@ -11,8 +11,8 @@
 // const core = (() => {
 
 function core () {
-    this._WIDTH_ = 13;
-    this._HEIGHT_ = 13;
+    this._WIDTH_ = 15;
+    this._HEIGHT_ = 15;
     this._PX_ = this._WIDTH_ * 32;
     this._PY_ = this._HEIGHT_ * 32;
     this._HALF_WIDTH_ = Math.floor(this._WIDTH_ / 2);
