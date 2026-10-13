@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Motajs runtime / logs
+_analysis/_ybfh-mota/_saves/
+_analysis/edge-cdp-*
+_analysis/cdp_*.png
+_analysis/cdp_diag_output*.json
