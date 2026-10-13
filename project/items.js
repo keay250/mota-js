@@ -96,37 +96,37 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"redPotion": {
 		"cls": "items",
 		"name": "红血瓶",
-		"text": "，生命+${core.values.redPotion}",
-		"itemEffect": "core.status.hero.hp += core.values.redPotion * core.status.thisMap.ratio",
+		"text": "，生命+${core.values.redPotion}（受上限封顶）",
+		"itemEffect": "core.addHp(core.values.redPotion * core.status.thisMap.ratio);",
 		"itemEffectTip": "，生命+${core.values.redPotion * core.status.thisMap.ratio}",
-		"useItemEffect": "core.status.hero.hp += core.values.redPotion",
+		"useItemEffect": "core.addHp(core.values.redPotion);",
 		"canUseItemEffect": "true"
 	},
 	"bluePotion": {
 		"cls": "items",
 		"name": "蓝血瓶",
-		"text": "，生命+${core.values.bluePotion}",
-		"itemEffect": "core.status.hero.hp += core.values.bluePotion * core.status.thisMap.ratio",
+		"text": "，生命+${core.values.bluePotion}（受上限封顶）",
+		"itemEffect": "core.addHp(core.values.bluePotion * core.status.thisMap.ratio);",
 		"itemEffectTip": "，生命+${core.values.bluePotion * core.status.thisMap.ratio}",
-		"useItemEffect": "core.status.hero.hp += core.values.bluePotion",
+		"useItemEffect": "core.addHp(core.values.bluePotion);",
 		"canUseItemEffect": "true"
 	},
 	"yellowPotion": {
 		"cls": "items",
 		"name": "黄血瓶",
-		"text": "，生命+${core.values.yellowPotion}",
-		"itemEffect": "core.status.hero.hp += core.values.yellowPotion * core.status.thisMap.ratio",
+		"text": "，生命+${core.values.yellowPotion}（受上限封顶）",
+		"itemEffect": "core.addHp(core.values.yellowPotion * core.status.thisMap.ratio);",
 		"itemEffectTip": "，生命+${core.values.yellowPotion * core.status.thisMap.ratio}",
-		"useItemEffect": "core.status.hero.hp += core.values.yellowPotion",
+		"useItemEffect": "core.addHp(core.values.yellowPotion);",
 		"canUseItemEffect": "true"
 	},
 	"greenPotion": {
 		"cls": "items",
-		"name": "生命上限瓶",
-		"text": "，生命上限+${core.values.greenPotion}",
-		"itemEffect": "core.status.hero.hpmax = (core.status.hero.hpmax || 0) + core.values.greenPotion * core.status.thisMap.ratio; core.status.hero.hp += core.values.greenPotion * core.status.thisMap.ratio;",
+		"name": "生命上限水晶",
+		"text": "，生命上限+${core.values.greenPotion}（当前生命按比例同步提升）",
+		"itemEffect": "core.addMaxHp(core.values.greenPotion * core.status.thisMap.ratio);",
 		"itemEffectTip": "，生命上限+${core.values.greenPotion * core.status.thisMap.ratio}",
-		"useItemEffect": "core.status.hero.hpmax = (core.status.hero.hpmax || 0) + core.values.greenPotion; core.status.hero.hp += core.values.greenPotion;",
+		"useItemEffect": "core.addMaxHp(core.values.greenPotion);",
 		"canUseItemEffect": "true"
 	},
 	"sword0": {

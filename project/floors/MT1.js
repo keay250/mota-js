@@ -154,10 +154,8 @@ main.floors.MT1=
                             "name": "recovery.mp3"
                         },
                         {
-                            "type": "setValue",
-                            "name": "status:hp",
-                            "operator": "+=",
-                            "value": "50"
+                            "type": "function",
+                            "value": "core.addHp(50);"
                         },
                         {
                             "type": "hide",
@@ -214,16 +212,8 @@ main.floors.MT1=
                     "name": "recovery.mp3"
                 },
                 {
-                    "type": "setValue",
-                    "name": "status:hpmax",
-                    "operator": "+=",
-                    "value": "20"
-                },
-                {
-                    "type": "setValue",
-                    "name": "status:hp",
-                    "operator": "+=",
-                    "value": "20"
+                    "type": "function",
+                    "value": "core.addMaxHp(20);"
                 },
                 {
                     "type": "hide",
