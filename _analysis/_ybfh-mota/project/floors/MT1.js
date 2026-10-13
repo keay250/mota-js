@@ -106,7 +106,7 @@ main.floors.MT1=
 ],
     "downFloor": [1, 1],
     "upFloor": [11, 11],
-    "bgm": "bgm.mp3",
+    "bgm": "forest.mp3",
     "beforeBattle": {},
     "cannotMoveIn": {},
     "autoEvent": {},

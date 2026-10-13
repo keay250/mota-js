@@ -62,6 +62,8 @@ async function getFile(req, res, path) {
             res.writeHead(200, { 'Content-type': 'text/css' });
         if (path.endsWith('.html'))
             res.writeHead(200, { 'Content-type': 'text/html' });
+        if (path.endsWith('.mp3'))
+            res.writeHead(200, { 'Content-type': 'audio/mpeg' });
         return res.end(data), true;
     } catch {
         return false;
@@ -600,7 +602,10 @@ server.on('listening', () => {
 // 处理请求
 server.on('request', async (req, res) => {
     /** @type {string} */
-    const p = req.url.replace(`/games/${name}`, '').replace('/all/', '/');
+    const decodedUrl = (() => {
+        try { return decodeURIComponent(req.url); } catch { return req.url; }
+    })();
+    const p = decodedUrl.replace(`/games/${name}`, '').replace('/all/', '/');
 
     if (req.method === 'GET') {
         const dir = path
