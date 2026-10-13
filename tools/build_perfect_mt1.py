@@ -93,16 +93,17 @@ shutil.copyfile(hero_src, hero_dest)
 print(" -> 主角行走图已更新为贾斯汀 (128x192)")
 
 # -------------------------------------------------------------
-# 3. 替换黄门为原版 Event01-Door04.png
+# 3. 替换黄门为原版 Event01-Door04.png (闭合木门，animates.png row 4)
 # -------------------------------------------------------------
 print("\n[3/7] 正在更新黄门开门动画帧...")
 anim_path = os.path.join(MOTA_DIR, 'project', 'materials', 'animates.png')
 anim_img = Image.open(anim_path).convert('RGBA')
 door_src = Image.open(os.path.join(RX_GFX_DIR, 'Characters', 'Event01-Door04.png')).convert('RGBA')
 door_row0 = door_src.crop((0, 0, 128, 32))
-anim_img.paste(door_row0, (0, 0), door_row0)
+# yellowDoor 在 icons.js 中定义为 row 4 (y = 4 * 32 = 128)
+anim_img.paste(door_row0, (0, 4 * 32), door_row0)
 anim_img.save(anim_path)
-print(" -> animates.png 第 0 行已更新为原版黄木门开门帧")
+print(" -> animates.png 第 4 行已更新为原版 Event01-Door04 闭合木门开门帧 (yellowDoor)")
 
 # -------------------------------------------------------------
 # 4. 替换 items.png 中的宝箱、红/蓝宝石碎片、血瓶、生命上限
@@ -135,12 +136,52 @@ items_img.paste(potion_100, (0, 21 * 32), potion_100)
 print(" -> items.png row 20, 21 已填入原版 103-item03 恢复药水 (redPotion, bluePotion)")
 
 # 4.4 生命上限 (Item01-Gem05.png) -> 替换 row 22 (greenPotion, ID 33)
+# 原版 Map007 的生命上限事件使用 dir=4, pat=2。在 86x115 的图片中对应切片 (43, 29, 65, 58)
 maxhp_src = Image.open(os.path.join(RX_GFX_DIR, 'Characters', 'Item01-Gem05.png')).convert('RGBA')
-maxhp_tile = maxhp_src.crop((64, 32, 96, 64))
-items_img.paste(maxhp_tile, (0, 22 * 32), maxhp_tile)
-print(" -> items.png row 22 已填入原版 Item01-Gem05 生命上限晶石 (greenPotion)")
+maxhp_tile = maxhp_src.crop((43, 29, 65, 58))
+maxhp_canvas = Image.new('RGBA', (32, 32), (0, 0, 0, 0))
+maxhp_canvas.paste(maxhp_tile, (5, 2), maxhp_tile)
+items_img.paste(maxhp_canvas, (0, 22 * 32), maxhp_canvas)
+print(" -> items.png row 22 已填入原版 Item01-Gem05 纯净翠绿立体生命上限水晶 (greenPotion)")
 
 items_img.save(items_path)
+
+# -------------------------------------------------------------
+# 4.5 提取并替换 enemys.png 原版怪物行走图
+# -------------------------------------------------------------
+print("\n[4.5/7] 正在更新 enemys.png 怪物材质为原版行走图...")
+enemys_path = os.path.join(MOTA_DIR, 'project', 'materials', 'enemys.png')
+enemys_img = Image.open(enemys_path).convert('RGBA')
+
+# 精准怪物映射:
+# 1. 荷依米 (怪物002): Monster01-01 row 0 (y=0) -> row 0 (greenSlime)
+# 2. 软泥怪 (怪物003): Monster01-04 row 1 (y=32) -> row 1 (redSlime)
+# 3. 幽林鬼火 (怪物005): Monster01-12 row 3 (y=96) -> row 2 (blackSlime, 纯正深蓝火焰!)
+# 4. 水花怪 (怪物004): Monster01-04 row 0 (y=0) -> row 3 (slimelord, 亮蓝水花怪!)
+# 5. 复活死者 (怪物007): Monster02-01 row 0 (y=0) -> row 8 (skeleton, 骷髅兵)
+# 6. 荷依米贵族 (怪物006): Monster01-02 row 0 (y=0) -> row 9 (skeletonWarrior, 荷依米贵族持剑盾!)
+# 7. 强化持盾怪 (怪物008): Monster01-01 row 1 (y=32) -> row 10 (skeletonCaptain, 粉红持盾怪!)
+m_specs = [
+    ('Monster01-01.png', 0, 0, 0),    # greenSlime (row 0): 荷依米
+    ('Monster01-04.png', 32, 0, 1),   # redSlime (row 1): 软泥怪
+    ('Monster01-12.png', 96, 0, 2),   # blackSlime (row 2): 幽林鬼火 (深蓝火焰!)
+    ('Monster01-04.png', 0, 0, 3),    # slimelord (row 3): 蓝色水花怪
+    ('Monster02-01.png', 0, 0, 8),    # skeleton (row 8): 复活的死者 (骷髅兵)
+    ('Monster01-02.png', 0, 0, 9),    # skeletonWarrior (row 9): 荷依米贵族 (剑盾绿史莱姆)
+    ('Monster01-01.png', 32, 0, 10),  # skeletonCaptain (row 10): 粉红持盾怪
+]
+
+for fname, y, x, row_idx in m_specs:
+    im = Image.open(os.path.join(RX_GFX_DIR, 'Characters', fname)).convert('RGBA')
+    t0 = im.crop((x, y, x + 32, y + 32))
+    t1 = im.crop((x + 64 if x + 64 < im.width else x, y, (x + 64 if x + 64 < im.width else x) + 32, y + 32))
+    row_block = Image.new('RGBA', (64, 32), (0, 0, 0, 0))
+    row_block.paste(t0, (0, 0), t0)
+    row_block.paste(t1, (32, 0), t1)
+    enemys_img.paste(row_block, (0, row_idx * 32), row_block)
+
+enemys_img.save(enemys_path)
+print(" -> enemys.png 关键怪物贴图已全量更新为原版行走图！")
 
 # -------------------------------------------------------------
 # 5. 生成 15x15 楼层脚本 MT1.js
@@ -170,15 +211,15 @@ for y in range(map_h):
         row.append(0 if passable else 17)
     maze.append(row)
 
-# 怪物 ID 映射
+# 真实怪物与道具映射
 MONSTER_MAP = {
-    '怪物002': 201, # 荷依米
-    '怪物003': 202, # 软泥怪
-    '怪物004': 203, # 幽林鬼火
-    '怪物005': 205, # 荷依米战士
-    '怪物006': 206, # 倍荷玛
-    '怪物007': 209, # 复活的死者
-    '怪物008': 210, # 倍荷玛战士
+    '怪物002': 201, # greenSlime: 荷依米 (绿色史莱姆)
+    '怪物003': 202, # redSlime: 软泥怪 (粉红史莱姆)
+    '怪物005': 203, # blackSlime: 幽林鬼火 (深蓝火焰!)
+    '怪物004': 204, # slimelord: 蓝色水花怪
+    '怪物007': 209, # skeleton: 复活的死者 (骷髅兵)
+    '怪物006': 210, # skeletonWarrior: 荷依米贵族 (剑盾绿史莱姆)
+    '怪物008': 211, # skeletonCaptain: 粉红持盾怪
 }
 
 mota_events = {}
