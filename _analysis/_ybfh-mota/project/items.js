@@ -20,20 +20,20 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"redGem": {
 		"cls": "items",
-		"name": "红宝石",
-		"text": "攻击+${core.values.redGem}",
-		"itemEffect": "core.status.hero.atk += core.values.redGem * core.status.thisMap.ratio",
-		"itemEffectTip": "，攻击+${core.values.redGem * core.status.thisMap.ratio}",
-		"useItemEffect": "core.status.hero.atk += core.values.redGem",
+		"name": "红宝石碎片",
+		"text": "，每凑齐3颗碎片合成1点攻击",
+		"itemEffect": "var c = (core.getFlag('redGemShard', 0) + 1); if (c >= 3) { core.status.hero.atk += 1; core.setFlag('redGemShard', 0); core.drawTip('凑齐 3 颗红宝石碎片，攻击力 +1！'); } else { core.setFlag('redGemShard', c); core.drawTip('获得【红宝石碎片】（当前: ' + c + '/3）'); }",
+		"itemEffectTip": "，红宝石碎片+1",
+		"useItemEffect": "core.status.hero.atk += 1",
 		"canUseItemEffect": "true"
 	},
 	"blueGem": {
 		"cls": "items",
-		"name": "蓝宝石",
-		"text": "，防御+${core.values.blueGem}",
-		"itemEffect": "core.status.hero.def += core.values.blueGem * core.status.thisMap.ratio",
-		"itemEffectTip": "，防御+${core.values.blueGem * core.status.thisMap.ratio}",
-		"useItemEffect": "core.status.hero.def += core.values.blueGem",
+		"name": "蓝宝石碎片",
+		"text": "，每凑齐3颗碎片合成1点防御",
+		"itemEffect": "var c = (core.getFlag('blueGemShard', 0) + 1); if (c >= 3) { core.status.hero.def += 1; core.setFlag('blueGemShard', 0); core.drawTip('凑齐 3 颗蓝宝石碎片，防御力 +1！'); } else { core.setFlag('blueGemShard', c); core.drawTip('获得【蓝宝石碎片】（当前: ' + c + '/3）'); }",
+		"itemEffectTip": "，蓝宝石碎片+1",
+		"useItemEffect": "core.status.hero.def += 1",
 		"canUseItemEffect": "true"
 	},
 	"greenGem": {
