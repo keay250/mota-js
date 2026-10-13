@@ -14,7 +14,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"winskin.png"
 		],
 		"tilesets": [
-			"magictower.png"
+			"magictower.png",
+			"003-Forest01.png"
 		],
 		"animates": [
 			"hand",
@@ -723,13 +724,13 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		"lavaDamage": 100,
 		"poisonDamage": 10,
 		"weakValue": 20,
-		"redGem": 3,
-		"blueGem": 3,
-		"greenGem": 5,
-		"redPotion": 100,
-		"bluePotion": 250,
-		"yellowPotion": 500,
-		"greenPotion": 800,
+		"redGem": 1,
+		"blueGem": 1,
+		"greenGem": 2,
+		"redPotion": 50,
+		"bluePotion": 100,
+		"yellowPotion": 200,
+		"greenPotion": 20,
 		"breakArmor": 0.9,
 		"counterAttack": 0.1,
 		"purify": 3,

@@ -122,11 +122,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"greenPotion": {
 		"cls": "items",
-		"name": "绿血瓶",
-		"text": "，生命+${core.values.greenPotion}",
-		"itemEffect": "core.status.hero.hp += core.values.greenPotion * core.status.thisMap.ratio",
-		"itemEffectTip": "，生命+${core.values.greenPotion * core.status.thisMap.ratio}",
-		"useItemEffect": "core.status.hero.hp += core.values.greenPotion",
+		"name": "生命上限瓶",
+		"text": "，生命上限+${core.values.greenPotion}",
+		"itemEffect": "core.status.hero.hpmax = (core.status.hero.hpmax || 0) + core.values.greenPotion * core.status.thisMap.ratio; core.status.hero.hp += core.values.greenPotion * core.status.thisMap.ratio;",
+		"itemEffectTip": "，生命上限+${core.values.greenPotion * core.status.thisMap.ratio}",
+		"useItemEffect": "core.status.hero.hpmax = (core.status.hero.hpmax || 0) + core.values.greenPotion; core.status.hero.hp += core.values.greenPotion;",
 		"canUseItemEffect": "true"
 	},
 	"sword0": {
