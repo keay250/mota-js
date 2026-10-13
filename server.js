@@ -64,6 +64,12 @@ async function getFile(req, res, path) {
             res.writeHead(200, { 'Content-type': 'text/html' });
         if (path.endsWith('.mp3'))
             res.writeHead(200, { 'Content-type': 'audio/mpeg' });
+        if (path.endsWith('.png'))
+            res.writeHead(200, { 'Content-type': 'image/png' });
+        if (path.endsWith('.jpg') || path.endsWith('.jpeg'))
+            res.writeHead(200, { 'Content-type': 'image/jpeg' });
+        if (req.method === 'HEAD')
+            return res.end(), true;
         return res.end(data), true;
     } catch {
         return false;
@@ -607,7 +613,7 @@ server.on('request', async (req, res) => {
     })();
     const p = decodedUrl.replace(`/games/${name}`, '').replace('/all/', '/');
 
-    if (req.method === 'GET') {
+    if (req.method === 'GET' || req.method === 'HEAD') {
         const dir = path
             .resolve(__dirname, p === '/' ? 'index.html' : p.slice(1))
             .split('?v=')[0];
