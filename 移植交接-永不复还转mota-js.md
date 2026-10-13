@@ -367,6 +367,15 @@ Windows 上可用；**macOS/Linux 用 `server.js`（Node）或 `server.py`（Fla
   3. **全局封装 `core.addMaxHp` 与 `core.addHp`**：在 `project/plugins.js` 注册全局辅助函数，包含等比例调整与封顶截断，并传入 `core.updateStatusBar(false, true)` 强制同步立即刷新。
   4. **道具与地图联动**：`items.js` 的所有血瓶与绿水晶统一调用该全局 API；地图上的教学血瓶（如 MT1 (1,11)）在满血（`status:hpmax - status:hp < 50`）时触发原版说明且不消耗血瓶。
 
+### 坑 20：开局教学血瓶防溢出拦截 vs 后续普通血瓶拾取的职责划分陷阱
+- **现象**：在写自动化地图生成脚本时，将 MT1 教学血瓶（(1,11)，原版 Event 36）的 `(status:hpmax - status:hp < 50)` 拦截逻辑误当成全局模板应用到了所有血瓶上，导致 MT2 及后续楼层所有血瓶走上去都弹窗阻止玩家拾取。
+- **规则**：原版仅 MT1 (1,11) 的第一瓶教学血瓶有剧情教学拦截。后续所有普通血瓶（红+50、蓝+100）必须只作为普通地图图块存在，玩家走上去直接吃掉并消耗，由底层的 `core.addHp` 自动执行上限截断，绝不可在地图层添加阻挡弹窗！
+
+### 坑 21：mota-js `updateStatusBar` 的 requestAnimationFrame 异步帧刷新延迟
+- **现象**：调用 `core.updateStatusBar()` 后立即读取 DOM（如 Playwright 断言或连续脚本交互），发现数值仍然是旧值。
+- **原因**：mota-js 源码中 `core.updateStatusBar` 默认走 `requestAnimationFrame` 延迟至下一帧更新。
+- **解法**：在即时结算函数（如 `core.addMaxHp`、`core.addHp`）中必须调用 `core.updateStatusBar(false, true)`，传入 `immediate=true` 强制同步立即重绘 DOM。
+
 ---
 
 ## 8. 环境与运行
@@ -544,19 +553,48 @@ cd mota-js && python3 server.py
 .venv/bin/python3 tools/verify_all_intro.py
 ```
 
-## 附录 C：本项目的验证结论（实测 v2.0）
+## 11. 现有方案封存说明与下一步战略 (Milestone v2.1)
+
+### 11.1 封存状态与阶段性资产
+- **封存里程碑 Tag**：`archive/v2.1-mota-milestone`（Commit `dd7673b` 及收尾提交）
+- **当前工程交付状态**：
+  1. **MT1 第一层 1:1 像素级复刻**：15×15 茂密森林 Autotile 背景、21 只原版数值怪物、开场序章与独白全量注入、获得狩猎之书、新手教学与开局防溢出教学完备。
+  2. **MT2 第二层自动化总装**：15×15 丛林与清澈湖泊 Autotile 背景、19 只怪物与 5 扇木门、双向楼梯跳转互联打通。
+  3. **底层生命与上限体系**：左侧状态栏复合显示 `当前生命 / 生命上限`（如 `700/700`，受到伤害后如 `688/700`）；绿水晶通过 `core.addMaxHp` 实现原版健康度等比例提升；血瓶通过 `core.addHp` 受上限封顶截断；普通血瓶顺畅拾取无阻断。
+  4. **自动化测试套件**：Playwright 端到端无头测试（`tools/verify_hp_system.py`、`tools/verify_subsequent_potions.py`、`tools/verify_all_intro.py`）测试用例 100% 通过。
+
+### 11.2 封存决策背景：为什么不再继续扩大 mota-js 移植规模？
+- **根本冲突**：mota-js 是“路线严格固定的古典数理魔塔”，而《永不复还》本质是“576 张地图、350+ 件随机词缀装备、一键换装、怒气充能技能树、魂海晋升的暗黑 ARPG”。
+- **边际成本**：继续手动/半自动转译剩余 574 张地图与复杂装备战斗公式，边际成本呈指数级剧增。
+- **关联调研**：详见本路径下 [`browser-RGSS.md`](file:///Users/zt-lin/Document/永不复还/移植包-永不复还转mota-js/browser-RGSS.md)（*把 RGSS 搬进浏览器 · 调研结果*）。
+
+### 11.3 后续演进建议（原版直跑与新路线指引）
+1. **现状封存保留**：当前 `_analysis/_ybfh-mota` 作为一个成熟稳定的“1~2 层精炼 Web 演示版”，随时可通过 `./start.sh` 启动体验。
+2. **新路线 Phase 1（Mac 原生直跑）**：
+   - 基于 **mkxp-z**（开源跨平台 RGSS 解释器）或 **Whisky / Wine** 在 macOS 上直接运行原版 `Game.exe` / `Data/*.rxdata`。
+   - 彻底解除“Mac 跑不了原版”的限制，瞬间获得 500 层完整内容。
+   - 针对原版 35 处 Win32API（全键盘、GDI 存盘缩略图、机器码）由 Python 脚本批量打 Stub Patch。
+3. **新路线 Phase 2（浏览器 WASM 直跑）**：
+   - 借助 `white-axe/mkxp-z-libretro-emscripten` 将原工程打包为 WebAssembly，保留 48k 行 Ruby 原版逻辑，直接在浏览器运行，彻底告别手工重写。
+
+---
+
+## 附录 C：本项目的验证结论（实测 v2.1 封存态）
 
 ```
 MT1  15×15 (480×480)  事件 56 个  完全 1:1 还原 RMXP Map007 寂静之森外围 ✓
-背景  48-Autotile 算法生成 15×15 茂密树林 + 草地 map007_bg.png ✓
+MT2  15×15 (480×480)  事件 43 个  完全 1:1 还原 RMXP Map009 寂静之森外围 2F ✓
+背景  48-Autotile 算法生成 15×15 茂密树林 + 草地 + 清澈湖泊 ✓
 主角  原版贾斯汀行走图 (128×192) 替换 hero.png ✓
 门箱  Event01-Door04 双开闭合木门 + 174-Chest01 金扣宝箱 ✓
-道具  Item01-Gem03 纯净月牙晶石（无杂质）+ 103-item03 恢复药水 + Item01-Gem05 翠绿生命水晶 ✓
-怪物  7 种魔兽（21 只怪）零重叠、零残影、严格对齐 Enemies.rxdata 原版攻防/生命/经验/金币 ✓
-机制  黑屏序章台词(14句) + 苏醒独白(10句) + 狩猎之书获得 + 首次拾取教学 + 血瓶防溢出 ✓
+道具  Item01-Gem03 纯净月牙晶石 + 103-item03 恢复药水 + Item01-Gem05 翠绿生命水晶 ✓
+怪物  8 种魔兽（40 只怪）零重叠、零残影、严格对齐 Enemies.rxdata 原版数值 ✓
+机制  当前/上限复合显示(700/700) + 绿水晶按比例成长 + 血瓶防溢出截断 + 教学与普通血瓶职责分离 ✓
+互联  MT1 (12, 0) 与 MT2 (2, 14) 上下楼梯双向无缝跳转 ✓
 验收  Playwright 无头自动化测试 100% 通过，实机画布完美无瑕 ✓
 ```
 
 ---
 
 *本文档由 DeepSeek Harness 会话实测产出，所有路径、ID、命令均经验证。若发现与实际不符，以现场脚本输出为准并回写本文件。*
+
