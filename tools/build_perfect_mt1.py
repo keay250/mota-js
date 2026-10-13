@@ -116,23 +116,25 @@ items_img = Image.open(items_backup_path if os.path.exists(items_backup_path) el
 # 4.1 宝箱 (174-Chest01.png) -> 替换 row 56 (shield2, ID 38)
 chest_src = Image.open(os.path.join(RX_GFX_DIR, 'Characters', '174-Chest01.png')).convert('RGBA')
 chest_32x32 = chest_src.crop((0, 16, 32, 48))
-items_img.paste(chest_32x32, (0, 56 * 32), chest_32x32)
+items_img.paste(chest_32x32, (0, 56 * 32)) # 绝不带 mask，直接完全覆盖原有像素
 print(" -> items.png row 56 已填入原版 174-Chest01 带金扣木宝箱 (shield2)")
 
 # 4.2 红蓝宝石碎片 (Item01-Gem03.png) -> 替换 row 16 (redGem, ID 27), row 17 (blueGem, ID 28)
+# 原版 Map007 的事件使用的是 Item01-Gem03.png 的第 0 行月牙碎片 (dir=2, pat=0 为红月牙，pat=1 为蓝月牙)
+# 彻底杜绝使用 mask，完全抹杀底层残留的八角棱形水晶杂质！
 gem_src = Image.open(os.path.join(RX_GFX_DIR, 'Characters', 'Item01-Gem03.png')).convert('RGBA')
 red_gem = gem_src.crop((0, 0, 32, 32))
 blue_gem = gem_src.crop((32, 0, 64, 32))
-items_img.paste(red_gem, (0, 16 * 32), red_gem)
-items_img.paste(blue_gem, (0, 17 * 32), blue_gem)
-print(" -> items.png row 16, 17 已填入原版 Item01-Gem03 红/蓝晶石碎片 (redGem, blueGem)")
+items_img.paste(red_gem, (0, 16 * 32)) # 无 mask，彻底覆盖清除杂质！
+items_img.paste(blue_gem, (0, 17 * 32)) # 无 mask，彻底覆盖清除杂质！
+print(" -> items.png row 16, 17 已填入原版 Item01-Gem03 纯净红/蓝月牙宝石碎片 (redGem, blueGem)")
 
 # 4.3 血瓶 (103-item03.png) -> 替换 row 20 (redPotion, ID 31), row 21 (bluePotion, ID 32)
 potion_src = Image.open(os.path.join(RX_GFX_DIR, 'Characters', '103-item03.png')).convert('RGBA')
 potion_50 = potion_src.crop((0, 32, 32, 64))
 potion_100 = potion_src.crop((32, 32, 64, 64))
-items_img.paste(potion_50, (0, 20 * 32), potion_50)
-items_img.paste(potion_100, (0, 21 * 32), potion_100)
+items_img.paste(potion_50, (0, 20 * 32))
+items_img.paste(potion_100, (0, 21 * 32))
 print(" -> items.png row 20, 21 已填入原版 103-item03 恢复药水 (redPotion, bluePotion)")
 
 # 4.4 生命上限 (Item01-Gem05.png) -> 替换 row 22 (greenPotion, ID 33)
@@ -140,8 +142,8 @@ print(" -> items.png row 20, 21 已填入原版 103-item03 恢复药水 (redPoti
 maxhp_src = Image.open(os.path.join(RX_GFX_DIR, 'Characters', 'Item01-Gem05.png')).convert('RGBA')
 maxhp_tile = maxhp_src.crop((43, 29, 65, 58))
 maxhp_canvas = Image.new('RGBA', (32, 32), (0, 0, 0, 0))
-maxhp_canvas.paste(maxhp_tile, (5, 2), maxhp_tile)
-items_img.paste(maxhp_canvas, (0, 22 * 32), maxhp_canvas)
+maxhp_canvas.paste(maxhp_tile, (5, 2))
+items_img.paste(maxhp_canvas, (0, 22 * 32))
 print(" -> items.png row 22 已填入原版 Item01-Gem05 纯净翠绿立体生命上限水晶 (greenPotion)")
 
 items_img.save(items_path)
@@ -153,35 +155,40 @@ print("\n[4.5/7] 正在更新 enemys.png 怪物材质为原版行走图...")
 enemys_path = os.path.join(MOTA_DIR, 'project', 'materials', 'enemys.png')
 enemys_img = Image.open(enemys_path).convert('RGBA')
 
-# 精准怪物映射:
-# 1. 荷依米 (怪物002): Monster01-01 row 0 (y=0) -> row 0 (greenSlime)
-# 2. 软泥怪 (怪物003): Monster01-04 row 1 (y=32) -> row 1 (redSlime)
-# 3. 幽林鬼火 (怪物005): Monster01-12 row 3 (y=96) -> row 2 (blackSlime, 纯正深蓝火焰!)
-# 4. 水花怪 (怪物004): Monster01-04 row 0 (y=0) -> row 3 (slimelord, 亮蓝水花怪!)
-# 5. 复活死者 (怪物007): Monster02-01 row 0 (y=0) -> row 8 (skeleton, 骷髅兵)
-# 6. 荷依米贵族 (怪物006): Monster01-02 row 0 (y=0) -> row 9 (skeletonWarrior, 荷依米贵族持剑盾!)
-# 7. 强化持盾怪 (怪物008): Monster01-01 row 1 (y=32) -> row 10 (skeletonCaptain, 粉红持盾怪!)
+# 精准怪物映射 (与 Enemies.rxdata 和 Map007.rxdata 100% 绝对一致):
+# 1. 怪物002: ID 2 荷依米 (绿色史莱姆) -> row 0 (greenSlime)
+# 2. 怪物006: ID 6 倍荷玛 (粉红圆圆史莱姆) -> row 1 (redSlime)
+# 3. 怪物004: ID 4 幽林鬼火 (深蓝火焰) -> row 2 (blackSlime)
+# 4. 怪物003: ID 3 软泥怪 (亮蓝色水花怪) -> row 3 (slimelord)
+# 5. 怪物005: ID 5 荷依米战士 (持剑盾绿史莱姆) -> row 4 (bat)
+# 6. 怪物007: ID 7 复活的死者 (白色骷髅兵) -> row 8 (skeleton)
+# 7. 怪物008: ID 8 倍荷玛战士 (持剑盾粉红怪) -> row 9 (skeletonWarrior)
 m_specs = [
     ('Monster01-01.png', 0, 0, 0),    # greenSlime (row 0): 荷依米
-    ('Monster01-04.png', 32, 0, 1),   # redSlime (row 1): 软泥怪
+    ('Monster01-01.png', 32, 0, 1),   # redSlime (row 1): 倍荷玛 (粉红圆圆史莱姆)
     ('Monster01-12.png', 96, 0, 2),   # blackSlime (row 2): 幽林鬼火 (深蓝火焰!)
-    ('Monster01-04.png', 0, 0, 3),    # slimelord (row 3): 蓝色水花怪
+    ('Monster01-04.png', 0, 0, 3),    # slimelord (row 3): 软泥怪 (亮蓝色水花怪!)
+    ('Monster01-02.png', 0, 0, 4),    # bat (row 4): 荷依米战士 (持剑盾绿史莱姆)
     ('Monster02-01.png', 0, 0, 8),    # skeleton (row 8): 复活的死者 (骷髅兵)
-    ('Monster01-02.png', 0, 0, 9),    # skeletonWarrior (row 9): 荷依米贵族 (剑盾绿史莱姆)
-    ('Monster01-01.png', 32, 0, 10),  # skeletonCaptain (row 10): 粉红持盾怪
+    ('Monster01-02.png', 32, 0, 9),   # skeletonWarrior (row 9): 倍荷玛战士 (粉红持盾怪)
 ]
+
+# 先清理可能被旧代码污染的第 10 行 (skeletonCaptain)
+clean_row = Image.new('RGBA', (64, 32), (0, 0, 0, 0))
+enemys_img.paste(clean_row, (0, 10 * 32))
 
 for fname, y, x, row_idx in m_specs:
     im = Image.open(os.path.join(RX_GFX_DIR, 'Characters', fname)).convert('RGBA')
     t0 = im.crop((x, y, x + 32, y + 32))
     t1 = im.crop((x + 64 if x + 64 < im.width else x, y, (x + 64 if x + 64 < im.width else x) + 32, y + 32))
     row_block = Image.new('RGBA', (64, 32), (0, 0, 0, 0))
-    row_block.paste(t0, (0, 0), t0)
-    row_block.paste(t1, (32, 0), t1)
-    enemys_img.paste(row_block, (0, row_idx * 32), row_block)
+    row_block.paste(t0, (0, 0))
+    row_block.paste(t1, (32, 0))
+    # 关键修复：绝不带 mask，直接完全覆盖原有像素，彻底抹杀底层残留旧盾牌与剑尖！
+    enemys_img.paste(row_block, (0, row_idx * 32))
 
 enemys_img.save(enemys_path)
-print(" -> enemys.png 关键怪物贴图已全量更新为原版行走图！")
+print(" -> enemys.png 关键怪物贴图已全量更新为原版行走图（零残留、零重叠）！")
 
 # -------------------------------------------------------------
 # 5. 生成 15x15 楼层脚本 MT1.js
@@ -214,12 +221,12 @@ for y in range(map_h):
 # 真实怪物与道具映射
 MONSTER_MAP = {
     '怪物002': 201, # greenSlime: 荷依米 (绿色史莱姆)
-    '怪物003': 202, # redSlime: 软泥怪 (粉红史莱姆)
-    '怪物005': 203, # blackSlime: 幽林鬼火 (深蓝火焰!)
-    '怪物004': 204, # slimelord: 蓝色水花怪
-    '怪物007': 209, # skeleton: 复活的死者 (骷髅兵)
-    '怪物006': 210, # skeletonWarrior: 荷依米贵族 (剑盾绿史莱姆)
-    '怪物008': 211, # skeletonCaptain: 粉红持盾怪
+    '怪物006': 202, # redSlime: 倍荷玛 (粉红圆圆史莱姆)
+    '怪物004': 203, # blackSlime: 幽林鬼火 (深蓝火焰!)
+    '怪物003': 204, # slimelord: 软泥怪 (亮蓝色水花怪!)
+    '怪物005': 205, # bat: 荷依米战士 (持剑盾绿史莱姆)
+    '怪物007': 209, # skeleton: 复活的死者 (白色骷髅兵)
+    '怪物008': 210, # skeletonWarrior: 倍荷玛战士 (粉红持盾怪)
 }
 
 mota_events = {}
