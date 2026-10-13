@@ -97,10 +97,16 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
             "type": "setText",
             "align": "center"
          },
-         "【初心试炼 福利已发放】\n初始黄钥匙 +5\n初始血量 +200\n初始攻击 +1\n初始防御 +1\n初始经验 +40\n\n“希望能够继续坚持这个选择。”",
+         "【初心试炼 福利已发放】\n初始黄钥匙 +5\n初始生命与上限 +200\n初始攻击 +1\n初始防御 +1\n初始经验 +40\n\n“希望能够继续坚持这个选择。”",
          {
             "type": "setText",
             "align": "left"
+         },
+         {
+            "type": "setValue",
+            "name": "status:hpmax",
+            "operator": "+=",
+            "value": "200"
          },
          {
             "type": "setValue",
@@ -149,10 +155,16 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
             "type": "setText",
             "align": "center"
          },
-         "【冒险篇章 福利已发放】\n初始黄钥匙 +2\n初始血量 +100\n初始防御 +1\n初始经验 +20",
+         "【冒险篇章 福利已发放】\n初始黄钥匙 +2\n初始生命与上限 +100\n初始防御 +1\n初始经验 +20",
          {
             "type": "setText",
             "align": "left"
+         },
+         {
+            "type": "setValue",
+            "name": "status:hpmax",
+            "operator": "+=",
+            "value": "100"
          },
          {
             "type": "setValue",
@@ -256,7 +268,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"animate": false,
 			"name": "贾斯汀",
 			"lv": 1,
-			"hpmax": 9999,
+			"hpmax": 500,
 			"hp": 500,
 			"manamax": -1,
 			"mana": 0,

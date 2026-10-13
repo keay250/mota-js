@@ -194,7 +194,7 @@ for eid, ev in sorted(events.items()):
                     ],
                     "false": [
                         {"type": "playSound", "name": "recovery.mp3"},
-                        {"type": "setValue", "name": "status:hp", "operator": "+=", "value": "50"},
+                        {"type": "function", "value": "core.addHp(50);"},
                         {"type": "hide", "remove": True}
                     ]
                 }
@@ -216,7 +216,7 @@ for eid, ev in sorted(events.items()):
                     ],
                     "false": [
                         {"type": "playSound", "name": "recovery.mp3"},
-                        {"type": "setValue", "name": "status:hp", "operator": "+=", "value": "100"},
+                        {"type": "function", "value": "core.addHp(100);"},
                         {"type": "hide", "remove": True}
                     ]
                 }
@@ -230,8 +230,7 @@ for eid, ev in sorted(events.items()):
             "enable": True,
             "data": [
                 {"type": "playSound", "name": "recovery.mp3"},
-                {"type": "setValue", "name": "status:hpmax", "operator": "+=", "value": "20"},
-                {"type": "setValue", "name": "status:hp", "operator": "+=", "value": "20"},
+                {"type": "function", "value": "core.addMaxHp(20);"},
                 {"type": "tip", "text": "生命上限 +20！当前生命值随比例同步提升！"},
                 {"type": "hide", "remove": True}
             ]

@@ -319,7 +319,7 @@ for eid, ev in sorted(events.items()):
                         ],
                         "false": [
                             {"type": "playSound", "name": "recovery.mp3"},
-                            {"type": "setValue", "name": "status:hp", "operator": "+=", "value": "50"},
+                            {"type": "function", "value": "core.addHp(50);"},
                             {"type": "hide", "remove": True}
                         ]
                     }
@@ -340,8 +340,7 @@ for eid, ev in sorted(events.items()):
                     "\t[说明]绿色水晶中蕴含着生命的力量，能够提高你的生命上限。\n\n需要注意的是，当生命上限发生变化的时候，血量也会随之而发生变化，保持在原来的比例。因此在血量较高时增加生命上限会有更高的收益。",
                     {"type": "setText", "align": "left"},
                     {"type": "playSound", "name": "recovery.mp3"},
-                    {"type": "setValue", "name": "status:hpmax", "operator": "+=", "value": "20"},
-                    {"type": "setValue", "name": "status:hp", "operator": "+=", "value": "20"},
+                    {"type": "function", "value": "core.addMaxHp(20);"},
                     {"type": "hide", "remove": True}
                 ]
             }

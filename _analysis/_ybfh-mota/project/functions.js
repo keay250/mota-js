@@ -1,4 +1,33 @@
 ///<reference path='../runtime.d.ts'/>
+if (typeof core !== 'undefined') {
+	core.addMaxHp = function (val) {
+		if (val == null) val = 0;
+		var curHp = core.getStatus ? core.getStatus('hp') : (core.status && core.status.hero ? core.status.hero.hp : 0);
+		var oldMax = core.getRealStatus ? core.getRealStatus('hpmax') : (core.status && core.status.hero ? core.status.hero.hpmax : 0);
+		if (oldMax <= 0) oldMax = Math.max(curHp, 1);
+		var hprate = curHp / oldMax;
+		var newMax = oldMax + val;
+		if (core.status && core.status.hero) {
+			core.status.hero.hpmax = newMax;
+			var newHp = (curHp >= oldMax) ? newMax : Math.round(newMax * hprate);
+			core.status.hero.hp = Math.min(newHp, newMax);
+		}
+		if (core.updateStatusBar) core.updateStatusBar();
+	};
+	core.addHp = function (val) {
+		if (val == null) val = 0;
+		var maxhp = core.getRealStatus ? core.getRealStatus('hpmax') : (core.status && core.status.hero ? core.status.hero.hpmax : 0);
+		var curHp = core.getStatus ? core.getStatus('hp') : (core.status && core.status.hero ? core.status.hero.hp : 0);
+		if (core.status && core.status.hero) {
+			if (maxhp > 0) {
+				core.status.hero.hp = Math.min(maxhp, curHp + val);
+			} else {
+				core.status.hero.hp = curHp + val;
+			}
+		}
+		if (core.updateStatusBar) core.updateStatusBar();
+	};
+}
 var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 {
 	"events": {
@@ -1172,9 +1201,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			// 检查等级
 			core.events.checkLvUp();
 
-			// 检查HP上限
-			if (core.flags.statusBarItems.indexOf('enableHPMax') >= 0) {
-				core.setStatus('hp', Math.min(core.getRealStatus('hpmax'), core.getStatus('hp')));
+			// 检查HP上限 (永不复还核心底层：当前HP受HPMAX严格封顶)
+			var curRealHpMax = core.getRealStatus('hpmax');
+			if (curRealHpMax > 0) {
+				core.status.hero.hp = Math.min(curRealHpMax, core.getStatus('hp'));
 			}
 
 			// 设置楼层名
@@ -1192,8 +1222,18 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			statusList.forEach(function (item) {
 				// 向下取整
 				core.status.hero[item] = Math.floor(core.status.hero[item]);
-				// 大数据格式化
-				core.setStatusBarInnerHTML(item, core.getRealStatus(item));
+				if (item === 'hp') {
+					var curHp = core.getStatus('hp');
+					var maxHpVal = core.getRealStatus('hpmax');
+					if (maxHpVal > 0 && maxHpVal < 999999) {
+						core.setStatusBarInnerHTML('hp', curHp + "/" + maxHpVal);
+					} else {
+						core.setStatusBarInnerHTML('hp', curHp);
+					}
+				} else {
+					// 大数据格式化
+					core.setStatusBarInnerHTML(item, core.getRealStatus(item));
+				}
 			});
 
 			// 设置魔力值; status:manamax 只有在非负时才生效。

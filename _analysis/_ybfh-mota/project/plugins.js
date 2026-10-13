@@ -2,6 +2,36 @@
 var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 {
 	"init": function () {
+		// 全局生命上限/生命恢复辅助函数 (1:1 原版《永不复还》CE2 / CE25 机制)
+		core.addMaxHp = function (val) {
+			if (val == null) val = 0;
+			var curHp = core.getStatus ? core.getStatus('hp') : (core.status && core.status.hero ? core.status.hero.hp : 0);
+			var oldMax = core.getRealStatus ? core.getRealStatus('hpmax') : (core.status && core.status.hero ? core.status.hero.hpmax : 0);
+			if (oldMax <= 0) oldMax = Math.max(curHp, 1);
+			var hprate = curHp / oldMax;
+			var newMax = oldMax + val;
+			if (core.status && core.status.hero) {
+				core.status.hero.hpmax = newMax;
+				var newHp = (curHp >= oldMax) ? newMax : Math.round(newMax * hprate);
+				core.status.hero.hp = Math.min(newHp, newMax);
+			}
+			if (core.updateStatusBar) core.updateStatusBar(false, true);
+		};
+
+		core.addHp = function (val) {
+			if (val == null) val = 0;
+			var maxhp = core.getRealStatus ? core.getRealStatus('hpmax') : (core.status && core.status.hero ? core.status.hero.hpmax : 0);
+			var curHp = core.getStatus ? core.getStatus('hp') : (core.status && core.status.hero ? core.status.hero.hp : 0);
+			if (core.status && core.status.hero) {
+				if (maxhp > 0) {
+					core.status.hero.hp = Math.min(maxhp, curHp + val);
+				} else {
+					core.status.hero.hp = curHp + val;
+				}
+			}
+			if (core.updateStatusBar) core.updateStatusBar(false, true);
+		};
+
 		this._afterLoadResources = function () {
 			// 本函数将在所有资源加载完毕后，游戏开启前被执行
 		}

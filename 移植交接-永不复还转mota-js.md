@@ -351,6 +351,22 @@ Windows 上可用；**macOS/Linux 用 `server.js`（Node）或 `server.py`（Fla
 ### 坑 18：`project/enemys.js` 与 `materials/enemys.png` 槽位必须严格对齐 `icons.js`
 - **规则**：`icons.js` 定义了每个 enemy 键在 `enemys.png` 里的行号（如 `blackSlime: 2`，`slimelord: 3`），同时在 `maps.js` 对应怪物数字 ID（`201`～`211`）。更新贴图、更新数值、更新地图矩阵三者必须使用同一套键名。
 
+### 坑 19：mota-js 默认缺失生命上限（hpmax）机制与绿水晶等比例成长陷阱
+- **原版 RMXP 核心底层**：
+  - 《永不复还》原版在 `Window_LeftDate`、CE2（加减血）与 CE25（生命上限血瓶）中确立了双重核心机制：
+    1. **状态栏呈现**：显示为标准的 `当前生命 / 生命上限`（如 `700/700`，战斗受损后如 `688/700`）。
+    2. **血瓶防溢出**：`Game_Battler` 底层 `hp = [[hp, maxhp].min, 0].max`，拾取血瓶（红+50、蓝+100）受生命上限严格封顶，不可突破上限。
+    3. **绿水晶等比例成长**：拾取/使用生命上限水晶（+20 hpmax）时，当前生命值按原有健康比例等比例同步放大（`newHp = Math.round(newMax * (oldHp / oldMax))`），满血吃升满，残血吃按比例提升。
+- **mota-js 模板缺陷**：
+  - 默认魔塔模板 `firstData.hero` 中将 `hpmax` 设为虚高的 9999，且状态栏只显示 `hp` 单一数值；
+  - `items.js` 中血瓶直接 `core.status.hero.hp += 50`，导致无限叠血无上限；
+  - 绿水晶写成 `hpmax += 20; hp += 20`，残血吃与满血吃收益相同，彻底破坏了原版“残血慎吃上限水晶”的策略博弈。
+- **标准工程解法**：
+  1. **校准初始数值**：`firstData.hero` 初始设为 `hpmax: 500, hp: 500`。在 `levelChoose` 中：初心试炼（Easy）发放福利 `status:hpmax += 200, status:hp += 200`（开局标准的 `700/700`）；冒险篇章（Normal）发放福利 `status:hpmax += 100, status:hp += 100`（`600/600`）；噩梦试炼（Hard）无福利（`500/500`）。
+  2. **状态栏复合渲染**：在 `project/functions.js` 的 `updateStatusBar` 中，限制 `core.status.hero.hp = Math.min(hpmax, curHp)`，并格式化渲染为 `curHp + "/" + maxHp`。
+  3. **全局封装 `core.addMaxHp` 与 `core.addHp`**：在 `project/plugins.js` 注册全局辅助函数，包含等比例调整与封顶截断，并传入 `core.updateStatusBar(false, true)` 强制同步立即刷新。
+  4. **道具与地图联动**：`items.js` 的所有血瓶与绿水晶统一调用该全局 API；地图上的教学血瓶（如 MT1 (1,11)）在满血（`status:hpmax - status:hp < 50`）时触发原版说明且不消耗血瓶。
+
 ---
 
 ## 8. 环境与运行
