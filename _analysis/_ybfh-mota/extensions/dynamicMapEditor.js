@@ -378,6 +378,7 @@ dynamicMapEditor.prototype.refreshToolBox = function() {
 }
 
 dynamicMapEditor.prototype.showInitHelp = function () {
+	return;
 	if (main.mode != 'play' || core.getLocalStorage('_dynamicMapEditor_init')) return;
 	var text = "新拓展：运行时动态编辑地图！\n\n在此状态下你可以一边游戏一边编辑地图或者修改数据。\n\n";
 	text += "进游戏后按 [ 键可以激活，快来尝试吧！\n\n";

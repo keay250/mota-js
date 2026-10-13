@@ -42,6 +42,27 @@ main.floors.MT1=
             "align": "left"
         },
         {
+            "type": "playSound",
+            "name": "item.mp3"
+        },
+        {
+            "type": "tip",
+            "text": "获得了【狩猎之书】！"
+        },
+        {
+            "type": "setText",
+            "align": "center"
+        },
+        "\t[狩猎之书]\n上面记载了所有常见的魔兽信息 @辅助类\n\n快捷操作：在游戏中按 D 键可直接打开怪物手册察看魔兽属性与战况预测。",
+        {
+            "type": "setText",
+            "align": "left"
+        },
+        {
+            "type": "function",
+            "function": "function(){\ncore.addItem('book', 1);\n}"
+        },
+        {
             "type": "tip",
             "text": "【寂静之森外围 (15×15)】方向键移动，探索迷宫，击败魔兽！"
         }
@@ -62,7 +83,7 @@ main.floors.MT1=
                     "align": "center"
                 },
                 "\t[宝箱]打开了宝箱！",
-                "\t[系统]获得了【佣兵短剑】！攻击力 +10！",
+                "\t[系统]获得了【佣兵短剑】！攻击力 +10！\n\n按 Q 键可进入装备界面查看装备。",
                 {
                     "type": "setText",
                     "align": "left"
@@ -72,6 +93,137 @@ main.floors.MT1=
                     "name": "status:atk",
                     "operator": "+=",
                     "value": "10"
+                },
+                {
+                    "type": "hide",
+                    "remove": true
+                }
+            ]
+        },
+        "3,13": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "setText",
+                    "align": "center"
+                },
+                "\t[贾斯汀]咦？这个东西是……",
+                "\t[教学]宝石碎片虽然无法单独为你提供能力加成，但当宝石碎片被集齐达到三个的时候将会自动合成为一颗完整的宝石并提升你的能力。\n\n红色的宝石或宝石碎片提升攻击力，蓝色的则提升防御力。",
+                {
+                    "type": "setText",
+                    "align": "left"
+                },
+                {
+                    "type": "playSound",
+                    "name": "gem.mp3"
+                },
+                {
+                    "type": "setValue",
+                    "name": "item:blueGem",
+                    "operator": "+=",
+                    "value": "1"
+                },
+                {
+                    "type": "hide",
+                    "remove": true
+                }
+            ]
+        },
+        "1,11": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "if",
+                    "condition": "(status:hpmax - status:hp < 50)",
+                    "true": [
+                        {
+                            "type": "setText",
+                            "align": "center"
+                        },
+                        "\t[说明]血瓶能够回复生命，目前红血瓶回复50，蓝血瓶回复100。\n\n然而游戏中存在着生命上限的设定，超过上限的部分会被浪费掉。\n待已损失血量超过50再来拿吧。",
+                        {
+                            "type": "setText",
+                            "align": "left"
+                        }
+                    ],
+                    "false": [
+                        {
+                            "type": "playSound",
+                            "name": "recovery.mp3"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "status:hp",
+                            "operator": "+=",
+                            "value": "50"
+                        },
+                        {
+                            "type": "hide",
+                            "remove": true
+                        }
+                    ]
+                }
+            ]
+        },
+        "3,11": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "item.mp3"
+                },
+                {
+                    "type": "setText",
+                    "align": "center"
+                },
+                "\t[教学]钥匙可以用来开启对应颜色的门。",
+                {
+                    "type": "setText",
+                    "align": "left"
+                },
+                {
+                    "type": "setValue",
+                    "name": "item:yellowKey",
+                    "operator": "+=",
+                    "value": "1"
+                },
+                {
+                    "type": "hide",
+                    "remove": true
+                }
+            ]
+        },
+        "1,13": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "setText",
+                    "align": "center"
+                },
+                "\t[说明]绿色水晶中蕴含着生命的力量，能够提高你的生命上限。\n\n需要注意的是，当生命上限发生变化的时候，血量也会随之而发生变化，保持在原来的比例。因此在血量较高时增加生命上限会有更高的收益。",
+                {
+                    "type": "setText",
+                    "align": "left"
+                },
+                {
+                    "type": "playSound",
+                    "name": "recovery.mp3"
+                },
+                {
+                    "type": "setValue",
+                    "name": "status:hpmax",
+                    "operator": "+=",
+                    "value": "20"
+                },
+                {
+                    "type": "setValue",
+                    "name": "status:hp",
+                    "operator": "+=",
+                    "value": "20"
                 },
                 {
                     "type": "hide",
@@ -164,10 +316,15 @@ main.floors.MT1=
                     "type": "setText",
                     "align": "center"
                 },
-                "\t[贾斯汀]那里太危险了……队长让我们往外围逃，不能回头。",
+                "\t[贾斯汀]那里太危险了。",
                 {
                     "type": "setText",
                     "align": "left"
+                },
+                {
+                    "type": "setHeroLoc",
+                    "x": 2,
+                    "y": 13
                 }
             ]
         }

@@ -81,48 +81,127 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"领域": "zone"
 		},
 		"levelChoose": [
-			{
-				"title": "简单",
-				"name": "Easy",
-				"hard": 1,
-				"color": [
-					64,
-					255,
-					85,
-					1
-				],
-				"action": [
-					{
-						"type": "comment",
-						"text": "在这里写该难度需执行的事件"
-					}
-				]
-			},
-			{
-				"title": "普通",
-				"name": "Normal",
-				"hard": 2,
-				"color": [
-					255,
-					221,
-					32,
-					1
-				],
-				"action": []
-			},
-			{
-				"title": "困难",
-				"name": "Hard",
-				"hard": 3,
-				"color": [
-					255,
-					68,
-					64,
-					1
-				],
-				"action": []
-			}
-		],
+   {
+      "title": "初心试炼 (简单)",
+      "name": "Easy",
+      "hard": 1,
+      "color": [
+         64,
+         255,
+         85,
+         1
+      ],
+      "action": [
+         {
+            "type": "setText",
+            "align": "center"
+         },
+         "【初心试炼 福利已发放】\n初始黄钥匙 +5\n初始血量 +200\n初始攻击 +1\n初始防御 +1\n初始经验 +40\n\n“希望能够继续坚持这个选择。”",
+         {
+            "type": "setText",
+            "align": "left"
+         },
+         {
+            "type": "setValue",
+            "name": "status:hp",
+            "operator": "+=",
+            "value": "200"
+         },
+         {
+            "type": "setValue",
+            "name": "status:atk",
+            "operator": "+=",
+            "value": "1"
+         },
+         {
+            "type": "setValue",
+            "name": "status:def",
+            "operator": "+=",
+            "value": "1"
+         },
+         {
+            "type": "setValue",
+            "name": "item:yellowKey",
+            "operator": "+=",
+            "value": "5"
+         },
+         {
+            "type": "setValue",
+            "name": "status:exp",
+            "operator": "+=",
+            "value": "40"
+         }
+      ]
+   },
+   {
+      "title": "冒险篇章 (普通)",
+      "name": "Normal",
+      "hard": 2,
+      "color": [
+         255,
+         221,
+         32,
+         1
+      ],
+      "action": [
+         {
+            "type": "setText",
+            "align": "center"
+         },
+         "【冒险篇章 福利已发放】\n初始黄钥匙 +2\n初始血量 +100\n初始防御 +1\n初始经验 +20",
+         {
+            "type": "setText",
+            "align": "left"
+         },
+         {
+            "type": "setValue",
+            "name": "status:hp",
+            "operator": "+=",
+            "value": "100"
+         },
+         {
+            "type": "setValue",
+            "name": "status:def",
+            "operator": "+=",
+            "value": "1"
+         },
+         {
+            "type": "setValue",
+            "name": "item:yellowKey",
+            "operator": "+=",
+            "value": "2"
+         },
+         {
+            "type": "setValue",
+            "name": "status:exp",
+            "operator": "+=",
+            "value": "20"
+         }
+      ]
+   },
+   {
+      "title": "噩梦试炼 (困难)",
+      "name": "Hard",
+      "hard": 3,
+      "color": [
+         255,
+         68,
+         64,
+         1
+      ],
+      "action": [
+         {
+            "type": "setText",
+            "align": "center"
+         },
+         "【噩梦试炼】\n无初始额外福利，纯粹的硬核原版数值挑战！",
+         {
+            "type": "setText",
+            "align": "left"
+         }
+      ]
+   }
+],
 		"equipName": [
 			"武器",
 			"盾牌"
@@ -202,13 +281,40 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		},
 		"startCanvas": [],
 		"startText": [
-			{
-				"type": "comment",
-				"text": "初始剧情"
-			},
-			"辉煌大陆西北角，寂静之森。\n\n贾斯汀，一个普通的不能再普通的小佣兵。\n十四岁成为佣兵之后在温饱线上已经挣扎了两年。",
-			"在辉煌大陆，寻常佣兵根本没有什么地位可言，\n所接到的任务也不过是些类似于看家护院找猫找狗的垃圾任务。\n\n—— 改编自《永不复还》第一章 · 厄泽往事"
-		],
+   {
+      "type": "comment",
+      "text": "=== 序章 第一幕：灵魂深处的苏醒 ==="
+   },
+   {
+      "type": "setText",
+      "align": "center"
+   },
+   "身体，仿佛撕裂一般痛苦。",
+   "不，或许我早已没有身体存在……",
+   "四周弥漫着的是阴影与死亡的气息，\n那令人沉醉的……\n\n灵魂。",
+   "脑海里似乎还有许多挥之不去的影像。\n那是属于我的东西吗？",
+   "或许，我应该将它们完全纳入到我的脑海里，让我\n看看，我，究竟来自于何方……",
+   {
+      "type": "comment",
+      "text": "=== 序章 第二幕：辉煌大陆与佣兵小队 ==="
+   },
+   "辉煌大陆西北角，寂静之森。",
+   "贾斯汀，一个普通的不能再普通的小佣兵。\n十四岁成为佣兵之后在温饱线上已经挣扎了两年。",
+   "在辉煌大陆，寻常佣兵根本没有什么地位可言，所\n接到的任务也不过是些类似于看家护院找猫找狗的\n垃圾任务。",
+   "而真正能够拿到高额报酬的任务，却不是什么佣兵\n都有资格接的，即使不限制接取资格，佣兵们也大\n多会为了自己的小命着想。",
+   {
+      "type": "comment",
+      "text": "=== 序章 第三幕：头脑发热的队长与噩梦之始 ==="
+   },
+   "然而，人总有那么一时会头脑发热，做出不该做的\n选择。\n\n贾斯汀所在的佣兵小队的队长就是这样一个人。",
+   "高级佣兵资格认证，却接了一个前往连特级佣兵都\n有可能丧命在里面的寂静之森的任务，任务内容是\n在森林里找寻一座建筑。",
+   "于是，贾斯汀的噩梦就这样开始了……",
+   "【第一章 厄泽往事】",
+   {
+      "type": "setText",
+      "align": "left"
+   }
+],
 		"shops": [
 			{
 				"id": "shop1",
