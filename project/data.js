@@ -172,14 +172,14 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		"hero": {
 			"image": "hero.png",
 			"animate": false,
-			"name": "阳光",
+			"name": "贾斯汀",
 			"lv": 1,
 			"hpmax": 9999,
-			"hp": 1000,
+			"hp": 500,
 			"manamax": -1,
 			"mana": 0,
-			"atk": 100,
-			"def": 100,
+			"atk": 12,
+			"def": 2,
 			"mdef": 0,
 			"money": 0,
 			"exp": 0,
@@ -191,8 +191,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			},
 			"loc": {
 				"direction": "up",
-				"x": 6,
-				"y": 10
+				"x": 7,
+				"y": 12
 			},
 			"flags": {},
 			"followers": [],
