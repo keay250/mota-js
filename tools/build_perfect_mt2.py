@@ -177,64 +177,14 @@ for eid, ev in sorted(events.items()):
         maze[y][x_prime] = 27
     elif name == '蓝宝石:1':
         maze[y][x_prime] = 28
-    # 血瓶
+    # 血瓶 (后续所有红蓝血瓶走标准直接拾取，由 items.js 底层核心 core.addHp 自动受上限封顶，不再拦截阻挡玩家)
     elif name == '血瓶:50':
         maze[y][x_prime] = 31 # redPotion
-        mota_events[f"{x_prime},{y}"] = {
-            "trigger": "action",
-            "enable": True,
-            "data": [
-                {
-                    "type": "if",
-                    "condition": "(status:hpmax - status:hp < 50)",
-                    "true": [
-                        {"type": "setText", "align": "center"},
-                        "\t[说明]生命上限不足，已损失血量少于 50 点。\n为避免浪费，待需要时再来饮用吧。",
-                        {"type": "setText", "align": "left"}
-                    ],
-                    "false": [
-                        {"type": "playSound", "name": "recovery.mp3"},
-                        {"type": "function", "value": "core.addHp(50);"},
-                        {"type": "hide", "remove": True}
-                    ]
-                }
-            ]
-        }
     elif name == '血瓶:100':
         maze[y][x_prime] = 32 # bluePotion
-        mota_events[f"{x_prime},{y}"] = {
-            "trigger": "action",
-            "enable": True,
-            "data": [
-                {
-                    "type": "if",
-                    "condition": "(status:hpmax - status:hp < 100)",
-                    "true": [
-                        {"type": "setText", "align": "center"},
-                        "\t[说明]生命上限不足，已损失血量少于 100 点。\n为避免浪费，待需要时再来饮用吧。",
-                        {"type": "setText", "align": "left"}
-                    ],
-                    "false": [
-                        {"type": "playSound", "name": "recovery.mp3"},
-                        {"type": "function", "value": "core.addHp(100);"},
-                        {"type": "hide", "remove": True}
-                    ]
-                }
-            ]
-        }
-    # 生命上限
+    # 生命上限 (走标准直接拾取，由 items.js 底层核心 core.addMaxHp 自动按比例成长提升)
     elif name == '生命上限:20':
         maze[y][x_prime] = 33 # greenPotion
-        mota_events[f"{x_prime},{y}"] = {
-            "trigger": "action",
-            "enable": True,
-            "data": [
-                {"type": "playSound", "name": "recovery.mp3"},
-                {"type": "function", "value": "core.addMaxHp(20);"},
-                {"type": "tip", "text": "生命上限 +20！当前生命值随比例同步提升！"},
-                {"type": "hide", "remove": True}
-            ]
-        }
     # 下楼口 (Event 45, (7, 14) -> (2, 14))
     elif eid == 45:
         maze[y][x_prime] = 88 # downFloor
