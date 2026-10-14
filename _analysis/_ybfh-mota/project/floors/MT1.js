@@ -1,4 +1,4 @@
-main.floors.MT1=
+main.floors.MT1 =
 {
     "floorId": "MT1",
     "title": "寂静之森外围",
@@ -331,7 +331,10 @@ main.floors.MT1=
     "changeFloor": {
         "12,0": {
             "floorId": "MT2",
-            "loc": [2, 13],
+            "loc": [
+                2,
+                13
+            ],
             "direction": "up"
         }
     },
@@ -581,7 +584,7 @@ main.floors.MT1=
         [
             17,
             17,
-            0,
+            17,
             17,
             17,
             17,

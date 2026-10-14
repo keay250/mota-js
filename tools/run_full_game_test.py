@@ -17,6 +17,10 @@
 import sys, os, time
 from playwright.sync_api import sync_playwright
 
+# 导入地图完整性与边界碰撞严密性审计模块
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from test_map_integrity import audit_all_maps
+
 BASE_URL = "http://127.0.0.1:3000/index.html"
 SCREENSHOT_DIR = os.path.expanduser("~/.gemini/antigravity-cli/brain/48353322-df08-453c-af70-634f832f9ad4")
 
@@ -75,6 +79,13 @@ class Chapter1FullSuiteRunner:
         print("==================================================================================")
         start_time = time.time()
 
+        # -------------------------------------------------------------
+        # 阶段 -1: 全量地图碰撞、边界严密性与传送拓扑审计 (Map Integrity Audit)
+        # -------------------------------------------------------------
+        print("\n【阶段 -1: 全量地图碰撞、边界严密性与传送拓扑审计】")
+        audit_code, audit_errs = audit_all_maps(verbose=False)
+        self.assert_step(audit_code == 0, "全量楼层碰撞、边界防穿模与传送落点净空审计 (186 项静态检查全绿)", str(audit_errs))
+
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=self.headless)
             page = browser.new_page(viewport={"width": 1280, "height": 800})
@@ -128,6 +139,10 @@ class Chapter1FullSuiteRunner:
             loc_mt1 = page.evaluate("({x: core.getHeroLoc('x'), y: core.getHeroLoc('y')})")
             self.assert_step(f_mt1 == "MT1" and loc_mt1['x'] == 12 and loc_mt1['y'] == 1, "MT2 (2,14) -> MT1 安全落点 (12,1)")
 
+            # 校验 MT1 底部边缘空气墙阻挡 (2, 14) 防穿模
+            mt1_edge_blocked = page.evaluate("core.noPass(2, 14);")
+            self.assert_step(mt1_edge_blocked, "MT1 底部边缘空气墙严密阻挡 (2, 14 无法穿出屏幕)")
+
             # -------------------------------------------------------------
             # 阶段 2: 迷宫分歧与前哨路牌 (MT3)
             # -------------------------------------------------------------
@@ -148,6 +163,8 @@ class Chapter1FullSuiteRunner:
             }""")
             self.clear_dialogs(page)
             self.assert_step(warn_triggered, "MT3 (0,3) 寂静之森深处前哨警告路牌触发正常")
+            mt3_edge_blocked = page.evaluate("core.noPass(0, 3);")
+            self.assert_step(mt3_edge_blocked, "MT3 (0,3) 西侧未开放支线空气墙严密阻挡 (无法穿模越界)")
 
             # 机关铁门 (2, 6) 状态判定
             door_block = page.evaluate("core.getBlock(2, 6)")
@@ -189,6 +206,10 @@ class Chapter1FullSuiteRunner:
             f_mt14_north = page.evaluate("core.status.floorId")
             loc_mt14_north = page.evaluate("({x: core.getHeroLoc('x'), y: core.getHeroLoc('y')})")
             self.assert_step(f_mt14_north == "MT14" and loc_mt14_north['x'] == 7 and loc_mt14_north['y'] == 13, "MT15 北出口顺利切入新场景【姆伊森运河·主河道】(MT14)")
+
+            # 校验 MT14 激流边缘空气墙 (0, 8)
+            mt14_edge_blocked = page.evaluate("core.noPass(0, 8);")
+            self.assert_step(mt14_edge_blocked, "MT14 西侧激流未开放支线空气墙严密阻挡 (0, 8 无法穿模越界)")
 
             # 从 MT14 南出口安全返回 MT15
             self.move_hero(page, 'down', wait_ms=600)
@@ -393,6 +414,19 @@ class Chapter1FullSuiteRunner:
 
             ch1_ended = page.evaluate("Boolean(core.hasFlag('ch1_ended'))")
             self.assert_step(ch1_ended, "第一章 32 句终局主线全量摊牌完成 (ch1_ended=true)")
+
+            # 校验 MT11 -> MT10 以及 MT10 -> MT7 返程安全落脚与守卫放行
+            self.nav_to(page, 'MT11', 8, 11, 'down')
+            self.move_hero(page, 'down', wait_ms=500)
+            f_back_mt10 = page.evaluate("core.status.floorId")
+            loc_back_mt10 = page.evaluate("({x: core.getHeroLoc('x'), y: core.getHeroLoc('y')})")
+            self.assert_step(f_back_mt10 == "MT10" and loc_back_mt10['x'] == 16 and loc_back_mt10['y'] == 7, "从 MT11 出门安全返回 MT10 回廊 [16, 7] (无撞墙卡死)")
+
+            self.nav_to(page, 'MT10', 2, 8, 'left')
+            self.move_hero(page, 'left', wait_ms=500)
+            f_back_mt7 = page.evaluate("core.status.floorId")
+            loc_back_mt7 = page.evaluate("({x: core.getHeroLoc('x'), y: core.getHeroLoc('y')})")
+            self.assert_step(f_back_mt7 == "MT7" and loc_back_mt7['x'] == 22 and loc_back_mt7['y'] == 30, "从 MT10 出门安全返回 MT7 公会大厅 [22, 30] (守卫放行/无撞墙卡死)")
 
             # 保存最终通关全景截图
             shot_final = os.path.join(SCREENSHOT_DIR, "chapter1_full_cleared_verification.png")

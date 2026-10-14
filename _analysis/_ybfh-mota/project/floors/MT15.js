@@ -1,4 +1,4 @@
-main.floors.MT15=
+main.floors.MT15 =
 {
     "floorId": "MT15",
     "title": "寂静之森外围·密林深径",
@@ -246,8 +246,8 @@ main.floors.MT15=
             17,
             31,
             0,
-            0,
             210,
+            0,
             17,
             31,
             0,

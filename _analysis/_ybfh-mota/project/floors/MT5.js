@@ -1,4 +1,4 @@
-main.floors.MT5=
+main.floors.MT5 =
 {
     "floorId": "MT5",
     "title": "寂静之森外围 5F·厄泽城外",
@@ -31,7 +31,7 @@ main.floors.MT5=
     "eachArrive": [],
     "parallelDo": "",
     "events": {
-                "10,9": {
+        "10,9": {
             "trigger": "action",
             "enable": true,
             "data": [
@@ -93,7 +93,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -182,7 +185,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -271,7 +277,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -360,7 +369,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -449,7 +461,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -538,7 +553,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -627,7 +645,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -716,7 +737,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -805,7 +829,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -894,7 +921,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -983,7 +1013,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -1072,7 +1105,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -1161,7 +1197,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -1250,7 +1289,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -1339,7 +1381,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -1428,7 +1473,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -1517,7 +1565,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -1606,7 +1657,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -1695,7 +1749,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -1784,7 +1841,10 @@ main.floors.MT5=
                                                         {
                                                             "type": "changeFloor",
                                                             "floorId": "MT6",
-                                                            "loc": [37, 30],
+                                                            "loc": [
+                                                                37,
+                                                                30
+                                                            ],
                                                             "direction": "down",
                                                             "time": 300
                                                         }
@@ -1960,15 +2020,14 @@ main.floors.MT5=
     },
     "changeFloor": {
         "0,7": {
-                "floorId": "MT4",
-                "loc": [
-                        13,
-                        7
-                ],
-                "direction": "left"
+            "floorId": "MT4",
+            "loc": [
+                13,
+                7
+            ],
+            "direction": "left"
         }
-},
-
+    },
     "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},
@@ -1984,12 +2043,12 @@ main.floors.MT5=
             17,
             17,
             17,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
+            17,
+            17,
+            17,
+            17,
+            17,
+            17
         ],
         [
             17,
@@ -2006,7 +2065,7 @@ main.floors.MT5=
             0,
             0,
             0,
-            0
+            17
         ],
         [
             17,
@@ -2023,7 +2082,7 @@ main.floors.MT5=
             0,
             0,
             0,
-            0
+            17
         ],
         [
             17,
@@ -2040,7 +2099,7 @@ main.floors.MT5=
             0,
             0,
             0,
-            0
+            17
         ],
         [
             17,
@@ -2057,7 +2116,7 @@ main.floors.MT5=
             17,
             17,
             0,
-            0
+            17
         ],
         [
             17,
@@ -2074,7 +2133,7 @@ main.floors.MT5=
             17,
             17,
             0,
-            0
+            17
         ],
         [
             17,
@@ -2091,7 +2150,7 @@ main.floors.MT5=
             128,
             21,
             0,
-            0
+            17
         ],
         [
             88,
@@ -2125,7 +2184,7 @@ main.floors.MT5=
             0,
             27,
             0,
-            0
+            17
         ],
         [
             17,
@@ -2142,7 +2201,7 @@ main.floors.MT5=
             0,
             0,
             0,
-            0
+            17
         ],
         [
             17,
@@ -2159,7 +2218,7 @@ main.floors.MT5=
             0,
             0,
             90,
-            0
+            17
         ],
         [
             17,
@@ -2176,7 +2235,7 @@ main.floors.MT5=
             90,
             90,
             90,
-            0
+            17
         ],
         [
             17,
@@ -2193,7 +2252,7 @@ main.floors.MT5=
             0,
             0,
             0,
-            0
+            17
         ],
         [
             17,
@@ -2210,7 +2269,7 @@ main.floors.MT5=
             0,
             0,
             0,
-            0
+            17
         ],
         [
             17,
@@ -2222,12 +2281,12 @@ main.floors.MT5=
             17,
             17,
             17,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
+            17,
+            17,
+            17,
+            17,
+            17,
+            17
         ]
     ],
     "bgmap": [],

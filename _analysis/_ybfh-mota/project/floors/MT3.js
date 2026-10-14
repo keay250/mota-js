@@ -1,4 +1,4 @@
-main.floors.MT3=
+main.floors.MT3 =
 {
     "floorId": "MT3",
     "title": "寂静之森外围 3F",
@@ -179,15 +179,10 @@ main.floors.MT3=
             "enable": true,
             "data": [
                 {
-                    "type": "setText",
-                    "align": "center"
+                    "type": "playSound",
+                    "name": "cursor.mp3"
                 },
-                "\t[前哨路牌]警告：前方为【寂静之森深处】！",
-                "\t[前哨路牌]该区域魔兽极为凶残，毒雾瘴气弥漫，\n非精锐佣兵请勿贸然涉足！",
-                {
-                    "type": "setText",
-                    "align": "left"
-                }
+                "\t[山壁塌方]通往密林更深处的哥布林洞穴已被巨石阻塞，前方道路暂未开放。"
             ]
         }
     },
@@ -274,7 +269,7 @@ main.floors.MT3=
             17
         ],
         [
-            0,
+            17,
             0,
             83,
             0,
@@ -320,8 +315,8 @@ main.floors.MT3=
             81,
             17,
             17,
-            0,
             202,
+            0,
             87
         ],
         [
