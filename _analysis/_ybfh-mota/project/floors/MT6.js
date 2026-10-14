@@ -6183,5 +6183,7 @@ main.floors.MT6 =
             0,
             0
         ]
-    ]
+    ],
+    "cannotMoveIn": {},
+    "autoEvent": {}
 }

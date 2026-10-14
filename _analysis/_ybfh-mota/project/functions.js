@@ -425,8 +425,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 
 			// 战后事件
-			if (core.status.floorId != null) {
-				core.push(todo, core.floors[core.status.floorId].afterBattle[x + "," + y]);
+			if (core.status.floorId != null && core.floors[core.status.floorId]) {
+				var fObj = core.floors[core.status.floorId];
+				if (fObj.afterBattle && fObj.afterBattle[x + "," + y]) {
+					core.push(todo, fObj.afterBattle[x + "," + y]);
+				}
 			}
 			core.push(todo, enemy.afterBattle);
 
@@ -474,8 +477,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 			var todo = [];
 			// 检查该点的开门后事件
-			if (core.status.floorId) {
-				core.push(todo, core.floors[core.status.floorId].afterOpenDoor[x + "," + y]);
+			if (core.status.floorId && core.floors[core.status.floorId]) {
+				var fObj = core.floors[core.status.floorId];
+				if (fObj.afterOpenDoor && fObj.afterOpenDoor[x + "," + y]) {
+					core.push(todo, fObj.afterOpenDoor[x + "," + y]);
+				}
 			}
 			// 检查批量开门事件
 			var door = core.getBlockById(doorId);
@@ -503,8 +509,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 			var todo = [];
 			// 检查该点的获得道具后事件。
-			if (core.status.floorId == null) return;
-			var event = core.floors[core.status.floorId].afterGetItem[x + "," + y];
+			if (core.status.floorId == null || !core.floors[core.status.floorId]) return;
+			var fObj = core.floors[core.status.floorId];
+			var event = (fObj.afterGetItem) ? fObj.afterGetItem[x + "," + y] : null;
 			if (event && (event instanceof Array || !isGentleClick || !event.disableOnGentleClick)) {
 				if (event.data) event = event.data;
 				core.unshift(todo, event);
@@ -1627,8 +1634,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				nowy = core.getHeroLoc('y');
 			var block = core.getBlock(nowx, nowy);
 			var hasTrigger = false;
+			var fObj = core.floors[core.status.floorId];
 			if (block != null && block.event.trigger == 'getItem' &&
-				!core.floors[core.status.floorId].afterGetItem[nowx + "," + nowy]) {
+				!(fObj && fObj.afterGetItem && fObj.afterGetItem[nowx + "," + nowy])) {
 				hasTrigger = true;
 				core.trigger(nowx, nowy, callback);
 			}

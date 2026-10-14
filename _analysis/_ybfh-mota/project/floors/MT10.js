@@ -47,7 +47,10 @@ main.floors.MT10 =
                 {
                     "type": "changeFloor",
                     "floorId": "MT7",
-                    "loc": [23, 31],
+                    "loc": [
+                        23,
+                        31
+                    ],
                     "direction": "down"
                 }
             ]
@@ -139,7 +142,10 @@ main.floors.MT10 =
     "changeFloor": {
         "1,8": {
             "floorId": "MT7",
-            "loc": [23, 31],
+            "loc": [
+                23,
+                31
+            ],
             "direction": "down"
         },
         "16,6": {
@@ -532,5 +538,7 @@ main.floors.MT10 =
             0,
             0
         ]
-    ]
+    ],
+    "cannotMoveIn": {},
+    "autoEvent": {}
 }

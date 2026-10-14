@@ -1,4 +1,4 @@
-main.floors.MT16=
+main.floors.MT16 =
 {
     "floorId": "MT16",
     "title": "姆伊森运河·支流前哨",
@@ -340,5 +340,11 @@ main.floors.MT16=
         1
     ],
     "bgm": "forest.mp3",
-    "canFlyFrom": true
+    "canFlyFrom": true,
+    "afterBattle": {},
+    "afterGetItem": {},
+    "afterOpenDoor": {},
+    "beforeBattle": {},
+    "cannotMoveIn": {},
+    "autoEvent": {}
 }

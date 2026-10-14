@@ -516,5 +516,7 @@ main.floors.MT9 =
             0,
             0
         ]
-    ]
+    ],
+    "cannotMoveIn": {},
+    "autoEvent": {}
 }

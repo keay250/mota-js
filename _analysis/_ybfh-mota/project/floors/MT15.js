@@ -1,4 +1,4 @@
-main.floors.MT15=
+main.floors.MT15 =
 {
     "floorId": "MT15",
     "title": "寂静之森外围·密林深径",
@@ -481,5 +481,11 @@ main.floors.MT15=
         1
     ],
     "bgm": "forest.mp3",
-    "canFlyFrom": true
+    "canFlyFrom": true,
+    "afterBattle": {},
+    "afterGetItem": {},
+    "afterOpenDoor": {},
+    "beforeBattle": {},
+    "cannotMoveIn": {},
+    "autoEvent": {}
 }

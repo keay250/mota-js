@@ -540,5 +540,7 @@ main.floors.MT8 =
             0,
             0
         ]
-    ]
+    ],
+    "cannotMoveIn": {},
+    "autoEvent": {}
 }
