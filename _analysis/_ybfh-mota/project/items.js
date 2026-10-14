@@ -564,6 +564,35 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			}
 		}
 	},
+		"lightGauntlets": {
+		"cls": "equips",
+		"name": "轻骑护手",
+		"text": "轻装骑兵配发的精钢护手。\n攻击速度+15，敏捷+15。",
+		"equip": {
+			"type": 4,
+			"value": {
+				"atk": 5,
+				"def": 2
+			},
+			"ybfh": {
+				"atkSpeed": 15
+			}
+		}
+	},
+	"skullShield": {
+		"cls": "equips",
+		"name": "骷髅盾",
+		"text": "镶嵌魔物颅骨的坚实重盾。\n防御力+12，自带10%物理减伤。",
+		"equip": {
+			"type": 2,
+			"value": {
+				"def": 12
+			},
+			"ybfh": {
+				"damageReduction": 0.1
+			}
+		}
+	},
 	"mercenarySword": {
 		"cls": "equips",
 		"name": "佣兵短剑",

@@ -66,37 +66,35 @@ main.floors.MT6=
                 }
             ]
         },
-        "68,16": {
+                                        "68,16": {
             "trigger": "action",
             "enable": true,
             "data": [
                 {
                     "type": "playSound",
-                    "name": "item.mp3"
+                    "name": "door.mp3"
                 },
-                "\t[厄泽城装备商店]工匠大师正在叮当作响地打磨锋利的剑刃，展示架上整齐陈列着佣兵短剑、劣质皮甲、小圆盾与各种附魔首饰。",
-                "\t[铁匠大师]嘿，小伙子！想换上更好的行头吗？本店正在筹备上架全新的【6格神装背包】和特技装备，很快就能为你量身打造！"
+                {
+                    "type": "changeFloor",
+                    "floorId": "MT8",
+                    "loc": [5, 15],
+                    "direction": "up"
+                }
             ]
         },
-        "58,67": {
+                                        "58,67": {
             "trigger": "action",
             "enable": true,
             "data": [
                 {
                     "type": "playSound",
-                    "name": "recovery.mp3"
-                },
-                "\t[瑞格沃酒馆]扑面而来的是醇厚的麦酒香气与烤肉滋滋作响的声音，游吟诗人正坐在炉火旁拨弄琴弦。",
-                "\t[酒馆侍者]欢迎光临瑞格沃酒馆！来一杯冰镇麦酒暖暖身子吧，疲劳度已完全清除！",
-                {
-                    "type": "setValue",
-                    "name": "status:hp",
-                    "operator": "=",
-                    "value": "status:maxHp"
+                    "name": "door.mp3"
                 },
                 {
-                    "type": "tip",
-                    "text": "生命值已完全恢复！"
+                    "type": "changeFloor",
+                    "floorId": "MT9",
+                    "loc": [5, 14],
+                    "direction": "up"
                 }
             ]
         },

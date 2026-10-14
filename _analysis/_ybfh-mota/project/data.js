@@ -8,7 +8,11 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
             "MT4",
             "MT5",
             "MT6",
-        "MT7"
+        "MT7",
+            "MT11",
+            "MT10",
+            "MT9",
+            "MT8"
         ],
         "floorPartitions": [],
         "images": [
@@ -25,6 +29,12 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
             "map017_compact_bg.png",
             "map017_bg.png",
             "map019_bg.png",
+            "骷髅盾.png",
+            "轻骑护手.png",
+            "map058_bg.png",
+            "map048_bg.png",
+            "map020_bg.png",
+            "map018_bg.png",
             "AttrsIcon.png",
             "Window.png",
             "sven.png",
