@@ -21,4 +21,11 @@
 
 - [x] **Milestone 4: 规划与校验报告生成**
   - [x] 对比当前已移植的楼层（MT1~MT5、Eze城等），生成差异与遗漏审计报告 -> `docs/extracted_data/AUDIT_AND_PLANNING_REPORT.md`
+
+- [x] **Milestone 5: 城镇与室内生活区专项深度采集**
+  - [x] 编写城镇专属采集器 `tools/extractor/extract_towns.rb`，覆盖厄泽城大系、王都大系、荒原集镇、商人营地、弧光城共 24 张核心城镇生活区地图
+  - [x] 深度提取 335 位独立 NPC 完整多页对话树、支线任务与选项分支
+  - [x] 深度提取 9 组系统级商业交易柜台（装备店、合成店、魔法店真实商品列表与金币标价）
+  - [x] 深度理清 54 处街道与室内建筑双向出入口落地坐标拓扑
+  - [x] 生成全景规划报告 -> `docs/extracted_data/towns/TOWNS_PLANNING_REPORT.md`
   - [ ] 提交并推送到 GitHub 远程仓库

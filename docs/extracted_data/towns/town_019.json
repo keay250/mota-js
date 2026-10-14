@@ -1,0 +1,369 @@
+{
+  "map_id": 19,
+  "name": "佣兵公会",
+  "group": "厄泽城大系",
+  "role": "佣兵公会",
+  "width": 26,
+  "height": 40,
+  "tileset_id": 73,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 7,
+      "name": "EV007",
+      "x": 15,
+      "y": 37,
+      "to_map_id": 17,
+      "to_map_name": "厄泽城",
+      "to_pos": [
+        41,
+        25
+      ]
+    },
+    {
+      "event_id": 18,
+      "name": "EV018",
+      "x": 23,
+      "y": 30,
+      "to_map_id": 48,
+      "to_map_name": "右侧回廊",
+      "to_pos": [
+        8,
+        8
+      ]
+    }
+  ],
+  "shops": [
+
+  ],
+  "npcs": [
+    {
+      "event_id": 1,
+      "name": "重装佣兵",
+      "x": 22,
+      "y": 30,
+      "character": "014-Warrior02",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "重装佣兵：\n这里闲人免进！\n贾斯汀：\n法芙娜在哪里？我要见她。\n重装佣兵：\n法芙娜？你说的是那个前台的姑娘？\n重装佣兵：\n哼，你是她什么人？\n贾斯汀：\n…………她究竟在哪里？\n重装佣兵：\n本大爷没空回答你的问题，快滚开！\n贾斯汀：\n告诉我，\n她——究——竟——在——哪——里！\n重装佣兵：\n你，你这小鬼，疯了不成。\n再不滚就让你尝尝本大爷的厉害！\n重装佣兵：\n咳呃呃……\n你……\n贾斯汀：\n……法芙娜！",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 2,
+      "name": "青年佣兵",
+      "x": 14,
+      "y": 28,
+      "character": "023-Gunner01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 3,
+      "name": "另一个青年佣兵",
+      "x": 14,
+      "y": 30,
+      "character": "020-Hunter01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 4,
+      "name": "EV004",
+      "x": 14,
+      "y": 29,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "青年佣兵：\n我跟你说，\n我家里祖上出过一位大人物！\n另一个青年佣兵：\n什么大人物？\n青年佣兵：\n哼哼，说出来怕吓到你，\n那可是一位职业者！\n另一个青年佣兵：\n妈的智障，你当我傻吗？\n职业者那么尊贵的存在怎\n么可能会定居厄泽城。\n青年佣兵：\n这个嘛……其中肯定是有原因的。\n反正我太爷爷的日记里是这么写的。\n另一个青年佣兵：\n你太爷爷是干啥的？\n也是佣兵吗？\n青年佣兵：\n不，我太爷爷是写笑话故事集的。\n另一个青年佣兵：\n………………",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 5,
+      "name": "重甲佣兵",
+      "x": 17,
+      "y": 32,
+      "character": "014-Warrior02",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "重甲佣兵：\n臭小子看什么看？\n再看本大爷把你眼睛挖出来！",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 6,
+      "name": "执事",
+      "x": 20,
+      "y": 28,
+      "character": "026-Cleric02",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "执事：\n哎，原本是奉我家老爷之命来佣兵公会雇些人护送\n老爷回王都，却想不到整个公会的人注意力都被那\n什么森林遗迹吸引过去了。\n执事：\n这下可怎么办啊，如今姆伊\n森运河沿岸上可不太平呀。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 8,
+      "name": "法芙娜",
+      "x": 9,
+      "y": 30,
+      "character": "118-Civilian18",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "法芙娜：\n贾斯汀，你回来了呀！\n赞美全能之神，真是太好了！\n法芙娜：\n你知道吗，我在公会里看到你们“挽歌”小队的队\n徽的时候可是吓坏了呢……\n贾斯汀：\n真的……\n只有我一个人回来了吗。\n法芙娜：\n……贾斯汀，很抱歉。\n其他人生还的可能性，恐怕……\n贾斯汀：\n拉瓦尔队长他对我那么好，在我还是个孤儿的时候\n就收养了我，并教会我信奉全能之神，可是，可是\n他……\n法芙娜：\n拉瓦尔大叔的确是个很好的人。\n正因为这样，贾斯汀你才要对得起大叔的养育呀！\n贾斯汀：\n嗯……我明白的，我会努力，让“挽歌”小队的名\n字留存下去，成为厄泽城最强大的佣兵小队！\n贾斯汀：\n完成，拉瓦尔队长的遗愿！\n法芙娜：\n……那个，贾斯汀。\n恐怕，挽歌小队的事情……\n贾斯汀：\n……难道说，解散？！\n法芙娜：\n根据佣兵公会的规定，一个佣兵小队至少要有三名\n中级佣兵或者一名高级及以上的佣兵才有资格注册\n并维持小队的存在。\n法芙娜：\n所以，挽歌小队，已经被解散了……\n贾斯汀：\n……我知道的，法芙娜。\n挽歌小队的解散只会是一时的事情。\n以后我会重新建立起新的挽歌小队的。\n法芙娜：\n对了，贾斯汀你现在是挽歌小队唯一一名幸存者，\n先前你们小队曾经在公会寄存了点东西，理应交付\n给你。\n贾斯汀：\n那我先去取东西了，一会儿见。",
+          "choices": [
+
+          ]
+        },
+        {
+          "page": 1,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": "A"
+          },
+          "text": "法芙娜：\n贾斯汀，路上一定要小心。\n法芙娜：\n贾斯汀，东西取回来了吗？\n贾斯汀：\n没什么东西，就一个装饰品小球。\n法芙娜：\n不是装备之类的东西吗？\n贾斯汀：\n装备上去没有任何效果，\n只是个单纯的装饰品罢了。\n法芙娜：\n哦……也是呢，拉瓦尔大叔以前倒也偶尔买一些昂\n贵的装饰品，我现在的工作就是他用买来的昂贵饰\n物换来的……\n法芙娜：\n对了贾斯汀，关于寂静之森遗迹的事情，\n你有什么想法没？\n贾斯汀：\n那不是我力所能及的事情，告示上都说\n了至少要有特级佣兵的实力才能前去。\n法芙娜：\n哎呀不要这么死板嘛，又没说\n让你跟着去探索那个遗迹。\n贾斯汀：\n那你的意思是？\n法芙娜：\n这个，前两天不是有不少实力中等的小队死在森林\n里了吗，他们身上的东西或许那些特级佣兵小队们\n看不上眼，所以……\n贾斯汀：\n……对呀，这或许是一个机会，其他强大的小队已\n经出发了，有他们在前面清扫魔兽，森林应该也没\n有那么危险了。\n贾斯汀：\n可是发死人财什么的，总感觉……\n法芙娜：\n贾斯汀，有钱不是为了铺张浪费，而是要用来帮助\n更多的人，想想拉瓦尔大叔。\n法芙娜：\n不管是建立起一个佣兵小队，还是抚养像我们一样\n的孤儿，都需要金钱的，还有比如买一处房屋作为\n你我的居所……\n贾斯汀：\n啥？买房屋干啥？\n法芙娜：\n…………\n法芙娜：\n人家什么都没说，你一定是听错了。\n贾斯汀：\n话说，我突然想起来在回来的路上，看到通往寂静\n之森深处的要道上有公会留下的封锁线。\n法芙娜：\n啊，那个好办，怎么说我也是在这里作接待工作的\n，一把钥匙的话还是搞得到的。\n法芙娜：\n喏，有了这个就能过去了。\n贾斯汀：\n真是太感谢你了！\n法芙娜：\n嘛，跟我还客气些什么。\n路上小心啊，有危险就及时收手吧。\n贾斯汀：\n恩，我会保重的。\n法芙娜：\n贾斯汀，东西取回来了吗？",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 9,
+      "name": "EV009",
+      "x": 15,
+      "y": 35,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "贾斯汀：\n……\n人果然少了许多。\n贾斯汀：\n先去问问柜台那边的法芙娜吧。",
+          "choices": [
+
+          ]
+        },
+        {
+          "page": 1,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": "A"
+          },
+          "text": "贾斯汀：\n约好了要再去见法芙娜的。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 11,
+      "name": "EV011",
+      "x": 16,
+      "y": 24,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "贾斯汀：\n先去柜台边找一下法芙娜吧。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 12,
+      "name": "EV012",
+      "x": 11,
+      "y": 8,
+      "character": "136-Bartender01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 13,
+      "name": "红发佣兵",
+      "x": 11,
+      "y": 9,
+      "character": "013-Warrior01",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "红发佣兵：\n闪开，没看到我正在办正事吗？",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 14,
+      "name": "EV014",
+      "x": 16,
+      "y": 6,
+      "character": "136-Bartender01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 15,
+      "name": "公会员工",
+      "x": 21,
+      "y": 8,
+      "character": "136-Bartender01",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "公会员工：\n挽歌小队，贾斯汀是吧？\n公会员工：\n嗯，挽歌小队目前已经被记录为解散状态，而你的\n名字又被登记在小队候补队长上，倒的确是有资格\n领取小队寄存的财产。\n贾斯汀：\n等等，看在全能之神的份上，\n能不能请您再说一遍。\n小队候补队长？\n公会员工：\n好吧，小队候补队长就是当公会判定某个小队队长\n死亡的情况下，在小队大部分成员尚未给出反馈之\n前，会自动将候补队长提升为队长。\n公会员工：\n当然，你们小队已经解散了，这个队长的名头便也\n没什么意义了。\n贾斯汀：\n这样吗……\n公会员工：\n我看看嗯……挽歌小队寄存物品如下：\n金币50枚，不知名无用装备一件。\n居然这么少，你们队长可真抠门。\n贾斯汀：\n（拉瓦尔大叔才不是那种人，小队赚来的钱大部分\n都用来接济像我和法芙娜那样的孤儿了……）\n公会员工：\n你稍等片刻，这就差人去取。\n贾斯汀：\n这个东西是？\n公会员工：\n装饰品吧，看上去也许值点钱的样子，\n能卖个几十金币也说不定。\n贾斯汀：\n…………\n还是要谢谢您了。\n赞美伟大的全能之神。\n公会员工：\n赞美伟大的全能之神。",
+          "choices": [
+
+          ]
+        },
+        {
+          "page": 1,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": "A"
+          },
+          "text": "公会员工：\n你还有事吗？\n没事不要打扰我办公。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 16,
+      "name": "城主府守卫",
+      "x": 16,
+      "y": 7,
+      "character": "005-Fighter05",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "城主府守卫：\n寂静之森这次出现的遗迹怕是会有不少好东西，只\n是可惜，没我们这些普通人什么事，至少是特级佣\n兵才有资格去呢。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 17,
+      "name": "EV017",
+      "x": 7,
+      "y": 37,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": 113,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "贾斯汀：\n咦？法芙娜人呢？",
+          "choices": [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "bulletins": [
+
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 18
+}

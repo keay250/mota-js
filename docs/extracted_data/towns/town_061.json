@@ -1,0 +1,92 @@
+{
+  "map_id": 61,
+  "name": "普利斯特王都 港口",
+  "group": "普利斯特王都大系",
+  "role": "王都港口",
+  "width": 30,
+  "height": 35,
+  "tileset_id": 67,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 5,
+      "name": "EV005",
+      "x": 9,
+      "y": 34,
+      "to_map_id": 62,
+      "to_map_name": "普利斯特王都 北区",
+      "to_pos": [
+        33,
+        0
+      ]
+    },
+    {
+      "event_id": 6,
+      "name": "EV006",
+      "x": 10,
+      "y": 34,
+      "to_map_id": 62,
+      "to_map_name": "普利斯特王都 北区",
+      "to_pos": [
+        34,
+        0
+      ]
+    },
+    {
+      "event_id": 7,
+      "name": "EV007",
+      "x": 8,
+      "y": 34,
+      "to_map_id": 62,
+      "to_map_name": "普利斯特王都 北区",
+      "to_pos": [
+        32,
+        0
+      ]
+    }
+  ],
+  "shops": [
+
+  ],
+  "npcs": [
+    {
+      "event_id": 1,
+      "name": "EV001",
+      "x": 20,
+      "y": 21,
+      "character": "150-Sailor01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 2,
+      "name": "水手",
+      "x": 13,
+      "y": 20,
+      "character": "150-Sailor01",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "水手：\n喂，你可没有买返程票。\n水手：\n想要回去的话，使用小站不就好了么。",
+          "choices": [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "bulletins": [
+
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 7
+}

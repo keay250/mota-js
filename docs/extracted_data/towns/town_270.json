@@ -1,0 +1,75 @@
+{
+  "map_id": 270,
+  "name": "荒原道具店",
+  "group": "荒原集镇大系",
+  "role": "荒原道具店",
+  "width": 22,
+  "height": 15,
+  "tileset_id": 21,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 1,
+      "name": "EV001",
+      "x": 13,
+      "y": 13,
+      "to_map_id": 269,
+      "to_map_name": "荒原集镇",
+      "to_pos": [
+        21,
+        9
+      ]
+    }
+  ],
+  "shops": [
+
+  ],
+  "npcs": [
+    {
+      "event_id": 2,
+      "name": "商人",
+      "x": 13,
+      "y": 7,
+      "character": "130-Noble05",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "商人：\n尽管大多数商品都要从大陆中央“运来”，\n但这价格嘛……绝对公道。还有，若想贩卖\n显影之尘的话，只能从我这里贩卖。",
+          "choices": [
+            "买卖道具",
+            "没什么事情"
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 5,
+      "name": "血瓶:500000",
+      "x": 15,
+      "y": 9,
+      "character": "Item01-02",
+      "dialogue_tree": [
+
+      ]
+    }
+  ],
+  "bulletins": [
+    {
+      "event_id": 6,
+      "name": "路牌",
+      "x": 11,
+      "y": 9,
+      "content": "设定说明之反隐\n显影之尘可以使当前地图内的敌方隐身失效，同时\n令部分与隐身相关的技能效果也变得无效。\n设定说明之反隐\n以目前的两个隐身技能为例，潜影被反隐，将彻底\n失效，既不能在经过相邻格子时主动攻击，也不能\n夺取到先手。\n设定说明之反隐\n而对于沙尘暴来说，显影之尘只能使其可以被玩家\n主动攻击且不能对玩家主动攻击，但沙尘暴本身并\n不会消失，走入其中仍会受到伤害。"
+    }
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 6
+}

@@ -1,0 +1,354 @@
+{
+  "map_id": 86,
+  "name": "营帐",
+  "group": "边境营地与商会",
+  "role": "营地主帐篷",
+  "width": 20,
+  "height": 15,
+  "tileset_id": 21,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 12,
+      "name": "EV012",
+      "x": 12,
+      "y": 14,
+      "to_map_id": 72,
+      "to_map_name": "砂锁之地",
+      "to_pos": [
+        8,
+        4
+      ]
+    },
+    {
+      "event_id": 31,
+      "name": "EV031",
+      "x": 17,
+      "y": 4,
+      "to_map_id": 87,
+      "to_map_name": "地下密厅",
+      "to_pos": [
+        12,
+        1
+      ]
+    }
+  ],
+  "shops": [
+
+  ],
+  "npcs": [
+    {
+      "event_id": 1,
+      "name": "怪物077",
+      "x": 6,
+      "y": 12,
+      "character": "Monster04-04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 2,
+      "name": "怪物078",
+      "x": 14,
+      "y": 12,
+      "character": "Monster04-03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 4,
+      "name": "怪物079",
+      "x": 9,
+      "y": 4,
+      "character": "Monster36-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 5,
+      "name": "怪物078",
+      "x": 15,
+      "y": 4,
+      "character": "Monster04-03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 6,
+      "name": "怪物080",
+      "x": 11,
+      "y": 4,
+      "character": "Monster14-12",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 7,
+      "name": "怪物100",
+      "x": 17,
+      "y": 12,
+      "character": "Monster04-01",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "7-姆伊森狱卒：\n噫？！\n这里是私人领地，快快出去！\n贾斯汀：\n就你一个黑铁，门外还有个黄金级高手保护。\n应该就是你吧，掌管着沙岚密匙的人。\n7-姆伊森狱卒：\n你不是我族中人？\n你……你想做什么？！\n7-姆伊森狱卒：\n啊哈，我知道了，\n你一定是想偷走密匙然后去破坏掉伟大魔神像！\n贾斯汀：\n……\n多谢提醒，如果不是你说，\n我还真不知道那玩意儿在哪。\n7-姆伊森狱卒：\n啊？啊？？\n你，你别过来！\n你再过来我就叫人了！\n贾斯汀：\n你是说门口那个黄金级职业者吗。\n已经被我解决掉了哟。\n7-姆伊森狱卒：\n什，什么？！\n7-姆伊森狱卒：\n不，你不能杀我！\n我是武尊大人的儿子，你杀了我\n武尊大人不会放过你的！\n7-姆伊森狱卒：\n我父亲可是沙岚军团的最高统帅，\n你绝对不能……\n贾斯汀：\n废话真多。\n贾斯汀：\n钥匙到手，应该能把那个探子救出去了。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 8,
+      "name": "怪物098",
+      "x": 9,
+      "y": 12,
+      "character": "Monster04-04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 9,
+      "name": "黄钥匙",
+      "x": 6,
+      "y": 11,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 11,
+      "name": "黄钥匙",
+      "x": 8,
+      "y": 11,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 13,
+      "name": "黄钥匙",
+      "x": 6,
+      "y": 13,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 14,
+      "name": "怪物098",
+      "x": 11,
+      "y": 12,
+      "character": "Monster04-04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 15,
+      "name": "魔瓶:50",
+      "x": 18,
+      "y": 13,
+      "character": "Item01-Gem05",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 16,
+      "name": "红宝石:3",
+      "x": 6,
+      "y": 3,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 17,
+      "name": "红宝石:3",
+      "x": 6,
+      "y": 5,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 18,
+      "name": "红宝石:3",
+      "x": 8,
+      "y": 3,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 19,
+      "name": "红宝石:3",
+      "x": 8,
+      "y": 5,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 20,
+      "name": "血瓶:2500",
+      "x": 7,
+      "y": 4,
+      "character": "Item01-02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 21,
+      "name": "怪物098",
+      "x": 14,
+      "y": 4,
+      "character": "Monster04-04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 22,
+      "name": "血瓶:2500",
+      "x": 18,
+      "y": 11,
+      "character": "Item01-02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 23,
+      "name": "血瓶:2500",
+      "x": 16,
+      "y": 13,
+      "character": "Item01-02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 24,
+      "name": "魔瓶:50",
+      "x": 16,
+      "y": 11,
+      "character": "Item01-Gem05",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 25,
+      "name": "黄钥匙",
+      "x": 8,
+      "y": 13,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 26,
+      "name": "黄门",
+      "x": 13,
+      "y": 12,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 27,
+      "name": "蓝门",
+      "x": 13,
+      "y": 4,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 28,
+      "name": "血瓶:5000",
+      "x": 7,
+      "y": 12,
+      "character": "Item01-02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 29,
+      "name": "EV029",
+      "x": 17,
+      "y": 3,
+      "character": "数字们",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "贾斯汀：\n这扇门用沙岚密匙应该就能打开。\n贾斯汀：\n这扇门用沙岚密匙应该就能打开。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 30,
+      "name": "EV030",
+      "x": 12,
+      "y": 12,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "12-沙岚军士：\n有入侵者！\n12-沙岚军士：\n盘查砂锁之地！\n绝对不能放跑他！\n贾斯汀：\n见鬼，被发现了吗？！\n贾斯汀：\n可恶，姆伊森人的反应还真快。\n贾斯汀：\n外面满城风雨，我该怎么脱身……\n贾斯汀：\n既然现在没办法出去，\n不如……搞点大动静？\n贾斯汀：\n如果能将敌人高手的注意力引向地下，\n或许到时候还有逃脱的机会。\n顺便完成赏金任务。",
+          "choices": [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "bulletins": [
+
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 31
+}

@@ -1,0 +1,49 @@
+{
+  "map_id": 60,
+  "name": "去往王都的船",
+  "group": "厄泽城大系",
+  "role": "去往王都的船",
+  "width": 60,
+  "height": 15,
+  "tileset_id": 4,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 2,
+      "name": "EV002",
+      "x": 25,
+      "y": 2,
+      "to_map_id": 60,
+      "to_map_name": "去往王都的船",
+      "to_pos": [
+        50,
+        5
+      ]
+    },
+    {
+      "event_id": 3,
+      "name": "EV003",
+      "x": 34,
+      "y": 4,
+      "to_map_id": 61,
+      "to_map_name": "普利斯特王都 港口",
+      "to_pos": [
+        9,
+        20
+      ]
+    }
+  ],
+  "shops": [
+
+  ],
+  "npcs": [
+
+  ],
+  "bulletins": [
+
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 3
+}

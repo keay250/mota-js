@@ -1,0 +1,1344 @@
+{
+  "map_id": 56,
+  "name": "商船甲板",
+  "group": "厄泽城大系",
+  "role": "商船甲板",
+  "width": 20,
+  "height": 50,
+  "tileset_id": 31,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 127,
+      "name": "EV127",
+      "x": 15,
+      "y": 11,
+      "to_map_id": 57,
+      "to_map_name": "船舱内部",
+      "to_pos": [
+        15,
+        11
+      ]
+    }
+  ],
+  "shops": [
+
+  ],
+  "npcs": [
+    {
+      "event_id": 1,
+      "name": "霍尔托",
+      "x": 13,
+      "y": 40,
+      "character": "Monster01-03",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "贾斯汀：\n前辈的风系魔法果然厉害，\n居然如此顺利地便将你我带到了这艘船上。\n霍尔托：\n最多只能做到这一步了。\n准备迎战吧小子，这艘船上高手数量不少，\n估计半个厄泽城的精英都被拉来了。\n霍尔托：\n嗯？凑近一感应才发现，这艘船上\n竟然有一名职业者，气息比较熟悉\n，目测是厄泽城佣兵公会的会长。\n贾斯汀：\n什么，职业者？！\n那前辈您……\n霍尔托：\n单对单斩杀他不成问题。\n但是其他人，恐怕就得你自己来解决了。\n霍尔托：\n祝你好运，人类小子。\n贾斯汀：\n训蛇士……\n是时候让你付出代价了！",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 2,
+      "name": "怪物059",
+      "x": 12,
+      "y": 35,
+      "character": "Monster14-05",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 4,
+      "name": "怪物058",
+      "x": 17,
+      "y": 35,
+      "character": "Monster06-02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 5,
+      "name": "怪物060",
+      "x": 8,
+      "y": 31,
+      "character": "Monster07-04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 6,
+      "name": "怪物061",
+      "x": 14,
+      "y": 41,
+      "character": "Monster07-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 7,
+      "name": "怪物062",
+      "x": 12,
+      "y": 32,
+      "character": "Monster14-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 8,
+      "name": "怪物058",
+      "x": 10,
+      "y": 41,
+      "character": "Monster06-02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 17,
+      "name": "红宝石:1",
+      "x": 6,
+      "y": 39,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 18,
+      "name": "红宝石:1",
+      "x": 9,
+      "y": 39,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 19,
+      "name": "蓝宝石:1",
+      "x": 15,
+      "y": 39,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 20,
+      "name": "蓝宝石:1",
+      "x": 18,
+      "y": 39,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 21,
+      "name": "血瓶:400",
+      "x": 7,
+      "y": 40,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 22,
+      "name": "血瓶:400",
+      "x": 8,
+      "y": 40,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 23,
+      "name": "血瓶:400",
+      "x": 17,
+      "y": 40,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 24,
+      "name": "血瓶:400",
+      "x": 16,
+      "y": 40,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 25,
+      "name": "怪物061",
+      "x": 7,
+      "y": 35,
+      "character": "Monster07-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 26,
+      "name": "血瓶:800",
+      "x": 7,
+      "y": 37,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 27,
+      "name": "红宝石:1",
+      "x": 15,
+      "y": 37,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 28,
+      "name": "黄钥匙",
+      "x": 8,
+      "y": 36,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 29,
+      "name": "黄门",
+      "x": 10,
+      "y": 34,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 30,
+      "name": "黄门",
+      "x": 14,
+      "y": 34,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 31,
+      "name": "黄钥匙",
+      "x": 16,
+      "y": 36,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 32,
+      "name": "蓝宝石:1",
+      "x": 9,
+      "y": 37,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 33,
+      "name": "血瓶:800",
+      "x": 17,
+      "y": 37,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 34,
+      "name": "怪物062",
+      "x": 16,
+      "y": 32,
+      "character": "Monster14-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 35,
+      "name": "血瓶:400",
+      "x": 11,
+      "y": 34,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 36,
+      "name": "血瓶:400",
+      "x": 13,
+      "y": 34,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 37,
+      "name": "血瓶:400",
+      "x": 7,
+      "y": 34,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 38,
+      "name": "血瓶:400",
+      "x": 9,
+      "y": 34,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 39,
+      "name": "血瓶:400",
+      "x": 15,
+      "y": 34,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 40,
+      "name": "血瓶:400",
+      "x": 17,
+      "y": 34,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 41,
+      "name": "黄钥匙",
+      "x": 12,
+      "y": 39,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 42,
+      "name": "黄门",
+      "x": 10,
+      "y": 39,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 43,
+      "name": "黄门",
+      "x": 13,
+      "y": 30,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 44,
+      "name": "黄门",
+      "x": 11,
+      "y": 28,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 45,
+      "name": "黄门",
+      "x": 14,
+      "y": 39,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 46,
+      "name": "黄门",
+      "x": 10,
+      "y": 36,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 47,
+      "name": "黄门",
+      "x": 14,
+      "y": 36,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 48,
+      "name": "黄门",
+      "x": 16,
+      "y": 30,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 49,
+      "name": "黄门",
+      "x": 16,
+      "y": 26,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 50,
+      "name": "黄门",
+      "x": 13,
+      "y": 25,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 51,
+      "name": "黄门",
+      "x": 8,
+      "y": 26,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 52,
+      "name": "黄门",
+      "x": 10,
+      "y": 23,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 53,
+      "name": "黄门",
+      "x": 13,
+      "y": 19,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 54,
+      "name": "黄门",
+      "x": 11,
+      "y": 21,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 55,
+      "name": "黄门",
+      "x": 17,
+      "y": 18,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 56,
+      "name": "黄门",
+      "x": 14,
+      "y": 16,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 57,
+      "name": "黄门",
+      "x": 10,
+      "y": 16,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 58,
+      "name": "黄门",
+      "x": 8,
+      "y": 18,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 59,
+      "name": "黄门",
+      "x": 8,
+      "y": 16,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 60,
+      "name": "黄门",
+      "x": 7,
+      "y": 21,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 61,
+      "name": "怪物058",
+      "x": 9,
+      "y": 22,
+      "character": "Monster06-02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 62,
+      "name": "红宝石:1",
+      "x": 8,
+      "y": 33,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 63,
+      "name": "红宝石:1",
+      "x": 16,
+      "y": 33,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 64,
+      "name": "红宝石:1",
+      "x": 13,
+      "y": 31,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 65,
+      "name": "蓝宝石:1",
+      "x": 13,
+      "y": 29,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 66,
+      "name": "血瓶:400",
+      "x": 11,
+      "y": 31,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 67,
+      "name": "血瓶:400",
+      "x": 9,
+      "y": 29,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 68,
+      "name": "黄钥匙",
+      "x": 15,
+      "y": 31,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 69,
+      "name": "黄钥匙",
+      "x": 17,
+      "y": 31,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 70,
+      "name": "黄钥匙",
+      "x": 15,
+      "y": 27,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 71,
+      "name": "黄钥匙",
+      "x": 15,
+      "y": 29,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 72,
+      "name": "血瓶:400",
+      "x": 11,
+      "y": 19,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 73,
+      "name": "黄钥匙",
+      "x": 17,
+      "y": 23,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 74,
+      "name": "黄钥匙",
+      "x": 17,
+      "y": 24,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 75,
+      "name": "怪物061",
+      "x": 15,
+      "y": 25,
+      "character": "Monster07-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 76,
+      "name": "红宝石:1",
+      "x": 17,
+      "y": 27,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 77,
+      "name": "红宝石:1",
+      "x": 17,
+      "y": 29,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 78,
+      "name": "怪物060",
+      "x": 16,
+      "y": 29,
+      "character": "Monster07-04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 79,
+      "name": "血瓶:800",
+      "x": 16,
+      "y": 28,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 80,
+      "name": "怪物059",
+      "x": 11,
+      "y": 29,
+      "character": "Monster14-05",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 81,
+      "name": "怪物062",
+      "x": 8,
+      "y": 27,
+      "character": "Monster14-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 82,
+      "name": "怪物059",
+      "x": 10,
+      "y": 24,
+      "character": "Monster14-05",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 83,
+      "name": "怪物062",
+      "x": 15,
+      "y": 23,
+      "character": "Monster14-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 84,
+      "name": "红宝石:1",
+      "x": 7,
+      "y": 29,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 85,
+      "name": "蓝宝石:1",
+      "x": 7,
+      "y": 25,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 86,
+      "name": "红宝石:1",
+      "x": 9,
+      "y": 25,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 87,
+      "name": "红宝石:1",
+      "x": 12,
+      "y": 18,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 88,
+      "name": "蓝宝石:1",
+      "x": 12,
+      "y": 20,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 89,
+      "name": "蓝宝石:1",
+      "x": 14,
+      "y": 18,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 90,
+      "name": "红宝石:1",
+      "x": 16,
+      "y": 17,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 91,
+      "name": "红宝石:1",
+      "x": 16,
+      "y": 19,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 92,
+      "name": "血瓶:400",
+      "x": 17,
+      "y": 20,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 93,
+      "name": "血瓶:400",
+      "x": 17,
+      "y": 16,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 94,
+      "name": "红宝石:1",
+      "x": 11,
+      "y": 15,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 95,
+      "name": "红宝石:1",
+      "x": 13,
+      "y": 15,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 96,
+      "name": "血瓶:400",
+      "x": 12,
+      "y": 16,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 97,
+      "name": "红宝石:1",
+      "x": 7,
+      "y": 16,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 98,
+      "name": "血瓶:800",
+      "x": 7,
+      "y": 18,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 99,
+      "name": "黄门",
+      "x": 13,
+      "y": 16,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 100,
+      "name": "黄钥匙",
+      "x": 15,
+      "y": 15,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 101,
+      "name": "怪物060",
+      "x": 9,
+      "y": 15,
+      "character": "Monster07-04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 102,
+      "name": "怪物058",
+      "x": 15,
+      "y": 16,
+      "character": "Monster06-02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 103,
+      "name": "怪物061",
+      "x": 9,
+      "y": 20,
+      "character": "Monster07-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 104,
+      "name": "红宝石:1",
+      "x": 12,
+      "y": 15,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 105,
+      "name": "怪物062",
+      "x": 11,
+      "y": 16,
+      "character": "Monster14-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 106,
+      "name": "蓝宝石:1",
+      "x": 11,
+      "y": 27,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 107,
+      "name": "怪物060",
+      "x": 15,
+      "y": 21,
+      "character": "Monster07-04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 108,
+      "name": "怪物059",
+      "x": 12,
+      "y": 19,
+      "character": "Monster14-05",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 109,
+      "name": "怪物060",
+      "x": 11,
+      "y": 22,
+      "character": "Monster07-04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 110,
+      "name": "怪物059",
+      "x": 14,
+      "y": 19,
+      "character": "Monster14-05",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 111,
+      "name": "怪物062",
+      "x": 16,
+      "y": 20,
+      "character": "Monster14-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 112,
+      "name": "怪物059",
+      "x": 9,
+      "y": 17,
+      "character": "Monster14-05",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 113,
+      "name": "黄钥匙",
+      "x": 8,
+      "y": 25,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 114,
+      "name": "黄钥匙",
+      "x": 7,
+      "y": 31,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 115,
+      "name": "血瓶:400",
+      "x": 11,
+      "y": 25,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 116,
+      "name": "血瓶:800",
+      "x": 13,
+      "y": 22,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 117,
+      "name": "血瓶:400",
+      "x": 17,
+      "y": 22,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 118,
+      "name": "怪物059",
+      "x": 9,
+      "y": 14,
+      "character": "Monster14-05",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 119,
+      "name": "怪物062",
+      "x": 9,
+      "y": 13,
+      "character": "Monster14-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 120,
+      "name": "怪物023",
+      "x": 12,
+      "y": 10,
+      "character": "Monster01-03",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "别插手，赶紧去完成你自己的任务！",
+          "choices": [
+
+          ]
+        },
+        {
+          "page": 1,
+          "condition": {
+            "switch1": 113,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "贾斯汀：\n霍尔托前辈！\n与您战斗的那个男人呢？\n呼，不是太清楚。\n刚刚打着打着这家伙突然就面色潮红，\n然后整个人“砰”地炸开了。\n像是奴仆契约，看样子这家伙估计是被\n训蛇士给收服了。\n这么说来，你已经成功把训蛇士给干掉了。\n见鬼，怎么这么慢。\n贾斯汀：\n他晋升辉煌了，所以我……\n…………\n干得不错，人类小子。\n你还是赶紧走吧，\n你走之后我立刻用风系魔法摧毁这艘船，\n不留下任何痕迹。\n贾斯汀：\n好的，我这就……\n？？？：\n想不到在这种地方也能有如此收获。\n贾斯汀：\n？！\n？！\n！！\n贾斯汀：\n眼前突然多了一个人？！这究竟是……\n这身服装……\n你莫非是普利斯特王都来的魔法师？\n神秘老者：\n咦？一只成年的倍荷玛森史莱姆。\n一边玩去，这里没你事。\n贾斯汀：\n人，人呢？\n怎么突然不见了？！\n神秘老者：\n不用担心，老头子我只是送他去河里\n泡了个澡而已。\n神秘老者：\n小家伙，你的运气不错啊，\n把那东西卖给我怎么样？我出三千紫晶币。\n神秘老者：\n哎事先说好，老头子我啊，\n一上了年纪，就喜欢较真。\n这强买强卖的事啊，也由不得我自己。\n贾斯汀：\n…………不，不行。\n神秘老者：\n哈？不行？\n神秘老者：\n哎没办法了，在这西北十六国转悠了俩月啥都没捞\n到，今天可算是来运气了，可不能就此错过。\n神秘老者：\n放心，小家伙，我不会伤你性命。\n以防万一，我还是先调查一下……\n神秘老者：\n咦？这印记是……\n神秘老者：\n啧啧，公主说的，就是这小子么。\n可是她完全没有提到过极限法球的事啊喂！\n神秘老者：\n哎真是可惜，既然是小公主罩着的人，\n看来不能打劫了。\n贾斯汀：\n（这老头子在自言自语些什么……）\n神秘老者：\n你可真是走运啊，小家伙。\n我改主意了，不做这笔买卖了。\n神秘老者：\n有道见面即是缘分，你以后若是遇上麻烦，可以来\n肯瑞托帝都找我，我大魔导师·无语，自然会帮你\n一忙，就当是初次见面的礼物了。\n神秘老者：\n嗯就这些，再见。（这小子天赋看起来的确不错，\n成为英雄也不是不可能，但是估计他这辈子都没能\n力到达肯瑞托吧。）\n贾斯汀：\n所以刚才那老家伙到底是什么人啊！\n自言自语一番后就跑路了！\n贾斯汀：\n啊，霍尔托前辈，刚才您……\n…………\n刚刚那个人类老者，没把你怎么样？\n贾斯汀：\n啊？\n刚才我眼前一恍惚，便发现自己出\n现在了数公里之外的运河河底。\n如果我猜得没错的话……\n传承记忆中所说的空间魔法，一定是了！\n那个老者一定不是普利斯特王国的人，整个王国都\n找不出拥有这般能力的存在。\n贾斯汀：\n前辈的意思是，\n他是从大陆上别的国家来的？\n实际上我也没有离开过这个国家，\n你们人类的活动范围是我们魔兽的禁地。\n这些都是从我血脉传承中获知的。\n但我猜测很有可能是这样。\n\n所以那位老者和你说了些什么？\n贾斯汀：\n他似乎认识我的样子……\n还说什么让我以后可以去肯瑞托帝都找他。\n肯瑞托……没听说过。\n估计是哪位路过的高人吧，你的天赋出众，\n打动了他，令他有收你作弟子的意向。\n估计是这样。\n这可能是一位英雄级别的存在，\n对你来说可谓是天大的喜事啊。\n贾斯汀：\n拜一位强者为师？\n哎，先不提我能不能找到那个叫肯瑞托的地方，\n其实我并不想离开这里。\n年轻的人类，你的潜力是我霍尔托诞生\n以来见过的最为强大的。\n厄泽城太小了，终究不是适合你的舞台。\n去你们人类的王都吧。\n那里高手如云，即便职业者也不是什么太过稀罕的\n存在，只有在那里，你才能发挥出你真正的力量。\n贾斯汀：\n王都，吗……\n这一次你也算是帮了我寂静之森一个大忙。\n年轻的人类，未来随时欢迎你来寂静之森做客。\n我霍尔托虽然算不上什么强者，\n但有需要的时候，也可以来打声招呼。\n能帮的，我尽量帮忙。\n那么，后会有期了。\n贾斯汀：\n后会有期，霍尔托……族长。\n贾斯汀：\n大仇已报，接下来该想想以后了……\n也许正如霍尔托所说，厄泽城实在太小了。\n贾斯汀：\n可是，那不是我想要的生活。\n我现在只想与法芙娜平平安安地生活在一起。\n幸福加上安定，足矣。\n贾斯汀：\n抱歉了，霍尔托族长。",
+          "choices": [
+
+          ]
+        }
+      ],
+      "trigger_teleport": {
+        "to_map_id": 54,
+        "to_map_name": "姆伊森运河",
+        "to_pos": [
+          12,
+          8
+        ]
+      }
+    },
+    {
+      "event_id": 121,
+      "name": "怪物063",
+      "x": 12,
+      "y": 8,
+      "character": "战士",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 122,
+      "name": "EV122",
+      "x": 9,
+      "y": 12,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "霍尔托！你这头该死的史莱姆魔兽！\n你是想彻底挑起寂静之森与厄泽城的战争吗！\n少说废话，在这里把你干掉，\n也只会联想到姆伊森人身上。\n可恶，霍尔托，你可知船上有一位大人物？\n若是他出了什么三长两短，整个寂静之森都\n得为他陪葬！\n不需要我重复第二遍了。\n你们死在这里，不会有人知道是我干的。\n嘿，人类小子，想不到你这么快就杀过来了。\n？！\n你是谁？\n为何会出现在这艘船上。\n小子，训蛇士现在就躲在船舱里，\n赶紧下去把他解决掉，然后来帮我\n干掉这个人类老匹夫！\n少年你究竟是什么人？\n你和这些魔兽是一伙的吗？\n居然放弃身为人类的尊严而\n去勾结这些肮脏的魔兽？！\n废话少说，马格罗斯，\n你这个厄泽城佣兵公会会长当了有七十年了，\n差不多也是时候交给年轻人了，就这样死在姆\n伊森运河上吧！\n老子不会死，该死的是你！\n今日拼尽全力也要将你这寂静之森\n的魔兽领袖斩杀于此！",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 123,
+      "name": "EV123",
+      "x": 11,
+      "y": 9,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "别插手，赶紧去完成你自己的任务！",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 124,
+      "name": "EV124",
+      "x": 10,
+      "y": 8,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "别插手，赶紧去完成你自己的任务！",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 125,
+      "name": "EV125",
+      "x": 13,
+      "y": 9,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "别插手，赶紧去完成你自己的任务！",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 126,
+      "name": "EV126",
+      "x": 14,
+      "y": 8,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "别插手，赶紧去完成你自己的任务！",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 128,
+      "name": "神秘老者",
+      "x": 13,
+      "y": 8,
+      "character": "RTP风格-老魔法师",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 131,
+      "name": "血瓶:800",
+      "x": 7,
+      "y": 20,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    }
+  ],
+  "bulletins": [
+    {
+      "event_id": 12,
+      "name": "路牌",
+      "x": 11,
+      "y": 33,
+      "content": "设定说明之技能列表\n不管是敌人还是玩家自身，都同时拥有“主动”与\n“被动”两类技能，其中被动技能根据其说明自动\n发挥作用，而主动技能则需要单独论述。\n根据技能列表（比如手册中敌人的主动技能按顺序\n排布的列表），敌人每回合都会对技能列表进行处\n理，通常情况下每回合都会处理一个技能。\n当然也有例外，比如奥术飞弹与炎爆，便是两种持\n续多回合连续释放的技能（实际上可以看成多个相\n同的技能连在一起）\n以本地图上的护卫魔导士为例，其会先施放七个回\n合的炎爆，之后才会释放三个回合的奥术飞弹，换\n句话说在八回合之内将其消灭，可以避免其放出伤\n害非常之高的奥术飞弹。"
+    },
+    {
+      "event_id": 130,
+      "name": "路牌",
+      "x": 13,
+      "y": 33,
+      "content": "设定说明之副本地图\n类似这样的地图，都具有两个特性。\n其一是过关后便无法再返回。\n其二则是敌人不提供经验金钱。\n换句话说，敌人留着不打也是完全没有关系的。"
+    }
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 131
+}

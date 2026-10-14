@@ -1,0 +1,101 @@
+{
+  "map_id": 18,
+  "name": "装备商店",
+  "group": "厄泽城大系",
+  "role": "装备商店",
+  "width": 20,
+  "height": 18,
+  "tileset_id": 73,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 1,
+      "name": "EV001",
+      "x": 10,
+      "y": 16,
+      "to_map_id": 17,
+      "to_map_name": "厄泽城",
+      "to_pos": [
+        68,
+        17
+      ]
+    }
+  ],
+  "shops": [
+    {
+      "event_id": 2,
+      "name": "店员",
+      "x": 12,
+      "y": 8,
+      "character": "116-Civilian16",
+      "goods": [
+        {
+          "type": 1,
+          "item_id": 1,
+          "name": "佣兵短剑",
+          "price": 30,
+          "icon": "佣兵短剑"
+        },
+        {
+          "type": 1,
+          "item_id": 2,
+          "name": "劣质皮甲",
+          "price": 20,
+          "icon": "劣质皮甲"
+        },
+        {
+          "type": 1,
+          "item_id": 3,
+          "name": "轻骑护手:A1:C15",
+          "price": 120,
+          "icon": "轻骑护手"
+        },
+        {
+          "type": 1,
+          "item_id": 6,
+          "name": "骷髅盾:D1",
+          "price": 70,
+          "icon": "骷髅盾"
+        },
+        {
+          "type": 1,
+          "item_id": 7,
+          "name": "回复戒指:A4",
+          "price": 850,
+          "icon": "回复戒指"
+        }
+      ],
+      "dialogues": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "店员：\n小哥，来选个装备吧！\n保证物美价廉，实用不易磨损。",
+          "choices": [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "npcs": [
+
+  ],
+  "bulletins": [
+    {
+      "event_id": 4,
+      "name": "路牌",
+      "x": 10,
+      "y": 10,
+      "content": "设定说明之护甲\n护甲能够以百分比形式减少敌人的物理伤害。\n这个减伤系数由你的护甲值决定。\n至于其中的公式，可以变相理解为每点护甲为你提\n供6%的血量收益，10点护甲相当于在计算物理伤害\n时你的1点血量可以发挥出1.6点血量的作用。\n而护甲为负时每点则会增加6%受到的物理伤害。\n当然，有必要再次重申。\n护甲减伤只对物理伤害有效。\n而敌人的普通攻击属于物理伤害。"
+    }
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 4
+}

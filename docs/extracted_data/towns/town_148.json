@@ -1,0 +1,156 @@
+{
+  "map_id": 148,
+  "name": "魔法商店",
+  "group": "弧光城大系",
+  "role": "魔法商店",
+  "width": 20,
+  "height": 16,
+  "tileset_id": 74,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 1,
+      "name": "EV001",
+      "x": 12,
+      "y": 14,
+      "to_map_id": 143,
+      "to_map_name": "弧光城",
+      "to_pos": [
+        45,
+        27
+      ]
+    }
+  ],
+  "shops": [
+    {
+      "event_id": 2,
+      "name": "尸巫",
+      "x": 12,
+      "y": 8,
+      "character": "RTP风格-尸巫",
+      "goods": [
+        {
+          "type": 1,
+          "item_id": 1,
+          "name": "佣兵短剑",
+          "price": 30,
+          "icon": "佣兵短剑"
+        },
+        {
+          "type": 1,
+          "item_id": 2,
+          "name": "劣质皮甲",
+          "price": 20,
+          "icon": "劣质皮甲"
+        },
+        {
+          "type": 1,
+          "item_id": 3,
+          "name": "轻骑护手:A1:C15",
+          "price": 120,
+          "icon": "轻骑护手"
+        },
+        {
+          "type": 1,
+          "item_id": 6,
+          "name": "骷髅盾:D1",
+          "price": 70,
+          "icon": "骷髅盾"
+        },
+        {
+          "type": 1,
+          "item_id": 7,
+          "name": "回复戒指:A4",
+          "price": 850,
+          "icon": "回复戒指"
+        }
+      ],
+      "dialogues": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "尸巫：\n死灵魔法博大精深，\n一生都学之不尽！\n确定要提取水晶剑上的附魔吗？\n需要消耗附魔提取卡片*1才能执行！\n成功吸收疾风的附魔力量，攻速+10%。\n确定要提取先锋盾上的附魔吗？\n需要消耗附魔提取卡片*1才能执行！\n成功吸收巨岩的附魔力量，防御+100。",
+          "choices": [
+            "是",
+            "否"
+          ]
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "event_id": 4,
+      "name": "怪物333",
+      "x": 16,
+      "y": 11,
+      "character": "Monster06-05",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": "A"
+          },
+          "text": "4-无敌阻激：\n我是咸鱼测试小助手洪杨超人\n你现在旁边的商店里有奥术鞋卷轴卖吗？\n4-无敌阻激：\n那就没事了\n4-无敌阻激：\n那我给你进货",
+          "choices": [
+            "有",
+            "没有"
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 7,
+      "name": "贩售物",
+      "x": 12,
+      "y": 11,
+      "character": "Item01-06",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": 146,
+            "switch2": null,
+            "variable": {
+              "id": 177,
+              "val": 1
+            },
+            "self_switch": null
+          },
+          "text": "给初心者和冒险者的鼓励\n奥术鞋充能卷轴*1",
+          "choices": [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "bulletins": [
+    {
+      "event_id": 5,
+      "name": "路牌",
+      "x": 9,
+      "y": 11,
+      "content": "设定说明之装备充能\n有的通过合成制作出来的装备初始便自带能量点数\n，这类装备在合成界面的装备图标上能看到初始能\n量的具体数值。\n设定说明之装备充能\n自然，使用获得对应装备的充能卷轴可以人为增加\n能量点数，延长使用次数。"
+    },
+    {
+      "event_id": 6,
+      "name": "路牌",
+      "x": 15,
+      "y": 11,
+      "content": "设定说明之瞬发技能\n一般来说，一个技能的释放不影响当前回合的普攻\n（除非文字中说明），但是技能与技能之间通常是\n不能在同一回合中连续使用的。\n所谓瞬发技能，便是不占用本回合的技能释放时机\n，在造成技能效果后紧接着便能执行下一个技能命\n令，这种技能100%不会影响到本回合普攻。\n举例说明，若技能列表为:普通技能-毁灭阴影，\n则毁灭阴影只使用一次。但如果是:瞬发技能-毁\n灭阴影，则毁灭阴影依然处于第一回合的使用时机\n，能够连续释放三次。"
+    }
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 7
+}

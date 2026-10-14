@@ -1,0 +1,140 @@
+{
+  "map_id": 62,
+  "name": "普利斯特王都 北区",
+  "group": "普利斯特王都大系",
+  "role": "王都北区",
+  "width": 50,
+  "height": 30,
+  "tileset_id": 61,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 1,
+      "name": "EV001",
+      "x": 32,
+      "y": 0,
+      "to_map_id": 61,
+      "to_map_name": "普利斯特王都 港口",
+      "to_pos": [
+        8,
+        34
+      ]
+    },
+    {
+      "event_id": 2,
+      "name": "EV002",
+      "x": 33,
+      "y": 0,
+      "to_map_id": 61,
+      "to_map_name": "普利斯特王都 港口",
+      "to_pos": [
+        9,
+        34
+      ]
+    },
+    {
+      "event_id": 3,
+      "name": "EV003",
+      "x": 34,
+      "y": 0,
+      "to_map_id": 61,
+      "to_map_name": "普利斯特王都 港口",
+      "to_pos": [
+        10,
+        34
+      ]
+    },
+    {
+      "event_id": 8,
+      "name": "EV008",
+      "x": 10,
+      "y": 29,
+      "to_map_id": 63,
+      "to_map_name": "普利斯特王都",
+      "to_pos": [
+        7,
+        0
+      ]
+    },
+    {
+      "event_id": 9,
+      "name": "EV009",
+      "x": 11,
+      "y": 29,
+      "to_map_id": 63,
+      "to_map_name": "普利斯特王都",
+      "to_pos": [
+        8,
+        0
+      ]
+    },
+    {
+      "event_id": 10,
+      "name": "EV010",
+      "x": 12,
+      "y": 29,
+      "to_map_id": 63,
+      "to_map_name": "普利斯特王都",
+      "to_pos": [
+        9,
+        0
+      ]
+    }
+  ],
+  "shops": [
+
+  ],
+  "npcs": [
+    {
+      "event_id": 6,
+      "name": "王都居民",
+      "x": 33,
+      "y": 9,
+      "character": "RTP风格-扫地",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "王都居民：\n年轻人第一次来王都吧？\n贾斯汀：\n这位大婶您是怎么看出来的……\n王都居民：\n东瞅西瞅一副看不够的样子，\n一看就是外地来的哟。\n贾斯汀：\n诶……",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 7,
+      "name": "王都居民 ",
+      "x": 11,
+      "y": 19,
+      "character": "111-Civilian11",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "王都居民 ：\n普利斯特王都作为整个王国最为核心的城市，\n称得上是高手云集。\n王都居民 ：\n而在这里面，除了皇室之外，\n一些家族和组织手中都掌握有强大的力量。\n王都居民 ：\n其中最强的是教团，信奉全能之神，主导整个国家\n的信仰，即便是皇室论影响力也无法与教团相比。\n王都居民 ：\n其次则是佣兵公会与三大家族。\n三大家族分别是路德维克家族、训氏家族以及布斯\n曼家族。\n王都居民 ：\n可以说，在教团不过问的情况下，这四大势力才是\n王都的真正统治者。",
+          "choices": [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "bulletins": [
+
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 10
+}

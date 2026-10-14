@@ -1,0 +1,120 @@
+{
+  "map_id": 85,
+  "name": "商人营地",
+  "group": "边境营地与商会",
+  "role": "沙漠商人营地",
+  "width": 20,
+  "height": 15,
+  "tileset_id": 21,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 12,
+      "name": "EV012",
+      "x": 12,
+      "y": 12,
+      "to_map_id": 71,
+      "to_map_name": "砂锁之地",
+      "to_pos": [
+        12,
+        12
+      ]
+    }
+  ],
+  "shops": [
+    {
+      "event_id": 1,
+      "name": "沙漠商人",
+      "x": 12,
+      "y": 7,
+      "character": "129-Noble04",
+      "goods": [
+        {
+          "type": 1,
+          "item_id": 1,
+          "name": "佣兵短剑",
+          "price": 30,
+          "icon": "佣兵短剑"
+        },
+        {
+          "type": 1,
+          "item_id": 2,
+          "name": "劣质皮甲",
+          "price": 20,
+          "icon": "劣质皮甲"
+        },
+        {
+          "type": 1,
+          "item_id": 3,
+          "name": "轻骑护手:A1:C15",
+          "price": 120,
+          "icon": "轻骑护手"
+        },
+        {
+          "type": 1,
+          "item_id": 6,
+          "name": "骷髅盾:D1",
+          "price": 70,
+          "icon": "骷髅盾"
+        },
+        {
+          "type": 1,
+          "item_id": 7,
+          "name": "回复戒指:A4",
+          "price": 850,
+          "icon": "回复戒指"
+        }
+      ],
+      "dialogues": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "沙漠商人：\n欢迎光临，不知客人是想？\n沙漠商人：\n好嘞，先锋盾是吗。\n很快就能解析出来。\n沙漠商人：\n现在可以合成先锋盾啦。\n沙漠商人：\n好嘞，水晶剑是吗。\n很快就能解析出来。\n沙漠商人：\n光用损毁武器很难解析出其全貌，\n想要合成的话还需要一份图纸才行。\n已经将合成清单纳入列表。\n沙漠商人：\n这位客人你身上并没有什么值得\n人在意的东西啊。",
+          "choices": [
+            "买卖装备",
+            "合成装备",
+            "提交图纸和损毁装备",
+            "没什么事情"
+          ]
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "event_id": 8,
+      "name": "怪物099",
+      "x": 9,
+      "y": 8,
+      "character": "Monster04-02",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "8-沙岚武尊：\n禁止入内。\n贾斯汀：\n8-沙岚武尊：\n打死我就能进去抢东西？\n想得美，我就不跟你打。",
+          "choices": [
+            "再见",
+            "来啊，谁怕谁！"
+          ]
+        }
+      ]
+    }
+  ],
+  "bulletins": [
+
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 5
+}

@@ -1,0 +1,519 @@
+{
+  "map_id": 17,
+  "name": "厄泽城",
+  "group": "厄泽城大系",
+  "role": "厄泽城主城 (75x75)",
+  "width": 75,
+  "height": 75,
+  "tileset_id": 10,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 7,
+      "name": "EV007",
+      "x": 5,
+      "y": 72,
+      "to_map_id": 13,
+      "to_map_name": "寂静之森外围",
+      "to_pos": [
+        19,
+        7
+      ]
+    },
+    {
+      "event_id": 8,
+      "name": "EV008",
+      "x": 5,
+      "y": 71,
+      "to_map_id": 13,
+      "to_map_name": "寂静之森外围",
+      "to_pos": [
+        19,
+        7
+      ]
+    },
+    {
+      "event_id": 9,
+      "name": "EV009",
+      "x": 5,
+      "y": 73,
+      "to_map_id": 13,
+      "to_map_name": "寂静之森外围",
+      "to_pos": [
+        19,
+        7
+      ]
+    },
+    {
+      "event_id": 12,
+      "name": "EV012",
+      "x": 41,
+      "y": 24,
+      "to_map_id": 19,
+      "to_map_name": "佣兵公会",
+      "to_pos": [
+        15,
+        36
+      ]
+    },
+    {
+      "event_id": 22,
+      "name": "EV022",
+      "x": 58,
+      "y": 67,
+      "to_map_id": 20,
+      "to_map_name": "瑞格沃酒馆",
+      "to_pos": [
+        12,
+        14
+      ]
+    },
+    {
+      "event_id": 26,
+      "name": "EV026",
+      "x": 55,
+      "y": 22,
+      "to_map_id": 17,
+      "to_map_name": "厄泽城",
+      "to_pos": [
+        8,
+        68
+      ]
+    },
+    {
+      "event_id": 27,
+      "name": "EV027",
+      "x": 8,
+      "y": 67,
+      "to_map_id": 17,
+      "to_map_name": "厄泽城",
+      "to_pos": [
+        55,
+        23
+      ]
+    }
+  ],
+  "shops": [
+
+  ],
+  "npcs": [
+    {
+      "event_id": 1,
+      "name": "厄泽城守卫甲",
+      "x": 73,
+      "y": 37,
+      "character": "005-Fighter05",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "厄泽城守卫甲：\n城主府，闲人勿入。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 4,
+      "name": "厄泽城守卫乙",
+      "x": 73,
+      "y": 40,
+      "character": "005-Fighter05",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "厄泽城守卫乙：\n城主府，闲人勿入。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 5,
+      "name": "事件",
+      "x": 74,
+      "y": 38,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "厄泽城守卫甲：\n城主府，闲人勿入。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 6,
+      "name": "事件",
+      "x": 74,
+      "y": 39,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "厄泽城守卫乙：\n城主府，闲人勿入。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 13,
+      "name": "平民少年",
+      "x": 19,
+      "y": 50,
+      "character": "104-Civilian04",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "平民少年：\n这里毗邻寂静之森，多亏了佣兵大哥大叔们才能保\n住城市不被森林里的魔兽所入侵呢。\n平民少年：\n我也要努力修行，将来成为一名合格的佣兵保卫厄\n泽城！\n平民少年：\n下级、中级、高级、特级、王牌、荣耀、辉煌。\n什么时候我才能成为像训蛇士大人一样强大的荣耀\n佣兵呢？",
+          "choices": [
+
+          ]
+        },
+        {
+          "page": 1,
+          "condition": {
+            "switch1": 110,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "平民少年：\n…………\n最近城里似乎萧条了许多。\n似乎是因为有人命案发生了呢……",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 14,
+      "name": "平民小女孩",
+      "x": 23,
+      "y": 25,
+      "character": "113-Civilian13",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "平民小女孩：\n最近听大人们说寂静之森里的小怪兽们都开始不安\n分了呢，就连出去玩也被禁止了。\n平民小女孩：\n好无聊，好想去森林里玩……\n平民小女孩：\n我可没有害怕哟，有无所不能的全能之神守护这座\n城市，根本没什么好怕的。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 16,
+      "name": "沧桑的大叔",
+      "x": 59,
+      "y": 49,
+      "character": "109-Civilian09",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "沧桑的大叔：\n想当年我曾经也是一名高级佣兵，\n直到我膝盖上中了一箭……\n沧桑的大叔：\n多亏我这么多年来都一直虔诚地信\n奉全能之神，关键时刻全能之神显\n灵让那支箭没有落到我的脖子上。\n沧桑的大叔：\n佣兵这门事业看起来风光，\n实际上，哎……\n沧桑的大叔：\n真正风光的，是那些站到巅峰的强者，\n而不是我们这些碌碌无为的普通佣兵。\n沧桑的大叔：\n或许，只有传说中的英雄，\n才有睥睨天下的资格吧。",
+          "choices": [
+
+          ]
+        },
+        {
+          "page": 1,
+          "condition": {
+            "switch1": 110,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "沧桑的大叔：\n佣兵公会关门了，\n听说是因为公会的会长神秘失踪！\n这究竟是怎么一回事？",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 17,
+      "name": "EV017",
+      "x": 41,
+      "y": 21,
+      "character": "193-Support01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 18,
+      "name": "EV018",
+      "x": 73,
+      "y": 36,
+      "character": "170-Door01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 19,
+      "name": "EV019",
+      "x": 68,
+      "y": 13,
+      "character": "建筑的挂牌",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 20,
+      "name": "门",
+      "x": 68,
+      "y": 16,
+      "character": "170-Door01",
+      "dialogue_tree": [
+
+      ],
+      "trigger_teleport": {
+        "to_map_id": 18,
+        "to_map_name": "装备商店",
+        "to_pos": [
+          10,
+          15
+        ]
+      }
+    },
+    {
+      "event_id": 21,
+      "name": "EV021",
+      "x": 58,
+      "y": 64,
+      "character": "建筑的挂牌",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 23,
+      "name": "商人",
+      "x": 55,
+      "y": 13,
+      "character": "112-Civilian12",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "商人：\n真是见了鬼了，\n刚来这座小城就碰上这种破事。\n商人：\n本来想投资开垦下城外森林外围区域，\n结果……哎，真是倒霉。\n商人：\n希望全能之神能够保佑接下来回\n去的路上别再出什么岔子了……\n商人：\n从上方的港口乘船沿姆伊森运\n河行驶上十来天就可以抵达普\n利斯特王都了。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 24,
+      "name": "EV024",
+      "x": 55,
+      "y": 11,
+      "character": "188-Wagon01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 25,
+      "name": "EV025",
+      "x": 55,
+      "y": 0,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "贾斯汀：\n现在没有必要去港口。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 28,
+      "name": "格瑞迪",
+      "x": 41,
+      "y": 29,
+      "character": "027-Cleric03",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": {
+              "id": 201,
+              "val": 3
+            },
+            "self_switch": null
+          },
+          "text": "格瑞迪：\n你这小子，想不到居然还活着。\n怎么没和你们那傻瓜队长一块儿留在森林里。\n贾斯汀：\n…………\n格瑞迪：\n而且，我不止跟你说过一遍了吧？\n离法芙娜远一点，穷小子。\n格瑞迪：\n她的容貌可不是你这种卑贱的穷佣兵所配拥有的，\n只有本少爷这种职业者家族出身的高贵人物才配得\n上，你明白吗？\n贾斯汀：\n格瑞迪，休要说什么大话，你的家族也不\n过是和那位职业者沾点远亲关系罢了！\n格瑞迪：\n哼，那又如何？还不是本少爷有权有势？\n告诉你，下次再见到你接近法芙娜，我就让人打断\n你的三条腿！\n格瑞迪：\n没了你那个穷鬼队长的保护，\n看你还敢硬气多久。\n贾斯汀：\n格瑞迪那家伙，一直对法芙娜图谋不轨。\n现在拉瓦尔队长不在了，我究竟该……\n贾斯汀：\n或许应该先去东边的装备商店看一看，\n有了公会的这笔遗产，说不定能买到不\n错的装备。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 29,
+      "name": "行踪诡秘的商人",
+      "x": 16,
+      "y": 60,
+      "character": "018-Thief03",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "行踪诡秘的商人：\n哥们儿，要黄钥匙不？\n我有大量的。\n行踪诡秘的商人：\n不过呢，每出售一把，价格都会翻上一倍。\n不介意吧？\n行踪诡秘的商人：\n当前黄钥匙价格为\\v[173]金币一把。\n行踪诡秘的商人：\n你没有那么多金币。",
+          "choices": [
+            "购买",
+            "放弃"
+          ]
+        },
+        {
+          "page": 1,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": "A"
+          },
+          "text": "行踪诡秘的商人：\n当前黄钥匙价格为\\v[173]金币一把。\n行踪诡秘的商人：\n你没有那么多金币。",
+          "choices": [
+            "购买",
+            "放弃"
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 30,
+      "name": "行踪诡秘的商人 ",
+      "x": 23,
+      "y": 60,
+      "character": "018-Thief03",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "行踪诡秘的商人 ：\n哥们儿，要蓝钥匙不？\n我有大量的。\n行踪诡秘的商人 ：\n不过呢，每出售一把，价格都会翻上一倍。\n不介意吧？\n行踪诡秘的商人 ：\n当前蓝钥匙价格为\\v[176]金币一把。\n行踪诡秘的商人 ：\n你没有那么多金币。",
+          "choices": [
+            "购买",
+            "放弃"
+          ]
+        },
+        {
+          "page": 1,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": "A"
+          },
+          "text": "行踪诡秘的商人 ：\n当前蓝钥匙价格为\\v[176]金币一把。\n行踪诡秘的商人 ：\n你没有那么多金币。",
+          "choices": [
+            "购买",
+            "放弃"
+          ]
+        }
+      ]
+    }
+  ],
+  "bulletins": [
+    {
+      "event_id": 10,
+      "name": "路牌",
+      "x": 30,
+      "y": 51,
+      "content": "路牌：\n↑佣兵公会\n→↑装备商店\n→↓瑞格沃酒馆"
+    },
+    {
+      "event_id": 11,
+      "name": "告示牌",
+      "x": 35,
+      "y": 27,
+      "content": "告示牌：\n由厄泽城佣兵公会及厄泽城城主府联合发布声明，\n现全面征召特级及以上等级佣兵参与对寂静之森遗\n迹的调查。\n告示牌：\n凡是提供开荒线索及重要相关物品者，\n将得到佣兵公会与城主府的联合重赏。\n告示牌：\n由于特殊原因，厄泽城佣兵公会现暂时关闭。"
+    },
+    {
+      "event_id": 15,
+      "name": "告示牌",
+      "x": 36,
+      "y": 27,
+      "content": "告示牌：\n由厄泽城佣兵公会及厄泽城城主府联合发布声明，\n现全面征召特级及以上等级佣兵参与对寂静之森遗\n迹的调查。\n告示牌：\n凡是提供开荒线索及重要相关物品者，\n将得到佣兵公会与城主府的联合重赏。\n告示牌：\n由于特殊原因，厄泽城佣兵公会现暂时关闭。"
+    }
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 30
+}

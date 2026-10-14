@@ -1,0 +1,144 @@
+{
+  "map_id": 48,
+  "name": "右侧回廊",
+  "group": "厄泽城大系",
+  "role": "公会右侧回廊",
+  "width": 30,
+  "height": 15,
+  "tileset_id": 73,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 1,
+      "name": "EV001",
+      "x": 8,
+      "y": 8,
+      "to_map_id": 19,
+      "to_map_name": "佣兵公会",
+      "to_pos": [
+        23,
+        30
+      ]
+    },
+    {
+      "event_id": 5,
+      "name": "EV005",
+      "x": 23,
+      "y": 6,
+      "to_map_id": 58,
+      "to_map_name": "屋内",
+      "to_pos": [
+        13,
+        12
+      ]
+    }
+  ],
+  "shops": [
+
+  ],
+  "npcs": [
+    {
+      "event_id": 2,
+      "name": "EV002",
+      "x": 13,
+      "y": 6,
+      "character": "170-Door01",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "贾斯汀：\n……不是这间！",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 4,
+      "name": "EV004",
+      "x": 18,
+      "y": 6,
+      "character": "170-Door01",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "贾斯汀：\n……也不是这间！",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 6,
+      "name": "怪物065",
+      "x": 12,
+      "y": 7,
+      "character": "014-Warrior02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 7,
+      "name": "怪物065",
+      "x": 12,
+      "y": 9,
+      "character": "014-Warrior02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 8,
+      "name": "EV008",
+      "x": 10,
+      "y": 8,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 1,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": "A"
+          },
+          "text": "你这小鬼是怎么跑进来的？！\n见鬼，外面那家伙是怎么看的门！\n既然你小子敢进来，那就只有把你干掉了！",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 13,
+      "name": "格瑞迪",
+      "x": 23,
+      "y": 7,
+      "character": "027-Cleric03",
+      "dialogue_tree": [
+
+      ]
+    }
+  ],
+  "bulletins": [
+
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 13
+}

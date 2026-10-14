@@ -1,0 +1,150 @@
+{
+  "map_id": 269,
+  "name": "荒原集镇",
+  "group": "荒原集镇大系",
+  "role": "荒原集镇",
+  "width": 45,
+  "height": 40,
+  "tileset_id": 20,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 2,
+      "name": "EV002",
+      "x": 5,
+      "y": 17,
+      "to_map_id": 252,
+      "to_map_name": "西北荒原",
+      "to_pos": [
+        19,
+        7
+      ]
+    },
+    {
+      "event_id": 4,
+      "name": "EV004",
+      "x": 26,
+      "y": 1,
+      "to_map_id": 257,
+      "to_map_name": "西北荒原",
+      "to_pos": [
+        12,
+        14
+      ]
+    },
+    {
+      "event_id": 9,
+      "name": "EV009",
+      "x": 33,
+      "y": 38,
+      "to_map_id": 260,
+      "to_map_name": "西北荒原",
+      "to_pos": [
+        12,
+        0
+      ]
+    },
+    {
+      "event_id": 10,
+      "name": "EV010",
+      "x": 43,
+      "y": 19,
+      "to_map_id": 273,
+      "to_map_name": "西北荒原",
+      "to_pos": [
+        5,
+        7
+      ]
+    }
+  ],
+  "shops": [
+
+  ],
+  "npcs": [
+    {
+      "event_id": 5,
+      "name": "门",
+      "x": 13,
+      "y": 8,
+      "character": "170-Door01",
+      "dialogue_tree": [
+
+      ],
+      "trigger_teleport": {
+        "to_map_id": 271,
+        "to_map_name": "荒原装备店",
+        "to_pos": [
+          13,
+          12
+        ]
+      }
+    },
+    {
+      "event_id": 6,
+      "name": "EV006",
+      "x": 9,
+      "y": 9,
+      "character": "建筑的挂牌",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 7,
+      "name": "门",
+      "x": 21,
+      "y": 8,
+      "character": "170-Door01",
+      "dialogue_tree": [
+
+      ],
+      "trigger_teleport": {
+        "to_map_id": 270,
+        "to_map_name": "荒原道具店",
+        "to_pos": [
+          13,
+          12
+        ]
+      }
+    },
+    {
+      "event_id": 8,
+      "name": "EV008",
+      "x": 21,
+      "y": 6,
+      "character": "193-Support01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 11,
+      "name": "EV011",
+      "x": 25,
+      "y": 31,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "奈文摩尔：\n总算是能进这个集镇了。\n也是时候好好补给一番了。\n奈文摩尔：\n来到这里，也差不多是走过了一半的路程了。\n果然越是接近大陆中央，土著生物便越是强大。\n爱丽丝：\n嗯嗯，感觉比寒夜位面还要可怕。\n奈文摩尔：\n目前还没有发现任何全能教团的踪迹……\n哼，怕是早晚都会来的。",
+          "choices": [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "bulletins": [
+
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 11
+}

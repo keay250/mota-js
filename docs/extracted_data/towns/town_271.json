@@ -1,0 +1,234 @@
+{
+  "map_id": 271,
+  "name": "荒原装备店",
+  "group": "荒原集镇大系",
+  "role": "荒原装备店",
+  "width": 22,
+  "height": 15,
+  "tileset_id": 21,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 1,
+      "name": "EV001",
+      "x": 13,
+      "y": 13,
+      "to_map_id": 269,
+      "to_map_name": "荒原集镇",
+      "to_pos": [
+        13,
+        9
+      ]
+    }
+  ],
+  "shops": [
+    {
+      "event_id": 2,
+      "name": "商人",
+      "x": 13,
+      "y": 7,
+      "character": "129-Noble04",
+      "goods": [
+        {
+          "type": 1,
+          "item_id": 1,
+          "name": "佣兵短剑",
+          "price": 30,
+          "icon": "佣兵短剑"
+        },
+        {
+          "type": 1,
+          "item_id": 2,
+          "name": "劣质皮甲",
+          "price": 20,
+          "icon": "劣质皮甲"
+        },
+        {
+          "type": 1,
+          "item_id": 3,
+          "name": "轻骑护手:A1:C15",
+          "price": 120,
+          "icon": "轻骑护手"
+        },
+        {
+          "type": 1,
+          "item_id": 6,
+          "name": "骷髅盾:D1",
+          "price": 70,
+          "icon": "骷髅盾"
+        },
+        {
+          "type": 1,
+          "item_id": 7,
+          "name": "回复戒指:A4",
+          "price": 850,
+          "icon": "回复戒指"
+        }
+      ],
+      "dialogues": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "商人：\n嘿，上好的武器，不来看看吗？",
+          "choices": [
+            "买卖装备",
+            "合成装备",
+            "没什么事情"
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 4,
+      "name": "过去的商人 ",
+      "x": 17,
+      "y": 10,
+      "character": "018-Thief03",
+      "goods": [
+        {
+          "type": 1,
+          "item_id": 1,
+          "name": "佣兵短剑",
+          "price": 30,
+          "icon": "佣兵短剑"
+        },
+        {
+          "type": 1,
+          "item_id": 2,
+          "name": "劣质皮甲",
+          "price": 20,
+          "icon": "劣质皮甲"
+        },
+        {
+          "type": 1,
+          "item_id": 3,
+          "name": "轻骑护手:A1:C15",
+          "price": 120,
+          "icon": "轻骑护手"
+        },
+        {
+          "type": 1,
+          "item_id": 6,
+          "name": "骷髅盾:D1",
+          "price": 70,
+          "icon": "骷髅盾"
+        },
+        {
+          "type": 1,
+          "item_id": 7,
+          "name": "回复戒指:A4",
+          "price": 850,
+          "icon": "回复戒指"
+        }
+      ],
+      "dialogues": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "过去的商人 ：\n你可以在我这里购买合成之前的一些东西。",
+          "choices": [
+            "买卖装备",
+            "合成装备",
+            "没什么事情"
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 6,
+      "name": "过去的商人",
+      "x": 9,
+      "y": 10,
+      "character": "018-Thief03",
+      "goods": [
+        {
+          "type": 1,
+          "item_id": 1,
+          "name": "佣兵短剑",
+          "price": 30,
+          "icon": "佣兵短剑"
+        },
+        {
+          "type": 1,
+          "item_id": 2,
+          "name": "劣质皮甲",
+          "price": 20,
+          "icon": "劣质皮甲"
+        },
+        {
+          "type": 1,
+          "item_id": 3,
+          "name": "轻骑护手:A1:C15",
+          "price": 120,
+          "icon": "轻骑护手"
+        },
+        {
+          "type": 1,
+          "item_id": 6,
+          "name": "骷髅盾:D1",
+          "price": 70,
+          "icon": "骷髅盾"
+        },
+        {
+          "type": 1,
+          "item_id": 7,
+          "name": "回复戒指:A4",
+          "price": 850,
+          "icon": "回复戒指"
+        }
+      ],
+      "dialogues": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "过去的商人：\n你可以在我这里购买合成之前的一些东西。\n奈文摩尔：\n很好，现在的我，\n感觉自己又强大了许多。",
+          "choices": [
+            "买卖装备",
+            "合成装备",
+            "没什么事情"
+          ]
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "event_id": 7,
+      "name": "血瓶:500000",
+      "x": 15,
+      "y": 9,
+      "character": "Item01-02",
+      "dialogue_tree": [
+
+      ]
+    }
+  ],
+  "bulletins": [
+    {
+      "event_id": 3,
+      "name": "路牌",
+      "x": 11,
+      "y": 9,
+      "content": "设定说明之以太之镜\n这件装备涉及到两个需要说明的概念，第一个是所\n有魔法伤害的增加，这一伤害增幅是在最终结算时\n，也就是说计算完法术能量之后。"
+    }
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 7
+}

@@ -1,0 +1,137 @@
+{
+  "map_id": 20,
+  "name": "瑞格沃酒馆",
+  "group": "厄泽城大系",
+  "role": "瑞格沃酒馆",
+  "width": 30,
+  "height": 20,
+  "tileset_id": 74,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 2,
+      "name": "EV002",
+      "x": 12,
+      "y": 15,
+      "to_map_id": 17,
+      "to_map_name": "厄泽城",
+      "to_pos": [
+        58,
+        68
+      ]
+    }
+  ],
+  "shops": [
+
+  ],
+  "npcs": [
+    {
+      "event_id": 1,
+      "name": "EV001",
+      "x": 10,
+      "y": 8,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "贾斯汀：\n那边是通往客房的地方。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 3,
+      "name": "重甲佣兵",
+      "x": 18,
+      "y": 11,
+      "character": "014-Warrior02",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "重甲佣兵：\n妈的，公会那帮人真是让人火大。\n居然说只允许特级佣兵通过封锁线\n，还把老子给踹了回来。\n重甲佣兵：\n奶奶的，不就是特级佣兵吗，老子\n只需要顶多几个月就能晋升了，至\n于在乎那么一会儿？",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 4,
+      "name": "红发佣兵",
+      "x": 20,
+      "y": 6,
+      "character": "013-Warrior01",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "红发佣兵：\nZZZZ……\n好像已经睡着了，而原本坐在他对面的人并没有买\n单的样子。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 5,
+      "name": "老板娘",
+      "x": 14,
+      "y": 7,
+      "character": "119-Civilian19",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "老板娘：\n想喝点什么不，小兄弟？\n贾斯汀：\n（每一枚金币都很宝贵，\n不能乱花钱……）",
+          "choices": [
+
+          ]
+        },
+        {
+          "page": 1,
+          "condition": {
+            "switch1": 110,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "老板娘：\n哎，佣兵公会不开门，生意越来越差了……",
+          "choices": [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "bulletins": [
+
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 6
+}

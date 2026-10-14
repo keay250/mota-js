@@ -1,0 +1,694 @@
+{
+  "map_id": 57,
+  "name": "船舱内部",
+  "group": "厄泽城大系",
+  "role": "船舱内部",
+  "width": 20,
+  "height": 36,
+  "tileset_id": 32,
+  "bgm": "",
+  "doorways": [
+    {
+      "event_id": 8,
+      "name": "EV008",
+      "x": 15,
+      "y": 9,
+      "to_map_id": 56,
+      "to_map_name": "商船甲板",
+      "to_pos": [
+        15,
+        10
+      ]
+    },
+    {
+      "event_id": 12,
+      "name": "EV012",
+      "x": 19,
+      "y": 7,
+      "to_map_id": 29,
+      "to_map_name": "姆伊森运河",
+      "to_pos": [
+        5,
+        7
+      ]
+    }
+  ],
+  "shops": [
+
+  ],
+  "npcs": [
+    {
+      "event_id": 1,
+      "name": "血瓶:400",
+      "x": 8,
+      "y": 24,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 2,
+      "name": "怪物060",
+      "x": 10,
+      "y": 28,
+      "character": "Monster07-04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 4,
+      "name": "怪物058",
+      "x": 8,
+      "y": 32,
+      "character": "Monster06-02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 5,
+      "name": "血瓶:400",
+      "x": 16,
+      "y": 24,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 6,
+      "name": "怪物061",
+      "x": 16,
+      "y": 30,
+      "character": "Monster07-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 7,
+      "name": "机关门",
+      "x": 12,
+      "y": 9,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 9,
+      "name": "怪物058",
+      "x": 12,
+      "y": 32,
+      "character": "Monster06-02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 11,
+      "name": "怪物064",
+      "x": 12,
+      "y": 4,
+      "character": "黑将",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "怎，怎么会……\n不，不可能，我是王都出身的顶级天才……\n为什么，会，输……\n贾斯汀：\n呼……呼……\n贾斯汀：\n把那个东西，\n还给我！\n哈哈，\n哈哈哈哈……\n你想要，那东西？\n我还以为是什么，你千辛万苦跑过来杀我，就是为\n了那东西？\n贾斯汀：\n那是拉瓦尔队长留给我的遗物！\n无论如何我也要将它夺回！\n哈哈，别开玩笑了。\n正视你自己吧，\n你其实也是渴望通过那东西来加快自己的修炼速度\n吧。\n我最讨厌的就是那些满口道义的家伙，就像教团的\n神棍一样令人恶心，你，和他们没什么区别！\n贾斯汀：\n我才没有！\n不愿意承认？\n好好看看你的内心吧。\n哈哈……\n我知道你这小子假仁假义。\n既然你信仰全能之神，满口普度众生。\n那你就没有想过，我一旦死去，\n之后又会死掉多少人吗？\n我，还有这个东西，都是训氏家族的希望，\n我死后，训氏家族不出十年必将惨遭灭门。\n贾斯汀：\n你，你这家伙……\n难道想说这一切都是因为我吗？！\n哈哈哈……当然不是。\n因为，弱小。\n你摧毁了我那弱小的家族翻盘的希望。\n总有一天，你会明白我的无奈的。\n总有一天，你会明白，你和我，并没有什么区别。\n总有一天……\n贾斯汀：\n闭嘴！！！\n贾斯汀：\n极限法球……果然在这里。\n贾斯汀：\n………………\n贾斯汀：\n………………\n贾斯汀：\n我，我……\n贾斯汀：\n我的内心，真的是为了自己的利益，\n才决心要将其夺回的吗……\n贾斯汀：\n…………\n贾斯汀：\n力量……\n前所未有的力量……\n我，已经沉醉于其中了吗……\n贾斯汀：\n对了！霍尔托前辈那边……",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 13,
+      "name": "怪物058",
+      "x": 16,
+      "y": 32,
+      "character": "Monster06-02",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 14,
+      "name": "黄钥匙",
+      "x": 7,
+      "y": 11,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 15,
+      "name": "机关门",
+      "x": 12,
+      "y": 7,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 16,
+      "name": "EV016",
+      "x": 12,
+      "y": 6,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "贾斯汀：\n训蛇士，你的末日到了！\n说实话，\n我真的十分后悔。\n贾斯汀：\n后悔当初在遗迹对我下毒之后没有补上一刀么？\n我后悔，当初为什么不下定决心招揽，\n如今，却是不得不将你这个潜力惊人的家伙杀死在\n这里了。\n贾斯汀：\n别做梦了，哪怕是这艘船上的准职业者也败在了我\n手下，就凭你一个……\n贾斯汀：\n不对，你，你……\n你突破了？！\n哈哈哈哈，正是如此，\n虽然没想到你不仅没死，而且能在如此之短的时间\n内突破到辉煌级别，但这并不要紧，因为，从你登\n上这条船开始，你就已经是死定了。\n同为辉煌级别，出身王都一流家族，被誉为当今王\n都第二天才的少爷我，可不是你这个穷乡僻野钻出\n来的小子所能比的。\n我如今的实力堪称职业者之下无敌，\n你绝不会是我的对手。\n贾斯汀：\n训蛇士……我跟你拼了！",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 17,
+      "name": "黄钥匙",
+      "x": 17,
+      "y": 11,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 18,
+      "name": "黄门",
+      "x": 12,
+      "y": 14,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 19,
+      "name": "黄门",
+      "x": 10,
+      "y": 32,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 20,
+      "name": "黄门",
+      "x": 14,
+      "y": 32,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 21,
+      "name": "怪物061",
+      "x": 8,
+      "y": 30,
+      "character": "Monster07-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 22,
+      "name": "怪物061",
+      "x": 12,
+      "y": 30,
+      "character": "Monster07-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 23,
+      "name": "黄钥匙",
+      "x": 8,
+      "y": 28,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 24,
+      "name": "黄钥匙",
+      "x": 12,
+      "y": 28,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 25,
+      "name": "黄钥匙",
+      "x": 16,
+      "y": 28,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 26,
+      "name": "黄门",
+      "x": 10,
+      "y": 24,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 27,
+      "name": "黄门",
+      "x": 12,
+      "y": 26,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 28,
+      "name": "黄门",
+      "x": 14,
+      "y": 24,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 29,
+      "name": "黄门",
+      "x": 12,
+      "y": 22,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 30,
+      "name": "黄门",
+      "x": 10,
+      "y": 16,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 31,
+      "name": "黄门",
+      "x": 8,
+      "y": 18,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 32,
+      "name": "黄门",
+      "x": 14,
+      "y": 16,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 33,
+      "name": "黄门",
+      "x": 16,
+      "y": 18,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 34,
+      "name": "怪物061",
+      "x": 12,
+      "y": 18,
+      "character": "Monster07-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 35,
+      "name": "怪物061",
+      "x": 10,
+      "y": 20,
+      "character": "Monster07-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 36,
+      "name": "怪物061",
+      "x": 14,
+      "y": 20,
+      "character": "Monster07-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 37,
+      "name": "黄钥匙",
+      "x": 12,
+      "y": 16,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 38,
+      "name": "黄钥匙",
+      "x": 8,
+      "y": 20,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 39,
+      "name": "黄钥匙",
+      "x": 16,
+      "y": 20,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 40,
+      "name": "黄门",
+      "x": 16,
+      "y": 26,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 41,
+      "name": "黄门",
+      "x": 8,
+      "y": 26,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 42,
+      "name": "怪物060",
+      "x": 14,
+      "y": 28,
+      "character": "Monster07-04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 43,
+      "name": "血瓶:400",
+      "x": 11,
+      "y": 15,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 44,
+      "name": "血瓶:400",
+      "x": 11,
+      "y": 17,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 45,
+      "name": "血瓶:400",
+      "x": 13,
+      "y": 17,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 46,
+      "name": "血瓶:400",
+      "x": 13,
+      "y": 15,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 47,
+      "name": "血瓶:400",
+      "x": 12,
+      "y": 20,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 48,
+      "name": "怪物059",
+      "x": 8,
+      "y": 22,
+      "character": "Monster14-05",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 49,
+      "name": "怪物062",
+      "x": 16,
+      "y": 22,
+      "character": "Monster14-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 50,
+      "name": "血瓶:400",
+      "x": 11,
+      "y": 23,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 51,
+      "name": "血瓶:800",
+      "x": 8,
+      "y": 16,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 52,
+      "name": "血瓶:800",
+      "x": 16,
+      "y": 16,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 53,
+      "name": "黄钥匙",
+      "x": 12,
+      "y": 11,
+      "character": "101-item01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 54,
+      "name": "血瓶:800",
+      "x": 8,
+      "y": 6,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 55,
+      "name": "血瓶:800",
+      "x": 7,
+      "y": 5,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 56,
+      "name": "血瓶:800",
+      "x": 16,
+      "y": 6,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 57,
+      "name": "血瓶:800",
+      "x": 17,
+      "y": 5,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 58,
+      "name": "血瓶:800",
+      "x": 8,
+      "y": 4,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 59,
+      "name": "血瓶:800",
+      "x": 16,
+      "y": 4,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 60,
+      "name": "EV060",
+      "x": 12,
+      "y": 12,
+      "character": "",
+      "dialogue_tree": [
+        {
+          "page": 0,
+          "condition": {
+            "switch1": null,
+            "switch2": null,
+            "variable": null,
+            "self_switch": null
+          },
+          "text": "贾斯汀：\n训蛇士这家伙应该就躲在房间里面。\n房间门前的魔法屏障应该是下面的那\n几个魔导士弄出来的。\n贾斯汀：\n必须先把他们解决掉。",
+          "choices": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "event_id": 61,
+      "name": "怪物062",
+      "x": 12,
+      "y": 8,
+      "character": "Monster14-01",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 62,
+      "name": "机关门",
+      "x": 12,
+      "y": 13,
+      "character": "Event01-Door04",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 63,
+      "name": "血瓶:400",
+      "x": 13,
+      "y": 25,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 64,
+      "name": "血瓶:400",
+      "x": 11,
+      "y": 25,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    },
+    {
+      "event_id": 65,
+      "name": "血瓶:400",
+      "x": 13,
+      "y": 23,
+      "character": "103-item03",
+      "dialogue_tree": [
+
+      ]
+    }
+  ],
+  "bulletins": [
+
+  ],
+  "interactables": [
+
+  ],
+  "events_count": 65
+}
