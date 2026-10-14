@@ -1,0 +1,428 @@
+{
+  "map_id": 14,
+  "width": 20,
+  "height": 15,
+  "tileset_id": 4,
+  "bgm": "",
+  "teleports": [
+    {
+      "event_id": 4,
+      "name": "EV004",
+      "x": 12,
+      "y": 14,
+      "target_map_id": 11,
+      "target_x": 12,
+      "target_y": 0
+    },
+    {
+      "event_id": 31,
+      "name": "EV031",
+      "x": 19,
+      "y": 9,
+      "target_map_id": 16,
+      "target_x": 5,
+      "target_y": 9
+    },
+    {
+      "event_id": 32,
+      "name": "EV032",
+      "x": 5,
+      "y": 8,
+      "target_map_id": 22,
+      "target_x": 19,
+      "target_y": 8
+    }
+  ],
+  "monsters": [
+    {
+      "event_id": 2,
+      "code_name": "怪物012",
+      "x": 18,
+      "y": 9,
+      "character": "Monster11-01",
+      "enemy_id": 12,
+      "real_name": "丛林幽影:50",
+      "hp": 122,
+      "atk": 11,
+      "def": 2,
+      "exp": 6,
+      "gold": 3
+    },
+    {
+      "event_id": 5,
+      "code_name": "怪物010",
+      "x": 18,
+      "y": 11,
+      "character": "Monster01-04",
+      "enemy_id": 10,
+      "real_name": "寒冰软泥怪:60:2",
+      "hp": 300,
+      "atk": 2,
+      "def": 0,
+      "exp": 4,
+      "gold": 2
+    },
+    {
+      "event_id": 6,
+      "code_name": "怪物011",
+      "x": 14,
+      "y": 12,
+      "character": "Monster01-03",
+      "enemy_id": 11,
+      "real_name": "荷依米贵族:25",
+      "hp": 101,
+      "atk": 13,
+      "def": 3,
+      "exp": 5,
+      "gold": 3
+    },
+    {
+      "event_id": 7,
+      "code_name": "怪物006",
+      "x": 13,
+      "y": 13,
+      "character": "Monster01-01",
+      "enemy_id": 6,
+      "real_name": "倍荷玛",
+      "hp": 58,
+      "atk": 7,
+      "def": 1,
+      "exp": 3,
+      "gold": 1
+    },
+    {
+      "event_id": 9,
+      "code_name": "怪物009",
+      "x": 9,
+      "y": 13,
+      "character": "Monster02-02",
+      "enemy_id": 9,
+      "real_name": "嗜血死者:15:2",
+      "hp": 75,
+      "atk": 18,
+      "def": 1,
+      "exp": 5,
+      "gold": 3
+    },
+    {
+      "event_id": 12,
+      "code_name": "怪物007",
+      "x": 10,
+      "y": 13,
+      "character": "Monster02-01",
+      "enemy_id": 7,
+      "real_name": "复活的死者:10",
+      "hp": 45,
+      "atk": 15,
+      "def": 0,
+      "exp": 3,
+      "gold": 1
+    },
+    {
+      "event_id": 13,
+      "code_name": "怪物008",
+      "x": 13,
+      "y": 9,
+      "character": "Monster01-02",
+      "enemy_id": 8,
+      "real_name": "倍荷玛战士",
+      "hp": 80,
+      "atk": 11,
+      "def": 3,
+      "exp": 4,
+      "gold": 2
+    },
+    {
+      "event_id": 26,
+      "code_name": "怪物006",
+      "x": 10,
+      "y": 10,
+      "character": "Monster01-01",
+      "enemy_id": 6,
+      "real_name": "倍荷玛",
+      "hp": 58,
+      "atk": 7,
+      "def": 1,
+      "exp": 3,
+      "gold": 1
+    },
+    {
+      "event_id": 27,
+      "code_name": "怪物004",
+      "x": 11,
+      "y": 12,
+      "character": "Monster01-12",
+      "enemy_id": 4,
+      "real_name": "幽林鬼火:40",
+      "hp": 25,
+      "atk": 6,
+      "def": 0,
+      "exp": 2,
+      "gold": 1
+    },
+    {
+      "event_id": 30,
+      "code_name": "怪物008",
+      "x": 14,
+      "y": 10,
+      "character": "Monster01-02",
+      "enemy_id": 8,
+      "real_name": "倍荷玛战士",
+      "hp": 80,
+      "atk": 11,
+      "def": 3,
+      "exp": 4,
+      "gold": 2
+    },
+    {
+      "event_id": 35,
+      "code_name": "怪物007",
+      "x": 17,
+      "y": 10,
+      "character": "Monster02-01",
+      "enemy_id": 7,
+      "real_name": "复活的死者:10",
+      "hp": 45,
+      "atk": 15,
+      "def": 0,
+      "exp": 3,
+      "gold": 1
+    },
+    {
+      "event_id": 36,
+      "code_name": "怪物013",
+      "x": 14,
+      "y": 7,
+      "character": "Monster06-01",
+      "enemy_id": 13,
+      "real_name": "流浪法师:30",
+      "hp": 96,
+      "atk": 12,
+      "def": 4,
+      "exp": 6,
+      "gold": 3
+    },
+    {
+      "event_id": 37,
+      "code_name": "怪物014",
+      "x": 8,
+      "y": 8,
+      "character": "Monster04-01",
+      "enemy_id": null,
+      "real_name": "怪物014",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    }
+  ],
+  "special_doors": [
+
+  ],
+  "normal_doors": [
+
+  ],
+  "pickups": [
+    {
+      "event_id": 15,
+      "name": "血瓶:50",
+      "x": 6,
+      "y": 11,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 16,
+      "name": "血瓶:50",
+      "x": 8,
+      "y": 11,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 17,
+      "name": "蓝宝石:1",
+      "x": 6,
+      "y": 13,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 18,
+      "name": "蓝宝石:1",
+      "x": 8,
+      "y": 13,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 19,
+      "name": "生命上限:20",
+      "x": 7,
+      "y": 12,
+      "character": "Item01-Gem05"
+    },
+    {
+      "event_id": 20,
+      "name": "黄钥匙",
+      "x": 13,
+      "y": 10,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 21,
+      "name": "血瓶:200",
+      "x": 18,
+      "y": 10,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 22,
+      "name": "红宝石:1",
+      "x": 15,
+      "y": 13,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 23,
+      "name": "血瓶:50",
+      "x": 16,
+      "y": 12,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 24,
+      "name": "黄钥匙",
+      "x": 18,
+      "y": 12,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 25,
+      "name": "血瓶:100",
+      "x": 18,
+      "y": 13,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 28,
+      "name": "血瓶:50",
+      "x": 11,
+      "y": 11,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 29,
+      "name": "血瓶:50",
+      "x": 10,
+      "y": 11,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 34,
+      "name": "血瓶:100",
+      "x": 12,
+      "y": 7,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 38,
+      "name": "生命上限:20",
+      "x": 11,
+      "y": 8,
+      "character": "Item01-Gem05"
+    },
+    {
+      "event_id": 39,
+      "name": "红宝石:1",
+      "x": 15,
+      "y": 7,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 40,
+      "name": "蓝宝石:1",
+      "x": 18,
+      "y": 8,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 41,
+      "name": "血瓶:100",
+      "x": 6,
+      "y": 9,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 42,
+      "name": "血瓶:50",
+      "x": 7,
+      "y": 9,
+      "character": "103-item03"
+    }
+  ],
+  "npcs": [
+    {
+      "event_id": 3,
+      "name": "EV003",
+      "x": 8,
+      "y": 5,
+      "character": "大船",
+      "dialogue": [
+
+      ]
+    },
+    {
+      "event_id": 8,
+      "name": "EV008",
+      "x": 2,
+      "y": 3,
+      "character": "大船",
+      "dialogue": [
+
+      ]
+    },
+    {
+      "event_id": 11,
+      "name": "EV011",
+      "x": 18,
+      "y": 0,
+      "character": "大船",
+      "dialogue": [
+
+      ]
+    },
+    {
+      "event_id": 14,
+      "name": "路牌",
+      "x": 12,
+      "y": 12,
+      "character": "186-Bulletin01",
+      "dialogue": [
+        "设定说明之闪避",
+        "每回合实际造成的伤害除了先前提到的攻速系数外",
+        "，还存在着命中系数。",
+        "通常情况下初始命中系数为1，而闪避类的技能可",
+        "以削弱命中系数。",
+        "例如攻击力为15，攻速400%，对手防御为5，闪避",
+        "率为30%",
+        "那么每回合实际造成伤害为（15-5）*2.0*0.7",
+        "0.7即是由闪避得来的系数",
+        "闪避只能针对单纯意义上的普攻伤害。"
+      ]
+    }
+  ],
+  "other_events": [
+    {
+      "event_id": 1,
+      "name": "EV001",
+      "x": 5,
+      "y": 0,
+      "character": ""
+    },
+    {
+      "event_id": 10,
+      "name": "EV010",
+      "x": 5,
+      "y": 1,
+      "character": ""
+    }
+  ]
+}

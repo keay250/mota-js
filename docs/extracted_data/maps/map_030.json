@@ -1,0 +1,226 @@
+{
+  "map_id": 30,
+  "width": 20,
+  "height": 15,
+  "tileset_id": 4,
+  "bgm": "",
+  "teleports": [
+    {
+      "event_id": 12,
+      "name": "EV012",
+      "x": 19,
+      "y": 7,
+      "target_map_id": 29,
+      "target_x": 5,
+      "target_y": 7
+    },
+    {
+      "event_id": 15,
+      "name": "EV015",
+      "x": 5,
+      "y": 8,
+      "target_map_id": 54,
+      "target_x": 19,
+      "target_y": 8
+    }
+  ],
+  "monsters": [
+    {
+      "event_id": 1,
+      "code_name": "怪物034",
+      "x": 6,
+      "y": 8,
+      "character": "Monster04-03",
+      "enemy_id": null,
+      "real_name": "怪物034",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 4,
+      "code_name": "怪物034",
+      "x": 11,
+      "y": 8,
+      "character": "Monster04-03",
+      "enemy_id": null,
+      "real_name": "怪物034",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 13,
+      "code_name": "怪物034",
+      "x": 9,
+      "y": 11,
+      "character": "Monster04-03",
+      "enemy_id": null,
+      "real_name": "怪物034",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 14,
+      "code_name": "怪物057",
+      "x": 12,
+      "y": 11,
+      "character": "Monster04-01",
+      "enemy_id": null,
+      "real_name": "怪物057",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    }
+  ],
+  "special_doors": [
+
+  ],
+  "normal_doors": [
+
+  ],
+  "pickups": [
+    {
+      "event_id": 2,
+      "name": "红钥匙",
+      "x": 15,
+      "y": 11,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 16,
+      "name": "血瓶:800",
+      "x": 11,
+      "y": 10,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 17,
+      "name": "红宝石:1",
+      "x": 13,
+      "y": 11,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 18,
+      "name": "蓝宝石:1",
+      "x": 14,
+      "y": 11,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 21,
+      "name": "血瓶:800",
+      "x": 16,
+      "y": 11,
+      "character": "103-item03"
+    }
+  ],
+  "npcs": [
+    {
+      "event_id": 5,
+      "name": "小站:4",
+      "x": 14,
+      "y": 13,
+      "character": "传送装置-大",
+      "dialogue": [
+
+      ]
+    },
+    {
+      "event_id": 6,
+      "name": "小站:4",
+      "x": 15,
+      "y": 13,
+      "character": "传送装置-器",
+      "dialogue": [
+
+      ]
+    },
+    {
+      "event_id": 7,
+      "name": "小站",
+      "x": 13,
+      "y": 12,
+      "character": "传送装置-器",
+      "dialogue": [
+
+      ]
+    },
+    {
+      "event_id": 8,
+      "name": "小站",
+      "x": 13,
+      "y": 13,
+      "character": "传送装置-器",
+      "dialogue": [
+
+      ]
+    },
+    {
+      "event_id": 9,
+      "name": "小站",
+      "x": 16,
+      "y": 12,
+      "character": "传送装置-器",
+      "dialogue": [
+
+      ]
+    },
+    {
+      "event_id": 11,
+      "name": "小站",
+      "x": 16,
+      "y": 13,
+      "character": "传送装置-器",
+      "dialogue": [
+
+      ]
+    },
+    {
+      "event_id": 19,
+      "name": "EV019",
+      "x": 17,
+      "y": 4,
+      "character": "大船",
+      "dialogue": [
+
+      ]
+    },
+    {
+      "event_id": 20,
+      "name": "EV020",
+      "x": 10,
+      "y": 1,
+      "character": "大船",
+      "dialogue": [
+
+      ]
+    }
+  ],
+  "other_events": [
+    {
+      "event_id": 3,
+      "name": "EV003",
+      "x": 5,
+      "y": 0,
+      "character": ""
+    },
+    {
+      "event_id": 10,
+      "name": "EV010",
+      "x": 5,
+      "y": 1,
+      "character": ""
+    }
+  ]
+}

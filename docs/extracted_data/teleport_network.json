@@ -1,0 +1,1292 @@
+[
+  {
+    "from_map_id": 7,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      7,
+      14
+    ],
+    "to_map_id": 49,
+    "to_map_name": "寂静之森核心",
+    "to_pos": [
+      17,
+      0
+    ],
+    "event_name": "EV018"
+  },
+  {
+    "from_map_id": 7,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      17,
+      0
+    ],
+    "to_map_id": 9,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      7,
+      14
+    ],
+    "event_name": "EV054"
+  },
+  {
+    "from_map_id": 9,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      17,
+      0
+    ],
+    "to_map_id": 10,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      8,
+      14
+    ],
+    "event_name": "EV044"
+  },
+  {
+    "from_map_id": 9,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      7,
+      14
+    ],
+    "to_map_id": 7,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      17,
+      0
+    ],
+    "event_name": "EV045"
+  },
+  {
+    "from_map_id": 10,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      8,
+      14
+    ],
+    "to_map_id": 9,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      17,
+      0
+    ],
+    "event_name": "EV012"
+  },
+  {
+    "from_map_id": 10,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      5,
+      3
+    ],
+    "to_map_id": 15,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      19,
+      3
+    ],
+    "event_name": "EV053"
+  },
+  {
+    "from_map_id": 10,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      19,
+      5
+    ],
+    "to_map_id": 12,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      5,
+      7
+    ],
+    "event_name": "EV066"
+  },
+  {
+    "from_map_id": 10,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      14,
+      0
+    ],
+    "to_map_id": 11,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      16,
+      14
+    ],
+    "event_name": "EV067"
+  },
+  {
+    "from_map_id": 11,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      16,
+      14
+    ],
+    "to_map_id": 10,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      14,
+      0
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 11,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      12,
+      0
+    ],
+    "to_map_id": 14,
+    "to_map_name": "姆伊森运河",
+    "to_pos": [
+      12,
+      14
+    ],
+    "event_name": "EV039"
+  },
+  {
+    "from_map_id": 12,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      5,
+      7
+    ],
+    "to_map_id": 10,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      19,
+      5
+    ],
+    "event_name": "EV019"
+  },
+  {
+    "from_map_id": 12,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      19,
+      7
+    ],
+    "to_map_id": 13,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      5,
+      7
+    ],
+    "event_name": "EV065"
+  },
+  {
+    "from_map_id": 12,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      12,
+      0
+    ],
+    "to_map_id": 16,
+    "to_map_name": "姆伊森运河",
+    "to_pos": [
+      12,
+      14
+    ],
+    "event_name": "EV066"
+  },
+  {
+    "from_map_id": 13,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      5,
+      7
+    ],
+    "to_map_id": 12,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV011"
+  },
+  {
+    "from_map_id": 13,
+    "from_map_name": "寂静之森外围",
+    "from_pos": [
+      19,
+      7
+    ],
+    "to_map_id": 17,
+    "to_map_name": "厄泽城",
+    "to_pos": [
+      5,
+      72
+    ],
+    "event_name": "EV041"
+  },
+  {
+    "from_map_id": 14,
+    "from_map_name": "姆伊森运河",
+    "from_pos": [
+      12,
+      14
+    ],
+    "to_map_id": 11,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      12,
+      0
+    ],
+    "event_name": "EV004"
+  },
+  {
+    "from_map_id": 14,
+    "from_map_name": "姆伊森运河",
+    "from_pos": [
+      19,
+      9
+    ],
+    "to_map_id": 16,
+    "to_map_name": "姆伊森运河",
+    "to_pos": [
+      5,
+      9
+    ],
+    "event_name": "EV031"
+  },
+  {
+    "from_map_id": 14,
+    "from_map_name": "姆伊森运河",
+    "from_pos": [
+      5,
+      8
+    ],
+    "to_map_id": 22,
+    "to_map_name": "姆伊森运河",
+    "to_pos": [
+      19,
+      8
+    ],
+    "event_name": "EV032"
+  },
+  {
+    "from_map_id": 15,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      19,
+      3
+    ],
+    "to_map_id": 10,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      5,
+      3
+    ],
+    "event_name": "EV012"
+  },
+  {
+    "from_map_id": 15,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      8,
+      0
+    ],
+    "to_map_id": 21,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      8,
+      14
+    ],
+    "event_name": "EV064"
+  },
+  {
+    "from_map_id": 15,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      5,
+      11
+    ],
+    "to_map_id": 23,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      19,
+      4
+    ],
+    "event_name": "EV066"
+  },
+  {
+    "from_map_id": 16,
+    "from_map_name": "姆伊森运河",
+    "from_pos": [
+      5,
+      9
+    ],
+    "to_map_id": 14,
+    "to_map_name": "姆伊森运河",
+    "to_pos": [
+      19,
+      9
+    ],
+    "event_name": "EV002"
+  },
+  {
+    "from_map_id": 16,
+    "from_map_name": "姆伊森运河",
+    "from_pos": [
+      12,
+      14
+    ],
+    "to_map_id": 12,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      12,
+      0
+    ],
+    "event_name": "EV004"
+  },
+  {
+    "from_map_id": 17,
+    "from_map_name": "厄泽城",
+    "from_pos": [
+      5,
+      72
+    ],
+    "to_map_id": 13,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV007"
+  },
+  {
+    "from_map_id": 17,
+    "from_map_name": "厄泽城",
+    "from_pos": [
+      5,
+      71
+    ],
+    "to_map_id": 13,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 17,
+    "from_map_name": "厄泽城",
+    "from_pos": [
+      5,
+      73
+    ],
+    "to_map_id": 13,
+    "to_map_name": "寂静之森外围",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV009"
+  },
+  {
+    "from_map_id": 17,
+    "from_map_name": "厄泽城",
+    "from_pos": [
+      41,
+      24
+    ],
+    "to_map_id": 19,
+    "to_map_name": "佣兵公会",
+    "to_pos": [
+      15,
+      36
+    ],
+    "event_name": "EV012"
+  },
+  {
+    "from_map_id": 17,
+    "from_map_name": "厄泽城",
+    "from_pos": [
+      68,
+      16
+    ],
+    "to_map_id": 18,
+    "to_map_name": "装备商店",
+    "to_pos": [
+      10,
+      15
+    ],
+    "event_name": "门"
+  },
+  {
+    "from_map_id": 17,
+    "from_map_name": "厄泽城",
+    "from_pos": [
+      58,
+      67
+    ],
+    "to_map_id": 20,
+    "to_map_name": "瑞格沃酒馆",
+    "to_pos": [
+      12,
+      14
+    ],
+    "event_name": "EV022"
+  },
+  {
+    "from_map_id": 17,
+    "from_map_name": "厄泽城",
+    "from_pos": [
+      55,
+      22
+    ],
+    "to_map_id": 17,
+    "to_map_name": "厄泽城",
+    "to_pos": [
+      8,
+      68
+    ],
+    "event_name": "EV026"
+  },
+  {
+    "from_map_id": 17,
+    "from_map_name": "厄泽城",
+    "from_pos": [
+      8,
+      67
+    ],
+    "to_map_id": 17,
+    "to_map_name": "厄泽城",
+    "to_pos": [
+      55,
+      23
+    ],
+    "event_name": "EV027"
+  },
+  {
+    "from_map_id": 18,
+    "from_map_name": "装备商店",
+    "from_pos": [
+      10,
+      16
+    ],
+    "to_map_id": 17,
+    "to_map_name": "厄泽城",
+    "to_pos": [
+      68,
+      17
+    ],
+    "event_name": "EV001"
+  },
+  {
+    "from_map_id": 19,
+    "from_map_name": "佣兵公会",
+    "from_pos": [
+      15,
+      37
+    ],
+    "to_map_id": 17,
+    "to_map_name": "厄泽城",
+    "to_pos": [
+      41,
+      25
+    ],
+    "event_name": "EV007"
+  },
+  {
+    "from_map_id": 19,
+    "from_map_name": "佣兵公会",
+    "from_pos": [
+      23,
+      30
+    ],
+    "to_map_id": 48,
+    "to_map_name": "右侧回廊",
+    "to_pos": [
+      8,
+      8
+    ],
+    "event_name": "EV018"
+  },
+  {
+    "from_map_id": 20,
+    "from_map_name": "瑞格沃酒馆",
+    "from_pos": [
+      12,
+      15
+    ],
+    "to_map_id": 17,
+    "to_map_name": "厄泽城",
+    "to_pos": [
+      58,
+      68
+    ],
+    "event_name": "EV002"
+  },
+  {
+    "from_map_id": 21,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      8,
+      14
+    ],
+    "to_map_id": 15,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      8,
+      0
+    ],
+    "event_name": "EV019"
+  },
+  {
+    "from_map_id": 21,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      8,
+      0
+    ],
+    "to_map_id": 22,
+    "to_map_name": "姆伊森运河",
+    "to_pos": [
+      8,
+      14
+    ],
+    "event_name": "EV020"
+  },
+  {
+    "from_map_id": 22,
+    "from_map_name": "姆伊森运河",
+    "from_pos": [
+      5,
+      8
+    ],
+    "to_map_id": 29,
+    "to_map_name": "姆伊森运河",
+    "to_pos": [
+      19,
+      8
+    ],
+    "event_name": "EV002"
+  },
+  {
+    "from_map_id": 22,
+    "from_map_name": "姆伊森运河",
+    "from_pos": [
+      8,
+      14
+    ],
+    "to_map_id": 21,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      8,
+      0
+    ],
+    "event_name": "EV004"
+  },
+  {
+    "from_map_id": 22,
+    "from_map_name": "姆伊森运河",
+    "from_pos": [
+      19,
+      8
+    ],
+    "to_map_id": 14,
+    "to_map_name": "姆伊森运河",
+    "to_pos": [
+      5,
+      8
+    ],
+    "event_name": "EV012"
+  },
+  {
+    "from_map_id": 23,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      19,
+      4
+    ],
+    "to_map_id": 15,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      5,
+      11
+    ],
+    "event_name": "EV021"
+  },
+  {
+    "from_map_id": 23,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      6,
+      14
+    ],
+    "to_map_id": 24,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      18,
+      0
+    ],
+    "event_name": "EV035"
+  },
+  {
+    "from_map_id": 24,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      18,
+      0
+    ],
+    "to_map_id": 23,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      6,
+      14
+    ],
+    "event_name": "EV015"
+  },
+  {
+    "from_map_id": 24,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      5,
+      2
+    ],
+    "to_map_id": 25,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      19,
+      2
+    ],
+    "event_name": "EV065"
+  },
+  {
+    "from_map_id": 25,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      19,
+      2
+    ],
+    "to_map_id": 24,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      5,
+      2
+    ],
+    "event_name": "EV004"
+  },
+  {
+    "from_map_id": 25,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      5,
+      11
+    ],
+    "to_map_id": 26,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      19,
+      11
+    ],
+    "event_name": "EV074"
+  },
+  {
+    "from_map_id": 26,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      19,
+      11
+    ],
+    "to_map_id": 25,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      5,
+      11
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 26,
+    "from_map_name": "寂静之森深处",
+    "from_pos": [
+      12,
+      4
+    ],
+    "to_map_id": 27,
+    "to_map_name": "莱尼克之墓 入口",
+    "to_pos": [
+      12,
+      14
+    ],
+    "event_name": "EV049"
+  },
+  {
+    "from_map_id": 27,
+    "from_map_name": "莱尼克之墓 入口",
+    "from_pos": [
+      12,
+      14
+    ],
+    "to_map_id": 26,
+    "to_map_name": "寂静之森深处",
+    "to_pos": [
+      12,
+      5
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 27,
+    "from_map_name": "莱尼克之墓 入口",
+    "from_pos": [
+      12,
+      2
+    ],
+    "to_map_id": 28,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      12,
+      14
+    ],
+    "event_name": "EV027"
+  },
+  {
+    "from_map_id": 28,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      12,
+      14
+    ],
+    "to_map_id": 27,
+    "to_map_name": "莱尼克之墓 入口",
+    "to_pos": [
+      12,
+      3
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 28,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      12,
+      0
+    ],
+    "to_map_id": 33,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      12,
+      14
+    ],
+    "event_name": "EV036"
+  },
+  {
+    "from_map_id": 28,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      5,
+      7
+    ],
+    "to_map_id": 31,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV066"
+  },
+  {
+    "from_map_id": 28,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      19,
+      7
+    ],
+    "to_map_id": 32,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      5,
+      7
+    ],
+    "event_name": "EV067"
+  },
+  {
+    "from_map_id": 29,
+    "from_map_name": "姆伊森运河",
+    "from_pos": [
+      19,
+      8
+    ],
+    "to_map_id": 22,
+    "to_map_name": "姆伊森运河",
+    "to_pos": [
+      5,
+      8
+    ],
+    "event_name": "EV012"
+  },
+  {
+    "from_map_id": 29,
+    "from_map_name": "姆伊森运河",
+    "from_pos": [
+      5,
+      7
+    ],
+    "to_map_id": 30,
+    "to_map_name": "姆伊森运河",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV018"
+  },
+  {
+    "from_map_id": 30,
+    "from_map_name": "姆伊森运河",
+    "from_pos": [
+      19,
+      7
+    ],
+    "to_map_id": 29,
+    "to_map_name": "姆伊森运河",
+    "to_pos": [
+      5,
+      7
+    ],
+    "event_name": "EV012"
+  },
+  {
+    "from_map_id": 30,
+    "from_map_name": "姆伊森运河",
+    "from_pos": [
+      5,
+      8
+    ],
+    "to_map_id": 54,
+    "to_map_name": "姆伊森运河",
+    "to_pos": [
+      19,
+      8
+    ],
+    "event_name": "EV015"
+  },
+  {
+    "from_map_id": 31,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      19,
+      7
+    ],
+    "to_map_id": 28,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      5,
+      7
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 32,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      5,
+      7
+    ],
+    "to_map_id": 28,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 33,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      12,
+      14
+    ],
+    "to_map_id": 28,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      12,
+      0
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 33,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      12,
+      0
+    ],
+    "to_map_id": 36,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      12,
+      14
+    ],
+    "event_name": "EV069"
+  },
+  {
+    "from_map_id": 33,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      5,
+      7
+    ],
+    "to_map_id": 34,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV079"
+  },
+  {
+    "from_map_id": 33,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      19,
+      7
+    ],
+    "to_map_id": 35,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      5,
+      7
+    ],
+    "event_name": "EV080"
+  },
+  {
+    "from_map_id": 34,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      19,
+      7
+    ],
+    "to_map_id": 33,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      5,
+      7
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 35,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      5,
+      7
+    ],
+    "to_map_id": 33,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 36,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      12,
+      14
+    ],
+    "to_map_id": 33,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      12,
+      0
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 36,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      5,
+      7
+    ],
+    "to_map_id": 37,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV070"
+  },
+  {
+    "from_map_id": 36,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      19,
+      7
+    ],
+    "to_map_id": 38,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      5,
+      7
+    ],
+    "event_name": "EV071"
+  },
+  {
+    "from_map_id": 36,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      12,
+      0
+    ],
+    "to_map_id": 40,
+    "to_map_name": "莱尼克之墓 中层入口",
+    "to_pos": [
+      12,
+      14
+    ],
+    "event_name": "EV079"
+  },
+  {
+    "from_map_id": 37,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      19,
+      7
+    ],
+    "to_map_id": 36,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      5,
+      7
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 38,
+    "from_map_name": "莱尼克之墓 上层",
+    "from_pos": [
+      5,
+      7
+    ],
+    "to_map_id": 36,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 39,
+    "from_map_name": "莱尼克之墓 中层",
+    "from_pos": [
+      12,
+      0
+    ],
+    "to_map_id": 41,
+    "to_map_name": "莱尼克之墓 中层",
+    "to_pos": [
+      12,
+      14
+    ],
+    "event_name": "EV005"
+  },
+  {
+    "from_map_id": 39,
+    "from_map_name": "莱尼克之墓 中层",
+    "from_pos": [
+      12,
+      14
+    ],
+    "to_map_id": 42,
+    "to_map_name": "莱尼克之墓 中层",
+    "to_pos": [
+      12,
+      0
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 39,
+    "from_map_name": "莱尼克之墓 中层",
+    "from_pos": [
+      5,
+      7
+    ],
+    "to_map_id": 44,
+    "to_map_name": "莱尼克之墓 中层",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV039"
+  },
+  {
+    "from_map_id": 39,
+    "from_map_name": "莱尼克之墓 中层",
+    "from_pos": [
+      19,
+      7
+    ],
+    "to_map_id": 45,
+    "to_map_name": "莱尼克之墓 中层",
+    "to_pos": [
+      5,
+      7
+    ],
+    "event_name": "EV040"
+  },
+  {
+    "from_map_id": 40,
+    "from_map_name": "莱尼克之墓 中层入口",
+    "from_pos": [
+      12,
+      10
+    ],
+    "to_map_id": 41,
+    "to_map_name": "莱尼克之墓 中层",
+    "to_pos": [
+      12,
+      6
+    ],
+    "event_name": "EV001"
+  },
+  {
+    "from_map_id": 40,
+    "from_map_name": "莱尼克之墓 中层入口",
+    "from_pos": [
+      12,
+      14
+    ],
+    "to_map_id": 36,
+    "to_map_name": "莱尼克之墓 上层",
+    "to_pos": [
+      12,
+      0
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 41,
+    "from_map_name": "莱尼克之墓 中层",
+    "from_pos": [
+      12,
+      5
+    ],
+    "to_map_id": 40,
+    "to_map_name": "莱尼克之墓 中层入口",
+    "to_pos": [
+      12,
+      9
+    ],
+    "event_name": "EV001"
+  },
+  {
+    "from_map_id": 41,
+    "from_map_name": "莱尼克之墓 中层",
+    "from_pos": [
+      12,
+      14
+    ],
+    "to_map_id": 39,
+    "to_map_name": "莱尼克之墓 中层",
+    "to_pos": [
+      12,
+      0
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 42,
+    "from_map_name": "莱尼克之墓 中层",
+    "from_pos": [
+      12,
+      0
+    ],
+    "to_map_id": 39,
+    "to_map_name": "莱尼克之墓 中层",
+    "to_pos": [
+      12,
+      14
+    ],
+    "event_name": "EV008"
+  },
+  {
+    "from_map_id": 42,
+    "from_map_name": "莱尼克之墓 中层",
+    "from_pos": [
+      12,
+      3
+    ],
+    "to_map_id": 43,
+    "to_map_name": "莱尼克之墓 核心",
+    "to_pos": [
+      11,
+      12
+    ],
+    "event_name": "EV016"
+  },
+  {
+    "from_map_id": 42,
+    "from_map_name": "莱尼克之墓 中层",
+    "from_pos": [
+      5,
+      7
+    ],
+    "to_map_id": 46,
+    "to_map_name": "莱尼克之墓 中层",
+    "to_pos": [
+      19,
+      7
+    ],
+    "event_name": "EV021"
+  },
+  {
+    "from_map_id": 42,
+    "from_map_name": "莱尼克之墓 中层",
+    "from_pos": [
+      19,
+      7
+    ],
+    "to_map_id": 47,
+    "to_map_name": "莱尼克之墓 中层",
+    "to_pos": [
+      5,
+      7
+    ],
+    "event_name": "EV037"
+  },
+  {
+    "from_map_id": 43,
+    "from_map_name": "莱尼克之墓 核心",
+    "from_pos": [
+      13,
+      12
+    ],
+    "to_map_id": 42,
+    "to_map_name": "莱尼克之墓 中层",
+    "to_pos": [
+      12,
+      13
+    ],
+    "event_name": "？？？"
+  },
+  {
+    "from_map_id": 43,
+    "from_map_name": "莱尼克之墓 核心",
+    "from_pos": [
+      12,
+      14
+    ],
+    "to_map_id": 27,
+    "to_map_name": "莱尼克之墓 入口",
+    "to_pos": [
+      12,
+      3
+    ],
+    "event_name": "EV008"
+  }
+]

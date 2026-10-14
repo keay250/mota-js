@@ -1,0 +1,85 @@
+{
+  "map_id": 41,
+  "width": 20,
+  "height": 15,
+  "tileset_id": 57,
+  "bgm": "",
+  "teleports": [
+    {
+      "event_id": 1,
+      "name": "EV001",
+      "x": 12,
+      "y": 5,
+      "target_map_id": 40,
+      "target_x": 12,
+      "target_y": 9
+    },
+    {
+      "event_id": 8,
+      "name": "EV008",
+      "x": 12,
+      "y": 14,
+      "target_map_id": 39,
+      "target_x": 12,
+      "target_y": 0
+    }
+  ],
+  "monsters": [
+
+  ],
+  "special_doors": [
+
+  ],
+  "normal_doors": [
+
+  ],
+  "pickups": [
+    {
+      "event_id": 2,
+      "name": "血瓶:800",
+      "x": 11,
+      "y": 6,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 4,
+      "name": "血瓶:800",
+      "x": 13,
+      "y": 6,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 18,
+      "name": "血瓶:800",
+      "x": 12,
+      "y": 8,
+      "character": "103-item03"
+    }
+  ],
+  "npcs": [
+
+  ],
+  "other_events": [
+    {
+      "event_id": 3,
+      "name": "EV003",
+      "x": 5,
+      "y": 0,
+      "character": ""
+    },
+    {
+      "event_id": 10,
+      "name": "EV010",
+      "x": 5,
+      "y": 1,
+      "character": ""
+    },
+    {
+      "event_id": 17,
+      "name": "EV017",
+      "x": 12,
+      "y": 10,
+      "character": ""
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "map_id": 42,
+  "width": 20,
+  "height": 15,
+  "tileset_id": 57,
+  "bgm": "",
+  "teleports": [
+    {
+      "event_id": 8,
+      "name": "EV008",
+      "x": 12,
+      "y": 0,
+      "target_map_id": 39,
+      "target_x": 12,
+      "target_y": 14
+    },
+    {
+      "event_id": 16,
+      "name": "EV016",
+      "x": 12,
+      "y": 3,
+      "target_map_id": 43,
+      "target_x": 11,
+      "target_y": 12
+    },
+    {
+      "event_id": 21,
+      "name": "EV021",
+      "x": 5,
+      "y": 7,
+      "target_map_id": 46,
+      "target_x": 19,
+      "target_y": 7
+    },
+    {
+      "event_id": 37,
+      "name": "EV037",
+      "x": 19,
+      "y": 7,
+      "target_map_id": 47,
+      "target_x": 5,
+      "target_y": 7
+    }
+  ],
+  "monsters": [
+    {
+      "event_id": 15,
+      "code_name": "怪物046",
+      "x": 12,
+      "y": 7,
+      "character": "Actor02-Monster17",
+      "enemy_id": null,
+      "real_name": "怪物046",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 18,
+      "code_name": "怪物039",
+      "x": 7,
+      "y": 7,
+      "character": "Monster11-01",
+      "enemy_id": null,
+      "real_name": "怪物039",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 19,
+      "code_name": "怪物039",
+      "x": 17,
+      "y": 7,
+      "character": "Monster11-01",
+      "enemy_id": null,
+      "real_name": "怪物039",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    }
+  ],
+  "special_doors": [
+    {
+      "event_id": 1,
+      "name": "机关门",
+      "x": 7,
+      "y": 6,
+      "character": "Event01-Door04",
+      "guard_area": {
+        "x1": 7,
+        "y1": 7,
+        "x2": 7,
+        "y2": 7
+      },
+      "raw_script": "x1=7;y1=7;x2=7;y2=7;@sw=true\nfor y in y1...y2+1\nfor x in x1...x2+1\nif $game_map.have_an_event?(x,y)\n@iid=$game_map.check_event(x,y)\nif $game_map.events[@iid]\\\n.event.name[0,6]==\"怪物\"\n@sw=false;break\nend\nend\nend\nend"
+    },
+    {
+      "event_id": 2,
+      "name": "机关门",
+      "x": 7,
+      "y": 8,
+      "character": "Event01-Door04",
+      "guard_area": {
+        "x1": 7,
+        "y1": 7,
+        "x2": 7,
+        "y2": 7
+      },
+      "raw_script": "x1=7;y1=7;x2=7;y2=7;@sw=true\nfor y in y1...y2+1\nfor x in x1...x2+1\nif $game_map.have_an_event?(x,y)\n@iid=$game_map.check_event(x,y)\nif $game_map.events[@iid]\\\n.event.name[0,6]==\"怪物\"\n@sw=false;break\nend\nend\nend\nend"
+    },
+    {
+      "event_id": 4,
+      "name": "机关门",
+      "x": 11,
+      "y": 2,
+      "character": "Event01-Door04",
+      "guard_area": {
+        "x1": 7,
+        "y1": 7,
+        "x2": 7,
+        "y2": 7
+      },
+      "raw_script": "x1=7;y1=7;x2=7;y2=7;@sw=true\nfor y in y1...y2+1\nfor x in x1...x2+1\nif $game_map.have_an_event?(x,y)\n@iid=$game_map.check_event(x,y)\nif $game_map.events[@iid]\\\n.event.name[0,6]==\"怪物\"\n@sw=false;break\nend\nend\nend\nend"
+    },
+    {
+      "event_id": 5,
+      "name": "机关门",
+      "x": 13,
+      "y": 2,
+      "character": "Event01-Door04",
+      "guard_area": {
+        "x1": 17,
+        "y1": 7,
+        "x2": 17,
+        "y2": 7
+      },
+      "raw_script": "x1=17;y1=7;x2=17;y2=7;@sw=true\nfor y in y1...y2+1\nfor x in x1...x2+1\nif $game_map.have_an_event?(x,y)\n@iid=$game_map.check_event(x,y)\nif $game_map.events[@iid]\\\n.event.name[0,6]==\"怪物\"\n@sw=false;break\nend\nend\nend\nend"
+    },
+    {
+      "event_id": 6,
+      "name": "机关门",
+      "x": 17,
+      "y": 6,
+      "character": "Event01-Door04",
+      "guard_area": {
+        "x1": 17,
+        "y1": 7,
+        "x2": 17,
+        "y2": 7
+      },
+      "raw_script": "x1=17;y1=7;x2=17;y2=7;@sw=true\nfor y in y1...y2+1\nfor x in x1...x2+1\nif $game_map.have_an_event?(x,y)\n@iid=$game_map.check_event(x,y)\nif $game_map.events[@iid]\\\n.event.name[0,6]==\"怪物\"\n@sw=false;break\nend\nend\nend\nend"
+    },
+    {
+      "event_id": 9,
+      "name": "机关门",
+      "x": 13,
+      "y": 12,
+      "character": "Event01-Door04",
+      "guard_area": {
+        "x1": 17,
+        "y1": 7,
+        "x2": 17,
+        "y2": 7
+      },
+      "raw_script": "x1=17;y1=7;x2=17;y2=7;@sw=true\nfor y in y1...y2+1\nfor x in x1...x2+1\nif $game_map.have_an_event?(x,y)\n@iid=$game_map.check_event(x,y)\nif $game_map.events[@iid]\\\n.event.name[0,6]==\"怪物\"\n@sw=false;break\nend\nend\nend\nend"
+    },
+    {
+      "event_id": 11,
+      "name": "机关门",
+      "x": 11,
+      "y": 12,
+      "character": "Event01-Door04",
+      "guard_area": {
+        "x1": 7,
+        "y1": 7,
+        "x2": 7,
+        "y2": 7
+      },
+      "raw_script": "x1=7;y1=7;x2=7;y2=7;@sw=true\nfor y in y1...y2+1\nfor x in x1...x2+1\nif $game_map.have_an_event?(x,y)\n@iid=$game_map.check_event(x,y)\nif $game_map.events[@iid]\\\n.event.name[0,6]==\"怪物\"\n@sw=false;break\nend\nend\nend\nend"
+    },
+    {
+      "event_id": 12,
+      "name": "机关门",
+      "x": 8,
+      "y": 7,
+      "character": "Event01-Door04",
+      "guard_area": {
+        "x1": 7,
+        "y1": 7,
+        "x2": 7,
+        "y2": 7
+      },
+      "raw_script": "x1=7;y1=7;x2=7;y2=7;@sw=true\nfor y in y1...y2+1\nfor x in x1...x2+1\nif $game_map.have_an_event?(x,y)\n@iid=$game_map.check_event(x,y)\nif $game_map.events[@iid]\\\n.event.name[0,6]==\"怪物\"\n@sw=false;break\nend\nend\nend\nend"
+    },
+    {
+      "event_id": 13,
+      "name": "机关门",
+      "x": 16,
+      "y": 7,
+      "character": "Event01-Door04",
+      "guard_area": {
+        "x1": 17,
+        "y1": 7,
+        "x2": 17,
+        "y2": 7
+      },
+      "raw_script": "x1=17;y1=7;x2=17;y2=7;@sw=true\nfor y in y1...y2+1\nfor x in x1...x2+1\nif $game_map.have_an_event?(x,y)\n@iid=$game_map.check_event(x,y)\nif $game_map.events[@iid]\\\n.event.name[0,6]==\"怪物\"\n@sw=false;break\nend\nend\nend\nend"
+    },
+    {
+      "event_id": 20,
+      "name": "机关门",
+      "x": 17,
+      "y": 8,
+      "character": "Event01-Door04",
+      "guard_area": {
+        "x1": 17,
+        "y1": 7,
+        "x2": 17,
+        "y2": 7
+      },
+      "raw_script": "x1=17;y1=7;x2=17;y2=7;@sw=true\nfor y in y1...y2+1\nfor x in x1...x2+1\nif $game_map.have_an_event?(x,y)\n@iid=$game_map.check_event(x,y)\nif $game_map.events[@iid]\\\n.event.name[0,6]==\"怪物\"\n@sw=false;break\nend\nend\nend\nend"
+    }
+  ],
+  "normal_doors": [
+
+  ],
+  "pickups": [
+    {
+      "event_id": 7,
+      "name": "蓝宝石:1",
+      "x": 17,
+      "y": 10,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 22,
+      "name": "红宝石:1",
+      "x": 7,
+      "y": 4,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 23,
+      "name": "红宝石:1",
+      "x": 7,
+      "y": 10,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 24,
+      "name": "红宝石:1",
+      "x": 9,
+      "y": 2,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 25,
+      "name": "红宝石:1",
+      "x": 9,
+      "y": 12,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 26,
+      "name": "蓝宝石:1",
+      "x": 15,
+      "y": 12,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 27,
+      "name": "蓝宝石:1",
+      "x": 17,
+      "y": 4,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 28,
+      "name": "蓝宝石:1",
+      "x": 15,
+      "y": 2,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 29,
+      "name": "血瓶:400",
+      "x": 7,
+      "y": 3,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 30,
+      "name": "血瓶:400",
+      "x": 16,
+      "y": 2,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 31,
+      "name": "血瓶:400",
+      "x": 8,
+      "y": 12,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 32,
+      "name": "血瓶:400",
+      "x": 7,
+      "y": 11,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 33,
+      "name": "血瓶:400",
+      "x": 8,
+      "y": 2,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 34,
+      "name": "血瓶:400",
+      "x": 17,
+      "y": 3,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 35,
+      "name": "血瓶:400",
+      "x": 17,
+      "y": 11,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 36,
+      "name": "血瓶:400",
+      "x": 16,
+      "y": 12,
+      "character": "103-item03"
+    }
+  ],
+  "npcs": [
+    {
+      "event_id": 14,
+      "name": "？？？",
+      "x": 12,
+      "y": 5,
+      "character": "女主角（战斗）",
+      "dialogue": [
+
+      ]
+    },
+    {
+      "event_id": 17,
+      "name": "EV017",
+      "x": 12,
+      "y": 14,
+      "character": "",
+      "dialogue": [
+        "贾斯汀：",
+        "下面空荡荡的，基本都被那个少女清扫干净了呢。"
+      ]
+    }
+  ],
+  "other_events": [
+    {
+      "event_id": 3,
+      "name": "EV003",
+      "x": 5,
+      "y": 0,
+      "character": ""
+    },
+    {
+      "event_id": 10,
+      "name": "EV010",
+      "x": 5,
+      "y": 1,
+      "character": ""
+    }
+  ]
+}

@@ -1,0 +1,658 @@
+{
+  "map_id": 15,
+  "width": 20,
+  "height": 15,
+  "tileset_id": 4,
+  "bgm": "",
+  "teleports": [
+    {
+      "event_id": 12,
+      "name": "EV012",
+      "x": 19,
+      "y": 3,
+      "target_map_id": 10,
+      "target_x": 5,
+      "target_y": 3
+    },
+    {
+      "event_id": 64,
+      "name": "EV064",
+      "x": 8,
+      "y": 0,
+      "target_map_id": 21,
+      "target_x": 8,
+      "target_y": 14
+    },
+    {
+      "event_id": 66,
+      "name": "EV066",
+      "x": 5,
+      "y": 11,
+      "target_map_id": 23,
+      "target_x": 19,
+      "target_y": 4
+    }
+  ],
+  "monsters": [
+    {
+      "event_id": 2,
+      "code_name": "怪物009",
+      "x": 14,
+      "y": 10,
+      "character": "Monster02-02",
+      "enemy_id": 9,
+      "real_name": "嗜血死者:15:2",
+      "hp": 75,
+      "atk": 18,
+      "def": 1,
+      "exp": 5,
+      "gold": 3
+    },
+    {
+      "event_id": 3,
+      "code_name": "怪物010",
+      "x": 15,
+      "y": 5,
+      "character": "Monster01-04",
+      "enemy_id": 10,
+      "real_name": "寒冰软泥怪:60:2",
+      "hp": 300,
+      "atk": 2,
+      "def": 0,
+      "exp": 4,
+      "gold": 2
+    },
+    {
+      "event_id": 4,
+      "code_name": "怪物011",
+      "x": 12,
+      "y": 7,
+      "character": "Monster01-03",
+      "enemy_id": 11,
+      "real_name": "荷依米贵族:25",
+      "hp": 101,
+      "atk": 13,
+      "def": 3,
+      "exp": 5,
+      "gold": 3
+    },
+    {
+      "event_id": 5,
+      "code_name": "怪物012",
+      "x": 17,
+      "y": 10,
+      "character": "Monster11-01",
+      "enemy_id": 12,
+      "real_name": "丛林幽影:50",
+      "hp": 122,
+      "atk": 11,
+      "def": 2,
+      "exp": 6,
+      "gold": 3
+    },
+    {
+      "event_id": 6,
+      "code_name": "怪物015",
+      "x": 7,
+      "y": 9,
+      "character": "Monster01-01",
+      "enemy_id": 15,
+      "real_name": "倍荷玛拉",
+      "hp": 157,
+      "atk": 19,
+      "def": 8,
+      "exp": 7,
+      "gold": 4
+    },
+    {
+      "event_id": 7,
+      "code_name": "怪物016",
+      "x": 15,
+      "y": 1,
+      "character": "Monster01-03",
+      "enemy_id": null,
+      "real_name": "怪物016",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 8,
+      "code_name": "怪物013",
+      "x": 18,
+      "y": 9,
+      "character": "Monster06-01",
+      "enemy_id": 13,
+      "real_name": "流浪法师:30",
+      "hp": 96,
+      "atk": 12,
+      "def": 4,
+      "exp": 6,
+      "gold": 3
+    },
+    {
+      "event_id": 9,
+      "code_name": "怪物017",
+      "x": 7,
+      "y": 11,
+      "character": "Monster02-02",
+      "enemy_id": null,
+      "real_name": "怪物017",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 11,
+      "code_name": "怪物018",
+      "x": 16,
+      "y": 13,
+      "character": "Monster14-11",
+      "enemy_id": null,
+      "real_name": "怪物018",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 13,
+      "code_name": "怪物008",
+      "x": 17,
+      "y": 8,
+      "character": "Monster01-02",
+      "enemy_id": 8,
+      "real_name": "倍荷玛战士",
+      "hp": 80,
+      "atk": 11,
+      "def": 3,
+      "exp": 4,
+      "gold": 2
+    },
+    {
+      "event_id": 16,
+      "code_name": "怪物009",
+      "x": 16,
+      "y": 4,
+      "character": "Monster02-02",
+      "enemy_id": 9,
+      "real_name": "嗜血死者:15:2",
+      "hp": 75,
+      "atk": 18,
+      "def": 1,
+      "exp": 5,
+      "gold": 3
+    },
+    {
+      "event_id": 17,
+      "code_name": "怪物009",
+      "x": 13,
+      "y": 4,
+      "character": "Monster02-02",
+      "enemy_id": 9,
+      "real_name": "嗜血死者:15:2",
+      "hp": 75,
+      "atk": 18,
+      "def": 1,
+      "exp": 5,
+      "gold": 3
+    },
+    {
+      "event_id": 19,
+      "code_name": "怪物009",
+      "x": 16,
+      "y": 6,
+      "character": "Monster02-02",
+      "enemy_id": 9,
+      "real_name": "嗜血死者:15:2",
+      "hp": 75,
+      "atk": 18,
+      "def": 1,
+      "exp": 5,
+      "gold": 3
+    },
+    {
+      "event_id": 21,
+      "code_name": "怪物009",
+      "x": 13,
+      "y": 1,
+      "character": "Monster02-02",
+      "enemy_id": 9,
+      "real_name": "嗜血死者:15:2",
+      "hp": 75,
+      "atk": 18,
+      "def": 1,
+      "exp": 5,
+      "gold": 3
+    },
+    {
+      "event_id": 27,
+      "code_name": "怪物018",
+      "x": 6,
+      "y": 11,
+      "character": "Monster14-11",
+      "enemy_id": null,
+      "real_name": "怪物018",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 31,
+      "code_name": "怪物013",
+      "x": 12,
+      "y": 5,
+      "character": "Monster06-01",
+      "enemy_id": 13,
+      "real_name": "流浪法师:30",
+      "hp": 96,
+      "atk": 12,
+      "def": 4,
+      "exp": 6,
+      "gold": 3
+    },
+    {
+      "event_id": 36,
+      "code_name": "怪物011",
+      "x": 12,
+      "y": 13,
+      "character": "Monster01-03",
+      "enemy_id": 11,
+      "real_name": "荷依米贵族:25",
+      "hp": 101,
+      "atk": 13,
+      "def": 3,
+      "exp": 5,
+      "gold": 3
+    },
+    {
+      "event_id": 38,
+      "code_name": "怪物012",
+      "x": 8,
+      "y": 7,
+      "character": "Monster11-01",
+      "enemy_id": 12,
+      "real_name": "丛林幽影:50",
+      "hp": 122,
+      "atk": 11,
+      "def": 2,
+      "exp": 6,
+      "gold": 3
+    },
+    {
+      "event_id": 46,
+      "code_name": "怪物013",
+      "x": 8,
+      "y": 9,
+      "character": "Monster06-01",
+      "enemy_id": 13,
+      "real_name": "流浪法师:30",
+      "hp": 96,
+      "atk": 12,
+      "def": 4,
+      "exp": 6,
+      "gold": 3
+    },
+    {
+      "event_id": 47,
+      "code_name": "怪物012",
+      "x": 11,
+      "y": 9,
+      "character": "Monster11-01",
+      "enemy_id": 12,
+      "real_name": "丛林幽影:50",
+      "hp": 122,
+      "atk": 11,
+      "def": 2,
+      "exp": 6,
+      "gold": 3
+    },
+    {
+      "event_id": 48,
+      "code_name": "怪物008",
+      "x": 18,
+      "y": 3,
+      "character": "Monster01-02",
+      "enemy_id": 8,
+      "real_name": "倍荷玛战士",
+      "hp": 80,
+      "atk": 11,
+      "def": 3,
+      "exp": 4,
+      "gold": 2
+    },
+    {
+      "event_id": 56,
+      "code_name": "怪物020",
+      "x": 8,
+      "y": 1,
+      "character": "Monster14-02",
+      "enemy_id": null,
+      "real_name": "怪物020",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 63,
+      "code_name": "怪物015",
+      "x": 8,
+      "y": 11,
+      "character": "Monster01-01",
+      "enemy_id": 15,
+      "real_name": "倍荷玛拉",
+      "hp": 157,
+      "atk": 19,
+      "def": 8,
+      "exp": 7,
+      "gold": 4
+    }
+  ],
+  "special_doors": [
+    {
+      "event_id": 65,
+      "name": "机关门",
+      "x": 8,
+      "y": 4,
+      "character": "Event01-Door04",
+      "guard_area": {
+        "x1": 8,
+        "y1": 1,
+        "x2": 8,
+        "y2": 1
+      },
+      "raw_script": "x1=8;y1=1;x2=8;y2=1;@sw=true\nfor y in y1...y2+1\nfor x in x1...x2+1\nif $game_map.have_an_event?(x,y)\n@iid=$game_map.check_event(x,y)\nif $game_map.events[@iid]\\\n.event.name[0,6]==\"怪物\"\n@sw=false;break\nend\nend\nend\nend"
+    }
+  ],
+  "normal_doors": [
+    {
+      "event_id": 14,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 6,
+      "y": 12
+    },
+    {
+      "event_id": 18,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 18,
+      "y": 5
+    },
+    {
+      "event_id": 20,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 13,
+      "y": 2
+    },
+    {
+      "event_id": 26,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 14,
+      "y": 13
+    },
+    {
+      "event_id": 34,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 9,
+      "y": 12
+    },
+    {
+      "event_id": 37,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 7,
+      "y": 7
+    },
+    {
+      "event_id": 45,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 10,
+      "y": 11
+    }
+  ],
+  "pickups": [
+    {
+      "event_id": 15,
+      "name": "血瓶:100",
+      "x": 6,
+      "y": 13,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 22,
+      "name": "血瓶:100",
+      "x": 12,
+      "y": 1,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 23,
+      "name": "生命上限:20",
+      "x": 14,
+      "y": 1,
+      "character": "Item01-Gem05"
+    },
+    {
+      "event_id": 24,
+      "name": "红宝石:1",
+      "x": 15,
+      "y": 2,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 25,
+      "name": "红宝石:1",
+      "x": 16,
+      "y": 1,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 28,
+      "name": "血瓶:400",
+      "x": 18,
+      "y": 13,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 29,
+      "name": "蓝钥匙",
+      "x": 17,
+      "y": 13,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 30,
+      "name": "黄钥匙",
+      "x": 11,
+      "y": 6,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 32,
+      "name": "红宝石:1",
+      "x": 14,
+      "y": 8,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 33,
+      "name": "血瓶:100",
+      "x": 15,
+      "y": 9,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 35,
+      "name": "血瓶:100",
+      "x": 9,
+      "y": 13,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 39,
+      "name": "红宝石:1",
+      "x": 6,
+      "y": 7,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 40,
+      "name": "蓝宝石:1",
+      "x": 6,
+      "y": 8,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 41,
+      "name": "血瓶:100",
+      "x": 6,
+      "y": 9,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 42,
+      "name": "生命上限:20",
+      "x": 9,
+      "y": 6,
+      "character": "Item01-Gem05"
+    },
+    {
+      "event_id": 43,
+      "name": "黄钥匙",
+      "x": 7,
+      "y": 6,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 44,
+      "name": "血瓶:100",
+      "x": 13,
+      "y": 6,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 49,
+      "name": "血瓶:100",
+      "x": 18,
+      "y": 2,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 50,
+      "name": "蓝宝石:1",
+      "x": 11,
+      "y": 13,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 51,
+      "name": "血瓶:100",
+      "x": 10,
+      "y": 12,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 52,
+      "name": "生命上限:20",
+      "x": 7,
+      "y": 12,
+      "character": "Item01-Gem05"
+    },
+    {
+      "event_id": 53,
+      "name": "蓝宝石:1",
+      "x": 15,
+      "y": 12,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 54,
+      "name": "血瓶:100",
+      "x": 16,
+      "y": 11,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 55,
+      "name": "血瓶:100",
+      "x": 18,
+      "y": 6,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 57,
+      "name": "红宝石:1",
+      "x": 7,
+      "y": 2,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 58,
+      "name": "蓝宝石:1",
+      "x": 9,
+      "y": 2,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 59,
+      "name": "血瓶:200",
+      "x": 7,
+      "y": 1,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 60,
+      "name": "血瓶:200",
+      "x": 9,
+      "y": 1,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 61,
+      "name": "蓝钥匙",
+      "x": 8,
+      "y": 3,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 62,
+      "name": "生命上限:50",
+      "x": 8,
+      "y": 2,
+      "character": "Item01-Gem05"
+    }
+  ],
+  "npcs": [
+
+  ],
+  "other_events": [
+    {
+      "event_id": 1,
+      "name": "EV001",
+      "x": 5,
+      "y": 0,
+      "character": ""
+    },
+    {
+      "event_id": 10,
+      "name": "EV010",
+      "x": 5,
+      "y": 1,
+      "character": ""
+    }
+  ]
+}

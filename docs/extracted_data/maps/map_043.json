@@ -1,0 +1,78 @@
+{
+  "map_id": 43,
+  "width": 20,
+  "height": 15,
+  "tileset_id": 57,
+  "bgm": "",
+  "teleports": [
+    {
+      "event_id": 2,
+      "name": "？？？",
+      "x": 13,
+      "y": 12,
+      "target_map_id": 42,
+      "target_x": 12,
+      "target_y": 13
+    },
+    {
+      "event_id": 8,
+      "name": "EV008",
+      "x": 12,
+      "y": 14,
+      "target_map_id": 27,
+      "target_x": 12,
+      "target_y": 3
+    }
+  ],
+  "monsters": [
+    {
+      "event_id": 1,
+      "code_name": "怪物047",
+      "x": 12,
+      "y": 7,
+      "character": "地狱火",
+      "enemy_id": null,
+      "real_name": "怪物047",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    }
+  ],
+  "special_doors": [
+
+  ],
+  "normal_doors": [
+
+  ],
+  "pickups": [
+
+  ],
+  "npcs": [
+
+  ],
+  "other_events": [
+    {
+      "event_id": 3,
+      "name": "EV003",
+      "x": 5,
+      "y": 0,
+      "character": ""
+    },
+    {
+      "event_id": 4,
+      "name": "戴蒙·莱尼克",
+      "x": 12,
+      "y": 3,
+      "character": ""
+    },
+    {
+      "event_id": 10,
+      "name": "EV010",
+      "x": 5,
+      "y": 1,
+      "character": ""
+    }
+  ]
+}

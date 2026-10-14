@@ -1,0 +1,237 @@
+{
+  "map_id": 29,
+  "width": 20,
+  "height": 15,
+  "tileset_id": 4,
+  "bgm": "",
+  "teleports": [
+    {
+      "event_id": 12,
+      "name": "EV012",
+      "x": 19,
+      "y": 8,
+      "target_map_id": 22,
+      "target_x": 5,
+      "target_y": 8
+    },
+    {
+      "event_id": 18,
+      "name": "EV018",
+      "x": 5,
+      "y": 7,
+      "target_map_id": 30,
+      "target_x": 19,
+      "target_y": 7
+    }
+  ],
+  "monsters": [
+    {
+      "event_id": 2,
+      "code_name": "怪物019",
+      "x": 6,
+      "y": 7,
+      "character": "Monster04-03",
+      "enemy_id": null,
+      "real_name": "怪物019",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 5,
+      "code_name": "怪物019",
+      "x": 7,
+      "y": 9,
+      "character": "Monster04-03",
+      "enemy_id": null,
+      "real_name": "怪物019",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 6,
+      "code_name": "怪物025",
+      "x": 16,
+      "y": 10,
+      "character": "Monster04-03",
+      "enemy_id": null,
+      "real_name": "怪物025",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 7,
+      "code_name": "怪物025",
+      "x": 13,
+      "y": 7,
+      "character": "Monster04-03",
+      "enemy_id": null,
+      "real_name": "怪物025",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 8,
+      "code_name": "怪物025",
+      "x": 11,
+      "y": 11,
+      "character": "Monster04-03",
+      "enemy_id": null,
+      "real_name": "怪物025",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 15,
+      "code_name": "怪物025",
+      "x": 9,
+      "y": 7,
+      "character": "Monster04-03",
+      "enemy_id": null,
+      "real_name": "怪物025",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 20,
+      "code_name": "怪物019",
+      "x": 8,
+      "y": 10,
+      "character": "Monster04-03",
+      "enemy_id": null,
+      "real_name": "怪物019",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    }
+  ],
+  "special_doors": [
+
+  ],
+  "normal_doors": [
+
+  ],
+  "pickups": [
+    {
+      "event_id": 9,
+      "name": "血瓶:50",
+      "x": 15,
+      "y": 9,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 11,
+      "name": "血瓶:50",
+      "x": 15,
+      "y": 8,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 13,
+      "name": "血瓶:100",
+      "x": 12,
+      "y": 8,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 14,
+      "name": "血瓶:100",
+      "x": 12,
+      "y": 9,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 16,
+      "name": "血瓶:200",
+      "x": 10,
+      "y": 9,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 17,
+      "name": "血瓶:200",
+      "x": 10,
+      "y": 8,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 19,
+      "name": "血瓶:400",
+      "x": 6,
+      "y": 11,
+      "character": "103-item03"
+    }
+  ],
+  "npcs": [
+    {
+      "event_id": 1,
+      "name": "EV001",
+      "x": 8,
+      "y": 1,
+      "character": "大船",
+      "dialogue": [
+
+      ]
+    },
+    {
+      "event_id": 4,
+      "name": "路牌",
+      "x": 18,
+      "y": 7,
+      "character": "186-Bulletin01",
+      "dialogue": [
+        "设定说明之野兽直觉",
+        "野兽直觉的反击效果是一种比较特殊的普攻，因此",
+        "仍然能触发法球及其他攻击特效，并且因为是普攻",
+        "，因此不会受到任何沉默效果的影响。",
+        "同时反击的普攻不会落空（玩家闪避无效），但在",
+        "被缴械情况下是无法发动反击的。"
+      ]
+    },
+    {
+      "event_id": 21,
+      "name": "EV021",
+      "x": 12,
+      "y": 3,
+      "character": "大船",
+      "dialogue": [
+
+      ]
+    }
+  ],
+  "other_events": [
+    {
+      "event_id": 3,
+      "name": "EV003",
+      "x": 5,
+      "y": 0,
+      "character": ""
+    },
+    {
+      "event_id": 10,
+      "name": "EV010",
+      "x": 5,
+      "y": 1,
+      "character": ""
+    }
+  ]
+}

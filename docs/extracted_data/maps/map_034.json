@@ -1,0 +1,690 @@
+{
+  "map_id": 34,
+  "width": 20,
+  "height": 15,
+  "tileset_id": 57,
+  "bgm": "",
+  "teleports": [
+    {
+      "event_id": 8,
+      "name": "EV008",
+      "x": 19,
+      "y": 7,
+      "target_map_id": 33,
+      "target_x": 5,
+      "target_y": 7
+    }
+  ],
+  "monsters": [
+    {
+      "event_id": 2,
+      "code_name": "怪物021",
+      "x": 14,
+      "y": 9,
+      "character": "Monster03-01",
+      "enemy_id": null,
+      "real_name": "怪物021",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 4,
+      "code_name": "怪物022",
+      "x": 10,
+      "y": 5,
+      "character": "Monster01-02",
+      "enemy_id": null,
+      "real_name": "怪物022",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 5,
+      "code_name": "怪物026",
+      "x": 17,
+      "y": 7,
+      "character": "Monster01-12",
+      "enemy_id": null,
+      "real_name": "怪物026",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 6,
+      "code_name": "怪物027",
+      "x": 10,
+      "y": 7,
+      "character": "Monster01-12",
+      "enemy_id": null,
+      "real_name": "怪物027",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 7,
+      "code_name": "怪物028",
+      "x": 10,
+      "y": 2,
+      "character": "Monster02-01",
+      "enemy_id": null,
+      "real_name": "怪物028",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 9,
+      "code_name": "怪物029",
+      "x": 14,
+      "y": 6,
+      "character": "Monster02-01",
+      "enemy_id": null,
+      "real_name": "怪物029",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 11,
+      "code_name": "怪物031",
+      "x": 17,
+      "y": 4,
+      "character": "Monster03-01",
+      "enemy_id": null,
+      "real_name": "怪物031",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 12,
+      "code_name": "怪物030",
+      "x": 18,
+      "y": 12,
+      "character": "Monster06-01",
+      "enemy_id": null,
+      "real_name": "怪物030",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 13,
+      "code_name": "怪物032",
+      "x": 7,
+      "y": 5,
+      "character": "Monster02-07",
+      "enemy_id": null,
+      "real_name": "怪物032",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 15,
+      "code_name": "怪物036",
+      "x": 8,
+      "y": 13,
+      "character": "Monster06-01",
+      "enemy_id": null,
+      "real_name": "怪物036",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 16,
+      "code_name": "怪物037",
+      "x": 8,
+      "y": 3,
+      "character": "Monster05-01",
+      "enemy_id": null,
+      "real_name": "怪物037",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 25,
+      "code_name": "怪物028",
+      "x": 10,
+      "y": 1,
+      "character": "Monster02-01",
+      "enemy_id": null,
+      "real_name": "怪物028",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 36,
+      "code_name": "怪物030",
+      "x": 17,
+      "y": 13,
+      "character": "Monster06-01",
+      "enemy_id": null,
+      "real_name": "怪物030",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 50,
+      "code_name": "怪物026",
+      "x": 12,
+      "y": 11,
+      "character": "Monster01-12",
+      "enemy_id": null,
+      "real_name": "怪物026",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 51,
+      "code_name": "怪物031",
+      "x": 15,
+      "y": 10,
+      "character": "Monster03-01",
+      "enemy_id": null,
+      "real_name": "怪物031",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 55,
+      "code_name": "怪物027",
+      "x": 6,
+      "y": 8,
+      "character": "Monster01-12",
+      "enemy_id": null,
+      "real_name": "怪物027",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 56,
+      "code_name": "怪物028",
+      "x": 10,
+      "y": 10,
+      "character": "Monster02-01",
+      "enemy_id": null,
+      "real_name": "怪物028",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 57,
+      "code_name": "怪物028",
+      "x": 11,
+      "y": 12,
+      "character": "Monster02-01",
+      "enemy_id": null,
+      "real_name": "怪物028",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 67,
+      "code_name": "怪物021",
+      "x": 8,
+      "y": 7,
+      "character": "Monster03-01",
+      "enemy_id": null,
+      "real_name": "怪物021",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 68,
+      "code_name": "怪物022",
+      "x": 14,
+      "y": 7,
+      "character": "Monster01-02",
+      "enemy_id": null,
+      "real_name": "怪物022",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    },
+    {
+      "event_id": 69,
+      "code_name": "怪物022",
+      "x": 16,
+      "y": 8,
+      "character": "Monster01-02",
+      "enemy_id": null,
+      "real_name": "怪物022",
+      "hp": null,
+      "atk": null,
+      "def": null,
+      "exp": null,
+      "gold": null
+    }
+  ],
+  "special_doors": [
+
+  ],
+  "normal_doors": [
+    {
+      "event_id": 1,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 15,
+      "y": 7
+    },
+    {
+      "event_id": 18,
+      "type": "blue",
+      "name": "蓝门",
+      "x": 18,
+      "y": 6
+    },
+    {
+      "event_id": 29,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 11,
+      "y": 1
+    },
+    {
+      "event_id": 30,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 17,
+      "y": 1
+    },
+    {
+      "event_id": 37,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 16,
+      "y": 13
+    },
+    {
+      "event_id": 40,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 8,
+      "y": 4
+    },
+    {
+      "event_id": 46,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 12,
+      "y": 10
+    },
+    {
+      "event_id": 52,
+      "type": "yellow",
+      "name": "黄门",
+      "x": 6,
+      "y": 9
+    }
+  ],
+  "pickups": [
+    {
+      "event_id": 14,
+      "name": "生命上限:50",
+      "x": 14,
+      "y": 12,
+      "character": "Item01-Gem05"
+    },
+    {
+      "event_id": 17,
+      "name": "红宝石:1",
+      "x": 13,
+      "y": 3,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 19,
+      "name": "红宝石:1",
+      "x": 14,
+      "y": 3,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 20,
+      "name": "红宝石:1",
+      "x": 16,
+      "y": 3,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 21,
+      "name": "蓝宝石:1",
+      "x": 16,
+      "y": 5,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 22,
+      "name": "蓝宝石:1",
+      "x": 13,
+      "y": 5,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 23,
+      "name": "红宝石:1",
+      "x": 15,
+      "y": 3,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 24,
+      "name": "血瓶:200",
+      "x": 11,
+      "y": 3,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 26,
+      "name": "血瓶:200",
+      "x": 8,
+      "y": 1,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 27,
+      "name": "蓝宝石:1",
+      "x": 16,
+      "y": 1,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 28,
+      "name": "红宝石:1",
+      "x": 12,
+      "y": 1,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 31,
+      "name": "黄钥匙",
+      "x": 10,
+      "y": 3,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 32,
+      "name": "黄钥匙",
+      "x": 9,
+      "y": 1,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 33,
+      "name": "黄钥匙",
+      "x": 18,
+      "y": 1,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 34,
+      "name": "血瓶:200",
+      "x": 18,
+      "y": 5,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 35,
+      "name": "黄钥匙",
+      "x": 18,
+      "y": 7,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 38,
+      "name": "黄钥匙",
+      "x": 17,
+      "y": 11,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 41,
+      "name": "红宝石:1",
+      "x": 6,
+      "y": 3,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 42,
+      "name": "红宝石:1",
+      "x": 7,
+      "y": 3,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 43,
+      "name": "血瓶:100",
+      "x": 6,
+      "y": 1,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 44,
+      "name": "血瓶:100",
+      "x": 6,
+      "y": 2,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 45,
+      "name": "蓝宝石:1",
+      "x": 11,
+      "y": 5,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 47,
+      "name": "血瓶:200",
+      "x": 12,
+      "y": 13,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 48,
+      "name": "红宝石:1",
+      "x": 6,
+      "y": 12,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 49,
+      "name": "红宝石:1",
+      "x": 6,
+      "y": 13,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 53,
+      "name": "黄钥匙",
+      "x": 6,
+      "y": 5,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 54,
+      "name": "黄钥匙",
+      "x": 6,
+      "y": 6,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 58,
+      "name": "蓝宝石:1",
+      "x": 10,
+      "y": 12,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 59,
+      "name": "蓝宝石:1",
+      "x": 10,
+      "y": 13,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 60,
+      "name": "红宝石:1",
+      "x": 14,
+      "y": 11,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 61,
+      "name": "红宝石:1",
+      "x": 14,
+      "y": 13,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 62,
+      "name": "蓝宝石:1",
+      "x": 15,
+      "y": 12,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 63,
+      "name": "血瓶:200",
+      "x": 14,
+      "y": 1,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 64,
+      "name": "血瓶:200",
+      "x": 8,
+      "y": 10,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 65,
+      "name": "血瓶:100",
+      "x": 8,
+      "y": 6,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 66,
+      "name": "血瓶:100",
+      "x": 8,
+      "y": 8,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 70,
+      "name": "黄钥匙",
+      "x": 12,
+      "y": 12,
+      "character": "101-item01"
+    },
+    {
+      "event_id": 71,
+      "name": "血瓶:400",
+      "x": 14,
+      "y": 4,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 72,
+      "name": "血瓶:400",
+      "x": 15,
+      "y": 4,
+      "character": "103-item03"
+    },
+    {
+      "event_id": 73,
+      "name": "红宝石:1",
+      "x": 18,
+      "y": 3,
+      "character": "Item01-Gem03"
+    },
+    {
+      "event_id": 74,
+      "name": "生命上限:50",
+      "x": 18,
+      "y": 8,
+      "character": "Item01-Gem05"
+    },
+    {
+      "event_id": 75,
+      "name": "蓝钥匙",
+      "x": 18,
+      "y": 10,
+      "character": "101-item01"
+    }
+  ],
+  "npcs": [
+
+  ],
+  "other_events": [
+    {
+      "event_id": 3,
+      "name": "EV003",
+      "x": 5,
+      "y": 0,
+      "character": ""
+    },
+    {
+      "event_id": 10,
+      "name": "EV010",
+      "x": 5,
+      "y": 1,
+      "character": ""
+    }
+  ]
+}

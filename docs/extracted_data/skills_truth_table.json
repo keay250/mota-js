@@ -1,0 +1,3152 @@
+{
+  "1": {
+    "id": 1,
+    "name": "寒霜攻击:a:1",
+    "description": "攻击中带有冰寒的力量，将对手缓慢冻结\\n第一次命中开始对手攻速降低\\v%",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "2": {
+    "id": 2,
+    "name": "腐蚀毒素:a:3",
+    "description": "攻击时释放出毒素缓慢腐蚀敌人的身躯\\n每回合攻击额外造成\\v点无视防御的物理伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "3": {
+    "id": 3,
+    "name": "亡灵协同:a:7",
+    "description": "弱小亡灵们总是聚在一起展现出强大的协同作战能力\\n地图上每有一只除自身外的亡灵，便增加\\v%生命",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "4": {
+    "id": 4,
+    "name": "嗜血本能:a:2",
+    "description": "对鲜血的渴望让意志变得越发的疯狂\\n根据对手战前已损失生命比例，每1%提升自身\\v%的攻速",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "5": {
+    "id": 5,
+    "name": "上位威压:a:11",
+    "description": "周身时刻散发出强大的威压，震慑弱小者\\n每比对手高出一级，便在先前基础上进一步削弱对手\\v%的攻防",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "6": {
+    "id": 6,
+    "name": "闪避:255:225:100",
+    "description": "身形飘忽不定，闪躲敌人的攻击\\n有\\v%概率闪避敌人的攻击",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "7": {
+    "id": 7,
+    "name": "奥术飞弹:a:4",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "8": {
+    "id": 8,
+    "name": "精准射击:255:50:200",
+    "description": "在远处便对敌人进行精准射击，拒敌于千里之外\\n当目标处于其可见直线上时每一步都能发动一回合普攻",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "9": {
+    "id": 9,
+    "name": "领主光环:a:11",
+    "description": "每一个领主生物都无时无刻不散发着王者之气，震慑宵小\\n削弱对手\\v%的攻防与\\v%攻速，并自带\\v%的免伤",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "10": {
+    "id": 10,
+    "name": "风暴:a:4",
+    "description": "操纵四周空气流动，产生一个持续五回合的风暴\\n风暴每回合造成\\v点魔法伤害并在期间降低对方\\v%攻速",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "11": {
+    "id": 11,
+    "name": "野兽直觉:128:0:255",
+    "description": "野兽在被攻击时将会对攻击者发起疯狂的反击\\n对手每回合攻击都会引起自身的一次反击（该攻击不会落空）",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "12": {
+    "id": 12,
+    "name": "炎爆术:a:9",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "13": {
+    "id": 13,
+    "name": "致命一击:a:2",
+    "description": "以惊人的力量攻击敌人的薄弱之处\\n\\v%概率造成\\v倍暴击，第一回合必定暴击",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "14": {
+    "id": 14,
+    "name": "皮肤硬化:a:7",
+    "description": "以强大的硬壳皮肤抵挡任何物理攻击的侵袭\\n减少\\v%受到的物理伤害，之后再减少\\v点物理伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "15": {
+    "id": 15,
+    "name": "雷霆一击:64:255:64",
+    "description": "汇集全力轰击地面，使敌人重创并难以控制自身\\n造成\\v点魔法伤害，并在接下来\\v回合中减少对方\\v%攻速",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "16": {
+    "id": 16,
+    "name": "烈焰之拳:a:9",
+    "description": "凝聚着地狱烈焰的一拳，造成极大的破坏\\n连续\\v回合攻击附带\\v点火焰魔法伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "17": {
+    "id": 17,
+    "name": "永恒献祭:255:55:55",
+    "description": "地狱烈焰环绕周身，时刻烧灼着敌人\\n每回合持续造成\\v点纯粹伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "18": {
+    "id": 18,
+    "name": "魔法免疫:a:7",
+    "description": "隔绝抵挡一切魔力元素的侵袭，金刚不坏\\n免疫魔法伤害及其他魔法效果",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "19": {
+    "id": 19,
+    "name": "次级沟壑:128:128:64",
+    "description": "利用土元素魔法震撼大地，改变地貌\\n造成\\v点魔法伤害及\\v回合眩晕，使对方身后一格变为沟壑地形",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "20": {
+    "id": 20,
+    "name": "绝境反击:128:128:64",
+    "description": "受到致死伤害时立刻发动一次不会落空的反击，一场战斗最多发动一次\\n反击造成伤害的\\v%会转化为自身生命",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "21": {
+    "id": 21,
+    "name": "过载:50:255:240",
+    "description": "使用电能刺激自身激发出全部潜力\\n每回合消耗自身\\v点生命，提高\\v%攻速与\\v%减伤",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "22": {
+    "id": 22,
+    "name": "雷霆之击:0:180:200",
+    "description": "召唤来自大自然中的电荷能量打击敌人\\n释放出一个雷霆力场，连续4回合造成\\v点魔法伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "23": {
+    "id": 23,
+    "name": "静电场:a:4",
+    "description": "用魔力引发空气中的电荷爆裂\\n施放技能时造成敌人当前生命\\v%的纯粹伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "24": {
+    "id": 24,
+    "name": "凤凰冲击:a:12",
+    "description": "汇聚周身火元素化身为凤凰先发制人靠近敌人\\n获取先手并造成\\v点魔法伤害，战始前发动且不占用回合数。",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "25": {
+    "id": 25,
+    "name": "撕裂伤口:a:12",
+    "description": "新鲜伤口引来了清道夫，令敌人在\\v回合内减少\\v%攻速\\n期间造成的普攻伤害会吸取\\v%治疗自身（减速可叠加）",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "26": {
+    "id": 26,
+    "name": "元素冲击:255:225:100",
+    "description": "纯粹的无属性元素攻击，穿透敌人的护甲直接给予伤害\\n普攻附带\\v点无视闪避的魔法伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "27": {
+    "id": 27,
+    "name": "勇气之霎:128:128:64",
+    "description": "在遭受到敌人第一次攻击时会立刻发动一次不会落空的反击\\n反击造成伤害的\\v%会转化为自身生命",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "28": {
+    "id": 28,
+    "name": "风暴之锤:a:4",
+    "description": "用充满战意的力量对敌人造成致命打击，消耗\\v点魔法\\n本回合不攻击，造成\\v点魔法伤害，并眩晕对方\\v回合",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "29": {
+    "id": 29,
+    "name": "淬毒攻击:a:3",
+    "description": "毒素让任何回复手段都变得无力，攻击附加\\v点毒素伤害\\n第一次命中开始令对手的生命回复变为等额流失",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "30": {
+    "id": 30,
+    "name": "通灵召唤:a:4",
+    "description": "熟练地召唤出傀儡或是仆从生物为自己而战\\n开战前召唤\\v ",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 5,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "31": {
+    "id": 31,
+    "name": "混沌一击:a:4",
+    "description": "激发起冥冥之中的混沌力量重创敌人，并击碎其盔甲\\n\\v%概率造成\\v倍暴击并降低\\v点护甲，第一回合必定暴击",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "32": {
+    "id": 32,
+    "name": "魔法抗性:a:7",
+    "description": "凭借特殊的体质对魔法产生强大的抗性\\n减少\\v%受到的魔法伤害，之后再减少\\v点魔法伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "33": {
+    "id": 33,
+    "name": "洗礼:255:225:100",
+    "description": "当有单位遭遇攻击时予以圣光支援（对亡灵协同只会造成伤害）\\n对友方造成\\v点治疗并对敌方造成\\v点纯粹伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 2,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "34": {
+    "id": 34,
+    "name": "驱逐:255:175:100",
+    "description": "当有单位遭遇攻击时予以驱逐支援\\n为友方创造一个免疫魔法的保护罩，持续\\v回合",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 2,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "35": {
+    "id": 35,
+    "name": "退化光环:255:125:100",
+    "description": "神圣的领域，降下神圣的意志令不洁之徒寸步难行\\n降低敌人\\v%攻速及\\v%的闪避率，并使其被动技能无效",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "36": {
+    "id": 36,
+    "name": "突进:255:0:255",
+    "description": "在远处便暴起冲锋，突击毫无防备的对手\\n获取先手并眩晕对方\\v回合，战斗开始前发动且不占用回合数。",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "37": {
+    "id": 37,
+    "name": "盛宴:255:0:255",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "38": {
+    "id": 38,
+    "name": "重生:125:125:125",
+    "description": "跌倒，再爬起，以崭新的姿态面对敌人的冲锋。\\n死后重生为\\v ",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "39": {
+    "id": 39,
+    "name": "持盾冲击:255:0:255",
+    "description": "激发先锋盾上的神秘力量并重击身前的敌人，消耗12点魔法\\n对敌人造成自身护甲*25点魔法伤害，并眩晕一回合",
+    "sp_cost": 12,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "40": {
+    "id": 40,
+    "name": "重音击:128:64:64",
+    "description": "似乎是某种奥义的劣化版本\\n本回合不攻击，造成地图上存在的事物个数*\\v的魔法伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "41": {
+    "id": 41,
+    "name": "惑幻:255:0:255",
+    "description": "复制自身，创造出不会施放主动技能的幻象消灭敌人\\n创造\\v个普攻造成\\v%伤害并受到\\v%伤害的幻象",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 5,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "42": {
+    "id": 42,
+    "name": "猎手天赋:192:124:124",
+    "description": "猎手不会放过其所发现的每一次战斗契机\\n若直线视野内有友军遭到攻击，则前往支援并协同作战",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "43": {
+    "id": 43,
+    "name": "轰雷:0:180:200",
+    "description": "凝聚大量雷电力量，化作一道晴天霹雳\\n雷电落下造成\\v点魔法伤害并使敌人麻痹，\\v回合内无法攻击",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "44": {
+    "id": 44,
+    "name": "法力燃烧:22:22:184",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "45": {
+    "id": 45,
+    "name": "腐蚀皮肤:64:255:64",
+    "description": "完全由剧毒物质构成的皮肤将人彻底侵染\\n减少\\v%的伤害，并降低对手\\v%的攻速及\\v点护甲",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "46": {
+    "id": 46,
+    "name": "龙裔血脉:200:100:100",
+    "description": "龙裔生物特有的坚实鳞甲及自我恢复能力\\n减少\\v%伤害，同时每回合恢复初始生命值\\v%的生命",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "47": {
+    "id": 47,
+    "name": "诅咒:128:0:128",
+    "description": "向敌人施加最为可怕的诅咒，令它变得更加脆弱\\n持续\\v回合的诅咒，每回合附加\\v+该回合损血\\v%的魔法伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "48": {
+    "id": 48,
+    "name": "幽冥剧毒:128:0:128",
+    "description": "向敌人喷吐一团剧毒液体，使其饱受毒素的折磨\\n造成\\v点毒素伤害并令对手每回合流失\\v生命（永久，可叠加）",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "49": {
+    "id": 49,
+    "name": "倒影:0:160:180",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 5,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "50": {
+    "id": 50,
+    "name": "灵魂支配Lv1:128:128:64",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "51": {
+    "id": 51,
+    "name": "毁灭阴影Lv1|1.5:128:128:64",
+    "description": "txt",
+    "sp_cost": 0,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "52": {
+    "id": 52,
+    "name": "阻激:128:128:64",
+    "description": "使用强大魔力将敌人隔绝开来并予以重创\\n与敌人接近时后退一格并造成\\v点魔法伤害",
+    "sp_cost": 0,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "53": {
+    "id": 53,
+    "name": "夹击:128:128:64",
+    "description": "txt",
+    "sp_cost": 0,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "54": {
+    "id": 54,
+    "name": "模糊:a:7",
+    "description": "txt",
+    "sp_cost": 0,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "55": {
+    "id": 55,
+    "name": "幽魂形态:a:7",
+    "description": "飘渺如烟的生命形态，游走于虚实之间\\n免疫一切物理伤害，但会受到更多的魔法伤害",
+    "sp_cost": 0,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "56": {
+    "id": 56,
+    "name": "持盾猛击:255:0:255",
+    "description": "txt",
+    "sp_cost": 25,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "57": {
+    "id": 57,
+    "name": "能量冲击Lv1|5:255:0:255",
+    "description": "txt",
+    "sp_cost": 30,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "58": {
+    "id": 58,
+    "name": "烈火精灵:a:12",
+    "description": "连续\\v回合每回合召唤一只烈火精灵灼伤对手\\n烈火精灵造成\\v点魔法伤害并降低\\v%攻速，持续4回合",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "59": {
+    "id": 59,
+    "name": "警戒:255:0:255",
+    "description": "时刻警戒四周，一旦遇敌便立即呼叫友军协同作战\\n召唤横纵坐标差之和\\v格以内的怪物，且必须存在可支援路径",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "60": {
+    "id": 60,
+    "name": "嗜血术:255:55:55",
+    "description": "给一个友军(包括自身)加持嗜血术，直到所有友军拥有此效果\\n施放回合不会攻击，增加目标\\v%攻速与\\v%的吸血",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "61": {
+    "id": 61,
+    "name": "火焰爆轰:a:12",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "62": {
+    "id": 62,
+    "name": "引燃:a:2",
+    "description": "丢出化学物质点燃对手，使敌人被火焰所吞噬\\n每回合造成\\v点魔法伤害，期间降低\\v%攻速，持续\\v回合",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "63": {
+    "id": 63,
+    "name": "多重施法:50:255;240",
+    "description": "对魔法本质的精通使得施法变得更加容易起来\\n任何主动技能都会在同一回合内施展\\v次，并引发多重强化",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "64": {
+    "id": 64,
+    "name": "小队作战:a:11",
+    "description": "充分发挥群体作战的能力，以小队形式与敌人战斗\\n小队包括\\v ",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 5,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "65": {
+    "id": 65,
+    "name": "超新星:255:15:15",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "66": {
+    "id": 66,
+    "name": "特殊保护",
+    "description": "只会受到普攻伤害且单次伤害最高1点",
+    "sp_cost": 0,
+    "power": 0,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "67": {
+    "id": 67,
+    "name": "绝望光环:255:125:100",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "68": {
+    "id": 68,
+    "name": "生命吸取:a:9",
+    "description": "从鲜血中汲取力量，将敌人的生机吸食殆尽\\n造成的普攻伤害会吸取\\v%治疗自身",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "69": {
+    "id": 69,
+    "name": "伤残恐惧:128:128:64",
+    "description": "在敌人头脑中植入扭曲深渊的幻象，令其恐惧\\n使敌人攻击有\\v%概率落空，且受到沉默效果，持续\\v回合",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "70": {
+    "id": 70,
+    "name": "破甲熔炎:255:0:0",
+    "description": "攻击附带有魔力，熔化敌人的盔甲\\n每次攻击降低敌人\\v点护甲，最大减甲\\v点",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "71": {
+    "id": 71,
+    "name": "复仇光环:255:125:100",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "72": {
+    "id": 72,
+    "name": "剑舞:a:4",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "73": {
+    "id": 73,
+    "name": "毁灭阴影Lv2|3:128:128:64",
+    "description": "txt",
+    "sp_cost": 0,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "74": {
+    "id": 74,
+    "name": "灵魂支配Lv2:128:128:64",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "75": {
+    "id": 75,
+    "name": "反击:200:100:100",
+    "description": "以近乎于本能的反应速度灵活进行攻守转换\\n每次受到攻击时都会立刻反击敌人(不会落空）",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "76": {
+    "id": 76,
+    "name": "守护天使:255:225:100",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "77": {
+    "id": 77,
+    "name": "恶念瞥视:0:180:200",
+    "description": "发动魔力驱逐敌人，\\v回合后将玩家传回到\\v步之前的位置\\n若在传回前自身未被消灭则会中止战斗并回满生命",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "78": {
+    "id": 78,
+    "name": "法力损毁:205:0:255",
+    "description": "引爆魔法的不稳定性，令施法者受到伤害\\n每次攻击损毁目标最多\\v点魔法，并附加\\v倍的物理伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "79": {
+    "id": 79,
+    "name": "法力虚空:255:0:205",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "80": {
+    "id": 80,
+    "name": "伪无敌斩:255:205:100",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "81": {
+    "id": 81,
+    "name": "魔法反制:a:4",
+    "description": "感应敌人的魔力波动，在施法的关键时刻一瞬反击\\n受到技能效果时会对施法者造成\\v点魔法伤害并将其净化",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "82": {
+    "id": 82,
+    "name": "攻击反噬:200:125:125",
+    "description": "任何胆敢攻击被诅咒者的生物都将堕入相同的诅咒地狱之中\\n受到任何普攻伤害都会立刻反弹对手\\v%的魔法伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "83": {
+    "id": 83,
+    "name": "勇气之霎:128:128:64",
+    "description": "每回合受到攻击时有\\v%几率发动一次不会落空的反击\\n反击造成伤害的\\v%会转化为自身生命",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "84": {
+    "id": 84,
+    "name": "死亡:255:70:155",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "85": {
+    "id": 85,
+    "name": "爆破人形Lv1|2:a:1",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "86": {
+    "id": 86,
+    "name": "暗夜猎影:0:0:80",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "87": {
+    "id": 87,
+    "name": "霜冻护甲:a:1",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "88": {
+    "id": 88,
+    "name": "冰霜新星:a:4",
+    "description": "本回合不攻击，制造一个持续\\v回合的冰霜新星冻结对手\\n初始造成\\v点魔法伤害，之后降低其\\v%攻速与\\v%闪避",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "89": {
+    "id": 89,
+    "name": "冰封禁制:a:4",
+    "description": "本回合不攻击，招来寒风将敌人冰封，持续\\v回合\\n期间目标无法攻击，无法闪避，且每回合受到\\v点魔法伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "90": {
+    "id": 90,
+    "name": "极寒之触:a:4",
+    "description": "操控极寒之力，接下来\\v回合内获得攻击特效\\n每次攻击额外造成\\v点魔法伤害并降低敌人\\v%攻速",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "91": {
+    "id": 91,
+    "name": "精气光环:255:0:255",
+    "description": "殁境的水晶散发出能量，令奥术重新产生活力\\n友军在所有主动技能施放完毕后会再次按列表施放，最多\\v轮",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "92": {
+    "id": 92,
+    "name": "奥术光环:a:4",
+    "description": "释放出奥术精华，加剧天地间魔力的波动程度\\n增加全地图所有友军\\v%的魔法伤害（多个光环效果可叠加）",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "93": {
+    "id": 93,
+    "name": "极寒领域:0:85:255",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "94": {
+    "id": 94,
+    "name": "掘地穿刺:180:50:50",
+    "description": "潜藏于地表之下突袭对手，战斗开始前发动且不占用回合数\\n获取先手并眩晕对方\\v回合，穿刺造成\\v点魔法伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "95": {
+    "id": 95,
+    "name": "灵魂汲取:125:0:55",
+    "description": "汝之灵魂，吾之食粮。痛苦吧，哀嚎吧！\\n吸取敌人\\v点灵魂，若灵魂不足则造成致死效果。",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "96": {
+    "id": 96,
+    "name": "阎刃:155:85:0",
+    "description": "来自地狱的火焰，灼烧并审判一切懦弱的灵魂\\n攻击额外造成\\v+\\v%敌人生命上限的魔法伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "97": {
+    "id": 97,
+    "name": "严寒灼烧:0:75:185",
+    "description": "喷吐出一口寒冷的龙炎，持续烧灼对手\\n\\v回合内每回合的攻击都会使对方被灼烧，损失\\v%当前生命",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "98": {
+    "id": 98,
+    "name": "寒冬诅咒:155:0:155",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "99": {
+    "id": 99,
+    "name": "镜像:255:55:205",
+    "description": "完美复制对手的一切信息\\n这个生物的初始攻击力与防御力始终与敌人保持相同",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "100": {
+    "id": 100,
+    "name": "神力图腾:a:2",
+    "description": "远古的图腾力量在此展现神威\\n增加以自身为中心\\v*\\v范围内所有友军\\v%的攻击力（可叠加）",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "101": {
+    "id": 101,
+    "name": "守护图腾:a:1",
+    "description": "远古的图腾力量在此展现神威\\n增加以自身为中心\\v*\\v范围内所有友军\\v%的防御力（可叠加）",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "102": {
+    "id": 102,
+    "name": "治愈图腾:a:3",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "103": {
+    "id": 103,
+    "name": "破甲光环:a:4",
+    "description": "远程打击令敌人失去抵挡之力\\n以自身为中心\\v*\\v范围内所有友军攻击附带\\v点护甲穿透（不可叠加）",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "104": {
+    "id": 104,
+    "name": "狂战士之血:a:9",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "105": {
+    "id": 105,
+    "name": "致命射击:255:50:200",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "106": {
+    "id": 106,
+    "name": "阳炎之索:255:75:25",
+    "description": "阳炎之火汇聚而成的绳索将敌人死死束缚\\n令敌人无法攻击和闪避，每回合受到\\v点魔法伤害，持续\\v回合",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "107": {
+    "id": 107,
+    "name": "无影拳:135:255:35",
+    "description": "武技之巅峰，招招无影无形，令人难以防备\\n自身初始攻速为敌人攻速的\\v倍，且攻击无视闪避",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "108": {
+    "id": 108,
+    "name": "火焰壁垒:a:12",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "109": {
+    "id": 109,
+    "name": "魔王降临Lv1:128:128:64",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "110": {
+    "id": 110,
+    "name": "风之守护:a:3",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "111": {
+    "id": 111,
+    "name": "风漩:a:3",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "112": {
+    "id": 112,
+    "name": "沙尘暴:180:80:50",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "113": {
+    "id": 113,
+    "name": "野性掠夺:205:50:255",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "114": {
+    "id": 114,
+    "name": "潜影:a:7",
+    "description": "你永远都不知道利刃什么时候抵在了你的后颈上\\n保持隐身，在敌人经过临近四格时会显形突袭，获取绝对先手",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "115": {
+    "id": 115,
+    "name": "暗杀:255:0:50",
+    "description": "从阴影中现身，给予对方毁灭性的打击\\n若战斗时处于先手状态，则额外造成一回合\\v倍攻击力的攻击",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "116": {
+    "id": 116,
+    "name": "决斗:a:11",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "117": {
+    "id": 117,
+    "name": "超负荷:55:85:255",
+    "description": "超负荷使用自身魔力，使得每次施法时都会造成一次额外的魔法伤害\\n初始伤害为\\v，每次施法伤害量递增\\v%",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "118": {
+    "id": 118,
+    "name": "飓风:a:4",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "119": {
+    "id": 119,
+    "name": "腐尸毒:0:185:0",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "120": {
+    "id": 120,
+    "name": "地震:180:80:50",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "121": {
+    "id": 121,
+    "name": "能量冲击Lv2|8:255:0:255",
+    "description": "txt",
+    "sp_cost": 50,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "122": {
+    "id": 122,
+    "name": "爆破人形Lv2|5:a:1",
+    "description": "txt",
+    "sp_cost": 40,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "123": {
+    "id": 123,
+    "name": "幽魂形态:a:7",
+    "description": "无需消耗魔法，使用后接下来4回合内进入幽魂形态\\n期间无法攻击，也无法被攻击，且会额外受到100%魔法伤害",
+    "sp_cost": 0,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "124": {
+    "id": 124,
+    "name": "赤红之怒:255:0:255",
+    "description": "txt",
+    "sp_cost": 50,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "125": {
+    "id": 125,
+    "name": "沟壑:128:128:64",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "126": {
+    "id": 126,
+    "name": "电磁脉冲:255:0:255",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "127": {
+    "id": 127,
+    "name": "超震声波:a:4",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "128": {
+    "id": 128,
+    "name": "荆棘光环:50:255:55",
+    "description": "尖刺荆棘，以牙还牙。以自身为中心\\v*\\v范围内所有友军\\n反弹\\v%的普攻伤害。\\n伤害类型为物理，光环不叠加",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "129": {
+    "id": 129,
+    "name": "极速神符:255:0:0",
+    "description": "获得极速状态，攻击速度3倍，闪避率+35%\\n神符效果持续5场战斗",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "130": {
+    "id": 130,
+    "name": "奥术神符:255:0:255",
+    "description": "增强奥术力量，所有魔法伤害+60%，所有魔法消耗-40%\\n神符效果持续7场战斗",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "131": {
+    "id": 131,
+    "name": "双倍神符:0:0:255",
+    "description": "提升自身伤害，普攻造成的物理伤害翻倍\\n神符效果持续5场战斗",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "132": {
+    "id": 132,
+    "name": "恢复神符:0:255:0",
+    "description": "进入恢复状态，每场战斗恢复自身10%的生命与10%的魔法\\n神符效果持续15场战斗，战斗时受到伤害会立刻中断",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "133": {
+    "id": 133,
+    "name": "霜冻光环:50:50:255",
+    "description": "寒冷中逐渐停滞的脚步。\\n以自身为中心\\v*\\v范围内所有敌人都会被降低\\n\\v%攻速与\\v%闪避(不叠加)",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "134": {
+    "id": 134,
+    "name": "神龙摆尾:155:0:155",
+    "description": "使用盾牌狠狠撞击面前的敌人\\n造成\\v回合的眩晕，并在之后\\v回合内受到的物理伤害减少\\v%",
+    "sp_cost": 25,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "135": {
+    "id": 135,
+    "name": "结阵作战:255:0:155",
+    "description": "以阵法构筑特殊战阵\\n每存在一名成员，单个成员血量攻击防御便提升\\v%，\\v%，\\v%\\n小队包括\\v ",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 5,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "136": {
+    "id": 136,
+    "name": "血战誓约:a:2",
+    "description": "战士永远都会战至最后一滴血\\n以自身为中心\\v*\\v范围内所有友军获得[反击]技能和\\v%吸血",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "137": {
+    "id": 137,
+    "name": "绝对净化:a:4",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "138": {
+    "id": 138,
+    "name": "神圣劝化:a:4",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 5,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "139": {
+    "id": 139,
+    "name": "反击螺旋:a:11",
+    "description": "每次受到攻击时都会进行反击，造成\\v点物理伤害\\n不属于普攻，即便处于被缴械状态依然能触发",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "140": {
+    "id": 140,
+    "name": "狂战怒吼:a:12",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "141": {
+    "id": 141,
+    "name": "灵魂猎手:125:0:55",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "142": {
+    "id": 142,
+    "name": "毒素烙印:a:3",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "143": {
+    "id": 143,
+    "name": "致命链接:a:7",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "144": {
+    "id": 144,
+    "name": "竭心光环:255:70:125",
+    "description": "在以自身为中心\\v*\\v范围内战斗的敌人都将受到影响\\n使敌人在战斗中额外失去\\v%生命上限的生命与\\v点灵魂",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "145": {
+    "id": 145,
+    "name": "强力击:88:255:88",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "146": {
+    "id": 146,
+    "name": "风行:205:205:50",
+    "description": "风之力量环绕周身，\\v回合内受到风之力量的影响\\n持续期间内100%闪避普攻且提升自身\\v%的攻速",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "147": {
+    "id": 147,
+    "name": "寄生种子:0:255:0",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "148": {
+    "id": 148,
+    "name": "活体护甲:180:50:50",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 2,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "149": {
+    "id": 149,
+    "name": "固定生命恢复",
+    "description": "",
+    "sp_cost": 0,
+    "power": 0,
+    "scope": 0,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "150": {
+    "id": 150,
+    "name": "神圣霜冻光环:a:1",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "151": {
+    "id": 151,
+    "name": "冰晶爆破Lv1|8:a:1",
+    "description": "txt",
+    "sp_cost": 120,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "152": {
+    "id": 152,
+    "name": "妖术:a:1",
+    "description": "txt",
+    "sp_cost": 50,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "153": {
+    "id": 153,
+    "name": "不朽之力:a:7",
+    "description": "txt",
+    "sp_cost": 50,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "154": {
+    "id": 154,
+    "name": "幽冥之触:0:155:0",
+    "description": "txt",
+    "sp_cost": 50,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "155": {
+    "id": 155,
+    "name": "冰结之域:0:120:255",
+    "description": "txt",
+    "sp_cost": 50,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "156": {
+    "id": 156,
+    "name": "禁魔光环:0:0:155",
+    "description": "txt",
+    "sp_cost": 50,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "157": {
+    "id": 157,
+    "name": "军团作战:0:155:255",
+    "description": "txt",
+    "sp_cost": 50,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "158": {
+    "id": 158,
+    "name": "幽冥守卫:55:105:255",
+    "description": "txt",
+    "sp_cost": 50,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "159": {
+    "id": 159,
+    "name": "能源之岚:a:4",
+    "description": "txt",
+    "sp_cost": 50,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "160": {
+    "id": 160,
+    "name": "无敌斩:255:205:100",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "161": {
+    "id": 161,
+    "name": "魂之挽歌Lv1|20:a:1",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "162": {
+    "id": 162,
+    "name": "能量冲击Lv3|24:255:0:255",
+    "description": "txt",
+    "sp_cost": 100,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "163": {
+    "id": 163,
+    "name": "灵魂燃烧:a:7",
+    "description": "txt",
+    "sp_cost": 80,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "164": {
+    "id": 164,
+    "name": "以太冲击Lv3:255:0:255",
+    "description": "txt",
+    "sp_cost": 100,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "165": {
+    "id": 165,
+    "name": "缴械:a:7",
+    "description": "txt",
+    "sp_cost": 100,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "166": {
+    "id": 166,
+    "name": "毁灭阴影Lv3|5:128:128:64",
+    "description": "txt",
+    "sp_cost": 0,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "167": {
+    "id": 167,
+    "name": "灵魂支配Lv3:128:128:64",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "168": {
+    "id": 168,
+    "name": "魔王降临Lv2:128:128:64",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "169": {
+    "id": 169,
+    "name": "魔王降临Lv3:128:128:64",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "170": {
+    "id": 170,
+    "name": "灵魂撕裂:a:7",
+    "description": "txt",
+    "sp_cost": 120,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "171": {
+    "id": 171,
+    "name": "自杀攻击:255:80:80:200",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "172": {
+    "id": 172,
+    "name": "战场轰炸:a:12",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "173": {
+    "id": 173,
+    "name": "火焰气息Lv3|10:128:128:64",
+    "description": "txt",
+    "sp_cost": 60,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "174": {
+    "id": 174,
+    "name": "追踪导弹:55:175:255",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "175": {
+    "id": 175,
+    "name": "重型机炮:a:11",
+    "description": "每次普攻时附加\\v点混合伤害\\n特殊伤害类型，计算护甲，计算魔抗\\n对眩晕中的目标造成\\v倍伤害",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "176": {
+    "id": 176,
+    "name": "激光:a:4",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "177": {
+    "id": 177,
+    "name": "真视领域:a:4",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "178": {
+    "id": 178,
+    "name": "镜壁领域:255:50:200",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "179": {
+    "id": 179,
+    "name": "分则能成:255:50:200",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 5,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "180": {
+    "id": 180,
+    "name": "灵魂爆发:255:50:200",
+    "description": "txt",
+    "sp_cost": 100,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "181": {
+    "id": 181,
+    "name": "法力黑洞:255:0:205",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "182": {
+    "id": 182,
+    "name": "牺牲:155:0:0",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "183": {
+    "id": 183,
+    "name": "活血术:0:255:80",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "184": {
+    "id": 184,
+    "name": "焚灭之域:255:50:80",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "185": {
+    "id": 185,
+    "name": "隐身神符:a:7",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "186": {
+    "id": 186,
+    "name": "极寒风暴:0:85:255",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "187": {
+    "id": 187,
+    "name": "无法侦测:a:7",
+    "description": "现在还无法侦测到这个生命体的能力\\n或许还需要更加强大的意志才能看破……",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "188": {
+    "id": 188,
+    "name": "追猎:250:50:100",
+    "description": "当目标处于其可见直线上时，自身都会在目标每次进行\\n移动时向目标移动一格，若接触则发生战斗",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "189": {
+    "id": 189,
+    "name": "至死方休:250:50:100",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "190": {
+    "id": 190,
+    "name": "黑龙吐息:100:0:40",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "191": {
+    "id": 191,
+    "name": "刚毅不屈:0:0:255",
+    "description": "刚毅的身躯能够承受更多的打击\\n自身增加相当于\\v%敌方防御力数值的防御力\\n该被动会受到破坏效果",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "192": {
+    "id": 192,
+    "name": "猛毒缠身:192:0:192",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "193": {
+    "id": 193,
+    "name": "魔霭诅咒:255:0:192",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "194": {
+    "id": 194,
+    "name": "强体光环:a:3",
+    "description": "赋予他人强健的肉体与顽强的生命力\\n增加以自身为中心\\v*\\v范围内所有友军\\v%的生命（可叠加）",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "195": {
+    "id": 195,
+    "name": "虚弱之诏:255:0:255",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "196": {
+    "id": 196,
+    "name": "震荡领域:255:255:128",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "197": {
+    "id": 197,
+    "name": "阳炎冲击:a:12",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "198": {
+    "id": 198,
+    "name": "壮烈成仁:255:0:155",
+    "description": "txt",
+    "sp_cost": 50,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "199": {
+    "id": 199,
+    "name": "剑刃风暴:a:4",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "200": {
+    "id": 200,
+    "name": "业火的杀戮:a:1",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "201": {
+    "id": 201,
+    "name": "磐石聚心:a:1",
+    "description": "txt",
+    "sp_cost": 150,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "202": {
+    "id": 202,
+    "name": "巨浪:0:120:205",
+    "description": "txt",
+    "sp_cost": 150,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "203": {
+    "id": 203,
+    "name": "海妖外壳:192:128:128",
+    "description": "txt",
+    "sp_cost": 150,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "204": {
+    "id": 204,
+    "name": "幽冥射击:192:0:192",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "205": {
+    "id": 205,
+    "name": "诅咒之矢:255:0:255",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "206": {
+    "id": 206,
+    "name": "恩赐解脱:a:9",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "207": {
+    "id": 207,
+    "name": "幻末之墙:255:0:255",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "208": {
+    "id": 208,
+    "name": "月神之箭:a:4",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "209": {
+    "id": 209,
+    "name": "群星风暴:a:4",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "210": {
+    "id": 210,
+    "name": "回溯共鸣:a:1",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "211": {
+    "id": 211,
+    "name": "命运之笔:a:1",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "212": {
+    "id": 212,
+    "name": "[认知干扰]:a:1",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "213": {
+    "id": 213,
+    "name": "傲慢之心:255:75:185",
+    "description": "txt",
+    "sp_cost": 0,
+    "power": 0,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "214": {
+    "id": 214,
+    "name": "否决之力:a:7",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "215": {
+    "id": 215,
+    "name": "憎恶:205:0:255",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "216": {
+    "id": 216,
+    "name": "暮色凋零:255:50:200",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "217": {
+    "id": 217,
+    "name": "怒意狂击:250:168:114",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "218": {
+    "id": 218,
+    "name": "超强力量:166:66:184",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "219": {
+    "id": 219,
+    "name": "不朽之域:a:7",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 4,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "220": {
+    "id": 220,
+    "name": "九阳踏天:a:12",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "221": {
+    "id": 221,
+    "name": "抗性皮肤:a:7",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "222": {
+    "id": 222,
+    "name": "命源逆转:a:4",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "223": {
+    "id": 223,
+    "name": "抗性穿透:a:3",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 3,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "224": {
+    "id": 224,
+    "name": "风暴之锤:a:4",
+    "description": "用充满战意的力量对敌人造成致命打击\\n本回合不攻击，造成\\v点魔法伤害，并眩晕对方\\v回合",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  },
+  "225": {
+    "id": 225,
+    "name": "神之力量:a:12",
+    "description": "txt",
+    "sp_cost": 255,
+    "power": 255,
+    "scope": 1,
+    "plus_state_set": [
+
+    ],
+    "minus_state_set": [
+
+    ]
+  }
+}
