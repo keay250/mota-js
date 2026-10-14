@@ -57,63 +57,6 @@ main.floors.MT6 =
                 "\t[贾斯汀]（或许应该先去东边的【装备商店】(68, 16)看一看，有了公会给的这笔抚恤金，说不定能买到不错的武器与防具防身。）"
             ]
         },
-        "41,24": {
-            "trigger": "action",
-            "enable": true,
-            "data": [
-                {
-                    "type": "playSound",
-                    "name": "door.mp3"
-                },
-                {
-                    "type": "changeFloor",
-                    "floorId": "MT7",
-                    "loc": [
-                        15,
-                        36
-                    ],
-                    "direction": "up"
-                }
-            ]
-        },
-        "68,16": {
-            "trigger": "action",
-            "enable": true,
-            "data": [
-                {
-                    "type": "playSound",
-                    "name": "door.mp3"
-                },
-                {
-                    "type": "changeFloor",
-                    "floorId": "MT8",
-                    "loc": [
-                        5,
-                        15
-                    ],
-                    "direction": "up"
-                }
-            ]
-        },
-        "58,67": {
-            "trigger": "action",
-            "enable": true,
-            "data": [
-                {
-                    "type": "playSound",
-                    "name": "door.mp3"
-                },
-                {
-                    "type": "changeFloor",
-                    "floorId": "MT9",
-                    "loc": [
-                        5,
-                        14
-                    ],
-                    "direction": "up"
-                }
-            ]
-        },
         "30,51": {
             "trigger": "action",
             "enable": true,

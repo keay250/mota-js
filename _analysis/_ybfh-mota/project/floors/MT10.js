@@ -36,25 +36,6 @@ main.floors.MT10 =
     "eachArrive": [],
     "parallelDo": "",
     "events": {
-        "1,8": {
-            "trigger": "action",
-            "enable": true,
-            "data": [
-                {
-                    "type": "playSound",
-                    "name": "door.mp3"
-                },
-                {
-                    "type": "changeFloor",
-                    "floorId": "MT7",
-                    "loc": [
-                        23,
-                        31
-                    ],
-                    "direction": "down"
-                }
-            ]
-        },
         "6,6": {
             "trigger": "action",
             "enable": true,
