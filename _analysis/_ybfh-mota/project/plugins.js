@@ -32,6 +32,29 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.updateStatusBar) core.updateStatusBar(false, true);
 		};
 
+		// 增强 events.prototype._action_function，防止任何写法缺失或直接写表达式导致静默失败
+		if (events && events.prototype) {
+			var origActionFunction = events.prototype._action_function;
+			events.prototype._action_function = function (data, x, y, prefix) {
+				var func = data["function"] || data["value"];
+				try {
+					if (typeof func === "function") {
+						func();
+					} else if (typeof func === "string") {
+						func = func.trim();
+						if (func.indexOf("function") === 0) {
+							eval('(' + func + ')()');
+						} else {
+							eval(func);
+						}
+					}
+				} catch (e) {
+					console.error("Action function execution error:", e, data);
+				}
+				if (!data.async) core.doAction();
+			};
+		}
+
 		// 检查指定楼层区域内是否存在任何存活怪物
 		core.hasMonsterInArea = function (floorId, x1, y1, x2, y2) {
 			floorId = floorId || core.status.floorId;

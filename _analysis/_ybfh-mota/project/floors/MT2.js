@@ -54,14 +54,23 @@ main.floors.MT2=
     },
     "changeFloor": {
         "2,14": {
-            "floorId": "MT1",
-            "stair": "upFloor"
+                "floorId": "MT1",
+                "loc": [
+                        12,
+                        1
+                ],
+                "direction": "down"
         },
         "12,0": {
-            "floorId": "MT3",
-            "loc": [3, 14]
+                "floorId": "MT3",
+                "loc": [
+                        3,
+                        13
+                ],
+                "direction": "up"
         }
-    },
+},
+
     "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},

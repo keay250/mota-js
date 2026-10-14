@@ -31,7 +31,1698 @@ main.floors.MT5=
     "eachArrive": [],
     "parallelDo": "",
     "events": {
+                "10,9": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "11,9": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "12,9": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "13,9": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "14,9": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "10,10": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "11,10": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "12,10": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "13,10": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "14,10": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "10,11": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
         "11,11": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "12,11": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "13,11": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "14,11": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "10,12": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "11,12": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "12,12": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "13,12": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "playSound",
+                    "name": "centerFly.mp3"
+                },
+                {
+                    "type": "if",
+                    "condition": "!core.hasFlag('station_mt5_activated')",
+                    "true": [
+                        {
+                            "type": "tip",
+                            "text": "【厄泽城外小站】已成功登记激活！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:station_mt5_activated",
+                            "operator": "=",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "type": "choices",
+                    "text": "\t[厄泽城外小站]\n古老符文闪烁着流光，这是连通大陆各处的魔法传送阵。\n请选择小站服务：",
+                    "choices": [
+                        {
+                            "text": "休整：恢复全部生命值",
+                            "action": [
+                                {
+                                    "type": "playSound",
+                                    "name": "recovery.mp3"
+                                },
+                                {
+                                    "type": "function",
+                                    "function": "function() { core.status.hero.hp = core.status.hero.hpmax || 1000; core.updateStatusBar(); }"
+                                },
+                                {
+                                    "type": "tip",
+                                    "text": "生命值已完全恢复！"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "传送：前往其他小站",
+                            "action": [
+                                {
+                                    "type": "if",
+                                    "condition": "core.hasFlag('station_mt6_activated')",
+                                    "true": [
+                                        {
+                                            "type": "choices",
+                                            "text": "请选择目的地：",
+                                            "choices": [
+                                                {
+                                                    "text": "厄泽城·中央广场小站",
+                                                    "action": [
+                                                        {
+                                                            "type": "changeFloor",
+                                                            "floorId": "MT6",
+                                                            "loc": [37, 30],
+                                                            "direction": "down",
+                                                            "time": 300
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "text": "取消",
+                                                    "action": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "false": [
+                                        "\t[小站管理员]目前尚未连接其他已激活的小站。穿过哨卡进入厄泽城后，可在中央广场激活城镇小站！"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "离开",
+                            "action": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "14,12": {
             "trigger": "action",
             "enable": true,
             "data": [
@@ -269,13 +1960,15 @@ main.floors.MT5=
     },
     "changeFloor": {
         "0,7": {
-            "floorId": "MT4",
-            "loc": [
-                14,
-                7
-            ]
+                "floorId": "MT4",
+                "loc": [
+                        13,
+                        7
+                ],
+                "direction": "left"
         }
-    },
+},
+
     "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},

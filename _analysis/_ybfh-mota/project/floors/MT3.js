@@ -159,20 +159,23 @@ main.floors.MT3=
     },
     "changeFloor": {
         "3,14": {
-            "floorId": "MT2",
-            "loc": [
-                12,
-                0
-            ]
+                "floorId": "MT2",
+                "loc": [
+                        12,
+                        1
+                ],
+                "direction": "down"
         },
         "14,5": {
-            "floorId": "MT4",
-            "loc": [
-                0,
-                7
-            ]
+                "floorId": "MT4",
+                "loc": [
+                        1,
+                        7
+                ],
+                "direction": "right"
         }
-    },
+},
+
     "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},

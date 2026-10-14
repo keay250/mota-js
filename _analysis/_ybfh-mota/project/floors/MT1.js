@@ -155,7 +155,11 @@ main.floors.MT1=
                         },
                         {
                             "type": "function",
-                            "value": "core.addHp(50);"
+                            "function": "function() {\n    core.addHp(50);\n}"
+                        },
+                        {
+                            "type": "tip",
+                            "text": "生命值 +50！"
                         },
                         {
                             "type": "hide",
@@ -213,7 +217,11 @@ main.floors.MT1=
                 },
                 {
                     "type": "function",
-                    "value": "core.addMaxHp(20);"
+                    "function": "function() {\n    core.addMaxHp(20);\n}"
+                },
+                {
+                    "type": "tip",
+                    "text": "生命上限 +20！"
                 },
                 {
                     "type": "hide",
