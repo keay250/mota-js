@@ -85,17 +85,34 @@ h = m.attributes.get('@height') or m.attributes.get(b'@height')
 tbl_data = m.attributes.get('@data')._private_data
 tbl = struct.unpack(f'<{w*h*3}h', tbl_data[20:])
 
-full_img = Image.new('RGBA', (w * 32, h * 32), (0, 0, 0, 0))
+# 提取优先级 priorities
+pri_data = t73.attributes['@priorities']._private_data
+priorities = struct.unpack(f'<{len(pri_data)//2 - 10}h', pri_data[20:])
+
+# 收集所有渲染项并按 RMXP 真实深度 (Z-sort) 排序
+# 地表 (p == 0): z = 0
+# 前景图块 (p > 0): z = y * 32 + p * 32
+# NPC: z = (ey + 1) * 32
+render_items = []
+seq = 0
+
 for layer in range(3):
     layer_offset = layer * (w * h)
     for y in range(h):
         for x in range(w):
             tid = tbl[layer_offset + y * w + x]
+            if tid == 0: continue
+            p = priorities[tid] if tid < len(priorities) else 0
             t = render_tile(tid)
-            if t:
-                full_img.paste(t, (x * 32, y * 32), t)
+            if not t: continue
+            if p == 0:
+                render_items.append((0, layer, seq, 'tile', (t, x * 32, y * 32)))
+            else:
+                z = y * 32 + p * 32
+                render_items.append((z, layer, seq, 'tile', (t, x * 32, y * 32)))
+            seq += 1
 
-# 合成 NPC 行走图到背景
+# 合成 NPC 行走图到 Z-sort 队列
 events = m.attributes.get('@events', {})
 dir_row_map = {2: 0, 4: 1, 6: 2, 8: 3}
 
@@ -127,12 +144,26 @@ for eid, ev in sorted(events.items()):
         # 底部贴合到格子底部
         px = ex * 32 + (32 - cw) // 2
         py = (ey + 1) * 32 - ch
+        z = (ey + 1) * 32
+        # NPC 在相同 Z 时层级置于中层 (1.5)
+        render_items.append((z, 1.5, seq, 'npc', (sub, px, py, cname, ex, ey)))
+        seq += 1
+        print(f"  + 队列装载 NPC: {cname} at ({ex}, {ey}), 深度 Z={z}")
+
+# 按 Z 轴升序渲染
+render_items.sort(key=lambda it: (it[0], it[1], it[2]))
+full_img = Image.new('RGBA', (w * 32, h * 32), (0, 0, 0, 0))
+for it in render_items:
+    if it[3] == 'tile':
+        t, tx, ty = it[4]
+        full_img.paste(t, (tx, ty), t)
+    else:
+        sub, px, py, cname, ex, ey = it[4]
         full_img.paste(sub, (px, py), sub)
-        print(f"  + 合成 NPC: {cname} at ({ex}, {ey}), 尺寸 ({cw}x{ch})")
 
 bg_dest = os.path.join(MOTA_DIR, 'project', 'images', 'map019_bg.png')
 full_img.save(bg_dest)
-print(f"[*] 佣兵公会背景图渲染完成 ({full_img.size})，用时 {time.time() - t0:.2f}s，文件: {bg_dest}")
+print(f"[*] 佣兵公会高保真背景图渲染完成 ({full_img.size})，用时 {time.time() - t0:.2f}s，文件: {bg_dest}")
 
 # -------------------------------------------------------------
 # 2. 计算 26x40 通行度与空气墙矩阵
@@ -161,7 +192,7 @@ for y in range(h):
         if is_blocked:
             map_arr[y][x] = 17 # 空气墙
 
-# 将有 NPC 的格子加上阻挡，防止穿模
+# 将有 NPC 的格子加上阻挡，防止穿模并确保撞击触发 action
 for eid, ev in events.items():
     attrs = ev.attributes
     ex = attrs.get('@x')
@@ -181,8 +212,163 @@ print(f"[*] 碰撞矩阵计算完成！阻挡格数: {sum(row.count(17) for row 
 # -------------------------------------------------------------
 print("\n[3/5] 正在装配 MT7.js 佣兵公会全量事件与剧情链路...")
 
+# 法芙娜剧情定义
+fafna_event_data = [
+    {
+        "type": "playSound",
+        "name": "cursor.mp3"
+    },
+    {
+        "type": "if",
+        "condition": "core.hasFlag('fafna_quest_done')",
+        "true": [
+            "\t[法芙娜,woman]\b[up,9,30]贾斯汀，寂静之森深处非常危险，路上一定要多加小心啊！",
+            "\t[法芙娜,woman]\b[up,9,30]如果遇到难以应付的魔兽，千万别逞强，及时撤退回来，知道了吗？",
+            "\t[贾斯汀,hero]\b[up,hero]放心吧法芙娜，我一定会平安回来的！"
+        ],
+        "false": [
+            {
+                "type": "if",
+                "condition": "core.hasFlag('got_captain_legacy')",
+                "true": [
+                    "\t[法芙娜,woman]\b[up,9,30]贾斯汀，东西取回来了吗？",
+                    "\t[贾斯汀,hero]\b[up,hero]没什么值钱的东西，就一个样式古怪的装饰品小球【封印之球】。",
+                    "\t[法芙娜,woman]\b[up,9,30]不是装备或者魔法道具吗？",
+                    "\t[贾斯汀,hero]\b[up,hero]装备上去没有任何属性加成，只是个单纯的装饰品罢了。",
+                    "\t[法芙娜,woman]\b[up,9,30]哦……也是呢，拉瓦尔大叔以前倒也偶尔买一些古怪的饰品……",
+                    "\t[法芙娜,woman]\b[up,9,30]对了贾斯汀，关于寂静之森遗迹的事情，你有什么想法没？",
+                    "\t[贾斯汀,hero]\b[up,hero]那不是我力所能及的事情，告示上都说了至少要有特级佣兵的实力才能前去。",
+                    "\t[法芙娜,woman]\b[up,9,30]哎呀不要这么死板嘛！前两天不是有不少中等实力的小队遇难在森林里了吗？那些大佣兵团看不上的遗落物资……",
+                    "\t[贾斯汀,hero]\b[up,hero]……对呀！这或许是一个机会！大部队在前面清扫魔兽，森林深处反而可能安全不少！",
+                    "\t[贾斯汀,hero]\b[up,hero]可是发死人财什么的，总感觉有些愧疚……",
+                    "\t[法芙娜,woman]\b[up,9,30]贾斯汀，有钱不是为了铺张浪费，而是要用来帮助更多的人！想想拉瓦尔大叔！不管是重建佣兵小队，还是抚养像我们一样的孤儿，都需要金钱的……还有比如在城里买一处房屋作为居所……",
+                    "\t[贾斯汀,hero]\b[up,hero]啥？买房屋干啥？",
+                    "\t[法芙娜,woman]\b[up,9,30]…………笨蛋！人家什么都没说，你一定是听错了！",
+                    "\t[贾斯汀,hero]\b[up,hero]话说，通往寂静之森深处的要道上有公会的严密封锁线，我该怎么过去呢？",
+                    "\t[法芙娜,woman]\b[up,9,30]啊，那个好办！怎么说我也是公会的接待员，搞一把通行钥匙还是没问题的！",
+                    {
+                        "type": "playSound",
+                        "name": "item.mp3"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "获得了【公会封锁线钥匙】！"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "item:yellowKey",
+                        "value": "item:yellowKey+2"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:fafna_quest_done",
+                        "value": True
+                    },
+                    "\t[法芙娜,woman]\b[up,9,30]喏，有了这个就能通过封锁线了。路上千万小心啊，有危险就及时收手吧！",
+                    "\t[贾斯汀,hero]\b[up,hero]嗯！真是太感谢你了，法芙娜，我一定会保重的！"
+                ],
+                "false": [
+                    "\t[法芙娜,woman]\b[up,9,30]贾斯汀！你平安回来了呀！赞美全能之神，真是太好了！",
+                    "\t[法芙娜,woman]\b[up,9,30]你知道吗，我在公会里看到你们“挽歌”小队的受损队徽时，整个人都吓坏了呢……",
+                    "\t[贾斯汀,hero]\b[up,hero]真的……只有我一个人回来了吗。",
+                    "\t[法芙娜,woman]\b[up,9,30]……贾斯汀，很抱歉。其他人生还的可能性，恐怕……",
+                    "\t[贾斯汀,hero]\b[up,hero]拉瓦尔队长他对我那么好，在我还是个孤儿的时候就收养了我，教会我信奉全能之神，可是他……",
+                    "\t[法芙娜,woman]\b[up,9,30]拉瓦尔大叔是个真正的高尚之人。正因为这样，贾斯汀你才更要振作起来，对得起大叔的养育之恩呀！",
+                    "\t[贾斯汀,hero]\b[up,hero]嗯……我明白的！我会努力让“挽歌”小队的名字留存下去，成为厄泽城最强大的佣兵小队，完成队长的遗愿！",
+                    "\t[法芙娜,woman]\b[up,9,30]……那个，贾斯汀。根据公会规定，小队至少要有三名中级佣兵或一名高级佣兵才能维持注册……所以，“挽歌”小队目前已经被判定解散了……",
+                    "\t[贾斯汀,hero]\b[up,hero]……我知道的，法芙娜。这只是一时的，以后我一定会亲手重新建立起新的挽歌小队！",
+                    "\t[法芙娜,woman]\b[up,9,30]对了！你是小队唯一的幸存者，先前拉瓦尔队长在公会办理过寄存财产，理应由你继承！你快去上方柜台找【公会员工】(21, 8)办理领取吧！",
+                    "\t[贾斯汀,hero]\b[up,hero]好的，我这就去柜台取遗物，一会儿见！",
+                    {
+                        "type": "setValue",
+                        "name": "flag:talked_fafna",
+                        "value": True
+                    }
+                ]
+            }
+        ]
+    }
+]
+
+# 公会办事柜台 (21, 8) 领取队长遗产
+legacy_event_data = [
+    {
+        "type": "playSound",
+        "name": "cursor.mp3"
+    },
+    {
+        "type": "if",
+        "condition": "core.hasFlag('got_captain_legacy')",
+        "true": [
+            "\t[公会员工,man]\b[up,21,8]你还有事吗？没事不要打扰我办公，后面还有好多佣兵排队呢。"
+        ],
+        "false": [
+            {
+                "type": "if",
+                "condition": "core.hasFlag('talked_fafna')",
+                "true": [
+                    "\t[公会员工,man]\b[up,21,8]挽歌小队，贾斯汀是吧？",
+                    "\t[公会员工,man]\b[up,21,8]嗯，挽歌小队目前已经被记录为解散状态。不过你的名字登记在小队候补队长一栏，按条例确实有资格领取小队寄存的财产。",
+                    "\t[贾斯汀,hero]\b[up,hero]等等……小队候补队长？拉瓦尔队长居然把我的名字写在了候补队长上……",
+                    "\t[公会员工,man]\b[up,21,8]别发愣了。挽歌小队寄存物品如下：金币 50 枚，未知装饰品一件。队长可真够拮据的。你稍等，这就差人去取。",
+                    {
+                        "type": "playSound",
+                        "name": "coin.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:money",
+                        "value": "status:money+50"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "获得了金币 +50 与队长遗物【封印之球】！"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:got_captain_legacy",
+                        "value": True
+                    },
+                    "\t[贾斯汀,hero]\b[up,hero]（拉瓦尔大叔才不是小气，小队赚来的赏金大多都用来接济贫困的孤儿了……）",
+                    "\t[贾斯汀,hero]\b[up,hero]谢谢您，赞美伟大的全能之神。",
+                    "\t[公会员工,man]\b[up,21,8]赞美伟大的全能之神。拿了东西就快走吧，顺便记得回去找法芙娜知会一声。"
+                ],
+                "false": [
+                    "\t[公会员工,man]\b[up,21,8]新来的？这里是公会财产核算与抚恤领取专柜，请先去接待处核实小队身份再来排队！"
+                ]
+            }
+        ]
+    }
+]
+
+# 青年佣兵对话
+mercenary_pair_event = [
+    "\t[青年佣兵,man]\b[up,14,28]听说城主府已经贴出巨额悬赏了，谁要是能在寂静之森遗迹带回神殿核心，就能直接册封贵族骑士！",
+    "\t[伙伴佣兵,man]\b[up,14,30]省省吧兄弟，那地方连初阶魔导兽都成群结队，没点真本事去也是白白送死。"
+]
+
+# 执事对话
+cleric_event = [
+    "\t[公会执事,man]\b[up,20,28]全能之神在上，愿逝去佣兵的灵魂得到永恒的安宁。"
+]
+
+# 重装佣兵对话
+heavy_warrior_event = [
+    "\t[重装佣兵,man]\b[up,22,30]身上的甲胄哪怕厚一寸，在面对嗜血魔兽时就能多撑一个回合！工欲善其事，必先利其器啊！"
+]
+
+# 红发佣兵对话
+red_warrior_event = [
+    "\t[红发佣兵,man]\b[up,11,9]闪开，没看到本大爷正和调酒师商量委托酬劳吗？小鬼一边去！"
+]
+
+# 城主府守卫对话
+guard_event = [
+    "\t[城主府守卫,man]\b[up,16,7]城主府正在紧急调动驻军驻扎城外防线，严防森林深处的异动波及到厄泽城主城区！"
+]
+
 events_dict = {
-    # 1. 大门出口 (15, 37) -> 回到厄泽城 MT6 (41, 25)
+    # 1. 大门出口
     "15,37": {
         "trigger": "action",
         "enable": True,
@@ -200,188 +386,40 @@ events_dict = {
         ]
     },
 
-    # 2. 法芙娜核心剧情 (9, 30) - 触发点在 (10, 30) 和 (9, 31)
-    "10,30": {
-        "trigger": "action",
-        "enable": True,
-        "data": [
-            {
-                "type": "playSound",
-                "name": "cursor.mp3"
-            },
-            {
-                "type": "if",
-                "condition": "core.hasFlag('fafna_quest_done')",
-                "true": [
-                    "\t[法芙娜,woman]\b[up,9,30]贾斯汀，寂静之森深处非常危险，路上一定要多加小心啊！",
-                    "\t[法芙娜,woman]\b[up,9,30]如果遇到难以应付的魔兽，千万别逞强，及时撤退回来，知道了吗？",
-                    "\t[贾斯汀,hero]\b[up,hero]放心吧法芙娜，我一定会平安回来的！"
-                ],
-                "false": [
-                    {
-                        "type": "if",
-                        "condition": "core.hasFlag('got_captain_legacy')",
-                        "true": [
-                            "\t[法芙娜,woman]\b[up,9,30]贾斯汀，东西取回来了吗？",
-                            "\t[贾斯汀,hero]\b[up,hero]没什么值钱的东西，就一个样式古怪的装饰品小球【封印之球】。",
-                            "\t[法芙娜,woman]\b[up,9,30]不是装备或者魔法道具吗？",
-                            "\t[贾斯汀,hero]\b[up,hero]装备上去没有任何属性加成，只是个单纯的装饰品罢了。",
-                            "\t[法芙娜,woman]\b[up,9,30]哦……也是呢，拉瓦尔大叔以前倒也偶尔买一些古怪的饰品……",
-                            "\t[法芙娜,woman]\b[up,9,30]对了贾斯汀，关于寂静之森遗迹的事情，你有什么想法没？",
-                            "\t[贾斯汀,hero]\b[up,hero]那不是我力所能及的事情，告示上都说了至少要有特级佣兵的实力才能前去。",
-                            "\t[法芙娜,woman]\b[up,9,30]哎呀不要这么死板嘛！前两天不是有不少中等实力的小队遇难在森林里了吗？那些大佣兵团看不上的遗落物资……",
-                            "\t[贾斯汀,hero]\b[up,hero]……对呀！这或许是一个机会！大部队在前面清扫魔兽，森林深处反而可能安全不少！",
-                            "\t[贾斯汀,hero]\b[up,hero]可是发死人财什么的，总感觉有些愧疚……",
-                            "\t[法芙娜,woman]\b[up,9,30]贾斯汀，有钱不是为了铺张浪费，而是要用来帮助更多的人！想想拉瓦尔大叔！不管是重建佣兵小队，还是抚养像我们一样的孤儿，都需要金钱的……还有比如在城里买一处房屋作为居所……",
-                            "\t[贾斯汀,hero]\b[up,hero]啥？买房屋干啥？",
-                            "\t[法芙娜,woman]\b[up,9,30]…………笨蛋！人家什么都没说，你一定是听错了！",
-                            "\t[贾斯汀,hero]\b[up,hero]话说，通往寂静之森深处的要道上有公会的严密封锁线，我该怎么过去呢？",
-                            "\t[法芙娜,woman]\b[up,9,30]啊，那个好办！怎么说我也是公会的接待员，搞一把通行钥匙还是没问题的！",
-                            {
-                                "type": "playSound",
-                                "name": "item.mp3"
-                            },
-                            {
-                                "type": "tip",
-                                "text": "获得了【公会封锁线钥匙】！"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "item:yellowKey",
-                                "value": "item:yellowKey+2"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "flag:fafna_quest_done",
-                                "value": True
-                            },
-                            "\t[法芙娜,woman]\b[up,9,30]喏，有了这个就能通过封锁线了。路上千万小心啊，有危险就及时收手吧！",
-                            "\t[贾斯汀,hero]\b[up,hero]嗯！真是太感谢你了，法芙娜，我一定会保重的！"
-                        ],
-                        "false": [
-                            "\t[法芙娜,woman]\b[up,9,30]贾斯汀！你平安回来了呀！赞美全能之神，真是太好了！",
-                            "\t[法芙娜,woman]\b[up,9,30]你知道吗，我在公会里看到你们“挽歌”小队的受损队徽时，整个人都吓坏了呢……",
-                            "\t[贾斯汀,hero]\b[up,hero]真的……只有我一个人回来了吗。",
-                            "\t[法芙娜,woman]\b[up,9,30]……贾斯汀，很抱歉。其他人生还的可能性，恐怕……",
-                            "\t[贾斯汀,hero]\b[up,hero]拉瓦尔队长他对我那么好，在我还是个孤儿的时候就收养了我，教会我信奉全能之神，可是他……",
-                            "\t[法芙娜,woman]\b[up,9,30]拉瓦尔大叔是个真正的高尚之人。正因为这样，贾斯汀你才更要振作起来，对得起大叔的养育之恩呀！",
-                            "\t[贾斯汀,hero]\b[up,hero]嗯……我明白的！我会努力让“挽歌”小队的名字留存下去，成为厄泽城最强大的佣兵小队，完成队长的遗愿！",
-                            "\t[法芙娜,woman]\b[up,9,30]……那个，贾斯汀。根据公会规定，小队至少要有三名中级佣兵或一名高级佣兵才能维持注册……所以，“挽歌”小队目前已经被判定解散了……",
-                            "\t[贾斯汀,hero]\b[up,hero]……我知道的，法芙娜。这只是一时的，以后我一定会亲手重新建立起新的挽歌小队！",
-                            "\t[法芙娜,woman]\b[up,9,30]对了！你是小队唯一的幸存者，先前拉瓦尔队长在公会办理过寄存财产，理应由你继承！你快去上方柜台找【公会员工】(21, 8)办理领取吧！",
-                            "\t[贾斯汀,hero]\b[up,hero]好的，我这就去柜台取遗物，一会儿见！",
-                            {
-                                "type": "setValue",
-                                "name": "flag:talked_fafna",
-                                "value": True
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
+    # 2. 法芙娜：NPC本人 (9,30)、柜台前接触点 (10,30)、侧面 (9,31)
+    "9,30": {"trigger": "action", "enable": True, "data": fafna_event_data},
+    "10,30": {"trigger": "action", "enable": True, "data": fafna_event_data},
+    "9,31": {"trigger": "action", "enable": True, "data": fafna_event_data},
 
-    # 3. 公会办事柜台 (21, 8) - 领取拉瓦尔队长遗产
-    "21,9": {
-        "trigger": "action",
-        "enable": True,
-        "data": [
-            {
-                "type": "playSound",
-                "name": "cursor.mp3"
-            },
-            {
-                "type": "if",
-                "condition": "core.hasFlag('got_captain_legacy')",
-                "true": [
-                    "\t[公会员工,man]\b[up,21,8]你还有事吗？没事不要打扰我办公，后面还有好多佣兵排队呢。"
-                ],
-                "false": [
-                    {
-                        "type": "if",
-                        "condition": "core.hasFlag('talked_fafna')",
-                        "true": [
-                            "\t[公会员工,man]\b[up,21,8]挽歌小队，贾斯汀是吧？",
-                            "\t[公会员工,man]\b[up,21,8]嗯，挽歌小队目前已经被记录为解散状态。不过你的名字登记在小队候补队长一栏，按条例确实有资格领取小队寄存的财产。",
-                            "\t[贾斯汀,hero]\b[up,hero]等等……小队候补队长？拉瓦尔队长居然把我的名字写在了候补队长上……",
-                            "\t[公会员工,man]\b[up,21,8]别发愣了。挽歌小队寄存物品如下：金币 50 枚，未知装饰品一件。队长可真够拮据的。你稍等，这就差人去取。",
-                            {
-                                "type": "playSound",
-                                "name": "coin.mp3"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "status:money",
-                                "value": "status:money+50"
-                            },
-                            {
-                                "type": "tip",
-                                "text": "获得了金币 +50 与队长遗物【封印之球】！"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "flag:got_captain_legacy",
-                                "value": True
-                            },
-                            "\t[贾斯汀,hero]\b[up,hero]（拉瓦尔大叔才不是小气，小队赚来的赏金大多都用来接济贫困的孤儿了……）",
-                            "\t[贾斯汀,hero]\b[up,hero]谢谢您，赞美伟大的全能之神。",
-                            "\t[公会员工,man]\b[up,21,8]赞美伟大的全能之神。拿了东西就快走吧，顺便记得回去找法芙娜知会一声。"
-                        ],
-                        "false": [
-                            "\t[公会员工,man]\b[up,21,8]新来的？这里是公会财产核算与抚恤领取专柜，请先去接待处核实小队身份再来排队！"
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
+    # 3. 公会专柜：员工本人 (21,8)、柜台前接触点 (21,9)
+    "21,8": {"trigger": "action", "enable": True, "data": legacy_event_data},
+    "21,9": {"trigger": "action", "enable": True, "data": legacy_event_data},
 
-    # 4. 青年佣兵与伙伴 (14, 28) & (14, 30)
-    "15,28": {
-        "trigger": "action",
-        "enable": True,
-        "data": [
-            "\t[青年佣兵,man]\b[up,14,28]听说城主府已经贴出巨额悬赏了，谁要是能在寂静之森遗迹带回神殿核心，就能直接册封贵族骑士！",
-            "\t[伙伴佣兵,man]\b[up,14,30]省省吧兄弟，那地方连初阶魔导兽都成群结队，没点真本事去也是白白送死。"
-        ]
-    },
+    # 4. 青年佣兵与伙伴：(14,28), (14,29桌子), (14,30), (15,28), (15,29), (15,30)
+    "14,28": {"trigger": "action", "enable": True, "data": mercenary_pair_event},
+    "14,29": {"trigger": "action", "enable": True, "data": mercenary_pair_event},
+    "14,30": {"trigger": "action", "enable": True, "data": mercenary_pair_event},
+    "15,28": {"trigger": "action", "enable": True, "data": mercenary_pair_event},
+    "15,29": {"trigger": "action", "enable": True, "data": mercenary_pair_event},
+    "15,30": {"trigger": "action", "enable": True, "data": mercenary_pair_event},
 
-    # 5. 执事 (20, 28)
-    "20,29": {
-        "trigger": "action",
-        "enable": True,
-        "data": [
-            "\t[公会执事,man]\b[up,20,28]全能之神在上，愿逝去佣兵的灵魂得到永恒的安宁。"
-        ]
-    },
+    # 5. 执事：(20,28), (20,29)
+    "20,28": {"trigger": "action", "enable": True, "data": cleric_event},
+    "20,29": {"trigger": "action", "enable": True, "data": cleric_event},
 
-    # 6. 重装佣兵 (22, 30)
-    "21,30": {
-        "trigger": "action",
-        "enable": True,
-        "data": [
-            "\t[重装佣兵,man]\b[up,22,30]身上的甲胄哪怕厚一寸，在面对嗜血魔兽时就能多撑一个回合！工欲善其事，必先利其器啊！"
-        ]
-    },
+    # 6. 重装佣兵与重甲佣兵：(22,30), (21,30), (23,30), (17,32)
+    "22,30": {"trigger": "action", "enable": True, "data": heavy_warrior_event},
+    "21,30": {"trigger": "action", "enable": True, "data": heavy_warrior_event},
+    "23,30": {"trigger": "action", "enable": True, "data": heavy_warrior_event},
+    "17,32": {"trigger": "action", "enable": True, "data": heavy_warrior_event},
 
-    # 7. 红发佣兵 (11, 9)
-    "11,10": {
-        "trigger": "action",
-        "enable": True,
-        "data": [
-            "\t[红发佣兵,man]\b[up,11,9]闪开，没看到本大爷正和调酒师商量委托酬劳吗？小鬼一边去！"
-        ]
-    },
+    # 7. 红发佣兵：(11,9), (11,10)
+    "11,9": {"trigger": "action", "enable": True, "data": red_warrior_event},
+    "11,10": {"trigger": "action", "enable": True, "data": red_warrior_event},
 
-    # 8. 城主府守卫 (16, 7)
-    "16,8": {
-        "trigger": "action",
-        "enable": True,
-        "data": [
-            "\t[城主府守卫,man]\b[up,16,7]城主府正在紧急调动驻军驻扎城外防线，严防森林深处的异动波及到厄泽城主城区！"
-        ]
-    }
+    # 8. 城主府守卫：(16,7), (16,8)
+    "16,7": {"trigger": "action", "enable": True, "data": guard_event},
+    "16,8": {"trigger": "action", "enable": True, "data": guard_event}
 }
 
 mt7_data = {

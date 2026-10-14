@@ -1978,5 +1978,111 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.drawTip("【蓄势一击】已关闭，恢复常态期望。");
 			}
 		};
+
+		// -------------------------------------------------------------
+		// 1. 修复空气墙/障碍物绑定 action 触发事件时 canMoveHero 被拦截的问题
+		// -------------------------------------------------------------
+		var originCheckPoint = core.maps._canMoveHero_checkPoint;
+		core.maps._canMoveHero_checkPoint = function (x, y, direction, floorId, arrays) {
+			floorId = floorId || core.status.floorId;
+			var nx = x + core.utils.scan[direction].x, ny = y + core.utils.scan[direction].y;
+			var thisEvents = (core.floors[floorId] && core.floors[floorId].events) || {};
+			var hasAction = thisEvents[nx + "," + ny] && thisEvents[nx + "," + ny].trigger == "action";
+			if (hasAction) {
+				return true;
+			}
+			return originCheckPoint.call(this, x, y, direction, floorId, arrays);
+		};
+
+		// -------------------------------------------------------------
+		// 2. 永不复还专属装备与自定义道具图标渲染系统
+		// -------------------------------------------------------------
+		var equipImgMap = {
+			'crystalSword': '装备-水晶剑.png',
+			'iceCrystalSword': '装备-水晶剑（寒冰）.png',
+			'mercenarySword': '佣兵短剑.png',
+			'poorLeather': '劣质皮甲.png',
+			'buckler': '小圆盾.png',
+			'ringOfRegen': '回复戒指.png',
+			'greatSword': '装备-大剑.png',
+			'vanguard': '装备-先锋盾.png',
+			'maskOfMadness': '装备-吸血面具.png',
+			'powerTreads': '装备-力量假腿.png',
+			'ringOfAquila': '装备-天鹰之戒.png',
+			'forceStaff': '装备-原力法杖.png',
+			'bladeMail': '装备-刃甲.png',
+			'divineRapier': '圣剑.png',
+			'yasha': '装备-夜叉.png',
+			'perseverance': '装备-坚韧球.png',
+			'echoSabre': '装备-回音战刃.png'
+		};
+
+		core.ui.drawItemIcon = function (canvas, itemId, x, y, width, height) {
+			width = width || 32;
+			height = height || 32;
+			if (!itemId) return;
+
+			var customImgName = equipImgMap[itemId];
+			if (!customImgName && core.material.items[itemId]) {
+				var iname = core.material.items[itemId].name;
+				if (core.material.images.images[iname + '.png']) {
+					customImgName = iname + '.png';
+				} else if (core.material.images.images['装备-' + iname + '.png']) {
+					customImgName = '装备-' + iname + '.png';
+				}
+			}
+
+			var img = customImgName ? core.material.images.images[customImgName] : null;
+			if (img) {
+				core.drawImage(canvas, img, 0, 0, img.width, img.height, x, y, width, height);
+				return;
+			}
+
+			var icon = core.material.icons.items[itemId];
+			if (icon != null && core.material.images.items) {
+				core.drawImage(canvas, core.material.images.items, 0, 32 * icon, 32, 32, x, y, width, height);
+				return;
+			}
+
+			// 兜底保全
+			core.fillRect(canvas, x, y, width, height, '#333333');
+			core.strokeRoundRect(canvas, x, y, width, height, 4, '#888888');
+			var label = (core.material.items[itemId] && core.material.items[itemId].name) || itemId;
+			core.fillText(canvas, label.substring(0, 1), x + width / 2, y + height / 2 + 5, '#EEEEEE', 'bold 14px Arial');
+		};
+
+		// 重写已装备栏图标绘制
+		ui.prototype._drawEquipbox_drawEquiped = function (info, line) {
+			core.setTextAlign('ui', 'center');
+			var per_line = core._HALF_WIDTH_ - 3, width = Math.floor(core._PX_ / (per_line + 0.25));
+			for (var i = 0; i < info.equipLength; i++) {
+				var equipId = info.equipEquipment[i] || null;
+				var offset_image = width * (i % per_line) + width * 2 / 3;
+				var offset_text = offset_image - (width - 32) / 2;
+				var y = line + 54 * Math.floor(i / per_line) + 19;
+				if (equipId) {
+					core.ui.drawItemIcon('ui', equipId, offset_image, y, 32, 32);
+				}
+				core.fillText('ui', info.allEquips[i] || "未知", offset_text, y + 27, '#FFFFFF', this._buildFont(16, true));
+				core.strokeRoundRect('ui', offset_image - 4, y - 4, 40, 40, 6, info.index == i ? core.status.globalAttribute.selectColor : "#FFFFFF");
+			}
+		};
+
+		// 重写拥有装备与道具栏图标绘制
+		ui.prototype._drawToolbox_drawContent = function (info, line, items, page, drawCount) {
+			var n = core._HALF_WIDTH_;
+			core.setTextAlign('ui', 'right');
+			for (var i = 0; i < core._WIDTH_ - 1; i++) {
+				var item = items[(core._WIDTH_ - 1) * (page - 1) + i];
+				if (!item) continue;
+				var yoffset = line + 54 * Math.floor(i / n) + 19;
+				var xoffset = 64 * (i % n) + 21;
+				core.ui.drawItemIcon('ui', item, xoffset, yoffset, 32, 32);
+				if (drawCount)
+					core.fillText('ui', core.itemCount(item), 64 * (i % n) + 56, yoffset + 33, '#FFFFFF', this._buildFont(14, true));
+				if (info.selectId == item)
+					core.strokeRoundRect('ui', 64 * (i % n) + 17, yoffset - 4, 40, 40, 6, core.status.globalAttribute.selectColor);
+			}
+		};
 	}
 }
