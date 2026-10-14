@@ -546,7 +546,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				[24, "激光", function (enemy) { return "经过怪物同行或同列时自动减生命" + (enemy.laser || 0) + "点"; }, "#dda0dd"],
 				[25, "光环", function (enemy) { return (enemy.range != null ? ((enemy.haloSquare ? "该怪物九宫格" : "该怪物十字") + enemy.haloRange + "格范围内") : "同楼层所有") + "怪物生命提升" + (enemy.hpBuff || 0) + "%，攻击提升" + (enemy.atkBuff || 0) + "%，防御提升" + (enemy.defBuff || 0) + "%，" + (enemy.haloAdd ? "可叠加" : "不可叠加"); }, "#e6e099", 1],
 				[26, "支援", "当周围一圈的怪物受到攻击时将上前支援，并组成小队战斗。", "#77c0b6", 1],
-				[27, "捕捉", function (enemy) { return "当走到怪物周围" + (enemy.zoneSquare ? "九宫格" : "十字") + "时会强制进行战斗。"; }, "#c0ddbb"]
+				[27, "捕捉", function (enemy) { return "当走到怪物周围" + (enemy.zoneSquare ? "九宫格" : "十字") + "时会强制进行战斗。"; }, "#c0ddbb"],
+				[30, "上位威压", function (enemy) { return "周身时刻散发出强大的威压。勇士等级低于怪兽时，削弱勇士" + (enemy.pressureRate || 25) + "%的攻击与防御（勇士升级到2级可破解威压）。"; }, "#da70d6"],
+				[31, "腐蚀毒素", function (enemy) { return "攻击附带腐蚀毒素，每回合额外造成" + (enemy.poisonPierce || 1) + "点无视防御的穿透物理伤害。"; }, "#7cfc00"],
+				[32, "闪避", function (enemy) { return "身形飘忽不定，有" + (enemy.dodgeRate || 50) + "%的概率闪避勇士的攻击。"; }, "#87ceeb"]
 			];
 		},
 		"getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -723,6 +726,19 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				mon_def = Math.max(0, mon_def - ybfhProps.armorBreak);
 			}
 
+			// ====== 永不复还怪物技能：上位威压 ======
+			if (core.hasSpecial(mon_special, 30)) {
+				var hero_lv = (hero && hero.lv != null) ? hero.lv : (core.getStatus('lv') || 1);
+				var enemy_lv = enemy.level || 2;
+				if (enemy_lv > hero_lv) {
+					var diff = enemy_lv - hero_lv;
+					var rate = (enemy.pressureRate || 25) / 100.0;
+					var mult = Math.pow(1.0 - rate, diff);
+					hero_atk = Math.floor(hero_atk * mult);
+					hero_def = Math.floor(hero_def * mult);
+				}
+			}
+
 			// 如果是无敌属性，且勇士未持有十字架
 			if (core.hasSpecial(mon_special, 20) && !core.hasItem("cross"))
 				return null; // 不可战斗
@@ -757,6 +773,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			// 战斗伤害不能为负值
 			if (per_damage < 0) per_damage = 0;
 
+			// ====== 永不复还怪物技能：腐蚀毒素 ======
+			if (core.hasSpecial(mon_special, 31)) {
+				per_damage += (enemy.poisonPierce || 1);
+			}
+
 			// 2连击 & 3连击 & N连击
 			if (core.hasSpecial(mon_special, 4)) per_damage *= 2;
 			if (core.hasSpecial(mon_special, 5)) per_damage *= 3;
@@ -786,6 +807,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 			// 勇士的攻击回合数；为怪物生命除以每回合伤害向上取整
 			var turn = Math.ceil(mon_hp / hero_per_damage);
+
+			// ====== 永不复还怪物技能：闪避 ======
+			if (core.hasSpecial(mon_special, 32)) {
+				var dodge = (enemy.dodgeRate || 50) / 100.0;
+				if (dodge < 1.0) {
+					turn = Math.ceil(turn / (1.0 - dodge));
+				}
+			}
 
 			// ------ 支援 ----- //
 			// 这个递归最好想明白为什么，flag:__extraTurn__是怎么用的
