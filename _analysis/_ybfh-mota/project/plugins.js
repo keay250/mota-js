@@ -2172,5 +2172,32 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 					core.strokeRoundRect('ui', 64 * (i % n) + 17, yoffset - 4, 40, 40, 6, core.status.globalAttribute.selectColor);
 			}
 		};
+
+		// =========================================================
+		// 永不复还原版原生阶位突破引擎 (Rank Breakthrough Engine)
+		// =========================================================
+		core.events._checkLvUp_check = function () {
+			if (!core.firstData.levelUp || core.status.hero.lv >= core.firstData.levelUp.length) return null;
+			var next = core.firstData.levelUp[core.status.hero.lv] || {};
+			var need = core.calValue(next.need);
+			if (need == null) return null;
+			if (core.status.hero.exp >= need) {
+				core.status.hero.lv++;
+				if (next.clear) core.status.hero.exp -= need;
+				return next.action || [];
+			}
+			return null;
+		};
+
+		core.plugin.addExp = function (val) {
+			if (val <= 0) return;
+			core.status.hero.exp += val;
+			core.events.checkLvUp();
+			core.updateStatusBar();
+		};
+
+		core.plugin.getHeroRank = function () {
+			return core.getLvName() || "下级佣兵";
+		};
 	}
 }

@@ -1283,8 +1283,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 			// 设置勇士名字和图标
 			core.setStatusBarInnerHTML('name', core.getStatus('name'));
-			// 设置等级名称
-			core.setStatusBarInnerHTML('lv', core.getLvName());
+			// 设置等级名称 (永不复还原版阶位称号)
+			var rankName = core.getLvName() || ("Lv." + core.status.hero.lv);
+			core.setStatusBarInnerHTML('lv', rankName);
 
 			// 设置生命上限、生命值、攻防护盾金币和经验值
 			var statusList = ['hpmax', 'hp', 'mana', 'atk', 'def', 'mdef', 'money', 'exp'];
@@ -1298,6 +1299,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						core.setStatusBarInnerHTML('hp', curHp + "/" + maxHpVal);
 					} else {
 						core.setStatusBarInnerHTML('hp', curHp);
+					}
+				} else if (item === 'exp') {
+					var curExp = core.getStatus('exp');
+					var nextNeed = core.getNextLvUpNeed();
+					if (nextNeed != null) {
+						core.setStatusBarInnerHTML('exp', curExp + "/" + nextNeed);
+					} else {
+						core.setStatusBarInnerHTML('exp', curExp + "/MAX");
 					}
 				} else {
 					// 大数据格式化

@@ -8,7 +8,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
             "MT4",
             "MT5",
             "MT6",
-        "MT7",
+            "MT7",
             "MT11",
             "MT10",
             "MT9",
@@ -450,39 +450,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
                 ]
             },
             {
-                "id": "shop2",
-                "text": "\t[贪婪之神,expShop]勇敢的武士啊, 给我一定经验就可以：",
-                "textInList": "1F经验商店",
-                "mustEnable": false,
-                "disablePreview": true,
-                "choices": [
-                    {
-                        "text": "等级+1（100经验）",
-                        "need": "status:exp>=100",
-                        "action": [
-                            {
-                                "type": "setValue",
-                                "name": "status:exp",
-                                "operator": "-=",
-                                "value": "100"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "status:lv",
-                                "operator": "+=",
-                                "value": "1"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "status:hp",
-                                "operator": "+=",
-                                "value": "1000"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
                 "id": "itemShop",
                 "item": true,
                 "textInList": "道具商店",
@@ -506,18 +473,268 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
         "levelUp": [
             {
                 "need": "0",
-                "title": "",
+                "title": "下级佣兵",
+                "clear": true,
+                "action": []
+            },
+            {
+                "need": "120",
+                "title": "中级佣兵",
+                "clear": true,
                 "action": [
                     {
-                        "type": "comment",
-                        "text": "此处是初始等级，只需填写称号"
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "1"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "1"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "50"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "50"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【中级佣兵】！，攻击+1，防御+1，生命上限+50"
                     }
                 ]
             },
             {
-                "need": "20",
-                "title": "",
+                "need": "250",
+                "title": "高级佣兵",
+                "clear": true,
                 "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "2"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "2"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "100"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "100"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【高级佣兵】！，攻击+2，防御+2，生命上限+100"
+                    }
+                ]
+            },
+            {
+                "need": "400",
+                "title": "特级佣兵",
+                "clear": true,
+                "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "150"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "150"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【特级佣兵】！，攻击+3，防御+3，生命上限+150"
+                    }
+                ]
+            },
+            {
+                "need": "800",
+                "title": "王牌佣兵",
+                "clear": true,
+                "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "2"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "2"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "200"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "200"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【王牌佣兵】！，攻击+2，防御+2，生命上限+200"
+                    }
+                ]
+            },
+            {
+                "need": "3500",
+                "title": "荣耀佣兵",
+                "clear": true,
+                "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "4"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "4"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "400"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "400"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【荣耀佣兵】！，攻击+4，防御+4，生命上限+400"
+                    }
+                ]
+            },
+            {
+                "need": "8000",
+                "title": "辉煌佣兵",
+                "clear": true,
+                "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "5"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "5"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "300"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "300"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【辉煌佣兵】！，攻击+5，防御+5，生命上限+300"
+                    }
+                ]
+            },
+            {
+                "need": "20000",
+                "title": "准职业者",
+                "clear": true,
+                "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【准职业者】！"
+                    }
+                ]
+            },
+            {
+                "need": "0",
+                "title": "黑铁职业者",
+                "clear": true,
+                "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
                     {
                         "type": "setValue",
                         "name": "status:atk",
@@ -529,16 +746,331 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
                         "name": "status:def",
                         "operator": "+=",
                         "value": "10"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "1000"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "1000"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "=",
+                        "value": "core.getRealStatus(\"hpmax\")"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:manamax",
+                        "operator": "=",
+                        "value": "100"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:mana",
+                        "operator": "=",
+                        "value": "100"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【黑铁职业者】！，攻击+10，防御+10，生命上限+1000，大境界突破，生命完全补满！"
                     }
                 ]
             },
             {
-                "need": "40",
-                "title": "",
+                "need": "25000",
+                "title": "青铜职业者",
+                "clear": true,
                 "action": [
                     {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "20"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "20"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "2000"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "2000"
+                    },
+                    {
                         "type": "tip",
-                        "text": "恭喜升级"
+                        "text": "【阶位晋阶】晋升为【青铜职业者】！，攻击+20，防御+20，生命上限+2000"
+                    }
+                ]
+            },
+            {
+                "need": "40000",
+                "title": "白银职业者",
+                "clear": true,
+                "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "30"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "30"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "2000"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "2000"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【白银职业者】！，攻击+30，防御+30，生命上限+2000，开启新的装备槽！"
+                    }
+                ]
+            },
+            {
+                "need": "65000",
+                "title": "黄金职业者",
+                "clear": true,
+                "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "30"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "30"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "2500"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "2500"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【黄金职业者】！，攻击+30，防御+30，生命上限+2500"
+                    }
+                ]
+            },
+            {
+                "need": "100000",
+                "title": "蓝玉职业者",
+                "clear": true,
+                "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "40"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "40"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "3000"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "3000"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【蓝玉职业者】！，攻击+40，防御+40，生命上限+3000"
+                    }
+                ]
+            },
+            {
+                "need": "210000",
+                "title": "紫晶职业者",
+                "clear": true,
+                "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "50"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "50"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "5000"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "5000"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【紫晶职业者】！，攻击+50，防御+50，生命上限+5000，开启新的装备槽！"
+                    }
+                ]
+            },
+            {
+                "need": "200000",
+                "title": "半步英雄",
+                "clear": true,
+                "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "60"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "60"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "6000"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "6000"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【半步英雄】！，攻击+60，防御+60，生命上限+6000"
+                    }
+                ]
+            },
+            {
+                "need": "340000",
+                "title": "英雄一阶",
+                "clear": true,
+                "action": [
+                    {
+                        "type": "playSound",
+                        "name": "jump.mp3"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:def",
+                        "operator": "+=",
+                        "value": "10"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hpmax",
+                        "operator": "+=",
+                        "value": "10000"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "+=",
+                        "value": "10000"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "=",
+                        "value": "core.getRealStatus(\"hpmax\")"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:manamax",
+                        "operator": "=",
+                        "value": "100"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:mana",
+                        "operator": "=",
+                        "value": "100"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【阶位晋阶】晋升为【英雄一阶】！，攻击+10，防御+10，生命上限+10000，大境界突破，生命完全补满！"
                     }
                 ]
             }

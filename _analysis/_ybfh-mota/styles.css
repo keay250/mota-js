@@ -1,4 +1,4 @@
-﻿html, body {
+html, body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -234,6 +234,31 @@
     color: white;
     font: bold italic 1.1em Verdana;
     white-space: nowrap;
+}
+#statusBar p#lv {
+    font: bold normal 0.95em "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: #FFD700;
+    width: 72%;
+    text-shadow: 1px 1px 2px #000;
+    letter-spacing: 0.5px;
+}
+#statusBar p#exp {
+    font: bold normal 0.85em Verdana, sans-serif;
+    color: #00DDFF;
+    width: 72%;
+    text-shadow: 1px 1px 2px #000;
+}
+#statusBar p#hp {
+    font: bold normal 0.9em Verdana, sans-serif;
+    color: #FFFFFF;
+    width: 72%;
+    text-shadow: 1px 1px 2px #000;
+}
+#statusBar p#money {
+    font: bold normal 0.95em Verdana, sans-serif;
+    color: #FFD700;
+    width: 72%;
+    text-shadow: 1px 1px 2px #000;
 }
 #toolBar {
     position: absolute;
