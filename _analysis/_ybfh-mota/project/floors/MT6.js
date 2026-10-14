@@ -27,6 +27,12 @@ main.floors.MT6=
         {
             "type": "tip",
             "text": "穿越西城门，成功踏入宏伟的【厄泽城】！"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:station_mt6_activated",
+            "operator": "=",
+            "value": "true"
         }
     ],
     "eachArrive": [],
@@ -211,12 +217,14 @@ main.floors.MT6=
                     "text": "发现城下秘密暗道！瞬间穿梭至城东街巷！"
                 },
                 {
-                    "type": "setHeroLoc",
+                    "type": "changeFloor",
+                    "floorId": ":now",
                     "loc": [
                         55,
                         23
                     ],
-                    "direction": "down"
+                    "direction": "down",
+                    "time": 200
                 }
             ]
         },
@@ -233,12 +241,14 @@ main.floors.MT6=
                     "text": "发现城下秘密暗道！瞬间穿梭至城西民区！"
                 },
                 {
-                    "type": "setHeroLoc",
+                    "type": "changeFloor",
+                    "floorId": ":now",
                     "loc": [
                         8,
                         68
                     ],
-                    "direction": "down"
+                    "direction": "down",
+                    "time": 200
                 }
             ]
         },

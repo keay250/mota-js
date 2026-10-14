@@ -2066,18 +2066,26 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		};
 
 		// -------------------------------------------------------------
-		// 1. 修复空气墙/障碍物绑定 action 触发事件时 canMoveHero 被拦截的问题
+		// 1. 修复面向障碍物/空气墙时触发 action 事件的交互逻辑（杜绝穿模踩入障碍物）
 		// -------------------------------------------------------------
-		var originCheckPoint = core.maps._canMoveHero_checkPoint;
-		core.maps._canMoveHero_checkPoint = function (x, y, direction, floorId, arrays) {
-			floorId = floorId || core.status.floorId;
-			var nx = x + core.utils.scan[direction].x, ny = y + core.utils.scan[direction].y;
+		var originMoveActionNoPass = core.control._moveAction_noPass;
+		core.control._moveAction_noPass = function (canMove, callback) {
+			core.status.route.push(core.getHeroLoc('direction'));
+			core.status.automaticRoute.moveStepBeforeStop = [];
+			core.status.automaticRoute.lastDirection = core.getHeroLoc('direction');
+			var nx = core.nextX(), ny = core.nextY();
+			var floorId = core.status.floorId;
 			var thisEvents = (core.floors[floorId] && core.floors[floorId].events) || {};
 			var hasAction = thisEvents[nx + "," + ny] && thisEvents[nx + "," + ny].trigger == "action";
-			if (hasAction) {
-				return true;
+			if (canMove || hasAction) {
+				core.trigger(nx, ny);
 			}
-			return originCheckPoint.call(this, x, y, direction, floorId, arrays);
+			core.drawHero();
+			if (core.status.automaticRoute.moveStepBeforeStop.length == 0) {
+				core.clearContinueAutomaticRoute();
+				core.stopAutomaticRoute();
+			}
+			if (callback) callback();
 		};
 
 		// -------------------------------------------------------------

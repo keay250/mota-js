@@ -312,9 +312,10 @@ main.floors.MT1=
                     "align": "left"
                 },
                 {
-                    "type": "setHeroLoc",
-                    "x": 2,
-                    "y": 13
+                    "type": "move",
+                    "steps": [
+                        "up"
+                    ]
                 }
             ]
         }

@@ -2070,7 +2070,7 @@ events.prototype._action_choices = function (data, x, y, prefix) {
         try { return core.calValue(x.condition, prefix); } catch (e) { return true; }
     })
     if (data.choices.length == 0) return this.doAction();
-    if (core.isReplaying()) {
+    if (core.isReplaying() && core.status.replay && Array.isArray(core.status.replay.toReplay)) {
         var action = core.status.replay.toReplay.shift();
         if (action.indexOf('choices:') == 0 && !(action == 'choices:none' && !data.timeout)) {
             var index = action.substring(8);
