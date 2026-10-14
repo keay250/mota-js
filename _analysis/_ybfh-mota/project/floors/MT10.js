@@ -63,37 +63,59 @@ main.floors.MT10 =
             "enable": true,
             "data": [
                 {
-                    "type": "playSound",
-                    "name": "door.mp3"
-                },
-                "\t[回廊深处]\b[up,16,6]里面传来了少女的低吟和男人粗重的喘息声。",
-                "\t[贾斯汀,hero]\b[up,hero]…………",
-                "\t[贾斯汀,hero]\b[up,hero]……………………",
-                "\t[贾斯汀,hero]\b[up,hero]………………………………！",
-                "\t[格瑞迪,man]\b[up,16,6]咦？！你这家伙，不是死了吗！为什么会出现在这里？！",
-                "\t[格瑞迪,man]\b[up,16,6]你，你杀了门外他们两个？！",
-                "\t[格瑞迪,man]\b[up,16,6]呃……啊啊啊啊！",
-                {
-                    "type": "playSound",
-                    "name": "attack.mp3"
-                },
-                {
-                    "type": "tip",
-                    "text": "怒火中烧的贾斯汀一剑斩杀了格瑞迪，踹开了房门！"
-                },
-                {
-                    "type": "setFlag",
-                    "name": "killed_gredy",
-                    "value": true
-                },
-                {
-                    "type": "changeFloor",
-                    "floorId": "MT11",
-                    "loc": [
-                        8,
-                        11
+                    "type": "if",
+                    "condition": "!core.hasFlag('killed_gredy')",
+                    "true": [
+                        {
+                            "type": "playSound",
+                            "name": "door.mp3"
+                        },
+                        "\t[回廊深处]\b[up,16,6]里面传来了少女的低吟和男人粗重的喘息声。",
+                        "\t[贾斯汀,hero]\b[up,hero]…………",
+                        "\t[贾斯汀,hero]\b[up,hero]……………………",
+                        "\t[贾斯汀,hero]\b[up,hero]………………………………！",
+                        "\t[格瑞迪,man]\b[up,16,6]咦？！你这家伙，不是死了吗！为什么会出现在这里？！",
+                        "\t[格瑞迪,man]\b[up,16,6]你，你杀了门外他们两个？！",
+                        "\t[格瑞迪,man]\b[up,16,6]呃……啊啊啊啊！",
+                        {
+                            "type": "playSound",
+                            "name": "attack.mp3"
+                        },
+                        {
+                            "type": "tip",
+                            "text": "怒火中烧的贾斯汀一剑斩杀了格瑞迪，踹开了房门！"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:killed_gredy",
+                            "value": "true"
+                        },
+                        {"type": "function", "function": "function() { core.setFlag(\"killed_gredy\", true); }"},
+                        {
+                            "type": "changeFloor",
+                            "floorId": "MT11",
+                            "loc": [
+                                8,
+                                11
+                            ],
+                            "direction": "up"
+                        }
                     ],
-                    "direction": "up"
+                    "false": [
+                        {
+                            "type": "playSound",
+                            "name": "door.mp3"
+                        },
+                        {
+                            "type": "changeFloor",
+                            "floorId": "MT11",
+                            "loc": [
+                                8,
+                                11
+                            ],
+                            "direction": "up"
+                        }
+                    ]
                 }
             ]
         },
@@ -128,14 +150,6 @@ main.floors.MT10 =
                 31
             ],
             "direction": "down"
-        },
-        "16,6": {
-            "floorId": "MT11",
-            "loc": [
-                8,
-                11
-            ],
-            "direction": "up"
         }
     },
     "beforeBattle": {},

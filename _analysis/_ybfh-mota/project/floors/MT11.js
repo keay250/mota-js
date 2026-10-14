@@ -29,6 +29,11 @@ main.floors.MT11 =
     ],
     "firstArrive": [
         {
+            "type": "setValue",
+            "name": "flag:killed_gredy",
+            "value": "true"
+        },
+        {
             "type": "tip",
             "text": "进入【厄泽城·法芙娜寓所】"
         }
@@ -107,11 +112,7 @@ main.floors.MT11 =
                             "type": "tip",
                             "text": "失控的剑锋穿透了法芙娜的胸膛。曾经海誓山盟的恋人，倒在了血泊中。"
                         },
-                        {
-                            "type": "setFlag",
-                            "name": "ch1_ended",
-                            "value": true
-                        },
+                        {"type": "function", "function": "function() { core.setFlag(\"ch1_ended\", true); }"},
                         "\t[系统提示]第一章【寂静之森与厄泽城】主线剧情全部达成！\n\n贾斯汀在公会与全城的通缉追杀下，连夜逃离厄泽城，登上开往【普利斯特王都】的远洋商船……"
                     ]
                 }
