@@ -7,7 +7,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
             "MT3",
             "MT4",
             "MT5",
-            "MT6"
+            "MT6",
+        "MT7"
         ],
         "floorPartitions": [],
         "images": [
@@ -23,6 +24,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
             "winskin.png",
             "map017_compact_bg.png",
             "map017_bg.png",
+            "map019_bg.png",
             "AttrsIcon.png",
             "Window.png",
             "sven.png",
