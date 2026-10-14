@@ -90,7 +90,8 @@ print(f" -> 已保存 Map011 背景图: {out_bg}")
 
 # 3. 构建 MT15 楼层数据 (Map011)
 print("[*] 正在构建 MT15 楼层数据...")
-flags = t4.attributes['@passages']._private_data
+p_data = t4.attributes['@passages']._private_data
+flags = struct.unpack('<536h', p_data[20:])
 
 maze = []
 for y in range(map_h):
@@ -98,16 +99,21 @@ for y in range(map_h):
     for x_prime in range(map_w):
         x = x_prime + 5
         passable = True
-        for layer in range(z):
+        for layer in [2, 1, 0]:
             tid = tiles[layer * (w * h) + y * w + x]
+            if tid == 0: continue
             if tid < len(flags) and (flags[tid] & 0x0f == 0x0f):
                 passable = False
+                break
+            else:
+                passable = True
                 break
         row.append(0 if passable else 17)
     maze.append(row)
 
-# 底部出口 (11, 14) 是通畅的
-maze[14][11] = 88
+# 确保北出口 (7, 0) 与南出口 (11, 14) 是通畅的
+maze[0][7] = 87   # 北出口通往 MT14 (姆伊森运河)
+maze[14][11] = 88 # 南出口通往 MT3 (寂静之森外围)
 
 MONSTER_MAP = {
     '怪物002': 201, # 荷依米
@@ -242,13 +248,18 @@ floor_obj = {
             "floorId": "MT3",
             "loc": [9, 1], # 安全落点：MT3 (9, 1)，面向南
             "direction": "down"
+        },
+        "7,0": {
+            "floorId": "MT14",
+            "loc": [7, 13], # 安全落点：MT14 (7, 13)，面向北
+            "direction": "up"
         }
     },
     "map": maze,
     "bgmap": [],
     "fgmap": [],
     "downFloor": [11, 14],
-    "upFloor": [11, 1],
+    "upFloor": [7, 0],
     "bgm": "forest.mp3",
     "canFlyFrom": True
 }
@@ -260,84 +271,6 @@ with open(out_floor, 'w', encoding='utf-8') as f:
     f.write('\n')
 print(f" -> 已生成 MT15.js: {out_floor}")
 
-# 4. 更新 MT3.js
-# 4.1 正上方 (9, 0) 接入 MT15
-# 4.2 正左方 (0, 3) 放置路牌警示
-print("[*] 正在更新 MT3.js 接入 MT15 及前哨路牌...")
-mt3_path = os.path.join(MOTA_DIR, 'project', 'floors', 'MT3.js')
-with open(mt3_path, 'r', encoding='utf-8') as f:
-    mt3_txt = f.read()
-
-# 4.1 changeFloor 增加 9,0
-mt3_cf = {
-    "3,14": {
-        "floorId": "MT2",
-        "loc": [12, 1],
-        "direction": "down"
-    },
-    "14,5": {
-        "floorId": "MT4",
-        "loc": [1, 7],
-        "direction": "right"
-    },
-    "9,0": {
-        "floorId": "MT15",
-        "loc": [11, 13], # 安全落点：MT15 (11, 13)，面向北
-        "direction": "up"
-    }
-}
-mt3_txt = re.sub(r'\"changeFloor\":\s*\{[\s\S]+?\n    \},', f'"changeFloor": {json.dumps(mt3_cf, ensure_ascii=False, indent=8)},\n', mt3_txt)
-
-# 确保地图 (9, 0) 是传送门 (87)
-m = re.search(r'\"map\":\s*(\[\s*\[[\s\S]+?\]\s*\])', mt3_txt)
-if m:
-    mt3_map = json.loads(m.group(1))
-    mt3_map[0][9] = 87 # 正上方通往 MT15
-    mt3_map[3][0] = 129 # 左侧放路牌 (129)
-    mt3_txt = mt3_txt.replace(m.group(0), f'"map": {json.dumps(mt3_map)}')
-
-# 4.2 在 MT3 events 中增加 (0, 3) 前哨路牌
-sign_event = """
-        "0,3": {
-            "trigger": "action",
-            "enable": true,
-            "data": [
-                {
-                    "type": "setText",
-                    "align": "center"
-                },
-                "\\t[前哨路牌]警告：前方为【寂静之森深处】！",
-                "\\t[前哨路牌]该区域魔兽极为凶残，毒雾瘴气弥漫，\\n非精锐佣兵请勿贸然涉足！",
-                {
-                    "type": "setText",
-                    "align": "left"
-                }
-            ]
-        },"""
-
-if '"0,3"' not in mt3_txt:
-    mt3_txt = mt3_txt.replace('"events": {', '"events": {' + sign_event)
-
-with open(mt3_path, 'w', encoding='utf-8') as f:
-    f.write(mt3_txt)
-print(" -> MT3.js 已更新 (9, 0 接入 MT15，0, 3 警示路牌生效)！")
-
-# 5. 更新 project/data.js 注册 MT15 与 map011_bg.png
-print("[*] 正在更新 project/data.js 注册 MT15...")
-data_path = os.path.join(MOTA_DIR, 'project', 'data.js')
-with open(data_path, 'r', encoding='utf-8') as f:
-    data_txt = f.read()
-
-if '"MT15"' not in data_txt:
-    data_txt = data_txt.replace('"MT16"', '"MT15",\n\t\t\t"MT16"')
-
-if '"map011_bg.png"' not in data_txt:
-    data_txt = data_txt.replace('"map016_bg.png"', '"map011_bg.png",\n\t\t"map016_bg.png"')
-
-with open(data_path, 'w', encoding='utf-8') as f:
-    f.write(data_txt)
-print(" -> project/data.js 已完成 MT15 注册！")
-
 print("\n==============================================")
-print("🎉 Map011 (MT15) 密林深径构建与 MT3 贯通 100% 完成！")
+print("🎉 Map011 (MT15) 密林深径构建与 MT14 贯通 100% 完成！")
 print("==============================================")

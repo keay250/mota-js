@@ -89,7 +89,8 @@ print(f" -> 已保存 Map016 背景图: {out_bg}")
 
 # 3. 构建 MT16 楼层数据
 print("[*] 正在构建 MT16 楼层数据...")
-flags = t4.attributes['@passages']._private_data
+p_data = t4.attributes['@passages']._private_data
+flags = struct.unpack('<536h', p_data[20:])
 
 maze = []
 for y in range(map_h):
@@ -97,16 +98,21 @@ for y in range(map_h):
     for x_prime in range(map_w):
         x = x_prime + 5
         passable = True
-        for layer in range(z):
+        for layer in [2, 1, 0]:
             tid = tiles[layer * (w * h) + y * w + x]
+            if tid == 0: continue
             if tid < len(flags) and (flags[tid] & 0x0f == 0x0f):
                 passable = False
+                break
+            else:
+                passable = True
                 break
         row.append(0 if passable else 17)
     maze.append(row)
 
-# 确保底部出口 (7, 14) 是通畅的
-maze[14][7] = 88
+# 确保底部出口 (7, 14) 和西侧出口 (0, 9) 是通畅的
+maze[14][7] = 88 # 南出口通往 MT4
+maze[9][0] = 88  # 西出口通往 MT14 (姆伊森运河)
 
 MONSTER_MAP = {
     '怪物002': 201, # 荷依米
@@ -216,13 +222,18 @@ floor_obj = {
             "floorId": "MT4",
             "loc": [7, 1], # 安全落点：MT4 的林道 (7, 1)，面向南
             "direction": "down"
+        },
+        "0,9": {
+            "floorId": "MT14",
+            "loc": [13, 9], # 安全落点：MT14 运河河岸 (13, 9)，面向西
+            "direction": "left"
         }
     },
     "map": maze,
     "bgmap": [],
     "fgmap": [],
     "downFloor": [7, 14],
-    "upFloor": [7, 1],
+    "upFloor": [0, 9],
     "bgm": "forest.mp3",
     "canFlyFrom": True
 }
@@ -234,125 +245,5 @@ with open(out_floor, 'w', encoding='utf-8') as f:
     f.write('\n')
 print(f" -> 已生成 MT16.js: {out_floor}")
 
-# 4. 在 MT4.js 中配置正上方 (7, 0) 入口指向 MT16
-print("[*] 正在更新 MT4.js 接入 MT16 正上方通道及安全落点...")
-mt4_path = os.path.join(MOTA_DIR, 'project', 'floors', 'MT4.js')
-with open(mt4_path, 'r', encoding='utf-8') as f:
-    mt4_txt = f.read()
 
-# MT4 changeFloor
-mt4_cf = {
-    "7,0": {
-        "floorId": "MT16",
-        "loc": [7, 13], # 安全落点：MT16 出口前一格 (7, 13)，面向北
-        "direction": "up"
-    },
-    "0,7": {
-        "floorId": "MT3",
-        "loc": [13, 5], # 安全落点：MT3 林道 (13, 5)，面向西
-        "direction": "left"
-    },
-    "14,7": {
-        "floorId": "MT5",
-        "loc": [1, 7],  # 安全落点：MT5 城外林道 (1, 7)，面向东
-        "direction": "right"
-    }
-}
-mt4_txt = re.sub(r'\"changeFloor\":\s*\{[\s\S]+?\n    \},', f'"changeFloor": {json.dumps(mt4_cf, ensure_ascii=False, indent=8)},\n', mt4_txt)
-
-# 确保 MT4 地图矩阵在 (7, 0) 为 87 (upFloor 或可触发传送图块)
-m = re.search(r'\"map\":\s*(\[\s*\[[\s\S]+?\]\s*\])', mt4_txt)
-if m:
-    mt4_map = json.loads(m.group(1))
-    mt4_map[0][7] = 87 # 设置为传送楼梯
-    mt4_map[7][0] = 88 # 左侧出口
-    mt4_map[7][14] = 87 # 右侧出口
-    mt4_txt = mt4_txt.replace(m.group(0), f'"map": {json.dumps(mt4_map)}')
-
-with open(mt4_path, 'w', encoding='utf-8') as f:
-    f.write(mt4_txt)
-print(" -> MT4.js 拓扑及落点已更新！")
-
-# 5. 更新 MT3.js 安全落点
-print("[*] 正在更新 MT3.js 出入口安全落点...")
-mt3_path = os.path.join(MOTA_DIR, 'project', 'floors', 'MT3.js')
-with open(mt3_path, 'r', encoding='utf-8') as f:
-    mt3_txt = f.read()
-
-mt3_cf = {
-    "3,14": {
-        "floorId": "MT2",
-        "loc": [12, 1], # 安全落点：MT2 林道 (12, 1)，面向南
-        "direction": "down"
-    },
-    "14,5": {
-        "floorId": "MT4",
-        "loc": [1, 7],  # 安全落点：MT4 林道 (1, 7)，面向东
-        "direction": "right"
-    }
-}
-mt3_txt = re.sub(r'\"changeFloor\":\s*\{[\s\S]+?\n    \},', f'"changeFloor": {json.dumps(mt3_cf, ensure_ascii=False, indent=8)},\n', mt3_txt)
-with open(mt3_path, 'w', encoding='utf-8') as f:
-    f.write(mt3_txt)
-print(" -> MT3.js 落点已更新！")
-
-# 6. 更新 MT5.js 安全落点
-print("[*] 正在更新 MT5.js 出入口安全落点...")
-mt5_path = os.path.join(MOTA_DIR, 'project', 'floors', 'MT5.js')
-with open(mt5_path, 'r', encoding='utf-8') as f:
-    mt5_txt = f.read()
-
-mt5_cf = {
-    "0,7": {
-        "floorId": "MT4",
-        "loc": [13, 7], # 安全落点：MT4 林道 (13, 7)，面向西
-        "direction": "left"
-    }
-}
-mt5_txt = re.sub(r'\"changeFloor\":\s*\{[\s\S]+?\n    \},', f'"changeFloor": {json.dumps(mt5_cf, ensure_ascii=False, indent=8)},\n', mt5_txt)
-with open(mt5_path, 'w', encoding='utf-8') as f:
-    f.write(mt5_txt)
-print(" -> MT5.js 落点已更新！")
-
-# 7. 更新 MT2.js 安全落点
-print("[*] 正在更新 MT2.js 出入口安全落点...")
-mt2_path = os.path.join(MOTA_DIR, 'project', 'floors', 'MT2.js')
-with open(mt2_path, 'r', encoding='utf-8') as f:
-    mt2_txt = f.read()
-
-mt2_cf = {
-    "2,14": {
-        "floorId": "MT1",
-        "loc": [12, 1],
-        "direction": "down"
-    },
-    "12,0": {
-        "floorId": "MT3",
-        "loc": [3, 13], # 安全落点：MT3 草地 (3, 13)，面向北
-        "direction": "up"
-    }
-}
-mt2_txt = re.sub(r'\"changeFloor\":\s*\{[\s\S]+?\n    \},', f'"changeFloor": {json.dumps(mt2_cf, ensure_ascii=False, indent=8)},\n', mt2_txt)
-with open(mt2_path, 'w', encoding='utf-8') as f:
-    f.write(mt2_txt)
-print(" -> MT2.js 落点已更新！")
-
-# 8. 更新 data.js 注册 MT16 与 map016_bg.png
-print("[*] 正在更新 project/data.js 注册 MT16...")
-data_path = os.path.join(MOTA_DIR, 'project', 'data.js')
-with open(data_path, 'r', encoding='utf-8') as f:
-    data_txt = f.read()
-
-if '"MT16"' not in data_txt:
-    data_txt = data_txt.replace('"MT5"', '"MT5",\n\t\t\t"MT16"')
-
-if '"map016_bg.png"' not in data_txt:
-    data_txt = data_txt.replace('"map013_bg.png"', '"map013_bg.png",\n\t\t"map016_bg.png"')
-
-with open(data_path, 'w', encoding='utf-8') as f:
-    f.write(data_txt)
-print(" -> project/data.js 已完成 MT16 注册！")
-
-print("\n==============================================")
-print("🎉 Map016 接入与全地图出入口安全落点重构 100% 完成！")
-print("==============================================")
+print("🎉 Map016 支流前哨构建与 MT14 贯通 100% 完成！")

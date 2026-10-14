@@ -176,6 +176,24 @@ class Chapter1FullSuiteRunner:
             new_hpmax = page.evaluate("core.getStatus('hpmax')")
             self.assert_step(new_hpmax == cur_hpmax + 20, "MT15 密林深径生命水晶加点生效 (+20)")
 
+            # 边界阻挡与北出口直通 MT14
+            no_pass_tree = page.evaluate("core.noPass(6, 0);")
+            self.nav_to(page, 'MT15', 6, 1, 'up')
+            self.move_hero(page, 'up', wait_ms=250)
+            pos_tree = page.evaluate("({x: core.getHeroLoc('x'), y: core.getHeroLoc('y')})")
+            self.assert_step(no_pass_tree and pos_tree['x'] == 6 and pos_tree['y'] == 1, "MT15 顶部树林空气墙严密阻挡，零穿模出界")
+
+            # MT15 北出口 (7, 0) 直达新场景 MT14 (姆伊森运河·主河道)
+            self.nav_to(page, 'MT15', 7, 1, 'up')
+            self.move_hero(page, 'up', wait_ms=600)
+            f_mt14_north = page.evaluate("core.status.floorId")
+            loc_mt14_north = page.evaluate("({x: core.getHeroLoc('x'), y: core.getHeroLoc('y')})")
+            self.assert_step(f_mt14_north == "MT14" and loc_mt14_north['x'] == 7 and loc_mt14_north['y'] == 13, "MT15 北出口顺利切入新场景【姆伊森运河·主河道】(MT14)")
+
+            # 从 MT14 南出口安全返回 MT15
+            self.move_hero(page, 'down', wait_ms=600)
+            self.assert_step(page.evaluate("core.status.floorId") == "MT15", "从 MT14 运河主河道南出口安全返回 MT15")
+
             # 安全返回 MT3
             self.nav_to(page, 'MT15', 11, 13, 'down')
             self.move_hero(page, 'down')
@@ -198,6 +216,28 @@ class Chapter1FullSuiteRunner:
             f_mt16 = page.evaluate("core.status.floorId")
             loc_mt16 = page.evaluate("({x: core.getHeroLoc('x'), y: core.getHeroLoc('y')})")
             self.assert_step(f_mt16 == "MT16" and loc_mt16['x'] == 7 and loc_mt16['y'] == 13, "进入 MT16 姆伊森运河支流落点 (7,13)")
+
+            # 水面边界阻挡严密性验证
+            no_pass_water = page.evaluate("core.noPass(7, 7);")
+            self.nav_to(page, 'MT16', 7, 8, 'up')
+            self.move_hero(page, 'up', wait_ms=250)
+            pos_water = page.evaluate("({x: core.getHeroLoc('x'), y: core.getHeroLoc('y')})")
+            self.assert_step(no_pass_water and pos_water['x'] == 7 and pos_water['y'] == 8, "MT16 运河水面严密阻挡，踏水穿模 bug 彻底根治")
+
+            # MT16 西出口 (0, 9) 直达新场景 MT14 (姆伊森运河·主河道)
+            self.nav_to(page, 'MT16', 1, 9, 'left')
+            self.move_hero(page, 'left', wait_ms=600)
+            f_mt14_west = page.evaluate("core.status.floorId")
+            loc_mt14_west = page.evaluate("({x: core.getHeroLoc('x'), y: core.getHeroLoc('y')})")
+            self.assert_step(f_mt14_west == "MT14" and loc_mt14_west['x'] == 13 and loc_mt14_west['y'] == 9, "MT16 西出口顺利切入新场景【姆伊森运河·主河道】(MT14)")
+
+            # MT14 设定说明路牌验证
+            has_canal_sign = page.evaluate("core.getBlock(7, 12) !== null;")
+            self.assert_step(has_canal_sign, "MT14 (7,12) 运河设定说明路牌就绪")
+
+            # 从 MT14 东出口安全返回 MT16
+            self.move_hero(page, 'right', wait_ms=600)
+            self.assert_step(page.evaluate("core.status.floorId") == "MT16", "从 MT14 运河主河道东出口安全返回 MT16")
 
             # MT16 拾取宝箱精钢长剑 (7, 11)
             atk_before_sword = page.evaluate("core.getStatus('atk')")
