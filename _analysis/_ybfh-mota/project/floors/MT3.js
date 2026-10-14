@@ -28,9 +28,42 @@ main.floors.MT3=
             "text": "进入【寂静之森外围 3F】！"
         }
     ],
-    "eachArrive": [],
+    "eachArrive": [
+        {
+            "type": "if",
+            "condition": "core.hasFlag('mt3_doors_opened') || !core.hasMonsterInArea('MT3', 1, 7, 5, 11) || !core.hasEnemyLeft(null, 'MT3')",
+            "true": [
+                {
+                    "type": "function",
+                    "function": "function() {\n    core.setFlag('mt3_doors_opened', true);\n    var b = core.getBlock(2, 6);\n    if (b && (b.number == 85 || (b.event && b.event.id == 'specialDoor'))) {\n        core.removeBlock(2, 6);\n    }\n}"
+                }
+            ]
+        }
+    ],
     "parallelDo": "",
     "events": {
+        "2,6": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "if",
+                    "condition": "!core.hasMonsterInArea('MT3', 1, 7, 5, 11) || !core.hasEnemyLeft(null, 'MT3')",
+                    "true": [
+                        { "type": "setValue", "name": "flag:mt3_doors_opened", "value": "true" },
+                        { "type": "playSound", "name": "door.mp3" },
+                        { "type": "tip", "text": "【机关门已开启！】机关解除了！" },
+                        { "type": "openDoor", "loc": [2, 6], "needKey": false, "async": false }
+                    ],
+                    "false": [
+                        {
+                            "type": "show",
+                            "text": "\t[机关门]一道沉重冰冷的特殊铁门紧紧锁着……\n隐约能感觉到左下方守护怪物的魔力牵制，\n击败它们或许就能解除机关！"
+                        }
+                    ]
+                }
+            ]
+        },
         "9,11": {
             "trigger": "action",
             "enable": true,
@@ -414,6 +447,22 @@ main.floors.MT3=
     "bgm": "forest.mp3",
     "beforeBattle": {},
     "cannotMoveIn": {},
-    "autoEvent": {},
+    "autoEvent": {
+        "0,0": [
+            {
+                "condition": "(!core.hasFlag('mt3_doors_opened')) && (!core.hasMonsterInArea('MT3', 1, 7, 5, 11) || !core.hasEnemyLeft(null, 'MT3'))",
+                "currentFloor": true,
+                "priority": 0,
+                "delayExecute": false,
+                "multiExecute": false,
+                "data": [
+                    { "type": "setValue", "name": "flag:mt3_doors_opened", "value": "true" },
+                    { "type": "playSound", "name": "door.mp3" },
+                    { "type": "tip", "text": "【机关门已开启！】机关解除了！" },
+                    { "type": "openDoor", "loc": [2, 6], "needKey": false, "async": false }
+                ]
+            }
+        ]
+    },
     "canFlyFrom": true
 }

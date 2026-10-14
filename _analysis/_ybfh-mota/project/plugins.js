@@ -32,6 +32,92 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.updateStatusBar) core.updateStatusBar(false, true);
 		};
 
+		// 检查指定楼层区域内是否存在任何存活怪物
+		core.hasMonsterInArea = function (floorId, x1, y1, x2, y2) {
+			floorId = floorId || core.status.floorId;
+			if (!floorId || !core.status.maps || !core.status.maps[floorId]) return false;
+			core.extractBlocks(floorId);
+			var mapBlocks = core.status.maps[floorId].blocks || [];
+			for (var b = 0; b < mapBlocks.length; b++) {
+				var block = mapBlocks[b];
+				if (!block.disable && block.event && block.event.cls && block.event.cls.indexOf('enemy') === 0) {
+					if (block.x >= x1 && block.x <= x2 && block.y >= y1 && block.y <= y2) {
+						return true;
+					}
+				}
+			}
+			return false;
+		};
+
+		// 获取指定楼层剩余活着的怪物总数
+		core.enemyCount = function (floorId) {
+			floorId = floorId || core.status.floorId;
+			if (!floorId || !core.status.maps || !core.status.maps[floorId]) return 0;
+			core.extractBlocks(floorId);
+			var mapBlocks = core.status.maps[floorId].blocks || [];
+			var count = 0;
+			for (var b = 0; b < mapBlocks.length; b++) {
+				var block = mapBlocks[b];
+				if (!block.disable && block.event && block.event.cls && block.event.cls.indexOf('enemy') === 0) {
+					count++;
+				}
+			}
+			return count;
+		};
+
+		// 全局楼层机关门开门联动与自愈检查
+		core.checkFloorSpecialDoors = function (floorId) {
+			floorId = floorId || core.status.floorId;
+			if (!floorId) return;
+
+			if (floorId === 'MT4') {
+				var mt4Doors = [[7, 4], [5, 1], [9, 1]];
+				var guardCleared = !core.hasMonsterInArea('MT4', 11, 12, 13, 13);
+				var allCleared = core.enemyCount('MT4') === 0;
+				if (guardCleared || allCleared) {
+					if (!core.hasFlag('mt4_doors_opened')) {
+						core.setFlag('mt4_doors_opened', true);
+						var actions = [
+							{ "type": "playSound", "name": "door.mp3" },
+							{ "type": "tip", "text": "【机关门已开启！】通往森林深处的铁门打开了！" }
+						];
+						mt4Doors.forEach(function (loc) {
+							actions.push({ "type": "openDoor", "loc": loc, "needKey": false, "async": true });
+						});
+						actions.push({ "type": "waitAsync" });
+						core.insertAction(actions);
+					} else {
+						// 自愈兜底：若flag已开但门还在地图上，直接清除门
+						mt4Doors.forEach(function (loc) {
+							var b = core.getBlock(loc[0], loc[1], 'MT4');
+							if (b && (b.number == 85 || (b.event && b.event.id == 'specialDoor'))) {
+								core.removeBlock(loc[0], loc[1], 'MT4');
+							}
+						});
+					}
+				}
+			} else if (floorId === 'MT3') {
+				var mt3Door = [2, 6];
+				var guardCleared = !core.hasMonsterInArea('MT3', 1, 7, 5, 11);
+				var allCleared = core.enemyCount('MT3') === 0;
+				if (guardCleared || allCleared) {
+					if (!core.hasFlag('mt3_doors_opened')) {
+						core.setFlag('mt3_doors_opened', true);
+						core.insertAction([
+							{ "type": "playSound", "name": "door.mp3" },
+							{ "type": "tip", "text": "【机关门已开启！】机关解除了！" },
+							{ "type": "openDoor", "loc": mt3Door, "needKey": false, "async": false }
+						]);
+					} else {
+						var b = core.getBlock(mt3Door[0], mt3Door[1], 'MT3');
+						if (b && (b.number == 85 || (b.event && b.event.id == 'specialDoor'))) {
+							core.removeBlock(mt3Door[0], mt3Door[1], 'MT3');
+						}
+					}
+				}
+			}
+		};
+
 		this._afterLoadResources = function () {
 			// 本函数将在所有资源加载完毕后，游戏开启前被执行
 		}

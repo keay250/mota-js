@@ -275,6 +275,9 @@ def build_floor_data(mid, floor_id, title, bg_name, prev_floor, next_floor, is_f
 
     # 特殊剧情事件与楼梯出入口配置
     change_floor = {}
+    each_arrive = []
+    auto_event = {}
+
     if mid == 10:
         # MT3 (Map010): 下楼回到 MT2 (12, 0), 上楼前往 MT4 (0, 7)
         down_floor_pos = [3, 14] # (8, 14) -> (3, 14)
@@ -283,6 +286,59 @@ def build_floor_data(mid, floor_id, title, bg_name, prev_floor, next_floor, is_f
         maze[5][14] = 87 # upFloor
         change_floor["3,14"] = {"floorId": "MT2", "loc": [12, 0]}
         change_floor["14,5"] = {"floorId": "MT4", "loc": [0, 7]}
+
+        # 机关门 (2, 6) 联动与自愈
+        each_arrive = [
+            {
+                "type": "if",
+                "condition": "core.hasFlag('mt3_doors_opened') || !core.hasMonsterInArea('MT3', 1, 7, 5, 11) || !core.hasEnemyLeft(null, 'MT3')",
+                "true": [
+                    {
+                        "type": "function",
+                        "function": "function() {\n    core.setFlag('mt3_doors_opened', true);\n    var b = core.getBlock(2, 6);\n    if (b && (b.number == 85 || (b.event && b.event.id == 'specialDoor'))) {\n        core.removeBlock(2, 6);\n    }\n}"
+                    }
+                ]
+            }
+        ]
+        auto_event = {
+            "0,0": [
+                {
+                    "condition": "(!core.hasFlag('mt3_doors_opened')) && (!core.hasMonsterInArea('MT3', 1, 7, 5, 11) || !core.hasEnemyLeft(null, 'MT3'))",
+                    "currentFloor": True,
+                    "priority": 0,
+                    "delayExecute": False,
+                    "multiExecute": False,
+                    "data": [
+                        { "type": "setValue", "name": "flag:mt3_doors_opened", "value": "true" },
+                        { "type": "playSound", "name": "door.mp3" },
+                        { "type": "tip", "text": "【机关门已开启！】机关解除了！" },
+                        { "type": "openDoor", "loc": [2, 6], "needKey": False, "async": False }
+                    ]
+                }
+            ]
+        }
+        mota_events["2,6"] = {
+            "trigger": "action",
+            "enable": True,
+            "data": [
+                {
+                    "type": "if",
+                    "condition": "!core.hasMonsterInArea('MT3', 1, 7, 5, 11) || !core.hasEnemyLeft(null, 'MT3')",
+                    "true": [
+                        { "type": "setValue", "name": "flag:mt3_doors_opened", "value": "true" },
+                        { "type": "playSound", "name": "door.mp3" },
+                        { "type": "tip", "text": "【机关门已开启！】机关解除了！" },
+                        { "type": "openDoor", "loc": [2, 6], "needKey": False, "async": False }
+                    ],
+                    "false": [
+                        {
+                            "type": "show",
+                            "text": "\t[机关门]一道沉重冰冷的特殊铁门紧紧锁着……\n隐约能感觉到左下方守护怪物的魔力牵制，\n击败它们或许就能解除机关！"
+                        }
+                    ]
+                }
+            ]
+        }
 
         # 路牌对话事件 (6, 8)
         mota_events["6,8"] = {
@@ -303,6 +359,66 @@ def build_floor_data(mid, floor_id, title, bg_name, prev_floor, next_floor, is_f
         maze[7][14] = 87 # upFloor
         change_floor["0,7"] = {"floorId": "MT3", "loc": [14, 5]}
         change_floor["14,7"] = {"floorId": "MT5", "loc": [0, 7]}
+
+        # 机关门 (7, 4), (5, 1), (9, 1) 联动与自愈
+        each_arrive = [
+            {
+                "type": "if",
+                "condition": "core.hasFlag('mt4_doors_opened') || !core.hasMonsterInArea('MT4', 11, 12, 13, 13) || !core.hasEnemyLeft(null, 'MT4')",
+                "true": [
+                    {
+                        "type": "function",
+                        "function": "function() {\n    core.setFlag('mt4_doors_opened', true);\n    [[7, 4], [5, 1], [9, 1]].forEach(function(loc) {\n        var b = core.getBlock(loc[0], loc[1]);\n        if (b && (b.number == 85 || (b.event && b.event.id == 'specialDoor'))) {\n            core.removeBlock(loc[0], loc[1]);\n        }\n    });\n}"
+                    }
+                ]
+            }
+        ]
+        auto_event = {
+            "0,0": [
+                {
+                    "condition": "(!core.hasFlag('mt4_doors_opened')) && (!core.hasMonsterInArea('MT4', 11, 12, 13, 13) || !core.hasEnemyLeft(null, 'MT4'))",
+                    "currentFloor": True,
+                    "priority": 0,
+                    "delayExecute": False,
+                    "multiExecute": False,
+                    "data": [
+                        { "type": "setValue", "name": "flag:mt4_doors_opened", "value": "true" },
+                        { "type": "playSound", "name": "door.mp3" },
+                        { "type": "tip", "text": "【机关门已开启！】通往森林深处的铁门打开了！" },
+                        { "type": "openDoor", "loc": [7, 4], "needKey": False, "async": True },
+                        { "type": "openDoor", "loc": [5, 1], "needKey": False, "async": True },
+                        { "type": "openDoor", "loc": [9, 1], "needKey": False, "async": True },
+                        { "type": "waitAsync" }
+                    ]
+                }
+            ]
+        }
+        for dpos in ["7,4", "5,1", "9,1"]:
+            mota_events[dpos] = {
+                "trigger": "action",
+                "enable": True,
+                "data": [
+                    {
+                        "type": "if",
+                        "condition": "!core.hasMonsterInArea('MT4', 11, 12, 13, 13) || !core.hasEnemyLeft(null, 'MT4')",
+                        "true": [
+                            { "type": "setValue", "name": "flag:mt4_doors_opened", "value": "true" },
+                            { "type": "playSound", "name": "door.mp3" },
+                            { "type": "tip", "text": "【机关门已开启！】机关解除了！" },
+                            { "type": "openDoor", "loc": [7, 4], "needKey": False, "async": True },
+                            { "type": "openDoor", "loc": [5, 1], "needKey": False, "async": True },
+                            { "type": "openDoor", "loc": [9, 1], "needKey": False, "async": True },
+                            { "type": "waitAsync" }
+                        ],
+                        "false": [
+                            {
+                                "type": "show",
+                                "text": "\t[机关门]一道沉重冰冷的特殊铁门紧紧锁着……\n隐约能感觉到右下角守护怪物的魔力牵制，\n击败它们或许就能解除机关！"
+                            }
+                        ]
+                    }
+                ]
+            }
 
         # 初见荷依米贵族剧情 (1, 7)
         mota_events["1,7"] = {
@@ -419,7 +535,7 @@ def build_floor_data(mid, floor_id, title, bg_name, prev_floor, next_floor, is_f
             {"type": "playSound", "name": "forest.mp3"},
             {"type": "tip", "text": f"进入【{title}】！"}
         ],
-        "eachArrive": [],
+        "eachArrive": each_arrive,
         "parallelDo": "",
         "events": mota_events,
         "changeFloor": change_floor,
@@ -435,7 +551,7 @@ def build_floor_data(mid, floor_id, title, bg_name, prev_floor, next_floor, is_f
         "bgm": "forest.mp3",
         "beforeBattle": {},
         "cannotMoveIn": {},
-        "autoEvent": {},
+        "autoEvent": auto_event,
         "canFlyFrom": True
     }
 

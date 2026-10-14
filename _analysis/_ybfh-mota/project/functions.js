@@ -448,6 +448,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				core.updateStatusBar();
 			}
 
+			// 检查当前楼层是否有满足条件的机关门需要触发开启
+			if (core.checkFloorSpecialDoors) {
+				core.checkFloorSpecialDoors();
+			}
+
 			// 如果已有事件正在处理中
 			if (core.status.event.id == null)
 				core.continueAutomaticRoute();

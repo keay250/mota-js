@@ -28,9 +28,95 @@ main.floors.MT4=
             "text": "进入【寂静之森外围 4F】！"
         }
     ],
-    "eachArrive": [],
+    "eachArrive": [
+        {
+            "type": "if",
+            "condition": "core.hasFlag('mt4_doors_opened') || !core.hasMonsterInArea('MT4', 11, 12, 13, 13) || !core.hasEnemyLeft(null, 'MT4')",
+            "true": [
+                {
+                    "type": "function",
+                    "function": "function() {\n    core.setFlag('mt4_doors_opened', true);\n    [[7, 4], [5, 1], [9, 1]].forEach(function(loc) {\n        var b = core.getBlock(loc[0], loc[1]);\n        if (b && (b.number == 85 || (b.event && b.event.id == 'specialDoor'))) {\n            core.removeBlock(loc[0], loc[1]);\n        }\n    });\n}"
+                }
+            ]
+        }
+    ],
     "parallelDo": "",
     "events": {
+        "7,4": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "if",
+                    "condition": "!core.hasMonsterInArea('MT4', 11, 12, 13, 13) || !core.hasEnemyLeft(null, 'MT4')",
+                    "true": [
+                        { "type": "setValue", "name": "flag:mt4_doors_opened", "value": "true" },
+                        { "type": "playSound", "name": "door.mp3" },
+                        { "type": "tip", "text": "【机关门已开启！】机关解除了！" },
+                        { "type": "openDoor", "loc": [7, 4], "needKey": false, "async": true },
+                        { "type": "openDoor", "loc": [5, 1], "needKey": false, "async": true },
+                        { "type": "openDoor", "loc": [9, 1], "needKey": false, "async": true },
+                        { "type": "waitAsync" }
+                    ],
+                    "false": [
+                        {
+                            "type": "show",
+                            "text": "\t[机关门]一道沉重冰冷的特殊铁门紧紧锁着……\n隐约能感觉到右下角守护怪物的魔力牵制，\n击败它们或许就能解除机关！"
+                        }
+                    ]
+                }
+            ]
+        },
+        "5,1": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "if",
+                    "condition": "!core.hasMonsterInArea('MT4', 11, 12, 13, 13) || !core.hasEnemyLeft(null, 'MT4')",
+                    "true": [
+                        { "type": "setValue", "name": "flag:mt4_doors_opened", "value": "true" },
+                        { "type": "playSound", "name": "door.mp3" },
+                        { "type": "tip", "text": "【机关门已开启！】机关解除了！" },
+                        { "type": "openDoor", "loc": [7, 4], "needKey": false, "async": true },
+                        { "type": "openDoor", "loc": [5, 1], "needKey": false, "async": true },
+                        { "type": "openDoor", "loc": [9, 1], "needKey": false, "async": true },
+                        { "type": "waitAsync" }
+                    ],
+                    "false": [
+                        {
+                            "type": "show",
+                            "text": "\t[机关门]一道沉重冰冷的特殊铁门紧紧锁着……\n隐约能感觉到右下角守护怪物的魔力牵制，\n击败它们或许就能解除机关！"
+                        }
+                    ]
+                }
+            ]
+        },
+        "9,1": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "if",
+                    "condition": "!core.hasMonsterInArea('MT4', 11, 12, 13, 13) || !core.hasEnemyLeft(null, 'MT4')",
+                    "true": [
+                        { "type": "setValue", "name": "flag:mt4_doors_opened", "value": "true" },
+                        { "type": "playSound", "name": "door.mp3" },
+                        { "type": "tip", "text": "【机关门已开启！】机关解除了！" },
+                        { "type": "openDoor", "loc": [7, 4], "needKey": false, "async": true },
+                        { "type": "openDoor", "loc": [5, 1], "needKey": false, "async": true },
+                        { "type": "openDoor", "loc": [9, 1], "needKey": false, "async": true },
+                        { "type": "waitAsync" }
+                    ],
+                    "false": [
+                        {
+                            "type": "show",
+                            "text": "\t[机关门]一道沉重冰冷的特殊铁门紧紧锁着……\n隐约能感觉到右下角守护怪物的魔力牵制，\n击败它们或许就能解除机关！"
+                        }
+                    ]
+                }
+            ]
+        },
         "4,13": {
             "trigger": "action",
             "enable": true,
@@ -460,6 +546,25 @@ main.floors.MT4=
     "bgm": "forest.mp3",
     "beforeBattle": {},
     "cannotMoveIn": {},
-    "autoEvent": {},
+    "autoEvent": {
+        "0,0": [
+            {
+                "condition": "(!core.hasFlag('mt4_doors_opened')) && (!core.hasMonsterInArea('MT4', 11, 12, 13, 13) || !core.hasEnemyLeft(null, 'MT4'))",
+                "currentFloor": true,
+                "priority": 0,
+                "delayExecute": false,
+                "multiExecute": false,
+                "data": [
+                    { "type": "setValue", "name": "flag:mt4_doors_opened", "value": "true" },
+                    { "type": "playSound", "name": "door.mp3" },
+                    { "type": "tip", "text": "【机关门已开启！】通往森林深处的铁门打开了！" },
+                    { "type": "openDoor", "loc": [7, 4], "needKey": false, "async": true },
+                    { "type": "openDoor", "loc": [5, 1], "needKey": false, "async": true },
+                    { "type": "openDoor", "loc": [9, 1], "needKey": false, "async": true },
+                    { "type": "waitAsync" }
+                ]
+            }
+        ]
+    },
     "canFlyFrom": true
 }
