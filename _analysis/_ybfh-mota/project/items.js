@@ -528,5 +528,120 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"name": "钱袋",
 		"itemEffect": "core.status.hero.money += 500",
 		"itemEffectTip": "，金币+500"
+	},
+	"crystalSword": {
+		"cls": "equips",
+		"name": "水晶剑",
+		"text": "会自动攻击敌人弱点部位的神奇武器。\n【致命一击（被动）】20%概率造成1.75倍暴击（期望增伤15%）。",
+		"equip": {
+			"type": 0,
+			"animate": "sword",
+			"value": {
+				"atk": 175
+			},
+			"ybfh": {
+				"critRate": 0.2,
+				"critMult": 1.75,
+				"critExp": 1.15
+			}
+		}
+	},
+	"iceCrystalSword": {
+		"cls": "equips",
+		"name": "水晶剑(寒冰)",
+		"text": "蕴含极寒魔力的水晶剑。\n【致命一击】20%概率2倍暴击（期望增伤20%）。\n【冰冻光环】使周围敌人降低3点护甲与30%攻速。",
+		"equip": {
+			"type": 1,
+			"animate": "sword",
+			"value": {
+				"atk": 1350
+			},
+			"ybfh": {
+				"critRate": 0.2,
+				"critMult": 2.0,
+				"critExp": 1.2,
+				"armorBreak": 3
+			}
+		}
+	},
+	"mercenarySword": {
+		"cls": "equips",
+		"name": "佣兵短剑",
+		"text": "厄泽城佣兵公会发放的基础短剑，坚韧轻便。\n攻击力+15。",
+		"equip": {
+			"type": 0,
+			"animate": "sword",
+			"value": {
+				"atk": 15
+			}
+		}
+	},
+	"poorLeather": {
+		"cls": "equips",
+		"name": "劣质皮甲",
+		"text": "缝制粗糙的硬皮甲，能略微抵御野兽抓伤。\n防御力+3，生命上限+50。",
+		"equip": {
+			"type": 1,
+			"value": {
+				"def": 3,
+				"hpmax": 50
+			}
+		}
+	},
+	"buckler": {
+		"cls": "equips",
+		"name": "小圆盾",
+		"text": "随身携带的圆木轻盾。\n防御力+6，自带5%物理减伤。",
+		"equip": {
+			"type": 2,
+			"value": {
+				"def": 6
+			},
+			"ybfh": {
+				"damageReduction": 0.05
+			}
+		}
+	},
+	"ringOfRegen": {
+		"cls": "equips",
+		"name": "回复戒指",
+		"text": "微光流转的魔石戒指。\n生命上限+20，生命回复速率+15/t。",
+		"equip": {
+			"type": 3,
+			"value": {
+				"hpmax": 20
+			},
+			"ybfh": {
+				"hpRecover": 15
+			}
+		}
+	},
+	"greatSword": {
+		"cls": "equips",
+		"name": "大剑",
+		"text": "沉重厚实的精钢双手巨剑。\n攻击力+300。",
+		"equip": {
+			"type": 4,
+			"animate": "sword",
+			"value": {
+				"atk": 300
+			}
+		}
+	},
+	"vanguard": {
+		"cls": "equips",
+		"name": "先锋盾",
+		"text": "名震大陆的前线冲锋重盾。\n生命上限+250，防御力+25，自带15%物理减伤与+25/t回血。",
+		"equip": {
+			"type": 5,
+			"value": {
+				"def": 25,
+				"hpmax": 250
+			},
+			"ybfh": {
+				"damageReduction": 0.15,
+				"hpRecover": 25
+			}
+		}
 	}
 }

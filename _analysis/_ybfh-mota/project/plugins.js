@@ -408,6 +408,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		var fg2Canvas = createCanvas('fg2', 63);
 		// 大地图适配
 		core.bigmap.canvas = ["bg2", "fg2", "bg", "event", "event2", "fg", "damage"];
+		core.bigmap.threshold = 10000;
 		core.initStatus.bg2maps = {};
 		core.initStatus.fg2maps = {};
 
@@ -1845,5 +1846,137 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				}, 1000);
 			}
 		})();
+	},
+	"ybfhEquipPlugin": function () {
+		// 《永不复还》专属 6 格神装、词条乘区与暗黑 UI 增强插件
+		console.log("【永不复还】6格神装与暗黑UI插件初始化...");
+
+		// 1. 扩展装备槽选择机制：自动寻找 0~5 号空位
+		var _origGetEquipTypeById = core.items.getEquipTypeById;
+		core.items.getEquipTypeById = function (equipId) {
+			var eq = (core.material.items[equipId] || {}).equip;
+			if (!eq) return -1;
+			var heroEquips = core.status.hero.equipment || [];
+			// 寻找当前空的槽位
+			for (var i = 0; i < 6; i++) {
+				if (!heroEquips[i]) return i;
+			}
+			// 若全满，默认替换指定槽位或槽位 0
+			return (typeof eq.type === 'number') ? eq.type : 0;
+		};
+
+		// 2. 装备特殊词条动态计算
+		core.plugin.getHeroEquipProps = function () {
+			var total = {
+				critExp: 1.0,
+				damageReduction: 0.0,
+				armorBreak: 0,
+				hpRecover: 0
+			};
+			var heroEquips = core.status.hero.equipment || [];
+			for (var i = 0; i < 6; i++) {
+				var eqId = heroEquips[i];
+				if (!eqId) continue;
+				var it = core.material.items[eqId];
+				if (it && it.equip && it.equip.ybfh) {
+					var y = it.equip.ybfh;
+					if (y.critExp) total.critExp = Math.max(total.critExp, y.critExp);
+					if (y.damageReduction) {
+						total.damageReduction = 1 - (1 - total.damageReduction) * (1 - y.damageReduction);
+					}
+					if (y.armorBreak) total.armorBreak += y.armorBreak;
+					if (y.hpRecover) total.hpRecover += y.hpRecover;
+				}
+			}
+			return total;
+		};
+
+		// 3. 穿脱装备动态生命上限调整
+		var _origLoadEquipEffect = core.items._loadEquipEffect;
+		core.items._loadEquipEffect = function (equipId, unloadEquipId) {
+			if (_origLoadEquipEffect) {
+				_origLoadEquipEffect.call(core.items, equipId, unloadEquipId);
+			}
+			var loadEquip = core.material.items[equipId] || {};
+			var unloadEquip = core.material.items[unloadEquipId] || {};
+
+			// 处理生命上限增减
+			var hpmaxDelta = 0;
+			if (loadEquip.equip && loadEquip.equip.value && loadEquip.equip.value.hpmax) {
+				hpmaxDelta += loadEquip.equip.value.hpmax;
+			}
+			if (unloadEquip.equip && unloadEquip.equip.value && unloadEquip.equip.value.hpmax) {
+				hpmaxDelta -= unloadEquip.equip.value.hpmax;
+			}
+			if (hpmaxDelta !== 0) {
+				core.status.hero.hpmax = Math.max(1, (core.status.hero.hpmax || 1000) + hpmaxDelta);
+				core.status.hero.hp = Math.min(core.status.hero.hpmax, core.status.hero.hp + Math.max(0, hpmaxDelta));
+			}
+			core.updateStatusBar();
+		};
+
+		// 4. 步行动作后触发装备每步/每回合回血
+		var _origMoveOneStep = core.moveOneStep;
+		core.moveOneStep = function (callback) {
+			_origMoveOneStep.call(core, function () {
+				var props = core.plugin.getHeroEquipProps();
+				if (props.hpRecover > 0 && core.status.hero.hp < core.status.hero.hpmax) {
+					core.status.hero.hp = Math.min(core.status.hero.hpmax, core.status.hero.hp + props.hpRecover);
+					core.updateStatusBar();
+				}
+				if (callback) callback();
+			});
+		};
+
+		// 5. 永不复还原版快捷键界面
+		core.plugin.openYbfhTask = function () {
+			core.playSound('确定');
+			core.drawText([
+				"\\t[当前任务列表]\n\\c[gold]【主线目标】\\c前往【厄泽城】佣兵公会报到，会见会长格瑞迪。\n\n" +
+				"\\c[cyan]【当前进度】\\c已穿过寂静之森与城外大平原，西城门已开放通行。\n" +
+				"\\c[green]【提示】\\c厄泽城内设有装备店、瑞格沃酒馆与翻倍钥匙商人，可自由探索整备！"
+			]);
+		};
+
+		core.plugin.openYbfhSkill = function () {
+			core.playSound('确定');
+			var props = core.plugin.getHeroEquipProps();
+			var critDesc = props.critExp > 1 ? ("当前暴击期望: ×" + props.critExp.toFixed(2)) : "未激活（装备水晶剑激活）";
+			var defDesc = props.damageReduction > 0 ? ("物理减伤: " + (props.damageReduction * 100).toFixed(1) + "%") : "未激活（装备盾牌激活）";
+			core.drawText([
+				"\\t[角色特技与被动词条]\n" +
+				"\\c[gold]【致命一击（被动）】\\c\n" + critDesc + "\n\n" +
+				"\\c[cyan]【坚韧守护（被动）】\\c\n" + defDesc + "\n\n" +
+				"\\c[green]【生命泉涌（被动）】\\c\n当前每步回血: +" + props.hpRecover + " HP/t"
+			]);
+		};
+
+		core.plugin.openYbfhSuit = function () {
+			core.playSound('确定');
+			core.drawText([
+				"\\t[套装共鸣系统]\n" +
+				"\\c[gold]【狂战魔神套装】(0/3)\\c：需要装备【大剑】+【吸血面具】+【力量假腿】\n\n" +
+				"\\c[cyan]【坚不可摧套装】(0/2)\\c：需要装备【先锋盾】+【锁子甲】\n\n" +
+				"\\c[gray]收集齐套装各部件后，将自动激活强力光环加成！"
+			]);
+		};
+
+		core.plugin.toggleActiveEquipSkill = function () {
+			var hasCrystal = core.hasEquip('crystalSword') || core.hasEquip('iceCrystalSword');
+			if (!hasCrystal) {
+				core.playSound('操作失败');
+				core.drawTip("当前装备没有可释放的主动技能！");
+				return;
+			}
+			var active = core.getFlag('crystalSword_active', false);
+			active = !active;
+			core.setFlag('crystalSword_active', active);
+			core.playSound('技能');
+			if (active) {
+				core.drawTip("【蓄势一击】已开启！必定造成 2.0 倍暴击！");
+			} else {
+				core.drawTip("【蓄势一击】已关闭，恢复常态期望。");
+			}
+		};
 	}
 }

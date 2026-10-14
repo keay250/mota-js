@@ -710,6 +710,19 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				hero_atk *= 2; // 计算时攻击力翻倍	
 			}
 
+			// ====== 永不复还装备词条与被动技能乘区 ======
+			var ybfhProps = (core.plugin && core.plugin.getHeroEquipProps) ? core.plugin.getHeroEquipProps() : { critExp: 1.0, damageReduction: 0, armorBreak: 0 };
+			if (core.getFlag('crystalSword_active', false)) {
+				// 蓄势一击开启：必定造成 2.0 倍暴击
+				hero_atk = Math.floor(hero_atk * 2.0);
+			} else if (ybfhProps.critExp > 1.0) {
+				// 致命一击被动期望增伤（如水晶剑 1.15 倍）
+				hero_atk = Math.floor(hero_atk * ybfhProps.critExp);
+			}
+			if (ybfhProps.armorBreak > 0) {
+				mon_def = Math.max(0, mon_def - ybfhProps.armorBreak);
+			}
+
 			// 如果是无敌属性，且勇士未持有十字架
 			if (core.hasSpecial(mon_special, 20) && !core.hasItem("cross"))
 				return null; // 不可战斗
@@ -735,6 +748,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 			// 每回合怪物对勇士造成的战斗伤害
 			var per_damage = mon_atk - hero_def;
+			// 护甲减伤率（如小圆盾/先锋盾）
+			if (ybfhProps.damageReduction > 0) {
+				per_damage = Math.floor(per_damage * (1 - ybfhProps.damageReduction));
+			}
 			// 魔攻：战斗伤害就是怪物攻击力
 			if (core.hasSpecial(mon_special, 2)) per_damage = mon_atk;
 			// 战斗伤害不能为负值
@@ -852,35 +869,50 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 			// 根据keyCode值来执行对应操作
 			switch (keyCode) {
-				case 27: // ESC：打开菜单栏
+				case 8: // Backspace：原版撤销误开门
+					core.doSL("autoSave", "load");
+					core.drawTip("【防呆撤销】已回退上一步误操作");
+					break;
+				case 27: // ESC：打开系统设置/综合菜单
 					core.openSettings(true);
 					break;
-				case 88: // X：使用怪物手册
+				case 88: // X：原版敌物资料/怪物手册
 					core.openBook(true);
+					break;
+				case 81: // Q：原版打开 6 格神装装备栏
+					core.openEquipbox(true);
+					break;
+				case 65: // A：原版查看套装面板
+					if (core.plugin && core.plugin.openYbfhSuit) {
+						core.plugin.openYbfhSuit();
+					}
+					break;
+				case 87: // W：原版一键切换套装
+					core.drawTip("【套装切换】当前已穿戴主力神装方案");
+					break;
+				case 68: // D：原版查看特技与被动词条
+					if (core.plugin && core.plugin.openYbfhSkill) {
+						core.plugin.openYbfhSkill();
+					}
+					break;
+				case 83: // S：原版技能组合/天赋
+					core.drawTip("【技能组合】当前角色天赋处于稳定状态");
+					break;
+				case 69: // E：原版装备主动技能释放（如水晶剑蓄势一击）
+					if (core.plugin && core.plugin.toggleActiveEquipSkill) {
+						core.plugin.toggleActiveEquipSkill();
+					}
+					break;
+				case 78: // N：原版查看任务面板（彻底干掉自杀重开游戏逻辑！）
+					if (core.plugin && core.plugin.openYbfhTask) {
+						core.plugin.openYbfhTask();
+					}
 					break;
 				case 71: // G：使用楼传器
 					core.useFly(true);
 					break;
-				case 65: // A：读取自动存档（回退）
-					core.doSL("autoSave", "load");
-					break;
-				case 87: // W：撤销回退
-					core.doSL("autoSave", "reload");
-					break;
-				case 83: // S：存档
-					core.save(true);
-					break;
-				case 68: // D：读档
-					core.load(true);
-					break;
-				case 69: // E：打开光标
-					core.ui._drawCursor();
-					break;
 				case 84: // T：打开道具栏
 					core.openToolbox(true);
-					break;
-				case 81: // Q：打开装备栏
-					core.openEquipbox(true);
 					break;
 				case 90: // Z：转向
 					core.turnHero();
@@ -907,8 +939,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				case 77: // M：打开存档笔记
 					core.actions._clickNotes_show();
 					break;
-				case 78: // N：重新开始
-					core.confirmRestart();
+				case 116: // F5：快速存档
+					core.save(true);
+					break;
+				case 119: // F8：快速读档
+					core.load(true);
 					break;
 				case 79: // O：查看工程
 					core.actions._clickGameInfo_openProject();
@@ -1656,23 +1691,83 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					core.drawImage(ctx, core.statusBar.icons.exp, 6, 70, 25, 25);
 					fill(core.formatBigNumber(core.status.hero.exp), 42, 90);
 				} else if (!core.flags.hideLeftStatusBar) { // 横屏且未隐藏状态栏
-					core.drawImage(ctx, core.statusBar.icons.floor, 6, 9, 25, 25);
-					fill((core.status.thisMap || {}).name || "Loading", 42, 29);
-					core.drawImage(ctx, core.statusBar.icons.hp, 6, 43, 25, 25);
-					fill(core.formatBigNumber(core.getRealStatus('hp')), 42, 63);
-					core.drawImage(ctx, core.statusBar.icons.atk, 6, 77, 25, 25);
-					fill(core.formatBigNumber(core.getRealStatus('atk')), 42, 97);
-					core.drawImage(ctx, core.statusBar.icons.def, 6, 111, 25, 25);
-					fill(core.formatBigNumber(core.getRealStatus('def')), 42, 131);
-					core.drawImage(ctx, core.statusBar.icons.mdef, 6, 145, 25, 25);
-					fill(core.formatBigNumber(core.getRealStatus('mdef')), 42, 165);
-					core.drawImage(ctx, core.statusBar.icons.money, 6, 179, 25, 25);
-					fill(core.formatBigNumber(core.status.hero.money), 42, 199);
-					core.drawImage(ctx, core.statusBar.icons.exp, 6, 213, 25, 25);
-					fill(core.formatBigNumber(core.status.hero.exp), 42, 233);
-					fill(core.setTwoDigits(core.itemCount('yellowKey')), 11, 267, '#FFCCAA');
-					fill(core.setTwoDigits(core.itemCount('blueKey')), 46, 267, '#AAAADD');
-					fill(core.setTwoDigits(core.itemCount('redKey')), 81, 267, '#FF8888');
+					// 永不复还原版暗黑风格状态栏
+					core.ui.clearMap(ctx);
+					// 绘制暗黑背景底板
+					core.ui.fillRect(ctx, 0, 0, 130, core._PY_, '#12151c');
+					core.ui.strokeRect(ctx, 0, 0, 130, core._PY_, '#2a3346', 1);
+
+					// 1. 地图与楼层名
+					core.ui.setFont(ctx, 'bold 12px Verdana');
+					core.ui.fillBoldText(ctx, (core.status.thisMap || {}).name || "厄泽城外", 6, 20, '#F0E6D2');
+
+					// 2. 生命值与回血速率
+					core.drawImage(ctx, core.statusBar.icons.hp, 6, 30, 18, 18);
+					var hpVal = core.getRealStatus('hp');
+					var hpMaxVal = core.status.hero.hpmax || 1000;
+					core.ui.setFont(ctx, 'bold 11px Verdana');
+					core.ui.fillBoldText(ctx, hpVal + "/" + hpMaxVal, 26, 44, '#FFFFFF');
+					var props = (core.plugin && core.plugin.getHeroEquipProps) ? core.plugin.getHeroEquipProps() : {};
+					var hpRec = props.hpRecover || 0;
+					core.ui.setFont(ctx, '10px Verdana');
+					core.ui.fillBoldText(ctx, "+" + hpRec + "/t", 88, 44, '#70E080');
+
+					// 3. 攻击力与暴击
+					core.drawImage(ctx, core.statusBar.icons.atk, 6, 54, 18, 18);
+					var atkVal = core.getRealStatus('atk');
+					core.ui.setFont(ctx, 'bold 12px Verdana');
+					core.ui.fillBoldText(ctx, "" + atkVal, 26, 68, '#FFFFFF');
+					if (props.critExp > 1.0) {
+						core.ui.setFont(ctx, 'bold 10px Verdana');
+						core.ui.fillBoldText(ctx, "×" + props.critExp.toFixed(2), 70, 68, '#FFD700');
+					}
+
+					// 4. 防御力与减伤
+					core.drawImage(ctx, core.statusBar.icons.def, 6, 78, 18, 18);
+					var defVal = core.getRealStatus('def');
+					core.ui.setFont(ctx, 'bold 12px Verdana');
+					core.ui.fillBoldText(ctx, "" + defVal, 26, 92, '#FFFFFF');
+					if (props.damageReduction > 0) {
+						core.ui.setFont(ctx, '10px Verdana');
+						core.ui.fillBoldText(ctx, "-" + (props.damageReduction * 100).toFixed(0) + "%", 70, 92, '#55AAFF');
+					}
+
+					// 5. 攻速与出手
+					core.ui.setFont(ctx, 'bold 10px Verdana');
+					core.ui.fillBoldText(ctx, "攻速", 6, 112, '#AAAAAA');
+					core.ui.setFont(ctx, 'bold 11px Verdana');
+					core.ui.fillBoldText(ctx, "100% (*1.0)", 36, 112, '#DDDDDD');
+
+					// 6. 三维属性 (力/敏/智)
+					var attrsImg = core.material.images.images['AttrsIcon.png'];
+					var p1 = 25 + Math.floor(defVal / 2);
+					var p2 = 18;
+					var p3 = 12;
+					if (attrsImg) {
+						// 力量 拳头
+						core.drawImage(ctx, attrsImg, 0, 0, 36, 36, 6, 122, 16, 16);
+						core.ui.setFont(ctx, 'bold 11px Verdana');
+						core.ui.fillBoldText(ctx, "" + p1, 26, 135, '#FF6666');
+						// 敏捷 鞋子
+						core.drawImage(ctx, attrsImg, 36, 0, 36, 36, 6, 142, 16, 16);
+						core.ui.fillBoldText(ctx, "" + p2, 26, 155, '#66FF66');
+						// 智力 法杖
+						core.drawImage(ctx, attrsImg, 72, 0, 36, 36, 6, 162, 16, 16);
+						core.ui.fillBoldText(ctx, "" + p3, 26, 175, '#66AAFF');
+					}
+
+					// 7. 金币与经验
+					core.drawImage(ctx, core.statusBar.icons.money, 6, 186, 16, 16);
+					core.ui.setFont(ctx, 'bold 11px Verdana');
+					core.ui.fillBoldText(ctx, "" + core.status.hero.money, 26, 199, '#FFD700');
+					core.drawImage(ctx, core.statusBar.icons.exp, 6, 206, 16, 16);
+					core.ui.fillBoldText(ctx, "" + core.status.hero.exp, 26, 219, '#00DDFF');
+
+					// 8. 钥匙栏
+					core.ui.setFont(ctx, 'bold 12px Verdana');
+					core.ui.fillBoldText(ctx, "🔑 " + core.itemCount('yellowKey'), 6, 244, '#FFCC00');
+					core.ui.fillBoldText(ctx, "" + core.itemCount('blueKey'), 55, 244, '#4488FF');
+					core.ui.fillBoldText(ctx, "" + core.itemCount('redKey'), 88, 244, '#FF3333');
 				}
 			} else if (core.flags.hideLeftStatusBar && !core.domStyle.isVertical) { // 横屏且隐藏状态栏
 				if (!core.dymCanvas['status'])

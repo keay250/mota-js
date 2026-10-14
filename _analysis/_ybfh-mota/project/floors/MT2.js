@@ -58,8 +58,8 @@ main.floors.MT2=
             "stair": "upFloor"
         },
         "12,0": {
-            "floorId": ":next",
-            "stair": "downFloor"
+            "floorId": "MT3",
+            "loc": [3, 14]
         }
     },
     "afterBattle": {},
