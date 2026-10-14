@@ -527,7 +527,7 @@ main.floors.MT5=
         14,
         7
     ],
-    "bgm": "forest.mp3",
+    "bgm": "厄泽城.mp3",
     "beforeBattle": {},
     "cannotMoveIn": {},
     "autoEvent": {},

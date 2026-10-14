@@ -7,6 +7,7 @@ main.floors.MT10 =
     "height": 15,
     "canFlyTo": false,
     "canUseQuickShop": true,
+    "bgm": "厄泽城事变.mp3",
     "cannotViewMap": false,
     "defaultGround": "ground",
     "images": [

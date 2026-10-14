@@ -7,6 +7,7 @@ main.floors.MT7 =
     "height": 40,
     "canFlyTo": false,
     "canUseQuickShop": true,
+    "bgm": "厄泽城.mp3",
     "cannotMoveInFacing": false,
     "upFloor": [
         15,

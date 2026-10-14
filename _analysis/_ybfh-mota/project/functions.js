@@ -209,6 +209,15 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					core.visitFloor(floorId);
 				}
 			}
+
+			// 自动同步当前楼层的背景音乐 (BGM)
+			var targetBgm = (core.floors[floorId] && core.floors[floorId].bgm) || (core.status.maps[floorId] && core.status.maps[floorId].bgm);
+			if (floorId === 'MT7' && core.hasFlag('greedy_plot_revealed')) {
+				targetBgm = '厄泽城事变.mp3';
+			}
+			if (targetBgm && core.musicStatus && core.musicStatus.playingBgm !== targetBgm) {
+				core.playBgm(targetBgm);
+			}
 		},
 		"flyTo": function (toId, callback) {
 			// 楼层传送器的使用，从当前楼层飞往toId

@@ -8,6 +8,7 @@ main.floors.MT6=
     "canFlyTo": true,
     "canUseQuickShop": true,
     "cannotViewMap": false,
+    "bgm": "厄泽城.mp3",
     "images": [
         {
             "name": "map017_bg.png",

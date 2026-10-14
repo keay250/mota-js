@@ -7,6 +7,7 @@ main.floors.MT8 =
     "height": 17,
     "canFlyTo": false,
     "canUseQuickShop": true,
+    "bgm": "厄泽城.mp3",
     "cannotViewMap": false,
     "defaultGround": "ground",
     "images": [

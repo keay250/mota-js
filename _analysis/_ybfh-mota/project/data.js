@@ -74,7 +74,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
             "title.mp3",
             "forest.mp3",
             "标题画面.mp3",
-            "寂静之森.mp3"
+            "寂静之森.mp3",
+            "厄泽城.mp3",
+            "厄泽城事变.mp3",
+            "郊外平原.mp3"
         ],
         "sounds": [
             "attack.mp3",
