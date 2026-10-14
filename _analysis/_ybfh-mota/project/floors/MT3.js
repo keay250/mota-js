@@ -50,10 +50,28 @@ main.floors.MT3=
                     "type": "if",
                     "condition": "!core.hasMonsterInArea('MT3', 1, 7, 5, 11) || !core.hasEnemyLeft(null, 'MT3')",
                     "true": [
-                        { "type": "setValue", "name": "flag:mt3_doors_opened", "value": "true" },
-                        { "type": "playSound", "name": "door.mp3" },
-                        { "type": "tip", "text": "【机关门已开启！】机关解除了！" },
-                        { "type": "openDoor", "loc": [2, 6], "needKey": false, "async": false }
+                        {
+                            "type": "setValue",
+                            "name": "flag:mt3_doors_opened",
+                            "value": "true"
+                        },
+                        {
+                            "type": "playSound",
+                            "name": "door.mp3"
+                        },
+                        {
+                            "type": "tip",
+                            "text": "【机关门已开启！】机关解除了！"
+                        },
+                        {
+                            "type": "openDoor",
+                            "loc": [
+                                2,
+                                6
+                            ],
+                            "needKey": false,
+                            "async": false
+                        }
                     ],
                     "false": [
                         {
@@ -155,27 +173,50 @@ main.floors.MT3=
                 "\t[路牌]↑ 姆依森运河\n→ 厄泽城\n←↓ 寂静之森深处",
                 "\t[贾斯汀]太好了，看到路牌了，小站应该就在前面。\n只要到了小站就能安全回城了。"
             ]
+        },
+        "0,3": {
+            "trigger": "action",
+            "enable": true,
+            "data": [
+                {
+                    "type": "setText",
+                    "align": "center"
+                },
+                "\t[前哨路牌]警告：前方为【寂静之森深处】！",
+                "\t[前哨路牌]该区域魔兽极为凶残，毒雾瘴气弥漫，\n非精锐佣兵请勿贸然涉足！",
+                {
+                    "type": "setText",
+                    "align": "left"
+                }
+            ]
         }
     },
     "changeFloor": {
         "3,14": {
-                "floorId": "MT2",
-                "loc": [
-                        12,
-                        1
-                ],
-                "direction": "down"
+            "floorId": "MT2",
+            "loc": [
+                12,
+                1
+            ],
+            "direction": "down"
         },
         "14,5": {
-                "floorId": "MT4",
-                "loc": [
-                        1,
-                        7
-                ],
-                "direction": "right"
+            "floorId": "MT4",
+            "loc": [
+                1,
+                7
+            ],
+            "direction": "right"
+        },
+        "9,0": {
+            "floorId": "MT15",
+            "loc": [
+                11,
+                13
+            ],
+            "direction": "up"
         }
-},
-
+    },
     "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},
@@ -459,10 +500,28 @@ main.floors.MT3=
                 "delayExecute": false,
                 "multiExecute": false,
                 "data": [
-                    { "type": "setValue", "name": "flag:mt3_doors_opened", "value": "true" },
-                    { "type": "playSound", "name": "door.mp3" },
-                    { "type": "tip", "text": "【机关门已开启！】机关解除了！" },
-                    { "type": "openDoor", "loc": [2, 6], "needKey": false, "async": false }
+                    {
+                        "type": "setValue",
+                        "name": "flag:mt3_doors_opened",
+                        "value": "true"
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "door.mp3"
+                    },
+                    {
+                        "type": "tip",
+                        "text": "【机关门已开启！】机关解除了！"
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            6
+                        ],
+                        "needKey": false,
+                        "async": false
+                    }
                 ]
             }
         ]

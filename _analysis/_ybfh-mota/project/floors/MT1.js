@@ -330,8 +330,9 @@ main.floors.MT1=
     },
     "changeFloor": {
         "12,0": {
-            "floorId": ":next",
-            "stair": "downFloor"
+            "floorId": "MT2",
+            "loc": [2, 13],
+            "direction": "up"
         }
     },
     "afterBattle": {},

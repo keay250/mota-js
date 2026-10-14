@@ -4812,7 +4812,7 @@ main.floors.MT7 =
                 {
                     "type": "changeFloor",
                     "floorId": "MT10",
-                    "loc": [1, 8],
+                    "loc": [2, 8],
                     "direction": "right"
                 }
             ]
@@ -4853,7 +4853,18 @@ main.floors.MT7 =
             ]
         }
     },
-    "changeFloor": {},
+    "changeFloor": {
+        "15,37": {
+            "floorId": "MT6",
+            "loc": [41, 25],
+            "direction": "down"
+        },
+        "23,30": {
+            "floorId": "MT10",
+            "loc": [2, 8],
+            "direction": "right"
+        }
+    },
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},

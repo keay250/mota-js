@@ -1,4 +1,4 @@
-main.floors.MT6=
+main.floors.MT6 =
 {
     "floorId": "MT6",
     "title": "厄泽城 (1:1全景)",
@@ -57,7 +57,7 @@ main.floors.MT6=
                 "\t[贾斯汀]（或许应该先去东边的【装备商店】(68, 16)看一看，有了公会给的这笔抚恤金，说不定能买到不错的武器与防具防身。）"
             ]
         },
-                                "41,24": {
+        "41,24": {
             "trigger": "action",
             "enable": true,
             "data": [
@@ -68,12 +68,15 @@ main.floors.MT6=
                 {
                     "type": "changeFloor",
                     "floorId": "MT7",
-                    "loc": [15, 36],
+                    "loc": [
+                        15,
+                        36
+                    ],
                     "direction": "up"
                 }
             ]
         },
-                                        "68,16": {
+        "68,16": {
             "trigger": "action",
             "enable": true,
             "data": [
@@ -84,12 +87,15 @@ main.floors.MT6=
                 {
                     "type": "changeFloor",
                     "floorId": "MT8",
-                    "loc": [5, 15],
+                    "loc": [
+                        5,
+                        15
+                    ],
                     "direction": "up"
                 }
             ]
         },
-                                        "58,67": {
+        "58,67": {
             "trigger": "action",
             "enable": true,
             "data": [
@@ -100,7 +106,10 @@ main.floors.MT6=
                 {
                     "type": "changeFloor",
                     "floorId": "MT9",
-                    "loc": [5, 14],
+                    "loc": [
+                        5,
+                        14
+                    ],
                     "direction": "up"
                 }
             ]
@@ -367,6 +376,30 @@ main.floors.MT6=
                 7
             ],
             "direction": "left"
+        },
+        "41,24": {
+            "floorId": "MT7",
+            "loc": [
+                15,
+                36
+            ],
+            "direction": "up"
+        },
+        "68,16": {
+            "floorId": "MT8",
+            "loc": [
+                5,
+                15
+            ],
+            "direction": "up"
+        },
+        "58,67": {
+            "floorId": "MT9",
+            "loc": [
+                5,
+                14
+            ],
+            "direction": "up"
         }
     },
     "beforeBattle": {},

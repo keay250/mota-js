@@ -7,6 +7,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
             "MT3",
             "MT4",
             "MT5",
+			"MT15",
 			"MT16",
             "MT6",
             "MT7",
@@ -18,6 +19,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
         "floorPartitions": [],
         "images": [
             "map013_bg.png",
+		"map011_bg.png",
 		"map016_bg.png",
             "map012_bg.png",
             "map010_bg.png",
