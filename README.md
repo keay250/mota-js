@@ -111,13 +111,14 @@ pip3 install flask && python3 server.py
 
 ---
 
-## ⚠️ 三条最容易踩的坑（先看能省几小时）
+## ⚠️ 四条最容易踩的坑（先看能省几小时）
 
 1. **起始楼层有两处**：`data.js` 的 `main.floorIds` **和** `firstData.floorId`。只改前者 → 报 `不存在的楼层：sample0` → 卡黑屏进不去。
 2. **必须用官方服务**：静态服务会导致 mota-js 的动态端点 `/__all_floors__.js` 404 → **地图全黑但状态栏和文字正常**（极易误判为"渲染 bug"）。
 3. **`if` 事件的条件是 mota-js 的 DSL**（`item:yellowKey`），**不是 JS**（`core.hasItem(...)` 无效）。
+4. **移植怪物必须做全量数据与技能校对**：防范 `enemys.js` 重复键静默覆盖导致怪物全属性归 0；防范素材图 `enemys.png` 槽位全透明导致怪物隐形；必须解析原版 `element_ranks` 隐藏技能与名字 `\v` 参数插值（如上位威压、腐蚀毒素、2连击）注入战斗公式；提交前必跑 `tools/audit_all_floors_enemies.py` 达成 100% 数值对齐！
 
-> 完整 12 条见交接文档 **§7 坑清单**。
+> 完整 22 条见交接文档 **§7 坑清单**。
 
 ---
 

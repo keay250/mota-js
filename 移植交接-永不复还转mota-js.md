@@ -376,6 +376,56 @@ Windows 上可用；**macOS/Linux 用 `server.js`（Node）或 `server.py`（Fla
 - **原因**：mota-js 源码中 `core.updateStatusBar` 默认走 `requestAnimationFrame` 延迟至下一帧更新。
 - **解法**：在即时结算函数（如 `core.addMaxHp`、`core.addHp`）中必须调用 `core.updateStatusBar(false, true)`，传入 `immediate=true` 强制同步立即重绘 DOM。
 
+### 坑 22：⭐⭐⭐ 移植怪物数据校对的五重雷区与交叉审计规范（必读铁律）
+
+> **惨痛教训**：前期移植只把怪物外观贴上、凭直觉填了基础攻防，实机测试时发现不仅出现了“倍荷玛战士 0 血 0 防直接秒杀”的荒诞 Bug，还出现了“嗜血死者在地图上手册上全透明”、“荷依米贵族打不动但升到2级后战损没变化”等严重脱节现象。**移植任何怪物，必须严格执行以下五重数据校对流水线：**
+
+#### 1. `enemys.js` 重复键（Duplicate Keys）静默覆盖雷区
+- **现象**：在 `enemys.js` 头部明明写好了 `"skeletonWarrior": {"name":"倍荷玛战士","hp":80,"atk":11,"def":3...}`，进入游戏却发现它是 `0 HP / 0 ATK / 0 DEF` 的 0 经验秒杀怪。
+- **根因**：mota-js 原始模板的 `enemys.js` 末尾残留了大量默认魔塔怪兽（如第 47 行 `"skeletonWarrior": {"name":"骷髅士兵","hp":0...}`）。JS 对象字面量在解析同名 key 时，**后面的定义会静默覆盖前面的定义**，没有任何报错提示！
+- **铁律**：每当新增或修改怪物，**必须用脚本检测 `enemys.js` 中的重复键**：
+  ```python
+  keys = re.findall(r'"(\w+)"\s*:\s*\{', open('project/enemys.js', 'r').read())
+  dups = [k for k, count in collections.Counter(keys).items() if count > 1]
+  assert len(dups) == 0, f"发现重复怪物定义: {dups}"
+  ```
+
+#### 2. `enemys.png` 槽位必须验证实机像素（杜绝透明幽灵怪）
+- **现象**：`icons.js` 里明明绑定了 `"skeletonCaptain": 10`，但在地图和怪物手册中，嗜血死者却是一块没有任何图案的纯透明空框。
+- **根因**：官方模板的素材图 `project/materials/enemys.png` 尺寸为 64×2336，很多未使用的预留行（如第 10 行）**实际上是全透明 Alpha=0 的空像素**（`crop().getbbox() == None`）！只在 `icons.js` 里填了行号，没有向素材图写入真实切片，怪物就会变成“隐形幽灵”。
+- **铁律**：
+  1. 必须使用 Pillow 检测对应行是否有非空像素：`Image.open('materials/enemys.png').crop((0, row*32, 64, (row+1)*32)).getbbox() is not None`。
+  2. 提取 RMXP 行走图（如 `Graphics/Characters/Monster02-02.png`）时，取朝下正面（Row 0）的 **第 0 帧（x=0）** 与 **第 2 帧（x=64）**，合成为 64×32 的两帧待机动画，并以完全覆盖方式写入目标行（禁止传 mask）。
+
+#### 3. 原版隐藏技能解析：`element_ranks` 映射与名字参数 `\v` 插值
+- **原版底层架构**：
+  原版《永不复还》没有在敌人数据表直接设技能列，而是精妙复用了 RMXP 的属性抗性表：
+  1. **技能 ID**：`$data_enemies[id].element_ranks` 中抗性值等于 `1`（即编辑器 A 级评价）的属性序号，就是该怪物所持有的技能 ID（对应 `Data/Skills.rxdata`）。
+  2. **参数插值**：技能描述（`description`）中含有 `\v` 占位符的，其参数值按顺序截取自怪兽名字的冒号后缀！
+     - 例如 `荷依米贵族:25`（持有技能 5 【上位威压】，参数 `25` 代表削弱 25% 攻防）。
+     - 例如 `嗜血死者:15:2`（持有技能 3 【亡灵协同】参数 15，动作参数 2 代表 2 连击）。
+     - 例如 `寒冰软泥怪:60:2`（持有技能 1 【寒霜攻击】减速 60%，技能 2 【腐蚀毒素】穿透毒伤 2 点）。
+- **移植规范**：
+  绝不可只搬 HP/ATK/DEF 白板数值！必须将解析到的技能注入 mota-js：
+  - **2连击 / N连击**：配置 `special: 4` 或 `special: [4]`，mota-js 底层天然支持。
+  - **上位威压**：注册 `special: 30`，在 `project/functions.js` 的 `getDamageInfo` 中检测：若怪物等级高于勇士（`enemy_lv > hero_lv`），攻防乘以 `(1 - 0.25)^diff`；勇士一旦在地图升级到 2 级，威压自动破除！
+  - **腐蚀毒素**：注册 `special: 31`，在 `per_damage` 计算中每回合额外附加 `poisonPierce` 点无视护甲的物理穿透伤害。
+  - **闪避**：注册 `special: 32`，回合数按 `Math.ceil(turn / (1 - dodgeRate/100))` 折算。
+  - **魔攻**：配置 `special: 2`，无视护甲直接计算法术伤害。
+
+#### 4. 地图裁剪坐标偏移（`offset_x=5`）与原版事件交叉定位
+- **现象**：以为 MT1 的第 3 格是软泥怪，结果在原版 Map007 实际上放的是倍荷玛。
+- **根因**：原版 RMXP 迷宫普遍为 20×15，mota-js 标准规格为 15×15。移植时裁剪掉了左侧 5 列树林障碍（即 `orig_x = x + 5`）。
+- **铁律**：校对怪物时，必须以 `(x + 5, y)` 反查原版 `MapXXX.rxdata` 里的真实 Event 名称（形如 `怪物003`），再通过后三位数字匹配 `Enemies.rxdata`，确保每只怪物的身份、图块与原版完全吻合。
+
+#### 5. 跨楼层全自动交叉审计流水线
+- **必备验证工具**：项目内置了全楼层怪物审计脚本 [`tools/audit_all_floors_enemies.py`](file:///Users/zt-lin/Document/永不复还/移植包-永不复还转mota-js/tools/audit_all_floors_enemies.py)。
+- **交付标准**：每完成一层或修改任何怪物，必须在终端运行：
+  ```bash
+  .venv/bin/python tools/audit_all_floors_enemies.py
+  ```
+  **必须看到全楼层所有出场怪物全部输出 `✅ 【数值完全一致】`（0 错误、0 警告），且无任何丢失贴图，方可提交交付！**
+
 ---
 
 ## 8. 环境与运行
@@ -528,6 +578,7 @@ cd mota-js && python3 server.py
 | 工作副本（含 MT1/MT2） | `_analysis\_ybfh-mota\` |
 | 官方纯净源码 | `_analysis\_mota-js-latest\mota-js-master\` |
 | 1:1 像素级总装流水线 | **`tools/build_perfect_mt1.py`**（生成背景/贴图/MT1.js/注册出生点） |
+| 全楼层怪物交叉审计工具 | **`tools/audit_all_floors_enemies.py`**（双向校对全楼层怪物贴图、数值与隐藏技能） |
 | Playwright 全量验收脚本 | **`tools/verify_all_intro.py`** / `tools/capture_gameplay.py` |
 | 楼层文件 | `_analysis\_ybfh-mota\project\floors\MT1.js` / `MT2.js` |
 | 楼层注册 + 起始楼层 | `_analysis\_ybfh-mota\project\data.js`（`main.floorIds` + `firstData.floorId`） |
@@ -551,6 +602,9 @@ cd mota-js && python3 server.py
 
 # 3) 运行端到端 Playwright 自动化验证（跳过序章、断言台词、截图实机）
 .venv/bin/python3 tools/verify_all_intro.py
+
+# 4) 运行全楼层怪物贴图与数值只读交叉审计（必须 100% 全数值一致）
+.venv/bin/python3 tools/audit_all_floors_enemies.py
 ```
 
 ## 11. 现有方案封存说明与下一步战略 (Milestone v2.1)
