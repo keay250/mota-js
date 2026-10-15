@@ -339,13 +339,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
             "items": {
                 "constants": {},
                 "tools": {},
-                "equips": {
-                    "crystalSword": 1,
-                    "buckler": 1,
-                    "mercenarySword": 1,
-                    "poorLeather": 1,
-                    "ringOfRegen": 1
-                }
+                "equips": {}
             },
             "loc": {
                 "direction": "up",

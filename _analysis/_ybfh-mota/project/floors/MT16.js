@@ -44,16 +44,14 @@ main.floors.MT16=
                     "align": "center"
                 },
                 "\t[宝箱]打开了古代遗物宝箱！",
-                "\t[系统]获得了【精钢长剑】！攻击力 +15！",
+                "\t[系统]获得了【精钢长剑】！已放入装备库并自动佩戴（攻击力 +15）！",
                 {
                     "type": "setText",
                     "align": "left"
                 },
                 {
-                    "type": "setValue",
-                    "name": "status:atk",
-                    "operator": "+=",
-                    "value": "15"
+                    "type": "function",
+                    "function": "function() {\n    core.addItem('steelSword', 1);\n    core.loadEquip('steelSword');\n}"
                 },
                 {
                     "type": "hide",

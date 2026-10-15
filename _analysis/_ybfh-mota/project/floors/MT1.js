@@ -83,16 +83,14 @@ main.floors.MT1 =
                     "align": "center"
                 },
                 "\t[宝箱]打开了宝箱！",
-                "\t[系统]获得了【佣兵短剑】！攻击力 +10！\n\n按 Q 键可进入装备界面查看装备。",
+                "\t[系统]获得了【佣兵短剑】！已放入装备库并自动佩戴（攻击力 +15）！\n\n按 Q 键可随时打开 6 格神装界面查看与更换装备。",
                 {
                     "type": "setText",
                     "align": "left"
                 },
                 {
-                    "type": "setValue",
-                    "name": "status:atk",
-                    "operator": "+=",
-                    "value": "10"
+                    "type": "function",
+                    "function": "function() {\n    core.addItem('mercenarySword', 1);\n    core.loadEquip('mercenarySword');\n}"
                 },
                 {
                     "type": "hide",

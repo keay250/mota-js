@@ -1,3 +1,5 @@
+class Tone; def self._load(s); s; end; end
+class Color; def self._load(s); s; end; end
 module RPG
   class Map
     attr_accessor :tileset_id, :width, :height, :autoplay_bgm, :bgm, :autoplay_bgs, :bgs, :encounter_list, :encounter_step, :data, :events

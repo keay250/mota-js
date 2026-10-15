@@ -2120,6 +2120,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 						'lightGauntlets': '轻骑护手.png',
 			'skullShield': '骷髅盾.png',
 			'mercenarySword': '佣兵短剑.png',
+			'steelSword': '装备-大剑.png',
+			'forestSword': '佣兵短剑.png',
 			'poorLeather': '劣质皮甲.png',
 			'buckler': '小圆盾.png',
 			'ringOfRegen': '回复戒指.png',

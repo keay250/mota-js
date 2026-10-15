@@ -605,6 +605,30 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			}
 		}
 	},
+	"steelSword": {
+		"cls": "equips",
+		"name": "精钢长剑",
+		"text": "古代遗迹中出土的锋利精钢长剑，经久不锈。\n攻击力+15。",
+		"equip": {
+			"type": 0,
+			"animate": "sword",
+			"value": {
+				"atk": 15
+			}
+		}
+	},
+	"forestSword": {
+		"cls": "equips",
+		"name": "森林长剑",
+		"text": "密林深处遗落的青翠长剑，坚韧轻盈。\n攻击力+15。",
+		"equip": {
+			"type": 0,
+			"animate": "sword",
+			"value": {
+				"atk": 15
+			}
+		}
+	},
 	"poorLeather": {
 		"cls": "equips",
 		"name": "劣质皮甲",

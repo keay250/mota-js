@@ -44,7 +44,12 @@ def test_equip_and_ui():
         assert initial_atk == 13, f"Expected 13, got {initial_atk}"
         assert initial_def == 3, f"Expected 3, got {initial_def}"
         
-        # Verify hero bag contains crystalSword
+        # Add test equips for UI testing
+        page.evaluate("""
+            core.addItem('crystalSword', 1);
+            core.addItem('buckler', 1);
+            core.addItem('ringOfRegen', 1);
+        """)
         has_crystal = page.evaluate("core.hasItem('crystalSword')")
         print(f"Bag has crystalSword: {has_crystal}")
         assert has_crystal, "crystalSword should be in hero bag!"

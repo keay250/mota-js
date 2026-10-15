@@ -86,16 +86,14 @@ main.floors.MT15 =
                     "align": "center"
                 },
                 "\t[宝箱]打开了密林遗失的宝箱！",
-                "\t[系统]获得了【森林长剑】！攻击力 +15！",
+                "\t[系统]获得了【森林长剑】！已放入装备库并自动佩戴（攻击力 +15）！",
                 {
                     "type": "setText",
                     "align": "left"
                 },
                 {
-                    "type": "setValue",
-                    "name": "status:atk",
-                    "operator": "+=",
-                    "value": "15"
+                    "type": "function",
+                    "function": "function() {\n    core.addItem('forestSword', 1);\n    core.loadEquip('forestSword');\n}"
                 },
                 {
                     "type": "hide",

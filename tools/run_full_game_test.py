@@ -143,6 +143,15 @@ class Chapter1FullSuiteRunner:
             mt1_edge_blocked = page.evaluate("core.noPass(2, 14);")
             self.assert_step(mt1_edge_blocked, "MT1 底部边缘空气墙严密阻挡 (2, 14 无法穿出屏幕)")
 
+            # 开启第一层宝箱 (3, 1)，验证获得佣兵短剑、装备真正入库与自动佩戴
+            self.nav_to(page, 'MT1', 3, 2, 'up')
+            atk_pre_sword = page.evaluate("core.getRealStatus('atk')")
+            self.move_hero(page, 'up')
+            self.clear_dialogs(page)
+            has_sword_in_sys = page.evaluate("Boolean(core.hasEquip('mercenarySword') || core.hasItem('mercenarySword'))")
+            atk_post_sword = page.evaluate("core.getRealStatus('atk')")
+            self.assert_step(has_sword_in_sys and atk_post_sword == atk_pre_sword + 15, "开启第一层宝箱获得【佣兵短剑】并成功入库佩戴 (ATK +15)")
+
             # -------------------------------------------------------------
             # 阶段 2: 迷宫分歧与前哨路牌 (MT3)
             # -------------------------------------------------------------
